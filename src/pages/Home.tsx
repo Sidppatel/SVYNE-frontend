@@ -1,0 +1,182 @@
+import { useNavigate } from 'react-router-dom'
+import { Button } from '@/components/ui/Button'
+import { Eyebrow } from '@/components/ui/Eyebrow'
+import { Italian } from '@/components/ui/Italian'
+import { WorkTileSvg } from '@/components/ui/WorkTileSvg'
+import { CtaBand } from '@/components/layout/CtaBand'
+import { HOME_PILLARS, HOME_PILLAR_TAG, HOME_PROCESS, HOME_TESTIMONIAL } from '@/content/home'
+import { CASE_STUDIES } from '@/content/work'
+import { ROUTES } from '@/routes'
+
+export function Home() {
+  const navigate = useNavigate()
+  const featured = CASE_STUDIES[0]
+
+  return (
+    <>
+      <section className="hero">
+        <div className="doc">
+          <div className="hero-inner">
+            <Eyebrow className="fade-up">◆ One source. Online. ◆</Eyebrow>
+            <h1>
+              <span className="fade-up d1">One source.</span>
+              <br />
+              <em className="fade-up d2">Everything online.</em>
+            </h1>
+            <p className="hero-deck fade-up d3">
+              Svono <strong>builds, launches, and maintains</strong> websites, custom apps, and event platforms for small businesses across the Gulf Coast. <em>One source for everything.</em>
+            </p>
+            <div className="hero-ctas fade-up d4">
+              <Button variant="primary" withArrow onClick={() => navigate(ROUTES.contact)}>
+                Start a project
+              </Button>
+              <Button variant="secondary" onClick={() => navigate(ROUTES.work)}>
+                See the work
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr className="hairline" />
+
+      <section className="section">
+        <div className="doc">
+          <div className="section-header">
+            <div className="label-row">
+              <Eyebrow>Chapter I · Services</Eyebrow>
+              <Italian>three pillars</Italian>
+            </div>
+            <h2>
+              Three things. <em>Done well.</em>
+            </h2>
+            <p className="deck">
+              The full lifecycle of a website or web product. Build, launch, maintain — no handoffs between four people.
+            </p>
+          </div>
+
+          <div className="services-strip">
+            {HOME_PILLARS.map(p => (
+              <button
+                key={p.num}
+                className="pillar clickable"
+                onClick={() => navigate(ROUTES.services)}
+              >
+                <div className="pillar-num">{p.num} · pillar</div>
+                <h3>
+                  <em>{p.name}</em>
+                </h3>
+                <div className="pillar-italian">{HOME_PILLAR_TAG[p.name]}</div>
+                <p>{p.desc}</p>
+                <div className="pillar-more">
+                  Read more <span className="arr">→</span>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-parchment-deep">
+        <div className="doc">
+          <div className="section-header">
+            <div className="label-row">
+              <Eyebrow>Chapter II · The work</Eyebrow>
+              <Italian>what we've built</Italian>
+            </div>
+            <h2>
+              What we've <em>shipped.</em>
+            </h2>
+            <p className="deck">A small set, growing slowly. Better two real than ten placeholders.</p>
+          </div>
+
+          <div className="work-grid">
+            <button
+              className="work-tile"
+              onClick={() => navigate(ROUTES.workDetail(featured.id))}
+            >
+              <div className="work-img">
+                <WorkTileSvg grad={featured.grad} title={featured.title} year={featured.year} idx={featured.id} />
+              </div>
+              <div className="work-info">
+                <div className="work-tag">{featured.tag}</div>
+                <div className="work-title">
+                  {featured.title} — <em>{featured.titleEm}</em>
+                </div>
+                <div className="work-outcome">{featured.outcome}</div>
+                <p className="work-desc">{featured.desc}</p>
+              </div>
+            </button>
+
+            <div className="work-tile placeholder">
+              <div className="work-outcome">NEXT PROJECT · IN PROGRESS</div>
+              <div className="work-title">
+                <em>Your project here.</em>
+              </div>
+              <p className="placeholder-note">
+                We take on three new builds a quarter.
+                <br />
+                One slot remains.
+              </p>
+              <Button variant="primary" withArrow onClick={() => navigate(ROUTES.contact)}>
+                Start a project
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="doc">
+          <div className="section-header">
+            <div className="label-row">
+              <Eyebrow>Chapter III · The process</Eyebrow>
+              <Italian>how we work</Italian>
+            </div>
+            <h2>
+              Three steps. <em>No surprises.</em>
+            </h2>
+          </div>
+          <div className="process-teaser">
+            {HOME_PROCESS.map(s => (
+              <div key={s.num} className="process-step">
+                <div className="ps-num">{s.num}</div>
+                <h3 className="ps-title">
+                  <em>{s.title}</em>
+                </h3>
+                {s.italian && <div className="ps-italian">{s.italian}</div>}
+                <p className="ps-desc">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-cream">
+        <div className="doc-narrow">
+          <div className="testimonial">
+            <div className="testimonial-mark">"</div>
+            <p className="testimonial-quote">
+              {HOME_TESTIMONIAL.quote.split(HOME_TESTIMONIAL.highlight)[0]}
+              <em>{HOME_TESTIMONIAL.highlight}</em>
+              {HOME_TESTIMONIAL.quote.split(HOME_TESTIMONIAL.highlight)[1]}
+            </p>
+            <div className="testimonial-attr">
+              <span className="testimonial-attr-name">{HOME_TESTIMONIAL.attr}</span>
+              <span className="testimonial-attr-role">{HOME_TESTIMONIAL.role}</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <CtaBand
+        title={
+          <>
+            Everything online. <em>One source.</em>
+          </>
+        }
+        deck="Tell us what you're trying to build. We reply within one business day."
+      />
+    </>
+  )
+}

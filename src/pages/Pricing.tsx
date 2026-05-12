@@ -1,0 +1,174 @@
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { Eyebrow } from '@/components/ui/Eyebrow'
+import { Italian } from '@/components/ui/Italian'
+import { CtaBand } from '@/components/layout/CtaBand'
+import {
+  ADDONS,
+  BUNDLES,
+  MAINTAIN_TIERS,
+  PAYMENT_TERMS,
+  PRICING_TIERS,
+} from '@/content/pricing'
+import { ROUTES } from '@/routes'
+
+export function Pricing() {
+  const navigate = useNavigate()
+  const [activeBundle, setActiveBundle] = useState<string | null>(null)
+
+  return (
+    <>
+      <section className="hero">
+        <div className="doc">
+          <div className="hero-inner">
+            <Eyebrow className="fade-up">◆ Chapter 05 · Pricing ◆</Eyebrow>
+            <h1>
+              <span className="fade-up d1">Real numbers.</span>
+              <br />
+              <em className="fade-up d2">No "starting at."</em>
+            </h1>
+            <p className="hero-deck fade-up d3">
+              If your project fits one of our boxes, you see the price right now. If it doesn't, we write you a <strong>real proposal in 48 hours</strong>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <hr className="hairline" />
+
+      <div className="doc pricing-doc">
+        <div className="section-header">
+          <div className="label-row">
+            <Eyebrow>Build · construction</Eyebrow>
+            <Italian>three boxes</Italian>
+          </div>
+          <h2>
+            One-time build <em>tiers.</em>
+          </h2>
+        </div>
+
+        <div className="pkg-grid">
+          {PRICING_TIERS.map(t => {
+            const priceParts = t.price.split(' ')
+            return (
+              <div key={t.key} className={`pkg ${t.featured ? 'featured' : ''}`}>
+                <div className="pkg-italian">{t.italian}</div>
+                <h3 className="pkg-name">{t.name}</h3>
+                <div className="pkg-price">
+                  {priceParts[0]} <em>{priceParts.slice(1).join(' ')}</em>
+                </div>
+                <div className="pkg-tag">{t.tag}</div>
+                <ul className="pkg-list">
+                  {t.items.map(it => (
+                    <li key={it}>{it}</li>
+                  ))}
+                </ul>
+                <div className="pkg-meta">
+                  <strong>Timeline:</strong> {t.timeline}
+                  <br />
+                  <strong>Best for:</strong> {t.best}
+                </div>
+                <button className="pkg-btn" onClick={() => navigate(ROUTES.contact)}>
+                  Start <em>{t.name}</em> →
+                </button>
+              </div>
+            )
+          })}
+        </div>
+
+        <div className="maintain-wrap">
+          <div className="maintain-head">
+            <div className="maintain-head-label">◆ Maintain · ongoing care · monthly retainer ◆</div>
+            <h3 className="maintain-head-title">
+              Three <em>tiers</em> of ongoing care.
+            </h3>
+          </div>
+          {MAINTAIN_TIERS.map(m => (
+            <div key={m.tier} className="maintain-row">
+              <div className="m-tier">
+                <em>{m.tier}</em>
+              </div>
+              <div className="m-price">
+                {m.price}
+                <em>/mo</em>
+              </div>
+              <div className="m-feats">{m.features}</div>
+              <div className="m-best">{m.best}</div>
+            </div>
+          ))}
+        </div>
+
+        <div className="bundles-wrap">
+          <div className="bw-label">◆ Packages · bundle deals ◆</div>
+          <h3 className="bw-title">
+            Build <em>+</em> Maintain <em>=</em> a discount.
+          </h3>
+          {BUNDLES.map(b => {
+            const dim = activeBundle !== null && activeBundle !== b.key
+            return (
+              <button
+                key={b.key}
+                type="button"
+                className={`bw-item ${dim ? 'dim' : ''}`}
+                onClick={() => setActiveBundle(activeBundle === b.key ? null : b.key)}
+              >
+                <div>
+                  <div className="bw-name">{b.name}</div>
+                  <div className="bw-desc">{b.desc}</div>
+                </div>
+                <div className="bw-discount">{b.discount}</div>
+              </button>
+            )
+          })}
+        </div>
+
+        <div className="addons-block">
+          <div className="addons-head">◆ Extras · add-on services ◆</div>
+          <div className="addons-grid">
+            {ADDONS.map(a => (
+              <div key={a.name} className="addon">
+                <div>
+                  <div className="addon-name">{a.name}</div>
+                  <div className="addon-italian">{a.italian}</div>
+                </div>
+                <div className="addon-price">{a.price}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <section className="section section-parchment-deep">
+        <div className="doc">
+          <div className="section-header">
+            <div className="label-row">
+              <Eyebrow>Terms · payment terms</Eyebrow>
+              <Italian>honest</Italian>
+            </div>
+            <h2>
+              Honest <em>terms.</em>
+            </h2>
+          </div>
+          <div className="services-strip">
+            {PAYMENT_TERMS.map(t => (
+              <div key={t.num} className="pillar">
+                <div className="pillar-num">{t.num} · term</div>
+                <h3 className="pillar-h-sm">{t.name}</h3>
+                <p>{t.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CtaBand
+        title={
+          <>
+            Pick a box. <em>Or get a proposal.</em>
+          </>
+        }
+        deck="If you fit one of the boxes, sign and start. If you don't, we write you a real proposal in 48 hours."
+      />
+    </>
+  )
+}

@@ -1,0 +1,143 @@
+@import "tailwindcss";
+@import "./components.css";
+@import "./pages.css";
+
+@theme {
+  --color-parchment: #F5EAD8;
+  --color-parchment-deep: #EDDEC4;
+  --color-parchment-darker: #E2D2B4;
+  --color-cream: #FAF3E6;
+  --color-sienna: #A0382A;
+  --color-sienna-deep: #802B20;
+  --color-sienna-bright: #B8443A;
+  --color-ink: #2A1A14;
+  --color-ink-soft: #3D2820;
+  --color-sepia: #8A7560;
+  --color-sepia-light: #B8A488;
+  --color-gold: #C49B5A;
+
+  --font-display: "Fraunces", serif;
+  --font-sans: "Manrope", -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-italic: "Cormorant Garamond", serif;
+
+  --ease-svono: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-smooth: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+  body {
+    font-family: var(--font-sans);
+    background: var(--color-parchment);
+    color: var(--color-ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    scrollbar-width: none;
+  }
+  button {
+    background: none;
+    border: 0;
+    cursor: pointer;
+    color: inherit;
+    font: inherit;
+    padding: 0;
+  }
+  ul {
+    list-style: none;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  hr.hairline {
+    height: 1px;
+    background: var(--color-parchment-darker);
+    border: 0;
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+}
+
+@layer utilities {
+  .svono-period {
+    display: inline-block;
+    font-family: var(--font-italic);
+    font-style: italic;
+    color: var(--color-sienna);
+    transform-origin: bottom center;
+  }
+  .svono-period.sway {
+    animation: periodSway 1.2s var(--ease-svono);
+  }
+  @keyframes periodSway {
+    0% { transform: rotate(0deg) scale(1); }
+    35% { transform: rotate(-8deg) scale(1.2); }
+    70% { transform: rotate(4deg) scale(1.08); }
+    100% { transform: rotate(0deg) scale(1); }
+  }
+
+  .fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s var(--ease-svono) forwards;
+  }
+  .fade-up.d1 { animation-delay: 0.1s; }
+  .fade-up.d2 { animation-delay: 0.2s; }
+  .fade-up.d3 { animation-delay: 0.32s; }
+  .fade-up.d4 { animation-delay: 0.42s; }
+  .fade-up.d5 { animation-delay: 0.55s; }
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .link-draw {
+    position: relative;
+    padding-bottom: 2px;
+  }
+  .link-draw::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1.5px;
+    width: 0;
+    background: var(--color-sienna);
+    transition: width 0.35s var(--ease-smooth);
+  }
+  .link-draw:hover::after,
+  .link-draw[data-active="true"]::after {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

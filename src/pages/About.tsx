@@ -14,9 +14,9 @@ export function About() {
           <div className="hero-inner">
             <Eyebrow className="fade-up">◆ Chapter 02 · About the studio ◆</Eyebrow>
             <h1>
-              <span className="fade-up d1">A small studio.</span>
+              <span className="fade-up d1">A small studio<span className="svono-period sway">.</span></span>
               <br />
-              <em className="fade-up d2">One source.</em>
+              <em className="fade-up d2">One source<span className="svono-period sway">.</span></em>
             </h1>
             <p className="hero-deck fade-up d3">
               Svono is a two-person studio in <strong>Saraland, Alabama</strong>. We build websites and custom web products for small businesses across the Gulf Coast — and we don't disappear after launch.
@@ -32,7 +32,7 @@ export function About() {
           <div>
             <Eyebrow className="story-eyebrow">◆ The story ◆</Eyebrow>
             <h2 className="story-h">
-              Why we <em>exist.</em>
+              Why we <em>exist<span className="svono-period sway">.</span></em>
             </h2>
             <p className="story-accent">one source — everything online.</p>
           </div>

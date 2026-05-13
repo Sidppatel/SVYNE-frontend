@@ -64,7 +64,7 @@ export function Contact() {
             <Eyebrow>◆ Chapter 07 · Let's begin ◆</Eyebrow>
             <h1 className="contact-h">
               Tell us<br />
-              <em>about it.</em>
+              <em>about it<span className="svono-period sway">.</span></em>
             </h1>
             <p className="contact-deck">
               The form below goes straight to <em>{STUDIO.email}</em>. We read every inquiry and reply within one business day.

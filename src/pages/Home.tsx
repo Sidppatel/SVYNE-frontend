@@ -37,6 +37,12 @@ export function Home() {
               </Button>
             </div>
           </div>
+          <div className="scroll-indicator fade-up d5">
+            <div className="mouse">
+              <div className="wheel" />
+            </div>
+            <span>Scroll</span>
+          </div>
         </div>
       </section>
 

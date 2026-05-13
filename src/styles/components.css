@@ -319,7 +319,7 @@
   }
 
   .hero {
-    padding: 120px 0 110px;
+    padding: 120px 0 160px;
     position: relative;
     overflow: hidden;
   }
@@ -865,6 +865,57 @@
     letter-spacing: 0.22em;
     color: var(--color-sienna-bright);
     text-transform: uppercase;
+  }
+
+  .spark-mark {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: var(--color-sepia);
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  .mouse {
+    width: 20px;
+    height: 32px;
+    border: 1.5px solid var(--color-sepia-light);
+    border-radius: 20px;
+    position: relative;
+  }
+
+  .wheel {
+    width: 2px;
+    height: 5px;
+    background: var(--color-sienna);
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    animation: mouseWheel 2s infinite var(--ease-svono);
+  }
+
+  @keyframes mouseWheel {
+    0% { opacity: 0; transform: translate(-50%, 0); }
+    20% { opacity: 1; }
+    50% { opacity: 1; transform: translate(-50%, 10px); }
+    100% { opacity: 0; transform: translate(-50%, 10px); }
   }
 }
 

@@ -7,8 +7,10 @@ type Props = {
 export function SparkMark({ size = 26, color = 'var(--color-sienna)', stroke = 7 }: Props) {
   return (
     <svg
+      className="spark-mark"
       viewBox="0 0 100 100"
-      style={{ width: size, height: size, display: 'inline-block' }}
+      width={size}
+      height={size}
       aria-hidden="true"
     >
       <path

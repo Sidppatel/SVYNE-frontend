@@ -24,9 +24,9 @@ export function Work() {
           <div className="hero-inner">
             <Eyebrow className="fade-up">◆ Chapter 03 · The work ◆</Eyebrow>
             <h1>
-              <span className="fade-up d1">What we've</span>
+              <span className="fade-up d1">What we've<span className="svono-period sway">.</span></span>
               <br />
-              <em className="fade-up d2">shipped.</em>
+              <em className="fade-up d2">shipped<span className="svono-period sway">.</span></em>
             </h1>
             <p className="hero-deck fade-up d3">
               A small set, growing slowly. <strong>Three real projects</strong> beats ten placeholders. <em>One source</em>, every one.

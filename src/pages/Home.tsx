@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Button } from '@/components/ui/Button'
 import { Eyebrow } from '@/components/ui/Eyebrow'
 import { Accent } from '@/components/ui/Accent'
@@ -99,9 +99,9 @@ export function Home() {
           </div>
 
           <div className="work-grid">
-            <button
+            <Link
+              to={ROUTES.workDetail(featured.id)}
               className="work-tile"
-              onClick={() => navigate(ROUTES.workDetail(featured.id))}
             >
               <div className="work-img">
                 <WorkTileSvg grad={featured.grad} title={featured.title} year={featured.year} idx={featured.id} />
@@ -114,7 +114,7 @@ export function Home() {
                 <div className="work-outcome">{featured.outcome}</div>
                 <p className="work-desc">{featured.desc}</p>
               </div>
-            </button>
+            </Link>
 
             <div className="work-tile placeholder">
               <div className="work-outcome">NEXT · IN PROGRESS</div>
@@ -122,7 +122,7 @@ export function Home() {
                 <em>Your project here.</em>
               </div>
               <p className="placeholder-note">One slot remains this quarter.</p>
-              <Button variant="primary" withArrow onClick={() => navigate(ROUTES.contact)}>
+              <Button variant="primary" withArrow to={ROUTES.contact}>
                 Start a project
               </Button>
             </div>

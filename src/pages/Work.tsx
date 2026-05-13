@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/Button'
 import { Eyebrow } from '@/components/ui/Eyebrow'
 import { WorkTileSvg } from '@/components/ui/WorkTileSvg'
@@ -9,7 +9,6 @@ import { CASE_STUDIES, WORK_FILTERS } from '@/content/work'
 import { ROUTES } from '@/routes'
 
 export function Work() {
-  const navigate = useNavigate()
   const [filter, setFilter] = useState<(typeof WORK_FILTERS)[number]>('All')
   const filtered =
     filter === 'All'
@@ -52,10 +51,10 @@ export function Work() {
 
         <div className="work-grid">
           {filtered.map((cs, i) => (
-            <button
+            <Link
               key={cs.id}
+              to={ROUTES.workDetail(cs.id)}
               className="work-tile"
-              onClick={() => navigate(ROUTES.workDetail(cs.id))}
             >
               <div className="work-img">
                 <WorkTileSvg grad={cs.grad} title={cs.title} year={cs.year} idx={i} />
@@ -68,7 +67,7 @@ export function Work() {
                 <div className="work-outcome">{cs.outcome}</div>
                 <p className="work-desc">{cs.desc}</p>
               </div>
-            </button>
+            </Link>
           ))}
           <div className="work-tile placeholder">
             <div className="work-outcome">NEXT · IN PROGRESS</div>
@@ -76,7 +75,7 @@ export function Work() {
               <em>Your project here.</em>
             </div>
             <p className="placeholder-note">One slot remains this quarter.</p>
-            <Button variant="primary" withArrow onClick={() => navigate(ROUTES.contact)}>
+            <Button variant="primary" withArrow to={ROUTES.contact}>
               Start a project
             </Button>
           </div>

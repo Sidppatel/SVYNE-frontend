@@ -792,7 +792,7 @@
     display: grid;
     grid-template-columns: 1fr 1.1fr;
     gap: 80px;
-    padding: 100px 0 80px;
+    padding: 80px 0 60px;
   }
 
   .contact-h {
@@ -1047,7 +1047,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
-    padding: 60px 0 100px;
+    padding: 40px 0 100px;
   }
 
   .ns-step {

@@ -1,32 +1,27 @@
 import { useState } from 'react'
-import { NavLink, useLocation, useNavigate } from 'react-router-dom'
-import FocusTrap from 'focus-trap-react'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { FocusTrap } from 'focus-trap-react'
 import { NAV_ITEMS, ROUTES } from '@/routes'
 import { SparkMark } from '@/components/ui/SparkMark'
 import { Wordmark } from '@/components/ui/Wordmark'
+import { Button } from '@/components/ui/Button'
 import { useBodyScrollLock } from '@/hooks/useBodyScrollLock'
 
 export function Nav() {
   const [open, setOpen] = useState(false)
   const navigate = useNavigate()
-  const { pathname } = useLocation()
   useBodyScrollLock(open)
-
-  const go = (to: string) => {
-    setOpen(false)
-    navigate(to)
-  }
 
   return (
     <header className="nav">
       <div className="nav-inner">
-        <button className="nav-brand" onClick={() => go(ROUTES.home)} aria-label="Svono home">
+        <button className="nav-brand" onClick={() => navigate(ROUTES.home)} aria-label="Svono home">
           <SparkMark size={28} />
           <Wordmark />
         </button>
 
         <nav className="nav-links" aria-label="Primary">
-          {NAV_ITEMS.slice(0, 4).map(item => (
+          {NAV_ITEMS.map(item => (
             <NavLink
               key={item.to}
               to={item.to}
@@ -37,12 +32,14 @@ export function Nav() {
           ))}
         </nav>
 
-        <button
-          className="nav-cta nav-cta-desk"
-          onClick={() => go(ROUTES.contact)}
+        <Button
+          variant="primary"
+          to={ROUTES.contact}
+          className="nav-cta-desk"
+          withArrow
         >
-          Start a project<span className="arr">→</span>
-        </button>
+          Start a project
+        </Button>
 
         <button
           className="nav-burger"
@@ -60,18 +57,24 @@ export function Nav() {
         <FocusTrap focusTrapOptions={{ allowOutsideClick: true }}>
           <div id="mobile-menu" className="nav-mobile-panel" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
             {NAV_ITEMS.map(item => (
-              <button
+              <NavLink
                 key={item.to}
-                className={`nav-mobile-link ${pathname === item.to ? 'active' : ''}`}
-                onClick={() => go(item.to)}
+                to={item.to}
+                className={({ isActive }) => `nav-mobile-link ${isActive ? 'active' : ''}`}
+                onClick={() => setOpen(false)}
               >
                 <span>{item.label}</span>
                 <span className="arr">→</span>
-              </button>
+              </NavLink>
             ))}
-            <button className="nav-mobile-cta" onClick={() => go(ROUTES.contact)}>
-              Start a project <span className="arr">→</span>
-            </button>
+            <Button 
+              to={ROUTES.contact} 
+              className="nav-mobile-cta" 
+              onClick={() => setOpen(false)}
+              withArrow
+            >
+              Start a project
+            </Button>
           </div>
         </FocusTrap>
       )}

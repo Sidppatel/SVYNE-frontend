@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Button } from '@/components/ui/Button'
 import { Eyebrow } from '@/components/ui/Eyebrow'
 import { Accent } from '@/components/ui/Accent'
 import { SEO } from '@/components/layout/SEO'
@@ -92,7 +93,14 @@ export function Contact() {
               <div className="contact-meta-item">
                 <div className="contact-meta-label">Schedule</div>
                 <div className="contact-meta-value">
-                  <button className="link-draw">{STUDIO.schedulingUrl} →</button>
+                  <a 
+                    href={`https://${STUDIO.schedulingUrl}`} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="link-draw"
+                  >
+                    {STUDIO.schedulingUrl} →
+                  </a>
                 </div>
               </div>
             </div>
@@ -110,9 +118,9 @@ export function Contact() {
                 <p>
                   Reading every word. We'll be back within one business day — usually sooner.
                 </p>
-                <button className="btn btn-secondary" onClick={resetForm}>
+                <Button variant="secondary" onClick={resetForm}>
                   Send another
-                </button>
+                </Button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} noValidate>

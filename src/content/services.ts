@@ -6,9 +6,9 @@ export const SERVICE_BLOCKS: ServiceBlock[] = [
     name: 'Build',
     accent: 'construction',
     deck:
-      'From a clean marketing site to a custom event platform with ticketing. We design, code, and ship it — fully working, owned by you.',
+      'From a clean marketing site to a custom event platform with ticketing. I design, code, and ship it — fully working, owned by you.',
     colA: {
-      heading: 'What we make',
+      heading: 'What I make',
       items: [
         { title: 'Marketing sites', detail: '— 5 to 20 pages, fully responsive, fast' },
         { title: 'Custom dashboards', detail: '— admin tools, internal panels, reporting' },
@@ -18,7 +18,7 @@ export const SERVICE_BLOCKS: ServiceBlock[] = [
       ],
     },
     colB: {
-      heading: 'Our stack',
+      heading: 'The stack',
       items: [
         { title: 'Next.js', detail: ' + React for the framework' },
         { title: 'Tailwind CSS', detail: ' for styling' },
@@ -38,7 +38,7 @@ export const SERVICE_BLOCKS: ServiceBlock[] = [
     name: 'Launch',
     accent: 'going live',
     deck:
-      'Launch day is not a "fingers crossed" moment. We treat it as a planned event — hosting set up, SEO foundation laid, day-of monitoring in place.',
+      'Launch day is not a "fingers crossed" moment. I treat it as a planned event — hosting set up, SEO foundation laid, day-of monitoring in place.',
     colA: {
       heading: 'What "launch" includes',
       items: [
@@ -46,11 +46,11 @@ export const SERVICE_BLOCKS: ServiceBlock[] = [
         { title: 'SEO foundation', detail: '— sitemap, robots, meta tags, OG images' },
         { title: 'Analytics', detail: '— Plausible or Fathom, privacy-first' },
         { title: 'Email', detail: '— hello@yourdomain working day one' },
-        { title: 'Day-of coordination', detail: '— we monitor for 24 hours' },
+        { title: 'Day-of coordination', detail: '— I monitor for 24 hours' },
       ],
     },
     colB: {
-      heading: 'Day-one fires we handle',
+      heading: 'Day-one fires I handle',
       items: [
         { title: 'DNS propagation', detail: '— patient and predictable' },
         { title: 'Form submission failures', detail: '— tested before and after launch' },
@@ -101,18 +101,18 @@ export const SERVICE_BLOCKS: ServiceBlock[] = [
 
 export const SERVICES_NOT_OFFERED: Pillar[] = [
   {
-    num: '× not us',
+    num: '× not Svono',
     name: 'Logo & brand identity',
-    desc: "We partner with designers for this. Ask and we'll recommend one.",
+    desc: "I partner with designers for this. Ask and I'll recommend one.",
   },
   {
-    num: '× not us',
+    num: '× not Svono',
     name: 'SEO-only retainers',
-    desc: 'We do SEO foundation. For ongoing content strategy, you want a specialist.',
+    desc: 'I do SEO foundation. For ongoing content strategy, you want a specialist.',
   },
   {
-    num: '× not us',
+    num: '× not Svono',
     name: 'UX research',
-    desc: 'We design what you tell us users need. Discovery research is a separate scope.',
+    desc: 'I design what you tell me users need. Discovery research is a separate scope.',
   },
 ]

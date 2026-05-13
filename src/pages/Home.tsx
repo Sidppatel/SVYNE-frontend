@@ -90,10 +90,10 @@ export function Home() {
           <div className="section-header">
             <div className="label-row">
               <Eyebrow>Chapter II · The work</Eyebrow>
-              <Accent>what we've built</Accent>
+              <Accent>what I've built</Accent>
             </div>
             <h2>
-              What we've <em>shipped.</em>
+              What I've <em>shipped.</em>
             </h2>
             <p className="deck">A small set, growing slowly. Better two real than ten placeholders.</p>
           </div>
@@ -135,7 +135,7 @@ export function Home() {
           <div className="section-header">
             <div className="label-row">
               <Eyebrow>Chapter III · The process</Eyebrow>
-              <Accent>how we work</Accent>
+              <Accent>how I work</Accent>
             </div>
             <h2>
               Three steps. <em>No surprises.</em>
@@ -185,7 +185,7 @@ export function Home() {
             Everything online. <em>One source.</em>
           </>
         }
-        deck="Tell us what you're trying to build. We reply within one business day."
+        deck="Tell Svono what you're trying to build. I reply within one business day."
       />
     </>
   )

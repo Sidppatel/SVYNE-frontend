@@ -28,11 +28,11 @@ export const CASE_STUDIES: CaseStudy[] = [
         text:
           'Replace the spreadsheets with a real platform. Members log in, see upcoming evenings, RSVP, and pay. Hosts get a scanner that reads QR codes at the door and marks arrivals in real time. Owners get a dashboard with revenue per evening, conversion, and member retention.',
       },
-      { kind: 'h', text: 'How we built it' },
+      { kind: 'h', text: 'How I built it' },
       {
         kind: 'p',
         text:
-          'Two engineers. One designer. Weekly Friday demo. Slack channel from day one. The first staging link went out at the end of week one — empty, but live. By week three the auth, RSVP, and payment flows were solid. The last two weeks were scanner UX and the host dashboard.',
+          'One person — me. Designing, coding, and deploying. Weekly Friday demos. Slack channel from day one. The first staging link went out at the end of week one — empty, but live. By week three the auth, RSVP, and payment flows were solid. The last two weeks were scanner UX and the host dashboard.',
       },
       { kind: 'h', text: 'What shipped' },
       {
@@ -59,12 +59,12 @@ export const CASE_STUDIES: CaseStudy[] = [
     body: [
       {
         kind: 'p',
-        text: "A new tasting room opening on Dauphin Street needed a site that would carry the room's tone — quiet, set, considered — and book reservations. We started from a printed menu and three iPhone photos.",
+        text: "A new tasting room opening on Dauphin Street needed a site that would carry the room's tone — quiet, set, considered — and book reservations. I started from a printed menu and three iPhone photos.",
       },
       { kind: 'h', text: 'The work' },
       {
         kind: 'p',
-        text: "Twelve pages of unhurried, well-set type. A menu that reads. An OpenTable embed that doesn't fight the rest of the page. Image direction for the opening shoot (we wrote the shot list, the team brought it back).",
+        text: "Twelve pages of unhurried, well-set type. A menu that reads. An OpenTable embed that doesn't fight the rest of the page. Image direction for the opening shoot (I wrote the shot list, the team brought it back).",
       },
     ],
   },
@@ -87,7 +87,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         kind: 'p',
         text: 'A two-location boat-services shop had a brilliant front desk and a chaotic back office. The intake form was paper. Parts orders lived in three Google Sheets. Customer status updates went out by text — when the owner remembered.',
       },
-      { kind: 'h', text: 'What we built' },
+      { kind: 'h', text: 'What I built' },
       {
         kind: 'p',
         text: 'A single admin with intake, parts, and customer status — and an auto-text via Twilio when a job changes state. The owner gets one screen on her phone. The shop floor uses a tablet at the intake bay.',

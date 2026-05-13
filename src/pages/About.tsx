@@ -8,7 +8,7 @@ import { renderBold } from '@/lib/renderBold'
 export function About() {
   return (
     <>
-      <SEO title="About Us" description="Learn about the philosophy and people behind Svono. Built in Saraland, Alabama." />
+      <SEO title="About Svono" description="Learn about the philosophy behind Svono. Built in Saraland, Alabama." />
       <section className="hero">
         <div className="doc">
           <div className="hero-inner">
@@ -19,7 +19,7 @@ export function About() {
               <em className="fade-up d2">One source<span className="svono-period sway">.</span></em>
             </h1>
             <p className="hero-deck fade-up d3">
-              Svono is a two-person studio in <strong>Saraland, Alabama</strong>. We build websites and custom web products for small businesses across the Gulf Coast — and we don't disappear after launch.
+              Svono is a one-person studio in <strong>Saraland, Alabama</strong>. I build websites and custom web products for small businesses across the Gulf Coast — and I don't disappear after launch.
             </p>
           </div>
         </div>
@@ -32,7 +32,7 @@ export function About() {
           <div>
             <Eyebrow className="story-eyebrow">◆ The story ◆</Eyebrow>
             <h2 className="story-h">
-              Why we <em>exist<span className="svono-period sway">.</span></em>
+              Why Svono <em>exists<span className="svono-period sway">.</span></em>
             </h2>
             <p className="story-accent">one source — everything online.</p>
           </div>
@@ -46,7 +46,7 @@ export function About() {
         <div className="name-etymology">
           <div className="ne-label">◆ The name ◆</div>
           <div className="ne-formula">
-            <em>SOUND</em> <span className="plus">+</span> <em>DREAM</em> <span className="eq">=</span> SVONO<span className="period">.</span>
+            <em>SITE</em> <span className="plus">+</span> <em>VISION</em> <span className="eq">=</span> SVONO<span className="period">.</span>
           </div>
           <p className="ne-desc">
             A studio name that sounds like both — and a wordmark that signs itself with an italic period.
@@ -56,7 +56,7 @@ export function About() {
         <div className="section">
           <div className="section-header">
             <div className="label-row">
-              <Eyebrow>Values · our principles</Eyebrow>
+              <Eyebrow>Values · my principles</Eyebrow>
               <Accent>four rules</Accent>
             </div>
             <h2>
@@ -82,14 +82,14 @@ export function About() {
         <div className="section">
           <div className="section-header">
             <div className="label-row">
-              <Eyebrow>The team · who builds it</Eyebrow>
-              <Accent>two people</Accent>
+              <Eyebrow>The founder · who builds it</Eyebrow>
+              <Accent>one person</Accent>
             </div>
             <h2>
-              Two <em>people.</em>
+              One <em>person.</em>
             </h2>
             <p className="deck">
-              No account managers. No project coordinators. The people who quote the work are the people who ship it.
+              No account managers. No project coordinators. The person who quotes the work is the person who ships it.
             </p>
           </div>
           {ABOUT_TEAM.map(member => (
@@ -133,10 +133,10 @@ export function About() {
       <CtaBand
         title={
           <>
-            Work with <em>two people.</em>
+            Work with <em>one person.</em>
           </>
         }
-        deck="Same two faces from inquiry to launch to the third year of maintenance."
+        deck="The same face from inquiry to launch to the third year of maintenance."
       />
     </>
   )

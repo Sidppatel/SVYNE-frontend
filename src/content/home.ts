@@ -11,7 +11,7 @@ export const HOME_PILLARS: Pillar[] = [
     num: '02',
     name: 'Launch',
     desc:
-      "Hosting set up, SEO foundation laid, day-of coordination. We monitor for 24 hours so launch isn't a \"fingers crossed\" moment.",
+      "Hosting set up, SEO foundation laid, day-of coordination. I monitor for 24 hours so launch isn't a \"fingers crossed\" moment.",
   },
   {
     num: '03',
@@ -33,7 +33,7 @@ export const HOME_PROCESS: ProcessStep[] = [
     title: 'Talk',
     accent: 'discovery',
     desc:
-      'A 30-minute call. We listen. You leave with a written proposal in 48 hours — real number, real timeline.',
+      'A 30-minute call. I listen. You leave with a written proposal in 48 hours — real number, real timeline.',
   },
   {
     num: 'ii.',

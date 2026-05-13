@@ -3,7 +3,7 @@ import type { AddOn, Bundle, MaintainTier, Pillar, PricingTier } from '@/types'
 export const PRICING_TIERS: PricingTier[] = [
   {
     key: 'foundation',
-    italian: 'the foundation',
+    accent: 'the foundation',
     name: 'Foundation',
     price: '$3,500 – $6,000',
     tag: 'Marketing site · 5–10 pages',
@@ -20,7 +20,7 @@ export const PRICING_TIERS: PricingTier[] = [
   },
   {
     key: 'custom',
-    italian: 'the custom build',
+    accent: 'the custom build',
     name: 'Custom',
     price: '$8,000 – $25,000',
     tag: 'Custom app, dashboard, or platform',
@@ -39,7 +39,7 @@ export const PRICING_TIERS: PricingTier[] = [
   },
   {
     key: 'bespoke',
-    italian: 'made to measure',
+    accent: 'made to measure',
     name: 'Bespoke',
     price: '$25,000+',
     tag: 'Multi-month · custom proposal',
@@ -109,14 +109,14 @@ export const BUNDLES: Bundle[] = [
 ]
 
 export const ADDONS: AddOn[] = [
-  { name: 'Extra page', italian: 'beyond initial scope', price: '$300–500' },
-  { name: 'Copywriting assistance', italian: 'if you need help with words', price: '$200/page' },
-  { name: 'Photography direction', italian: 'shot list + coordination', price: '$500–1,500' },
-  { name: 'Migration from old site', italian: 'content + SEO redirects', price: '$500–2,000' },
-  { name: 'Email setup', italian: 'hello@yourdomain day one', price: '$200' },
-  { name: 'SEO retainer', italian: 'separate from Maintain', price: '$400–1,200/mo' },
-  { name: 'Logo / brand work', italian: 'we partner with a designer', price: '$500–2,000' },
-  { name: 'Rush fee', italian: 'under 2-week deadline', price: '+25%' },
+  { name: 'Extra page', accent: 'beyond initial scope', price: '$300–500' },
+  { name: 'Copywriting assistance', accent: 'if you need help with words', price: '$200/page' },
+  { name: 'Photography direction', accent: 'shot list + coordination', price: '$500–1,500' },
+  { name: 'Migration from old site', accent: 'content + SEO redirects', price: '$500–2,000' },
+  { name: 'Email setup', accent: 'hello@yourdomain day one', price: '$200' },
+  { name: 'SEO retainer', accent: 'separate from Maintain', price: '$400–1,200/mo' },
+  { name: 'Logo / brand work', accent: 'we partner with a designer', price: '$500–2,000' },
+  { name: 'Rush fee', accent: 'under 2-week deadline', price: '+25%' },
 ]
 
 export const PAYMENT_TERMS: Pillar[] = [

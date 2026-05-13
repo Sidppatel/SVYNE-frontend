@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Eyebrow } from '@/components/ui/Eyebrow'
-import { Italian } from '@/components/ui/Italian'
+import { Accent } from '@/components/ui/Accent'
 import { CtaBand } from '@/components/layout/CtaBand'
 import {
   ADDONS,
@@ -40,7 +40,7 @@ export function Pricing() {
         <div className="section-header">
           <div className="label-row">
             <Eyebrow>Build · construction</Eyebrow>
-            <Italian>three boxes</Italian>
+            <Accent>three boxes</Accent>
           </div>
           <h2>
             One-time build <em>tiers.</em>
@@ -52,7 +52,7 @@ export function Pricing() {
             const priceParts = t.price.split(' ')
             return (
               <div key={t.key} className={`pkg ${t.featured ? 'featured' : ''}`}>
-                <div className="pkg-italian">{t.italian}</div>
+                <div className="pkg-accent">{t.accent}</div>
                 <h3 className="pkg-name">{t.name}</h3>
                 <div className="pkg-price">
                   {priceParts[0]} <em>{priceParts.slice(1).join(' ')}</em>
@@ -129,7 +129,7 @@ export function Pricing() {
               <div key={a.name} className="addon">
                 <div>
                   <div className="addon-name">{a.name}</div>
-                  <div className="addon-italian">{a.italian}</div>
+                  <div className="addon-accent">{a.accent}</div>
                 </div>
                 <div className="addon-price">{a.price}</div>
               </div>
@@ -143,7 +143,7 @@ export function Pricing() {
           <div className="section-header">
             <div className="label-row">
               <Eyebrow>Terms · payment terms</Eyebrow>
-              <Italian>honest</Italian>
+              <Accent>honest</Accent>
             </div>
             <h2>
               Honest <em>terms.</em>

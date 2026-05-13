@@ -179,7 +179,7 @@
     color: var(--color-sienna);
     text-transform: uppercase;
   }
-  .italian {
+  .accent {
     font-family: var(--font-italic);
     font-style: italic;
     color: var(--color-sepia);
@@ -299,7 +299,7 @@
     font-style: normal;
     font-weight: 400;
   }
-  .hero-italian {
+  .hero-accent {
     font-family: var(--font-italic);
     font-style: italic;
     font-size: 24px;
@@ -401,7 +401,7 @@
     font-style: italic;
     color: var(--color-sienna);
   }
-  .pillar-italian {
+  .pillar-accent {
     font-family: var(--font-italic);
     font-style: italic;
     font-size: 17px;
@@ -579,14 +579,14 @@
     font-style: italic;
     color: var(--color-sienna);
   }
-  .ps-italian {
+  .ps-accent {
     font-family: var(--font-italic);
     font-style: italic;
     font-size: 14px;
     color: var(--color-sepia);
     margin-bottom: 12px;
   }
-  .section-dark .ps-italian { color: var(--color-sepia-light); }
+  .section-dark .ps-accent { color: var(--color-sepia-light); }
   .ps-desc {
     font-size: 14px;
     line-height: 1.6;

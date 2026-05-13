@@ -1,5 +1,5 @@
 import { Eyebrow } from '@/components/ui/Eyebrow'
-import { Italian } from '@/components/ui/Italian'
+import { Accent } from '@/components/ui/Accent'
 import { CtaBand } from '@/components/layout/CtaBand'
 import { SERVICE_BLOCKS, SERVICES_NOT_OFFERED } from '@/content/services'
 
@@ -31,7 +31,7 @@ export function Services() {
               <div className="sb-num">{b.num}</div>
               <div>
                 <h2 className="sb-title">
-                  {b.name} <em>— {b.italian}</em>
+                  {b.name} <em>— {b.accent}</em>
                 </h2>
                 <p className="sb-deck">{b.deck}</p>
                 <div className="sb-cols">
@@ -76,7 +76,7 @@ export function Services() {
           <div className="section-header">
             <div className="label-row">
               <Eyebrow>Honest list</Eyebrow>
-              <Italian>what we don't do</Italian>
+              <Accent>what we don't do</Accent>
             </div>
             <h2>
               What we <em>don't</em> do.

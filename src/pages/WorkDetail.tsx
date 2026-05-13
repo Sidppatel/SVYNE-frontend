@@ -1,6 +1,6 @@
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import { Button } from '@/components/ui/Button'
-import { Italian } from '@/components/ui/Italian'
+import { Accent } from '@/components/ui/Accent'
 import { WorkTileSvg } from '@/components/ui/WorkTileSvg'
 import { CASE_STUDIES } from '@/content/work'
 import { ROUTES } from '@/routes'
@@ -18,7 +18,7 @@ export function WorkDetail() {
         ← All work
       </button>
       <div className="cs-meta">
-        <Italian>{cs.italian} · {cs.year}</Italian>
+        <Accent>{cs.accent} · {cs.year}</Accent>
       </div>
       <h1 className="cs-title">
         {cs.title} — <em>{cs.titleEm}</em>

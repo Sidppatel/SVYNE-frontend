@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { Button } from '@/components/ui/Button'
 import { Eyebrow } from '@/components/ui/Eyebrow'
-import { Italian } from '@/components/ui/Italian'
+import { Accent } from '@/components/ui/Accent'
 import { WorkTileSvg } from '@/components/ui/WorkTileSvg'
 import { CtaBand } from '@/components/layout/CtaBand'
 import { HOME_PILLARS, HOME_PILLAR_TAG, HOME_PROCESS, HOME_TESTIMONIAL } from '@/content/home'
@@ -45,7 +45,7 @@ export function Home() {
           <div className="section-header">
             <div className="label-row">
               <Eyebrow>Chapter I · Services</Eyebrow>
-              <Italian>three pillars</Italian>
+              <Accent>three pillars</Accent>
             </div>
             <h2>
               Three things. <em>Done well.</em>
@@ -66,7 +66,7 @@ export function Home() {
                 <h3>
                   <em>{p.name}</em>
                 </h3>
-                <div className="pillar-italian">{HOME_PILLAR_TAG[p.name]}</div>
+                <div className="pillar-accent">{HOME_PILLAR_TAG[p.name]}</div>
                 <p>{p.desc}</p>
                 <div className="pillar-more">
                   Read more <span className="arr">→</span>
@@ -82,7 +82,7 @@ export function Home() {
           <div className="section-header">
             <div className="label-row">
               <Eyebrow>Chapter II · The work</Eyebrow>
-              <Italian>what we've built</Italian>
+              <Accent>what we've built</Accent>
             </div>
             <h2>
               What we've <em>shipped.</em>
@@ -131,7 +131,7 @@ export function Home() {
           <div className="section-header">
             <div className="label-row">
               <Eyebrow>Chapter III · The process</Eyebrow>
-              <Italian>how we work</Italian>
+              <Accent>how we work</Accent>
             </div>
             <h2>
               Three steps. <em>No surprises.</em>
@@ -144,7 +144,7 @@ export function Home() {
                 <h3 className="ps-title">
                   <em>{s.title}</em>
                 </h3>
-                {s.italian && <div className="ps-italian">{s.italian}</div>}
+                {s.accent && <div className="ps-accent">{s.accent}</div>}
                 <p className="ps-desc">{s.desc}</p>
               </div>
             ))}

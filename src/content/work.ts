@@ -4,7 +4,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     id: 'code829',
     tag: 'Event Platform · 2025',
-    italian: 'private events',
+    accent: 'private events',
     title: 'CODE829',
     titleEm: 'private events',
     outcome: 'A members-only platform from sketch to ship in five weeks.',
@@ -45,7 +45,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     id: 'mariella',
     tag: 'Marketing Site · 2026',
-    italian: 'tasting room site',
+    accent: 'tasting room site',
     title: 'Mariella & Co.',
     titleEm: 'tasting room',
     outcome: 'A wine-bar marketing site that books reservations.',
@@ -73,7 +73,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     id: 'aldridge',
     tag: 'Custom Dashboard · 2026',
-    italian: 'internal dashboard',
+    accent: 'internal dashboard',
     title: 'Aldridge Marine',
     titleEm: 'service dashboard',
     outcome: 'An internal admin that replaced four spreadsheets.',

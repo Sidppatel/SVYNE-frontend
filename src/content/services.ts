@@ -4,7 +4,7 @@ export const SERVICE_BLOCKS: ServiceBlock[] = [
   {
     num: 'i.',
     name: 'Build',
-    italian: 'construction',
+    accent: 'construction',
     deck:
       'From a clean marketing site to a custom event platform with ticketing. We design, code, and ship it — fully working, owned by you.',
     colA: {
@@ -36,7 +36,7 @@ export const SERVICE_BLOCKS: ServiceBlock[] = [
   {
     num: 'ii.',
     name: 'Launch',
-    italian: 'going live',
+    accent: 'going live',
     deck:
       'Launch day is not a "fingers crossed" moment. We treat it as a planned event — hosting set up, SEO foundation laid, day-of monitoring in place.',
     colA: {
@@ -68,7 +68,7 @@ export const SERVICE_BLOCKS: ServiceBlock[] = [
   {
     num: 'iii.',
     name: 'Maintain',
-    italian: 'ongoing care',
+    accent: 'ongoing care',
     deck:
       'The thing nobody tells you: launching is 20% of the work. Maintain is the other 80%. Monthly retainer, three tiers, someone on call when things change.',
     colA: {

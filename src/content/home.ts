@@ -31,21 +31,21 @@ export const HOME_PROCESS: ProcessStep[] = [
   {
     num: 'i.',
     title: 'Talk',
-    italian: 'discovery',
+    accent: 'discovery',
     desc:
       'A 30-minute call. We listen. You leave with a written proposal in 48 hours — real number, real timeline.',
   },
   {
     num: 'ii.',
     title: 'Build',
-    italian: 'construction',
+    accent: 'construction',
     desc:
       'Weekly check-ins. Shared progress link from day one. Slack channel stays open for the whole project.',
   },
   {
     num: 'iii.',
     title: 'Ship',
-    italian: 'launch day',
+    accent: 'launch day',
     desc:
       'Coordinated launch. 24-hour war-room mode. Then ongoing care if you want it — monthly retainer, three tiers.',
   },

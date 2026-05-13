@@ -1,5 +1,5 @@
 import { Eyebrow } from '@/components/ui/Eyebrow'
-import { Italian } from '@/components/ui/Italian'
+import { Accent } from '@/components/ui/Accent'
 import { CtaBand } from '@/components/layout/CtaBand'
 import { ABOUT_LOCATION, ABOUT_STORY, ABOUT_TEAM, ABOUT_VALUES } from '@/content/about'
 import { renderBold } from '@/lib/renderBold'
@@ -32,7 +32,7 @@ export function About() {
             <h2 className="story-h">
               Why we <em>exist.</em>
             </h2>
-            <p className="story-italian">one source — everything online.</p>
+            <p className="story-accent">one source — everything online.</p>
           </div>
           <div className="story-body">
             {ABOUT_STORY.map((p, i) => (
@@ -55,7 +55,7 @@ export function About() {
           <div className="section-header">
             <div className="label-row">
               <Eyebrow>Values · our principles</Eyebrow>
-              <Italian>four rules</Italian>
+              <Accent>four rules</Accent>
             </div>
             <h2>
               Four <em>principles.</em>
@@ -81,7 +81,7 @@ export function About() {
           <div className="section-header">
             <div className="label-row">
               <Eyebrow>The team · who builds it</Eyebrow>
-              <Italian>two people</Italian>
+              <Accent>two people</Accent>
             </div>
             <h2>
               Two <em>people.</em>
@@ -110,7 +110,7 @@ export function About() {
           <div className="section-header">
             <div className="label-row">
               <Eyebrow>Location · where & how</Eyebrow>
-              <Italian>Saraland, Alabama</Italian>
+              <Accent>Saraland, Alabama</Accent>
             </div>
             <h2>
               Local. <em>Working everywhere.</em>

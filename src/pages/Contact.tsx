@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Eyebrow } from '@/components/ui/Eyebrow'
-import { Italian } from '@/components/ui/Italian'
+import { Accent } from '@/components/ui/Accent'
 import {
   BUDGETS,
   CONTACT_NEXT_STEPS,
@@ -248,7 +248,7 @@ export function Contact() {
         <div className="section-header">
           <div className="label-row">
             <Eyebrow>The journey · what happens next</Eyebrow>
-            <Italian>three steps</Italian>
+            <Accent>three steps</Accent>
           </div>
           <h2>
             Three <em>steps</em> from here.

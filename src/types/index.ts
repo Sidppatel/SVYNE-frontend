@@ -1,14 +1,14 @@
 export type ServicePillar = {
   num: string
   name: string
-  italian: string
+  accent: string
   desc: string
 }
 
 export type ServiceBlock = {
   num: string
   name: string
-  italian: string
+  accent: string
   deck: string
   colA: { heading: string; items: ServiceItem[] }
   colB: { heading: string; items: ServiceItem[] }
@@ -23,7 +23,7 @@ export type ServiceItem = {
 export type CaseStudy = {
   id: string
   tag: string
-  italian: string
+  accent: string
   title: string
   titleEm: string
   outcome: string
@@ -39,7 +39,7 @@ export type CaseStudy = {
 
 export type PricingTier = {
   key: string
-  italian: string
+  accent: string
   name: string
   price: string
   tag: string
@@ -65,7 +65,7 @@ export type Bundle = {
 
 export type AddOn = {
   name: string
-  italian: string
+  accent: string
   price: string
 }
 
@@ -86,7 +86,7 @@ export type TeamMember = {
 export type ProcessStep = {
   num: string
   title: string
-  italian?: string
+  accent?: string
   desc: string
 }
 

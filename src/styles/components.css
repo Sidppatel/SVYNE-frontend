@@ -3,7 +3,7 @@
     position: sticky;
     top: 0;
     z-index: 50;
-    background: rgba(245, 234, 216, 0.88);
+    background: var(--color-parchment-glass);
     backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--color-parchment-darker);
   }
@@ -77,7 +77,7 @@
   .nav-cta:hover {
     background: var(--color-sienna);
     transform: translateY(-1px);
-    box-shadow: 0 8px 20px -8px rgba(160, 56, 42, 0.45);
+    box-shadow: 0 8px 20px -8px var(--color-sienna-glow);
   }
   .nav-cta .arr {
     display: inline-block;
@@ -228,7 +228,7 @@
   .btn-primary:hover {
     background: var(--color-sienna-deep);
     transform: translateY(-2px);
-    box-shadow: 0 12px 28px -10px rgba(160, 56, 42, 0.5);
+    box-shadow: 0 12px 28px -10px var(--color-sienna-deep-glow);
   }
   .btn-secondary {
     background: transparent;
@@ -261,7 +261,7 @@
     width: 700px;
     height: 700px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(160, 56, 42, 0.07), transparent 65%);
+    background: radial-gradient(circle, var(--color-sienna-faint), transparent 65%);
     pointer-events: none;
     z-index: 0;
   }
@@ -367,7 +367,7 @@
   .pillar.clickable { cursor: pointer; }
   .pillar.clickable:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 40px -22px rgba(42, 26, 20, 0.2);
+    box-shadow: 0 20px 40px -22px var(--color-ink-glow);
     border-color: var(--color-parchment-darker);
   }
   .pillar-num {
@@ -458,7 +458,7 @@
   }
   .work-tile:hover {
     transform: translateY(-6px);
-    box-shadow: 0 24px 48px -22px rgba(42, 26, 20, 0.22);
+    box-shadow: 0 24px 48px -22px var(--color-ink-glow);
   }
   .work-img {
     height: 320px;
@@ -682,9 +682,10 @@
   }
 
   .footer {
-    background: var(--color-ink);
+    background: var(--color-ink-soft);
     color: var(--color-parchment);
     padding: 80px 48px 40px;
+    border-top: 1px solid var(--color-parchment-faint);
   }
   .footer-inner {
     max-width: 1320px;
@@ -695,7 +696,7 @@
     grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 56px;
     padding-bottom: 60px;
-    border-bottom: 1px solid var(--color-ink-soft);
+    border-bottom: 1px solid var(--color-parchment-soft);
   }
   .footer-mark {
     font-family: var(--font-display);

@@ -12,7 +12,7 @@ export function Footer() {
         <div className="footer-top">
           <div>
             <div className="footer-mark">
-              <SparkMark size={34} color="#B8443A" stroke={7} />
+              <SparkMark size={34} color="var(--color-sienna-bright)" stroke={7} />
               <Wordmark />
             </div>
             <p className="footer-tag">{STUDIO.tagline} {STUDIO.description}</p>

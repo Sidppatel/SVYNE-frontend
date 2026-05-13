@@ -30,7 +30,7 @@ export function WorkTileSvg({ grad, title, year, idx }: Props) {
         fontFamily="Fraunces, serif"
         fontSize="56"
         fontWeight="300"
-        fill="#F5EAD8"
+        fill="var(--color-parchment)"
         letterSpacing="-2"
       >
         {first}
@@ -42,7 +42,7 @@ export function WorkTileSvg({ grad, title, year, idx }: Props) {
         fontStyle="italic"
         fontSize="44"
         fontWeight="300"
-        fill="#C49B5A"
+        fill="var(--color-gold)"
         letterSpacing="-1"
       >
         {rest}
@@ -52,13 +52,13 @@ export function WorkTileSvg({ grad, title, year, idx }: Props) {
         y="230"
         fontFamily="JetBrains Mono, monospace"
         fontSize="11"
-        fill="#F5EAD8"
+        fill="var(--color-parchment)"
         opacity="0.7"
         letterSpacing="3"
       >
         {year.toUpperCase()}
       </text>
-      <g stroke="#C49B5A" strokeWidth="1" opacity="0.35" fill="none">
+      <g stroke="var(--color-gold)" strokeWidth="1" opacity="0.35" fill="none">
         <circle cx="490" cy="160" r="84" />
         <circle cx="490" cy="160" r="52" />
         <circle cx="490" cy="160" r="24" />

@@ -15,7 +15,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     timeline: '5 weeks',
     tier: 'Custom ($8K–25K)',
     stack: 'Next.js · Supabase · Stripe',
-    grad: ['#A0382A', '#2A1A14'],
+    grad: ['var(--color-sienna)', 'var(--color-ink)'],
     body: [
       {
         kind: 'p',
@@ -55,7 +55,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     timeline: '2.5 weeks',
     tier: 'Foundation ($3.5K–6K)',
     stack: 'Next.js · OpenTable · Cloudinary',
-    grad: ['#3D2820', '#8A7560'],
+    grad: ['var(--color-ink-soft)', 'var(--color-sepia)'],
     body: [
       {
         kind: 'p',
@@ -84,7 +84,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     timeline: '7 weeks',
     tier: 'Custom ($8K–25K)',
     stack: 'Next.js · Postgres · Twilio',
-    grad: ['#1F2D24', '#A0382A'],
+    grad: ['var(--color-forest)', 'var(--color-sienna)'],
     body: [
       {
         kind: 'p',

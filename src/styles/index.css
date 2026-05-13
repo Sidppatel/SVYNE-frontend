@@ -15,6 +15,16 @@
   --color-sepia: #8A7560;
   --color-sepia-light: #B8A488;
   --color-gold: #C49B5A;
+  --color-forest: #1F2D24;
+  --color-parchment-glass: rgba(245, 234, 216, 0.88);
+  --color-sienna-faint: rgba(160, 56, 42, 0.07);
+  --color-gold-faint: rgba(255, 217, 163, 0.15);
+  --color-sienna-glow: rgba(160, 56, 42, 0.45);
+  --color-sienna-deep-glow: rgba(160, 56, 42, 0.5);
+  --color-ink-glow: rgba(42, 26, 20, 0.22);
+  --color-parchment-soft: rgba(245, 234, 216, 0.1);
+  --color-parchment-faint: rgba(245, 234, 216, 0.05);
+  --color-white-soft: rgba(255, 255, 255, 0.18);
 
   --font-display: "Fraunces", serif;
   --font-sans: "Manrope", -apple-system, sans-serif;

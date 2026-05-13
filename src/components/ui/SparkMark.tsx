@@ -4,7 +4,7 @@ type Props = {
   stroke?: number
 }
 
-export function SparkMark({ size = 26, color = '#A0382A', stroke = 7 }: Props) {
+export function SparkMark({ size = 26, color = 'var(--color-sienna)', stroke = 7 }: Props) {
   return (
     <svg
       viewBox="0 0 100 100"

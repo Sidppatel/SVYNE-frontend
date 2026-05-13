@@ -139,15 +139,21 @@ export function Home() {
               Three steps. <em>No surprises.</em>
             </h2>
           </div>
-          <div className="process-teaser">
+          <div className="services-strip">
             {HOME_PROCESS.map(s => (
-              <div key={s.num} className="process-step">
-                <div className="ps-num">{s.num}</div>
-                <h3 className="ps-title">
+              <div key={s.num} className="pillar">
+                <div className="pillar-num">{s.num} · step</div>
+                <h3>
                   <em>{s.title}</em>
                 </h3>
-                {s.accent && <div className="ps-accent">{s.accent}</div>}
-                <p className="ps-desc">{s.desc}</p>
+                <div className="pillar-accent">{s.accent}</div>
+                <p>{s.desc}</p>
+                <button
+                  className="pillar-more"
+                  onClick={() => navigate(ROUTES.services)}
+                >
+                  Learn more <span className="arr">→</span>
+                </button>
               </div>
             ))}
           </div>

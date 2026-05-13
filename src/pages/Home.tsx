@@ -111,15 +111,11 @@ export function Home() {
             </button>
 
             <div className="work-tile placeholder">
-              <div className="work-outcome">NEXT PROJECT · IN PROGRESS</div>
+              <div className="work-outcome">NEXT · IN PROGRESS</div>
               <div className="work-title">
                 <em>Your project here.</em>
               </div>
-              <p className="placeholder-note">
-                We take on three new builds a quarter.
-                <br />
-                One slot remains.
-              </p>
+              <p className="placeholder-note">One slot remains this quarter.</p>
               <Button variant="primary" withArrow onClick={() => navigate(ROUTES.contact)}>
                 Start a project
               </Button>

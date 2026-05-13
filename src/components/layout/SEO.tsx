@@ -7,11 +7,11 @@ interface SEOProps {
   type?: string
 }
 
-export function SEO({ 
-  title, 
-  description = 'One source. Everything online. Built in Saraland, Alabama — working everywhere.', 
-  name = 'Svono', 
-  type = 'website' 
+export function SEO({
+  title,
+  description = 'One source. Everything online. Built in Mobile, Alabama — working everywhere.',
+  name = 'Svono',
+  type = 'website'
 }: SEOProps) {
   const fullTitle = title ? `${title} — ${name}` : `${name} · ${description}`
 

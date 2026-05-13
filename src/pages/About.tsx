@@ -19,7 +19,7 @@ export function About() {
               <em className="fade-up d2">One source<span className="svono-period sway">.</span></em>
             </h1>
             <p className="hero-deck fade-up d3">
-              Svono is a one-person studio in <strong>Saraland, Alabama</strong>. I build websites and custom web products for small businesses across the Gulf Coast — and I don't disappear after launch.
+              Svono is a one-person studio in <strong>Saraland, Alabama</strong>. I build websites and custom web products for small businesses across the Gulf Coast - and I don't disappear after launch.
             </p>
           </div>
         </div>
@@ -34,7 +34,7 @@ export function About() {
             <h2 className="story-h">
               Why Svono <em>exists<span className="svono-period sway">.</span></em>
             </h2>
-            <p className="story-accent">one source — everything online.</p>
+            <p className="story-accent">one source - everything online.</p>
           </div>
           <div className="story-body">
             {ABOUT_STORY.map((p, i) => (
@@ -49,7 +49,7 @@ export function About() {
             <em>SITE</em> <span className="plus">+</span> <em>VISION</em> <span className="eq">=</span> SVONO<span className="period">.</span>
           </div>
           <p className="ne-desc">
-            A studio name that sounds like both — and a wordmark that signs itself with an italic period.
+            A studio name that sounds like both - and a wordmark that signs itself with an italic period.
           </p>
         </div>
 
@@ -97,7 +97,7 @@ export function About() {
               <div className="team-portrait">{member.initial}</div>
               <div className="team-info">
                 <h4>
-                  {member.name} <em>— {member.role}</em>
+                  {member.name} <em>- {member.role}</em>
                 </h4>
                 <div className="team-role">{member.meta}</div>
                 <p className="team-bio">{member.bio}</p>

@@ -11,8 +11,8 @@ export const PROJECT_TYPES = [
 
 export const BUDGETS = [
   '< $5K',
-  '$5K – $10K',
-  '$10K – $25K',
+  '$5K - $10K',
+  '$10K - $25K',
   '$25K +',
   'Not sure',
 ] as const
@@ -20,7 +20,7 @@ export const BUDGETS = [
 export const TIMELINES = [
   'ASAP',
   '< 1 month',
-  '1–3 months',
+  '1-3 months',
   '3+ months',
   'Flexible',
 ] as const
@@ -44,7 +44,7 @@ export const CONTACT_NEXT_STEPS: ProcessStep[] = [
     num: 'ii.',
     title: 'A 30-minute call',
     desc:
-      'We talk. We listen. We ask the questions that turn a request into a clear scope.',
+      'I talk. I listen. I ask the questions that turn a request into a clear scope.',
   },
   {
     num: 'iii.',

@@ -1,6 +1,6 @@
 # SONOVO-frontend
 
-Marketing site for **Svono** — a Saraland, Alabama web/software studio. Build, launch, and maintain websites and custom web products. One source for everything.
+Marketing site for **Svono** — a Mobile, Alabama web/software studio. Build, launch, and maintain websites and custom web products. One source for everything.
 
 ## Stack
 

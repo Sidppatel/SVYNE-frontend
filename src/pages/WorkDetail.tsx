@@ -23,7 +23,7 @@ export function WorkDetail() {
         <Accent>{cs.accent} · {cs.year}</Accent>
       </div>
       <h1 className="cs-title">
-        {cs.title} — <em>{cs.titleEm}</em>
+        {cs.title} - <em>{cs.titleEm}</em>
       </h1>
       <p className="cs-deck">{cs.outcome}</p>
       <div className="cs-hero-img">

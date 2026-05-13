@@ -8,7 +8,7 @@ type Props = {
   deck?: string
 }
 
-export function CtaBand({ title, deck = 'One source for everything. We reply within one business day.' }: Props) {
+export function CtaBand({ title, deck = 'One source for everything. I reply within one business day.' }: Props) {
   const navigate = useNavigate()
   return (
     <section className="section-dark">

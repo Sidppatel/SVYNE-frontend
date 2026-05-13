@@ -17,13 +17,13 @@ export function Work() {
 
   return (
     <>
-      <SEO title="Our Work" description="Explore our portfolio of web platforms, marketing sites, and custom dashboards." />
+      <SEO title="The Work" description="Explore the portfolio of web platforms, marketing sites, and custom dashboards." />
       <section className="hero work-hero">
         <div className="doc">
           <div className="hero-inner">
             <Eyebrow className="fade-up">◆ Chapter 03 · The work ◆</Eyebrow>
             <h1>
-              <span className="fade-up d1">What we've<span className="svono-period sway">.</span></span>
+              <span className="fade-up d1">What I've<span className="svono-period sway">.</span></span>
               <br />
               <em className="fade-up d2">shipped<span className="svono-period sway">.</span></em>
             </h1>
@@ -62,7 +62,7 @@ export function Work() {
               <div className="work-info">
                 <div className="work-tag">{cs.tag}</div>
                 <div className="work-title">
-                  {cs.title} — <em>{cs.titleEm}</em>
+                  {cs.title} - <em>{cs.titleEm}</em>
                 </div>
                 <div className="work-outcome">{cs.outcome}</div>
                 <p className="work-desc">{cs.desc}</p>

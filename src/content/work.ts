@@ -9,18 +9,18 @@ export const CASE_STUDIES: CaseStudy[] = [
     titleEm: 'private events',
     outcome: 'A members-only platform from sketch to ship in five weeks.',
     desc:
-      'Custom ticketing, scanner-based check-in, host tools, and member access — all on one stack the team owns.',
+      'Custom ticketing, scanner-based check-in, host tools, and member access - all on one stack the team owns.',
     sector: 'Private events club',
     year: '2025',
     timeline: '5 weeks',
-    tier: 'Custom ($8K–25K)',
-    stack: 'Next.js · Supabase · Stripe',
+    tier: 'Custom ($8K-25K)',
+    stack: 'Vite & React · Supabase · Stripe',
     grad: ['var(--color-sienna)', 'var(--color-ink)'],
     body: [
       {
         kind: 'p',
         text:
-          "CODE829 is an invitation-only events club in Mobile, Alabama — a small operation hosting four to six private dinners and salon evenings each season. They had a working spreadsheet system and a hand-tooled Squarespace site. It worked. It also didn't scale.",
+          "CODE829 is an invitation-only events club in Mobile, Alabama - a small operation hosting four to six private dinners and salon evenings each season. They had a working spreadsheet system and a hand-tooled Squarespace site. It worked. It also didn't scale.",
       },
       { kind: 'h', text: 'The brief' },
       {
@@ -32,13 +32,13 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         kind: 'p',
         text:
-          'One person — me. Designing, coding, and deploying. Weekly Friday demos. Slack channel from day one. The first staging link went out at the end of week one — empty, but live. By week three the auth, RSVP, and payment flows were solid. The last two weeks were scanner UX and the host dashboard.',
+          'One person - me. Designing, coding, and deploying. Weekly Friday demos. Slack channel from day one. The first staging link went out at the end of week one - empty, but live. By week three the auth, RSVP, and payment flows were solid. The last two weeks were scanner UX and the host dashboard.',
       },
       { kind: 'h', text: 'What shipped' },
       {
         kind: 'p',
         text:
-          'A private members area, a Stripe-backed RSVP flow, a phone-native scanner the door host runs at check-in, and an admin panel with the three reports the founders actually look at. Plus a Maintain retainer — 10 dev hours a month, priority response.',
+          'A private members area, a Stripe-backed RSVP flow, a phone-native scanner the door host runs at check-in, and an admin panel with the three reports the founders actually look at. Plus a Maintain retainer - 10 dev hours a month, priority response.',
       },
     ],
   },
@@ -53,13 +53,13 @@ export const CASE_STUDIES: CaseStudy[] = [
     sector: 'Restaurant · Mobile, AL',
     year: '2026',
     timeline: '2.5 weeks',
-    tier: 'Foundation ($3.5K–6K)',
-    stack: 'Next.js · OpenTable · Cloudinary',
+    tier: 'Foundation ($3.5K-6K)',
+    stack: 'Vite & React · OpenTable · Cloudinary',
     grad: ['var(--color-ink-soft)', 'var(--color-sepia)'],
     body: [
       {
         kind: 'p',
-        text: "A new tasting room opening on Dauphin Street needed a site that would carry the room's tone — quiet, set, considered — and book reservations. I started from a printed menu and three iPhone photos.",
+        text: "A new tasting room opening on Dauphin Street needed a site that would carry the room's tone - quiet, set, considered - and book reservations. I started from a printed menu and three iPhone photos.",
       },
       { kind: 'h', text: 'The work' },
       {
@@ -75,26 +75,25 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: 'Aldridge Marine',
     titleEm: 'service dashboard',
     outcome: 'An internal admin that replaced four spreadsheets.',
-    desc: 'Repair-shop intake, parts ordering, customer status — one panel, one source.',
+    desc: 'Repair-shop intake, parts ordering, customer status - one panel, one source.',
     sector: 'Boat services',
     year: '2026',
     timeline: '7 weeks',
-    tier: 'Custom ($8K–25K)',
-    stack: 'Next.js · Postgres · Twilio',
+    tier: 'Custom ($8K-25K)',
+    stack: 'Vite & React · Postgres · Twilio',
     grad: ['var(--color-forest)', 'var(--color-sienna)'],
     body: [
       {
         kind: 'p',
-        text: 'A two-location boat-services shop had a brilliant front desk and a chaotic back office. The intake form was paper. Parts orders lived in three Google Sheets. Customer status updates went out by text — when the owner remembered.',
+        text: 'A two-location boat-services shop had a brilliant front desk and a chaotic back office. The intake form was paper. Parts orders lived in three Google Sheets. Customer status updates went out by text - when the owner remembered.',
       },
       { kind: 'h', text: 'What I built' },
       {
         kind: 'p',
-        text: 'A single admin with intake, parts, and customer status — and an auto-text via Twilio when a job changes state. The owner gets one screen on her phone. The shop floor uses a tablet at the intake bay.',
+        text: 'A single admin with intake, parts, and customer status - and an auto-text via Twilio when a job changes state. The owner gets one screen on her phone. The shop floor uses a tablet at the intake bay.',
       },
     ],
   },
 ]
-
 
 export const WORK_FILTERS = ['All', 'Platform', 'Site', 'Dashboard'] as const

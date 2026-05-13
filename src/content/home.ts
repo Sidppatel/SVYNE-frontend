@@ -5,7 +5,7 @@ export const HOME_PILLARS: Pillar[] = [
     num: '01',
     name: 'Build',
     desc:
-      'Marketing sites, custom dashboards, event platforms, web apps. Modern stack — Next.js, React, Postgres, Stripe. Code you own.',
+      'Marketing sites, custom dashboards, event platforms, web apps. Modern stack - Vite & React, Postgres, Stripe. Code you own.',
   },
   {
     num: '02',
@@ -33,7 +33,7 @@ export const HOME_PROCESS: ProcessStep[] = [
     title: 'Talk',
     accent: 'discovery',
     desc:
-      'A 30-minute call. I listen. You leave with a written proposal in 48 hours — real number, real timeline.',
+      'A 30-minute call. I listen. You leave with a written proposal in 48 hours - real number, real timeline.',
   },
   {
     num: 'ii.',
@@ -47,14 +47,14 @@ export const HOME_PROCESS: ProcessStep[] = [
     title: 'Ship',
     accent: 'launch day',
     desc:
-      'Coordinated launch. 24-hour war-room mode. Then ongoing care if you want it — monthly retainer, three tiers.',
+      'Coordinated launch. 24-hour war-room mode. Then ongoing care if you want it - monthly retainer, three tiers.',
   },
 ]
 
 export const HOME_TESTIMONIAL = {
   quote:
-    "Svono shipped the platform we'd been quoted six months for — in five weeks. The site still works. We still talk every month.",
+    "Svono shipped the platform we'd been quoted six months for - in five weeks. The site still works. We still talk every month.",
   highlight: 'in five weeks',
-  attr: '— Founder, CODE829',
+  attr: '- Founder, CODE829',
   role: 'Private events · Mobile, AL',
 }

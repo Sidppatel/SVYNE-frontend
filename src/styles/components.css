@@ -1001,6 +1001,10 @@
     align-items: stretch;
   }
 
+  .scroll-indicator {
+    display: none;
+  }
+
   .hero-ctas .btn {
     justify-content: center;
   }

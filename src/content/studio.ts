@@ -2,13 +2,13 @@ export const STUDIO = {
   name: 'svono',
   tagline: 'One source. Everything online.',
   description:
-    'Built in Saraland, Alabama — working everywhere.',
+    'Built in Mobile, Alabama - working everywhere.',
   email: 'hello@svono.com',
-  location: 'Saraland, Alabama',
+  location: 'Mobile, Alabama',
   schedulingUrl: 'calendly.com/svono',
   established: 'EST. 2026',
-  bottomMeta: 'svono · est. 2026 · Saraland, Alabama',
-  bottomTag: 'one source — everything online.',
+  bottomMeta: 'svono · est. 2026 · Mobile, Alabama',
+  bottomTag: 'one source - everything online.',
 } as const
 
 export const FOOTER_LINKS = {

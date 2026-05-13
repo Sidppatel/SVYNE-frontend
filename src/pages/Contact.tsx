@@ -58,17 +58,17 @@ export function Contact() {
 
   return (
     <>
-      <SEO title="Contact Us" description="Ready to start your project? Tell us about it and we'll reply within one business day." />
+      <SEO title="Contact Svono" description="Ready to start your project? Tell Svono about it and I'll reply within one business day." />
       <div className="doc">
         <div className="contact-grid">
           <div>
             <Eyebrow>◆ Chapter 07 · Let's begin ◆</Eyebrow>
             <h1 className="contact-h">
-              Tell us<br />
+              Tell Svono<br />
               <em>about it<span className="svono-period sway">.</span></em>
             </h1>
             <p className="contact-deck">
-              The form below goes straight to <em>{STUDIO.email}</em>. We read every inquiry and reply within one business day.
+              The form below goes straight to <em>{STUDIO.email}</em>. I read every inquiry and reply within one business day.
             </p>
 
             <div className="contact-meta">
@@ -79,9 +79,9 @@ export function Contact() {
                 </div>
               </div>
               <div className="contact-meta-item">
-                <div className="contact-meta-label">Where we are</div>
+                <div className="contact-meta-label">Where I am</div>
                 <div className="contact-meta-value">
-                  Saraland · <em>Alabama</em>
+                  Mobile · <em>Alabama</em>
                 </div>
               </div>
               <div className="contact-meta-item">
@@ -93,10 +93,10 @@ export function Contact() {
               <div className="contact-meta-item">
                 <div className="contact-meta-label">Schedule</div>
                 <div className="contact-meta-value">
-                  <a 
-                    href={`https://${STUDIO.schedulingUrl}`} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href={`https://${STUDIO.schedulingUrl}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="link-draw"
                   >
                     {STUDIO.schedulingUrl} →
@@ -116,7 +116,7 @@ export function Contact() {
                   Received. <em>Thank you.</em>
                 </h3>
                 <p>
-                  Reading every word. We'll be back within one business day — usually sooner.
+                  Reading every word. I'll be back within one business day - usually sooner.
                 </p>
                 <Button variant="secondary" onClick={resetForm}>
                   Send another
@@ -163,7 +163,7 @@ export function Contact() {
                     id="business"
                     className="field-input"
                     type="text"
-                    placeholder="If you have one — optional"
+                    placeholder="If you have one - optional"
                     value={form.business}
                     onChange={e => setField('business', e.target.value)}
                   />
@@ -195,7 +195,7 @@ export function Contact() {
                       value={form.budget}
                       onChange={e => setField('budget', e.target.value)}
                     >
-                      <option value="">Pick one — optional</option>
+                      <option value="">Pick one - optional</option>
                       {BUDGETS.map(b => (
                         <option key={b}>{b}</option>
                       ))}
@@ -209,7 +209,7 @@ export function Contact() {
                       value={form.timeline}
                       onChange={e => setField('timeline', e.target.value)}
                     >
-                      <option value="">Pick one — optional</option>
+                      <option value="">Pick one - optional</option>
                       {TIMELINES.map(t => (
                         <option key={t}>{t}</option>
                       ))}
@@ -219,7 +219,7 @@ export function Contact() {
 
                 <div className="field">
                   <label htmlFor="details" className="field-label">
-                    Tell us about the project <span className="req">·</span> required
+                    Tell Svono about the project <span className="req">·</span> required
                   </label>
                   <textarea
                     id="details"
@@ -234,7 +234,7 @@ export function Contact() {
                 </div>
 
                 <div className="field">
-                  <span className="field-label">How did you hear about us</span>
+                  <span className="field-label">How did you hear about Svono</span>
                   <div className="field-pills">
                     {REFERRAL_SOURCES.map(r => (
                       <button
@@ -265,7 +265,7 @@ export function Contact() {
                     <p>
                       <strong>Something went wrong.</strong>
                       <br />
-                      We couldn't send your message. Please try again or email us directly at <em>{STUDIO.email}</em>.
+                      I couldn't send your message. Please try again or email me directly at <em>{STUDIO.email}</em>.
                     </p>
                   </div>
                 )}

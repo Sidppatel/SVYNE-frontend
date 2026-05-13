@@ -59,7 +59,7 @@ export function Home() {
               Three things. <em>Done well.</em>
             </h2>
             <p className="deck">
-              The full lifecycle of a website or web product. Build, launch, maintain — no handoffs between four people.
+              The full lifecycle of a website or web product. Build, launch, maintain - no handoffs between four people.
             </p>
           </div>
 
@@ -109,7 +109,7 @@ export function Home() {
               <div className="work-info">
                 <div className="work-tag">{featured.tag}</div>
                 <div className="work-title">
-                  {featured.title} — <em>{featured.titleEm}</em>
+                  {featured.title} - <em>{featured.titleEm}</em>
                 </div>
                 <div className="work-outcome">{featured.outcome}</div>
                 <p className="work-desc">{featured.desc}</p>

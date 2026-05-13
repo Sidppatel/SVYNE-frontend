@@ -7,7 +7,7 @@ import { SERVICE_BLOCKS, SERVICES_NOT_OFFERED } from '@/content/services'
 export function Services() {
   return (
     <>
-      <SEO title="Services" description="Build, launch, maintain. The three pillars of our web design and development process." />
+      <SEO title="Services" description="Build, launch, maintain. The three pillars of the web design and development process." />
       <section className="hero">
         <div className="doc">
           <div className="hero-inner">
@@ -33,7 +33,7 @@ export function Services() {
               <div className="sb-num">{b.num}</div>
               <div>
                 <h2 className="sb-title">
-                  {b.name} <em>— {b.accent}</em>
+                  {b.name} - <em>{b.accent}</em>
                 </h2>
                 <p className="sb-deck">{b.deck}</p>
                 <div className="sb-cols">
@@ -78,13 +78,13 @@ export function Services() {
           <div className="section-header">
             <div className="label-row">
               <Eyebrow>Honest list</Eyebrow>
-              <Accent>what we don't do</Accent>
+              <Accent>what I don't do</Accent>
             </div>
             <h2>
-              What we <em>don't</em> do.
+              What I <em>don't</em> do.
             </h2>
             <p className="deck">
-              Two minutes saved beats a misaligned project. If you need any of the below, we'll point you somewhere good.
+              Two minutes saved beats a misaligned project. If you need any of the below, I'll point you somewhere good.
             </p>
           </div>
           <div className="services-strip">
@@ -102,7 +102,7 @@ export function Services() {
       <CtaBand
         title={
           <>
-            Talk to us about <em>your project.</em>
+            Talk to Svono about <em>your project.</em>
           </>
         }
         deck="A 30-minute call. Written proposal in 48 hours. Real number, real timeline."

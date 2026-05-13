@@ -19,7 +19,7 @@ export function Pricing() {
 
   return (
     <>
-      <SEO title="Pricing" description="Real numbers. No hidden fees. Explore our build tiers and ongoing maintenance packages." />
+      <SEO title="Pricing" description="Real numbers. No hidden fees. Explore build tiers and ongoing maintenance packages." />
       <section className="hero">
         <div className="doc">
           <div className="hero-inner">
@@ -30,7 +30,7 @@ export function Pricing() {
               <em className="fade-up d2">No "starting at<span className="svono-period sway">.</span>"</em>
             </h1>
             <p className="hero-deck fade-up d3">
-              If your project fits one of our boxes, you see the price right now. If it doesn't, we write you a <strong>real proposal in 48 hours</strong>.
+              If your project fits one of the boxes, you see the price right now. If it doesn't, I write you a <strong>real proposal in 48 hours</strong>.
             </p>
           </div>
         </div>
@@ -191,7 +191,7 @@ export function Pricing() {
             Pick a box. <em>Or get a proposal.</em>
           </>
         }
-        deck="If you fit one of the boxes, sign and start. If you don't, we write you a real proposal in 48 hours."
+        deck="If you fit one of the boxes, sign and start. If you don't, I write you a real proposal in 48 hours."
       />
     </>
   )

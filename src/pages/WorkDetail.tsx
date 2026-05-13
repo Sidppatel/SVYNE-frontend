@@ -2,6 +2,7 @@ import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import { Button } from '@/components/ui/Button'
 import { Accent } from '@/components/ui/Accent'
 import { WorkTileSvg } from '@/components/ui/WorkTileSvg'
+import { SEO } from '@/components/layout/SEO'
 import { CASE_STUDIES } from '@/content/work'
 import { ROUTES } from '@/routes'
 
@@ -14,6 +15,7 @@ export function WorkDetail() {
 
   return (
     <div className="doc casestudy">
+      <SEO title={cs.title} description={cs.outcome} />
       <button className="cs-back" onClick={() => navigate(ROUTES.work)}>
         ← All work
       </button>

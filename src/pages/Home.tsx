@@ -4,6 +4,7 @@ import { Eyebrow } from '@/components/ui/Eyebrow'
 import { Accent } from '@/components/ui/Accent'
 import { WorkTileSvg } from '@/components/ui/WorkTileSvg'
 import { CtaBand } from '@/components/layout/CtaBand'
+import { SEO } from '@/components/layout/SEO'
 import { HOME_PILLARS, HOME_PILLAR_TAG, HOME_PROCESS, HOME_TESTIMONIAL } from '@/content/home'
 import { CASE_STUDIES } from '@/content/work'
 import { ROUTES } from '@/routes'
@@ -14,14 +15,15 @@ export function Home() {
 
   return (
     <>
+      <SEO />
       <section className="hero">
         <div className="doc">
           <div className="hero-inner">
             <Eyebrow className="fade-up">◆ One source. Online. ◆</Eyebrow>
             <h1>
-              <span className="fade-up d1">One source.</span>
+              <span className="fade-up d1">One source<span className="svono-period sway">.</span></span>
               <br />
-              <em className="fade-up d2">Everything online.</em>
+              <em className="fade-up d2">Everything online<span className="svono-period sway">.</span></em>
             </h1>
             <p className="hero-deck fade-up d3">
               Svono <strong>builds, launches, and maintains</strong> websites, custom apps, and event platforms for small businesses across the Gulf Coast. <em>One source for everything.</em>

@@ -1,19 +1,21 @@
 import { Eyebrow } from '@/components/ui/Eyebrow'
 import { Accent } from '@/components/ui/Accent'
 import { CtaBand } from '@/components/layout/CtaBand'
+import { SEO } from '@/components/layout/SEO'
 import { SERVICE_BLOCKS, SERVICES_NOT_OFFERED } from '@/content/services'
 
 export function Services() {
   return (
     <>
+      <SEO title="Services" description="Build, launch, maintain. The three pillars of our web design and development process." />
       <section className="hero">
         <div className="doc">
           <div className="hero-inner">
             <Eyebrow className="fade-up">◆ Chapter 04 · Services ◆</Eyebrow>
             <h1>
-              <span className="fade-up d1">Three things.</span>
+              <span className="fade-up d1">Three things<span className="svono-period sway">.</span></span>
               <br />
-              <em className="fade-up d2">Done well.</em>
+              <em className="fade-up d2">Done well<span className="svono-period sway">.</span></em>
             </h1>
             <p className="hero-deck fade-up d3">
               Build, launch, maintain. The <strong>full lifecycle</strong> of a website or web product. No handoffs between four people.

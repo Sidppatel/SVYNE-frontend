@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { NavLink, useLocation, useNavigate } from 'react-router-dom'
+import FocusTrap from 'focus-trap-react'
 import { NAV_ITEMS, ROUTES } from '@/routes'
 import { SparkMark } from '@/components/ui/SparkMark'
 import { Wordmark } from '@/components/ui/Wordmark'
@@ -47,6 +48,7 @@ export function Nav() {
           className="nav-burger"
           aria-label="Menu"
           aria-expanded={open}
+          aria-controls="mobile-menu"
           onClick={() => setOpen(o => !o)}
         >
           <span className={open ? 'b1 x' : 'b1'} />
@@ -55,21 +57,23 @@ export function Nav() {
       </div>
 
       {open && (
-        <div className="nav-mobile-panel">
-          {NAV_ITEMS.map(item => (
-            <button
-              key={item.to}
-              className={`nav-mobile-link ${pathname === item.to ? 'active' : ''}`}
-              onClick={() => go(item.to)}
-            >
-              <span>{item.label}</span>
-              <span className="arr">→</span>
+        <FocusTrap focusTrapOptions={{ allowOutsideClick: true }}>
+          <div id="mobile-menu" className="nav-mobile-panel" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+            {NAV_ITEMS.map(item => (
+              <button
+                key={item.to}
+                className={`nav-mobile-link ${pathname === item.to ? 'active' : ''}`}
+                onClick={() => go(item.to)}
+              >
+                <span>{item.label}</span>
+                <span className="arr">→</span>
+              </button>
+            ))}
+            <button className="nav-mobile-cta" onClick={() => go(ROUTES.contact)}>
+              Start a project <span className="arr">→</span>
             </button>
-          ))}
-          <button className="nav-mobile-cta" onClick={() => go(ROUTES.contact)}>
-            Start a project <span className="arr">→</span>
-          </button>
-        </div>
+          </div>
+        </FocusTrap>
       )}
     </header>
   )

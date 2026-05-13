@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { Eyebrow } from '@/components/ui/Eyebrow'
 import { Accent } from '@/components/ui/Accent'
 import { CtaBand } from '@/components/layout/CtaBand'
+import { SEO } from '@/components/layout/SEO'
 import {
   ADDONS,
   BUNDLES,
@@ -18,14 +19,15 @@ export function Pricing() {
 
   return (
     <>
+      <SEO title="Pricing" description="Real numbers. No hidden fees. Explore our build tiers and ongoing maintenance packages." />
       <section className="hero">
         <div className="doc">
           <div className="hero-inner">
             <Eyebrow className="fade-up">◆ Chapter 05 · Pricing ◆</Eyebrow>
             <h1>
-              <span className="fade-up d1">Real numbers.</span>
+              <span className="fade-up d1">Real numbers<span className="svono-period sway">.</span></span>
               <br />
-              <em className="fade-up d2">No "starting at."</em>
+              <em className="fade-up d2">No "starting at<span className="svono-period sway">.</span>"</em>
             </h1>
             <p className="hero-deck fade-up d3">
               If your project fits one of our boxes, you see the price right now. If it doesn't, we write you a <strong>real proposal in 48 hours</strong>.
@@ -83,19 +85,41 @@ export function Pricing() {
               Three <em>tiers</em> of ongoing care.
             </h3>
           </div>
-          {MAINTAIN_TIERS.map(m => (
-            <div key={m.tier} className="maintain-row">
-              <div className="m-tier">
-                <em>{m.tier}</em>
+          {MAINTAIN_TIERS.map(m => {
+            const basePrice = parseInt(m.price.replace('$', ''))
+            let displayPrice = m.price
+            let discountTag = null
+
+            if (activeBundle === 'essential6') {
+              displayPrice = `$${Math.floor(basePrice * 0.9)}`
+              discountTag = '10% off'
+            } else if (activeBundle === 'active12') {
+              displayPrice = `$${Math.floor(basePrice * 0.85)}`
+              discountTag = '15% off'
+            } else if (activeBundle === 'full12') {
+              displayPrice = `$${Math.floor(basePrice * 0.8)}`
+              discountTag = '20% off'
+            }
+
+            return (
+              <div key={m.tier} className={`maintain-row ${activeBundle ? 'has-bundle' : ''}`}>
+                <div className="m-tier">
+                  <em>{m.tier}</em>
+                </div>
+                <div className="m-price">
+                  <div className="m-price-stack">
+                    {activeBundle && <span className="m-price-old">{m.price}</span>}
+                    <span className="m-price-new">
+                      {displayPrice}<em>/mo</em>
+                    </span>
+                  </div>
+                  {discountTag && <span className="m-discount-badge">{discountTag}</span>}
+                </div>
+                <div className="m-feats">{m.features}</div>
+                <div className="m-best">{m.best}</div>
               </div>
-              <div className="m-price">
-                {m.price}
-                <em>/mo</em>
-              </div>
-              <div className="m-feats">{m.features}</div>
-              <div className="m-best">{m.best}</div>
-            </div>
-          ))}
+            )
+          })}
         </div>
 
         <div className="bundles-wrap">

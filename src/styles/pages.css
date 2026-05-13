@@ -238,6 +238,8 @@
   .pkg-btn:hover {
     background: var(--color-ink);
     color: var(--color-parchment);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px -8px var(--color-ink-glow);
   }
   .pkg.featured .pkg-btn {
     border-color: var(--color-gold);
@@ -246,6 +248,8 @@
   .pkg.featured .pkg-btn:hover {
     background: var(--color-gold);
     color: var(--color-ink);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px -8px var(--color-gold-faint);
   }
 
   .maintain-wrap {
@@ -300,12 +304,43 @@
   .m-price {
     font-family: var(--font-display);
     font-size: 28px;
-    font-weight: 400;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
   }
-  .m-price em {
+  .m-price-stack {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+  .m-price-old {
+    font-size: 14px;
+    text-decoration: line-through;
+    color: var(--color-sepia);
+    opacity: 0.6;
+  }
+  .m-price-new em {
     font-style: italic;
+    font-size: 14px;
+    color: var(--color-sepia);
+    margin-left: 2px;
+  }
+  .m-discount-badge {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: var(--color-sienna-faint);
     color: var(--color-sienna);
-    font-size: 16px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block;
+    width: fit-content;
+  }
+  .maintain-row.has-bundle {
+    border-color: var(--color-sienna-faint);
+    background: var(--color-parchment-faint);
   }
   .m-feats {
     font-size: 13.5px;

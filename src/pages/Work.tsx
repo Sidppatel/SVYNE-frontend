@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/Button'
 import { Eyebrow } from '@/components/ui/Eyebrow'
 import { WorkTileSvg } from '@/components/ui/WorkTileSvg'
 import { CtaBand } from '@/components/layout/CtaBand'
+import { SEO } from '@/components/layout/SEO'
 import { CASE_STUDIES, WORK_FILTERS } from '@/content/work'
 import { ROUTES } from '@/routes'
 
@@ -17,6 +18,7 @@ export function Work() {
 
   return (
     <>
+      <SEO title="Our Work" description="Explore our portfolio of web platforms, marketing sites, and custom dashboards." />
       <section className="hero work-hero">
         <div className="doc">
           <div className="hero-inner">

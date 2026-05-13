@@ -111,7 +111,8 @@
   .nav-burger .b2.x { top: 20px; transform: rotate(-45deg); }
   .nav-mobile-panel {
     display: none;
-    background: var(--color-parchment);
+    background: var(--color-parchment-glass);
+    backdrop-filter: blur(14px);
     border-top: 1px solid var(--color-parchment-darker);
     padding: 14px 28px 22px;
   }

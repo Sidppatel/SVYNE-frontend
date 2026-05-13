@@ -59,14 +59,12 @@ export const CASE_STUDIES: CaseStudy[] = [
     body: [
       {
         kind: 'p',
-        text:
-          "A new tasting room opening on Dauphin Street needed a site that would carry the room's tone — quiet, set, considered — and book reservations. We started from a printed menu and three iPhone photos.",
+        text: "A new tasting room opening on Dauphin Street needed a site that would carry the room's tone — quiet, set, considered — and book reservations. We started from a printed menu and three iPhone photos.",
       },
       { kind: 'h', text: 'The work' },
       {
         kind: 'p',
-        text:
-          "Twelve pages of unhurried, well-set type. A menu that reads. An OpenTable embed that doesn't fight the rest of the page. Image direction for the opening shoot (we wrote the shot list, the team brought it back).",
+        text: "Twelve pages of unhurried, well-set type. A menu that reads. An OpenTable embed that doesn't fight the rest of the page. Image direction for the opening shoot (we wrote the shot list, the team brought it back).",
       },
     ],
   },
@@ -77,8 +75,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: 'Aldridge Marine',
     titleEm: 'service dashboard',
     outcome: 'An internal admin that replaced four spreadsheets.',
-    desc:
-      'Repair-shop intake, parts ordering, customer status — one panel, one source.',
+    desc: 'Repair-shop intake, parts ordering, customer status — one panel, one source.',
     sector: 'Boat services',
     year: '2026',
     timeline: '7 weeks',
@@ -88,17 +85,16 @@ export const CASE_STUDIES: CaseStudy[] = [
     body: [
       {
         kind: 'p',
-        text:
-          'A two-location boat-services shop had a brilliant front desk and a chaotic back office. The intake form was paper. Parts orders lived in three Google Sheets. Customer status updates went out by text — when the owner remembered.',
+        text: 'A two-location boat-services shop had a brilliant front desk and a chaotic back office. The intake form was paper. Parts orders lived in three Google Sheets. Customer status updates went out by text — when the owner remembered.',
       },
       { kind: 'h', text: 'What we built' },
       {
         kind: 'p',
-        text:
-          'A single admin with intake, parts, and customer status — and an auto-text via Twilio when a job changes state. The owner gets one screen on her phone. The shop floor uses a tablet at the intake bay.',
+        text: 'A single admin with intake, parts, and customer status — and an auto-text via Twilio when a job changes state. The owner gets one screen on her phone. The shop floor uses a tablet at the intake bay.',
       },
     ],
   },
 ]
+
 
 export const WORK_FILTERS = ['All', 'Platform', 'Site', 'Dashboard'] as const

@@ -1,3 +1,4 @@
+import { SEO } from '@/components/layout/SEO'
 import { Eyebrow } from '@/components/ui/Eyebrow'
 import { Accent } from '@/components/ui/Accent'
 import { CtaBand } from '@/components/layout/CtaBand'
@@ -7,6 +8,7 @@ import { renderBold } from '@/lib/renderBold'
 export function About() {
   return (
     <>
+      <SEO title="About Us" description="Learn about the philosophy and people behind Svono. Built in Saraland, Alabama." />
       <section className="hero">
         <div className="doc">
           <div className="hero-inner">

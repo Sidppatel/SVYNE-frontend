@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Eyebrow } from '@/components/ui/Eyebrow'
 import { Accent } from '@/components/ui/Accent'
+import { SEO } from '@/components/layout/SEO'
 import {
   BUDGETS,
   CONTACT_NEXT_STEPS,
@@ -19,10 +20,12 @@ export function Contact() {
   const [errors, setErrors] = useState<ContactErrors>({})
   const [submitted, setSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState(false)
 
   const setField = <K extends keyof ContactForm>(key: K, value: ContactForm[K]) => {
     setForm(prev => ({ ...prev, [key]: value }))
     if (errors[key]) setErrors(prev => ({ ...prev, [key]: undefined }))
+    if (submitError) setSubmitError(false)
   }
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -31,20 +34,30 @@ export function Contact() {
     setErrors(found)
     if (Object.keys(found).length > 0) return
     setSubmitting(true)
+    setSubmitError(false)
+
     setTimeout(() => {
-      setSubmitted(true)
-      setSubmitting(false)
+      // Simulate failure for a specific email for testing
+      if (form.email.includes('error')) {
+        setSubmitError(true)
+        setSubmitting(false)
+      } else {
+        setSubmitted(true)
+        setSubmitting(false)
+      }
     }, SUBMIT_DELAY_MS)
   }
 
   const resetForm = () => {
     setSubmitted(false)
+    setSubmitError(false)
     setForm(EMPTY_CONTACT)
     setErrors({})
   }
 
   return (
     <>
+      <SEO title="Contact Us" description="Ready to start your project? Tell us about it and we'll reply within one business day." />
       <div className="doc">
         <div className="contact-grid">
           <div>
@@ -238,6 +251,16 @@ export function Contact() {
                     </>
                   )}
                 </button>
+
+                {submitError && (
+                  <div className="form-error-block fade-up">
+                    <p>
+                      <strong>Something went wrong.</strong>
+                      <br />
+                      We couldn't send your message. Please try again or email us directly at <em>{STUDIO.email}</em>.
+                    </p>
+                  </div>
+                )}
               </form>
             )}
           </div>

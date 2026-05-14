@@ -1,37 +1,43 @@
 @theme {
-  --color-parchment: #F5EAD8;
-  --color-parchment-deep: #EDDEC4;
-  --color-parchment-darker: #E2D2B4;
-  --color-cream: #FAF3E6;
-  --color-sienna: #A0382A;
-  --color-sienna-deep: #802B20;
-  --color-sienna-bright: #B8443A;
-  --color-ink: #2A1A14;
-  --color-ink-soft: #3D2820;
-  --color-sepia: #8A7560;
-  --color-sepia-light: #B8A488;
-  --color-gold: #C49B5A;
-  --color-forest: #1F2D24;
-  --color-parchment-glass: rgba(245, 234, 216, 0.88);
-  --color-sienna-faint: rgba(160, 56, 42, 0.07);
-  --color-gold-faint: rgba(255, 217, 163, 0.15);
-  --color-sienna-glow: rgba(160, 56, 42, 0.45);
-  --color-sienna-deep-glow: rgba(160, 56, 42, 0.5);
-  --color-ink-glow: rgba(42, 26, 20, 0.22);
-  --color-parchment-soft: rgba(245, 234, 216, 0.1);
-  --color-parchment-faint: rgba(245, 234, 216, 0.05);
-  --color-white-soft: rgba(255, 255, 255, 0.18);
+  --color-cream: #FDFCFB;
+  --color-ink: #000000;
+  --color-accent: #FF2A00;
+  --color-accent-deep: #D42400;
+  --color-accent-soft: rgba(255, 42, 0, 0.08);
+  
+  --color-gray-50: #F9F9F9;
+  --color-gray-100: #F2F2F2;
+  --color-gray-200: #E5E5E5;
+  --color-gray-400: #A3A3A3;
+  --color-gray-600: #666666;
+  --color-gray-800: #262626;
 
-  --font-display: "Fraunces", serif;
-  --font-sans: "Manrope", -apple-system, sans-serif;
+  --color-glass: rgba(253, 252, 251, 0.82);
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-border-strong: rgba(0, 0, 0, 0.15);
+
+  --font-display: "Outfit", -apple-system, sans-serif;
+  --font-sans: "Inter", -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
-  --font-italic: "Cormorant Garamond", serif;
 
-  --ease-svono: cubic-bezier(0.2, 0.8, 0.2, 1);
-  --ease-smooth: cubic-bezier(0.65, 0, 0.35, 1);
+  /* Legacy mappings to prevent breakages */
+  --color-parchment: var(--color-cream);
+  --color-parchment-deep: #F7F5F2;
+  --color-parchment-darker: var(--color-gray-200);
+  --color-sienna: var(--color-accent);
+  --color-sienna-bright: var(--color-accent);
+  --color-sepia: var(--color-gray-600);
+  --color-parchment-glass: var(--color-glass);
 
-  --doc-max-width: 1320px;
-  --nav-height: 73px;
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --doc-max-width: 1440px;
+  --nav-height: 80px;
+
+  /* Vibrant Gradients */
+  --grad-hero: linear-gradient(135deg, #FF2A00 0%, #FF8A00 50%, #7000FF 100%);
+  --grad-surface: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(253, 252, 251, 1) 100%);
 }
 
 @layer base {
@@ -90,31 +96,22 @@
 @layer utilities {
   .svono-period {
     display: inline-block;
-    font-family: var(--font-italic);
-    font-style: italic;
-    color: var(--color-sienna);
-    transform-origin: bottom center;
-  }
-  .svono-period.sway {
-    animation: periodSway 1.2s var(--ease-svono);
-  }
-  @keyframes periodSway {
-    0% { transform: rotate(0deg) scale(1); }
-    35% { transform: rotate(-8deg) scale(1.2); }
-    70% { transform: rotate(4deg) scale(1.08); }
-    100% { transform: rotate(0deg) scale(1); }
+    color: var(--color-accent);
+    margin-left: 1px;
   }
 
   .fade-up {
     opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 0.8s var(--ease-svono) forwards;
+    transform: translateY(30px);
+    animation: fadeUp 1s var(--ease-out) forwards;
   }
-  .fade-up.d1 { animation-delay: 0.1s; }
-  .fade-up.d2 { animation-delay: 0.2s; }
-  .fade-up.d3 { animation-delay: 0.32s; }
-  .fade-up.d4 { animation-delay: 0.42s; }
-  .fade-up.d5 { animation-delay: 0.55s; }
+
+  .fade-up.d1 { animation-delay: 0.15s; }
+  .fade-up.d2 { animation-delay: 0.25s; }
+  .fade-up.d3 { animation-delay: 0.4s; }
+  .fade-up.d4 { animation-delay: 0.5s; }
+  .fade-up.d5 { animation-delay: 0.65s; }
+
   @keyframes fadeUp {
     to {
       opacity: 1;

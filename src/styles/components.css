@@ -1,11 +1,13 @@
 @layer components {
   .nav {
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 50;
-    background: var(--color-parchment-glass);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--color-parchment-darker);
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: var(--color-glass);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-border);
   }
 
   .nav-inner {
@@ -20,11 +22,12 @@
   .nav-brand {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     font-family: var(--font-display);
-    font-size: 22px;
-    font-weight: 400;
-    letter-spacing: -0.025em;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--color-ink);
   }
 
   .nav-brand em {
@@ -76,12 +79,12 @@
   .nav-cta {
     font-family: var(--font-sans);
     font-size: 13px;
-    font-weight: 500;
-    padding: 10px 18px;
+    font-weight: 600;
+    padding: 10px 20px;
     background: var(--color-ink);
-    color: var(--color-parchment);
-    border-radius: 6px;
-    transition: all 0.3s var(--ease-svono);
+    color: white;
+    border-radius: 100px;
+    transition: all 0.3s var(--ease-out);
   }
 
   .nav-cta:hover {
@@ -215,26 +218,26 @@
 
   .section-dark {
     background: var(--color-ink);
-    color: var(--color-parchment);
+    color: white;
     padding: 100px 0;
   }
 
   .section-dark .eyebrow {
-    color: var(--color-sienna-bright);
+    color: var(--color-accent);
   }
 
   .eyebrow {
     font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    color: var(--color-sienna);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--color-accent);
     text-transform: uppercase;
   }
 
   .accent {
-    font-family: var(--font-italic);
-    font-style: italic;
-    color: var(--color-sepia);
+    font-family: var(--font-sans);
+    font-weight: 500;
+    color: var(--color-gray-600);
   }
 
   .hairline {
@@ -256,51 +259,45 @@
 
   .h-display em {
     font-style: italic;
-    color: var(--color-sienna);
+    color: var(--color-accent);
     font-weight: 300;
   }
 
   .section-dark .h-display em {
-    color: var(--color-sienna-bright);
+    color: var(--color-accent);
   }
 
   .btn {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     font-family: var(--font-sans);
     font-size: 14px;
-    font-weight: 500;
-    padding: 13px 22px;
-    border-radius: 6px;
-    transition: all 0.3s var(--ease-svono);
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 100px;
+    transition: all 0.3s var(--ease-out);
     text-decoration: none;
-  }
-
-  .btn .arr {
-    transition: transform 0.3s;
-    display: inline-block;
-  }
-
-  .btn:hover .arr {
-    transform: translateX(4px);
+    cursor: pointer;
   }
 
   .btn-primary {
-    background: var(--color-sienna);
-    color: var(--color-cream);
+    background: var(--color-ink);
+    color: white;
+    border: 1px solid var(--color-ink);
   }
 
   .btn-primary:hover {
-    background: var(--color-sienna-deep);
+    background: var(--color-accent);
+    border-color: var(--color-accent);
     transform: translateY(-2px);
-    box-shadow: 0 12px 28px -10px var(--color-sienna-deep-glow);
+    box-shadow: 0 10px 20px -5px var(--color-accent-soft);
   }
 
   .btn-secondary {
     background: transparent;
     color: var(--color-ink);
-    border: 1px solid var(--color-ink);
+    border: 1px solid var(--color-border-strong);
   }
 
   .btn-secondary:hover {
@@ -319,28 +316,40 @@
   }
 
   .hero {
-    padding: 120px 0 160px;
+    padding: 160px 0 140px;
     position: relative;
     overflow: hidden;
+    background: var(--color-ink);
+    color: white;
   }
 
   .hero::before {
     content: '';
     position: absolute;
-    top: -10%;
-    right: -15%;
-    width: 700px;
-    height: 700px;
-    border-radius: 50%;
-    background: radial-gradient(circle, var(--color-sienna-faint), transparent 65%);
-    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--grad-hero);
+    opacity: 0.85;
     z-index: 0;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--grad-surface);
+    z-index: 1;
   }
 
   .hero-inner {
     position: relative;
-    z-index: 1;
-    max-width: 1100px;
+    z-index: 10;
+    max-width: 1000px;
   }
 
   .hero h1 {
@@ -426,12 +435,11 @@
 
   .section-header .deck {
     font-family: var(--font-display);
-    font-style: italic;
-    font-size: 22px;
-    color: var(--color-sepia);
+    font-size: 20px;
+    color: var(--color-gray-600);
     max-width: 700px;
     margin-top: 20px;
-    line-height: 1.4;
+    line-height: 1.5;
   }
 
   .section-dark .section-header .deck {
@@ -505,7 +513,7 @@
 
   .pillar h3 em {
     font-style: italic;
-    color: var(--color-sienna);
+    color: var(--color-accent);
   }
 
   .pillar-accent {

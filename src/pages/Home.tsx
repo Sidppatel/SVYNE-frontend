@@ -5,6 +5,7 @@ import { Accent } from '@/components/ui/Accent'
 import { WorkTileSvg } from '@/components/ui/WorkTileSvg'
 import { CtaBand } from '@/components/layout/CtaBand'
 import { SEO } from '@/components/layout/SEO'
+import { Plexus } from '@/components/ui/Plexus'
 import { HOME_PILLARS, HOME_PILLAR_TAG, HOME_PROCESS, HOME_TESTIMONIAL } from '@/content/home'
 import { CASE_STUDIES } from '@/content/work'
 import { ROUTES } from '@/routes'
@@ -17,16 +18,17 @@ export function Home() {
     <>
       <SEO />
       <section className="hero">
+        <Plexus />
         <div className="doc">
           <div className="hero-inner">
-            <Eyebrow className="fade-up">◆ One source. Online. ◆</Eyebrow>
-            <h1>
-              <span className="fade-up d1">One source<span className="svono-period sway">.</span></span>
+            <Eyebrow className="fade-up">◆ Studio Platform ◆</Eyebrow>
+            <h1 className="h-display">
+              <span className="fade-up d1">Everything online<span className="svono-period">.</span></span>
               <br />
-              <em className="fade-up d2">Everything online<span className="svono-period sway">.</span></em>
+              <span className="fade-up d2">Built with craft<span className="svono-period">.</span></span>
             </h1>
             <p className="hero-deck fade-up d3">
-              Svono <strong>builds, launches, and maintains</strong> websites, custom apps, and event platforms for small businesses across the Gulf Coast. <em>One source for everything.</em>
+              SVONO builds, launches, and maintains high-performance websites and custom digital products for modern brands. <strong>One source for everything.</strong>
             </p>
             <div className="hero-ctas fade-up d4">
               <Button variant="primary" withArrow onClick={() => navigate(ROUTES.contact)}>
@@ -41,7 +43,6 @@ export function Home() {
             <div className="mouse">
               <div className="wheel" />
             </div>
-            <span>Scroll</span>
           </div>
         </div>
       </section>

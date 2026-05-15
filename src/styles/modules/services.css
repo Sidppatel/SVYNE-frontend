@@ -176,7 +176,7 @@
     font-size: 88px;
     color: var(--color-ink);
     line-height: 1;
-    opacity: 0.05;
+    opacity: 0.4;
     position: sticky;
     top: 120px;
   }

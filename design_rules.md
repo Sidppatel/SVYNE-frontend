@@ -50,8 +50,12 @@ Typography is the cornerstone of the brand. Scale must be fluid.
 ### 3.2 Scales & Rules
 - **H1 (Hero):** `clamp(72px, 11vw, 168px)`. Weight: 200. Line-height: 0.88. Letter-spacing: `-0.055em`.
 - **H2 (Section):** Weight: 300. Line-height: 0.92–0.95. Letter-spacing: `-0.035em` to `-0.04em`.
-- **Eyebrow:** Font: Mono. Size: `10px`. Letter-spacing: `0.2em` to `0.22em`. Text-transform: `uppercase`.
+- **Eyebrow:** Font: Mono. Size: `10px`. Letter-spacing: `0.22em` (Preferred) / `0.2em` (Base). Text-transform: `uppercase`.
 - **Body:** Size: `16px`. Line-height: 1.6. Weight: 400.
+- **Editorial (Narrative):** Size: `17px`. Line-height: 1.7. Used for case study body and team bios.
+- **Editorial (Lead):** Size: `22px`. Line-height: 1.55. Used for story blocks and intro decks.
+- **Small (Caption):** Size: `14px` or `14.5px`. Line-height: 1.6. Used for cards and metadata.
+- **Large Display (Number):** Size: `88px` to `140px`. Weight: 800. Opacity: `0.2` to `0.4`. Used for sticky section indicators and decorative quotes.
 - **Italics:** Use italics for "Sienna" accented words within headlines (e.g., `<em>SVONO</em>`).
 
 ---
@@ -59,49 +63,90 @@ Typography is the cornerstone of the brand. Scale must be fluid.
 ## 4. Layout & Grid
 The layout must feel grounded and technical.
 
-### 4.1 Constraints
+### 4.1 Constraints & Breakpoints
 - **Max Width:** `1440px` (`--doc-max-width`).
 - **Narrow Width:** `1080px`.
+- **Breakpoints:**
+  - `1440px`: Ultra-wide.
+  - `1024px`: Tablet / Small Laptop transition.
+  - `768px`: Tablet Portrait.
+  - `640px`: Mobile Standard.
 - **Gutter (Padding):**
   - Desktop: `48px`.
   - Tablet: `28px`.
   - Mobile: `20px`.
 
-### 4.2 Spacing
+### 4.2 The Triple Grid System
+The site uses hierarchical grids to manage visual density:
+1.  **Ambient Grid (Master):** `88px`. Used for background drifts and large layouts.
+2.  **Work Grid (Tile):** `42px`. Used for work previews and project shells.
+3.  **Micro Grid (Detail):** `32px`. Used for CTA backgrounds and high-density textures.
+
+### 4.3 Spacing
 - **Vertical Section Gap:** `100px` (Desktop) / `60px` (Mobile).
-- **Internal Component Gap:** Multiples of `4px` or `8px`.
+- **Structural Spacing:** Multiples of `8px` for containers and major blocks.
+- **Optical Spacing:** `10px`, `18px`, `22px` used for component internal rhythm and balanced gutters.
 - **Navigation Height:** `80px`.
+
+### 4.4 Z-Index Stack
+- **Global Navigation:** `100`
+- **Hero Overlays:** `10`
+- **Interactive Canvas (Plexus):** `3`
+- **Content Layers:** `1`
+- **Global Background:** `-1`
 
 ---
 
 ## 5. Motion & Interaction
 Motion should be buttery, intentional, and never distracting.
 
-### 5.1 Easing Curves
+### 5.1 Page Transitions (Framer Motion)
+- **Entrance:** `initial={{ opacity: 0, y: 10 }}`.
+- **Presence:** `animate={{ opacity: 1, y: 0 }}`.
+- **Exit:** `exit={{ opacity: 0, y: -10 }}`.
+- **Timing:** `duration: 0.4s` using `[0.23, 1, 0.32, 1]` ease.
+
+### 5.2 Global Physics (Lenis)
+- **Duration:** `1.2s`.
+- **Easing:** `exponential-out` (`(t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))`).
+- **Feel:** Smooth, weighted decelerations.
+
+### 5.2 Transition Scale
+- **0.2s:** UI feedback (Inputs, Toggles).
+- **0.3s:** Standard transitions (Buttons, Links, Opacity).
+- **0.4s:** Heavy UI (Pricing packages, Cards).
+- **0.5s:** Structural reveals (Work tiles, Grid shifts).
+- **0.6s:** Secondary animations (Preview panels, Staggers).
+- **1.0s+:** Ambient drifts and ambient-vine movements.
+
+### 5.3 Micro-Animations
 - **Brand Curve:** `cubic-bezier(0.16, 1, 0.3, 1)` (The "SVYNE" smooth curve).
 - **Standard Out:** `cubic-bezier(0.2, 0.8, 0.2, 1)`.
-
-### 5.2 Micro-Animations
-- **Hover Transitions:** `0.3s` using `--ease-out`.
-- **Fade-Up Staggers:** `1s` duration with `0.15s` increments (`d1` through `d5`).
 - **Logo Rotate:** `15s` linear infinite (Y-axis).
+- **Living Circle Morph:** `5s` duration. Transitions between `50%` radius (circle) and `4px` radius (square) with a custom `.41, .06, .37, .98` curve.
 - **Scroll Indicator:** `2s` loop with `10px` wheel travel.
-- **Kinetic Shimmer:** `9s` duration. Note: Keyframes may vary between linear sweeps (`-200%` to `200%`) and ease-in-out pulses (`0%` to `100%`) depending on module.
 
 ---
 
 ## 6. Component Standards
 
-### 6.1 Buttons
-- **Shape:** Pill-shaped (`border-radius: 100px`).
-- **Typography:** Sans, 14px, Weight 600.
-- **Padding:** `14px 28px` (Primary).
-- **Hover:** `translateY(-2px)` + `box-shadow: 0 10px 20px -5px var(--color-accent-soft)`.
+### 6.1 Border Radius Scale
+- **4px:** Micro tags and small indicators.
+- **6px:** Form inputs and utility panels.
+- **8px:** Submit buttons and action triggers.
+- **10px:** Addons and smaller cards.
+- **12px:** Secondary containers and steps.
+- **14px:** Work tiles and primary interactive cards.
+- **16px:** Hero cards and large section wrappers.
+- **18px:** Bundles and etymology blocks.
+- **20px:** Pricing packages and value cards.
+- **100px:** Pill-shaped primary buttons.
 
-### 6.2 Navigation
-- **Blur:** `backdrop-filter: blur(12px)`.
-- **Links:** Mono, 11px, Uppercase, `0.18em` letter-spacing.
-- **Active State:** `4px` dot indicator centered `22px` below the link.
+### 6.2 Shadow & Glow System
+- **Elevate:** `0 10px 20px -5px rgba(58, 42, 34, 0.1)`.
+- **Glow (Sienna):** `0 12px 28px -10px var(--color-sienna-deep-glow)`.
+- **Glow (Gold):** `0 8px 20px -8px var(--color-gold-faint)`.
+- **Prismatic:** `0 32px 64px -24px rgba(58, 42, 34, 0.18)`.
 
 ### 6.3 Dividers (Hairlines)
 - **Height:** `1px`.
@@ -122,10 +167,21 @@ Motion should be buttery, intentional, and never distracting.
 - Background size: `300% 100%`.
 - Animation: `kinetic-shimmer 9s ease-in-out infinite`.
 
+### 7.3 Technical Plexus
+- **Nodes:** `var(--color-gold)` circles, size `1.2px` to `3.7px`.
+- **Connections:** `var(--color-ink)` hairlines, dynamic opacity based on distance.
+- **Physics:** High-velocity movement with standard mouse attraction (`radius: 180px`).
+
+### 7.4 Micro-Decorations
+- **Signature Line:** `28px x 2px` solid `var(--color-accent)`. Used as a visual lead-in for attribution and metadata.
+- **Sticky Numbers:** Large, low-opacity numbers (`88px`) pinned to the viewport during section scrolls to provide structural context.
+- **Quote Marks:** Large `120px` to `140px` italic glyphs used as background textures for testimonials.
+
 ---
 
 ## 8. Development Rules
 1. **No Inline Styles:** All styling must reside in `.css` modules or the global `base.css`.
-2. **Semantic HTML:** Use `<section>`, `<article>`, `<aside>` for structure.
-3. **Accessibility:** Ensure a minimum contrast ratio of 4.5:1 for body text (Ink on Cream exceeds this).
-4. **Naming:** Use BEM-lite or descriptive lowercase-kebab classes (e.g., `hero-inner`, `btn-primary`).
+   - **Exception:** Dynamic React properties (calculated animation delays, canvas dimensions, or state-driven transforms).
+2. **Naming Convention:** Use BEM-lite with lowercase-kebab classes (e.g., `footer-inner`, `pkg-featured`). Avoid camelCase or Tailwind-style utilities in JSX.
+3. **Semantic HTML:** Use `<section>`, `<article>`, `<aside>` for structure.
+4. **Accessibility:** Ensure a minimum contrast ratio of 4.5:1. Use `aria-hidden="true"` for purely decorative elements like `Plexus` or `AmbientBackground`.

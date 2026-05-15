@@ -15,7 +15,7 @@ export function Plexus() {
     let height = window.innerHeight
 
     const particles: Particle[] = []
-    const particleCount = Math.min(Math.floor((width * height) / 800), 220)
+    const particleCount = Math.floor((width * height) / 7000)
     const connectionDistance = 140
     const mouse = { x: -100, y: -100 }
 

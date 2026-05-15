@@ -105,9 +105,10 @@
 
   .nav-burger {
     display: none;
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     position: relative;
+    margin-right: -12px;
   }
 
   .nav-burger span {
@@ -124,20 +125,19 @@
   }
 
   .nav-burger .b1 {
-    top: 16px;
-  }
-
-  .nav-burger .b2 {
-    top: 24px;
-  }
-
-  .nav-burger .b1.x {
     top: 20px;
+    left: 12px;
+  }
+  .nav-burger .b2 {
+    top: 28px;
+    left: 12px;
+  }
+  .nav-burger .b1.x {
+    top: 24px;
     transform: rotate(45deg);
   }
-
   .nav-burger .b2.x {
-    top: 20px;
+    top: 24px;
     transform: rotate(-45deg);
   }
 

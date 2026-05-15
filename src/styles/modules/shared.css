@@ -92,11 +92,11 @@
 @media (max-width: 640px) {
   .doc,
   .doc-narrow {
-    padding-left: 26px;
-    padding-right: 26px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .section {
-    padding: 70px 0;
+    padding: 60px 0;
   }
 }

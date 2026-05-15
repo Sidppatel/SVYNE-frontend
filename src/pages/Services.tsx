@@ -13,12 +13,12 @@ export function Services() {
           <div className="hero-inner">
             <Eyebrow className="fade-up">◆ Chapter 04 · Services ◆</Eyebrow>
             <h1>
-              <span className="fade-up d1">Three things<span className="svono-period sway">.</span></span>
+              <span className="fade-up d1">Three layers<span className="brand-period sway">.</span></span>
               <br />
-              <em className="fade-up d2">Done well<span className="svono-period sway">.</span></em>
+              <em className="fade-up d2">Built to grow<span className="brand-period sway">.</span></em>
             </h1>
             <p className="hero-deck fade-up d3">
-              Build, launch, maintain. The <strong>full lifecycle</strong> of a website or web product. No handoffs between four people.
+              Vision, growth, foundation. The <strong>full lifecycle</strong> of a website or web product, shaped as living architecture.
             </p>
           </div>
         </div>
@@ -102,7 +102,7 @@ export function Services() {
       <CtaBand
         title={
           <>
-            Talk to Svono about <em>your project.</em>
+            Talk to SVYNE about <em>your project.</em>
           </>
         }
         deck="A 30-minute call. Written proposal in 48 hours. Real number, real timeline."

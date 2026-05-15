@@ -12,7 +12,7 @@
     display: block;
     width: 100%;
     height: 100%;
-    transition: all 0.8s var(--ease-svono);
+    transition: all 0.8s var(--ease-svyne);
     transform-style: preserve-3d;
     animation: sparkRotate 15s linear infinite;
   }
@@ -69,7 +69,7 @@
     left: 50%;
     transform: translateX(-50%);
     border-radius: 2px;
-    animation: mouseWheel 2s infinite var(--ease-svono);
+    animation: mouseWheel 2s infinite var(--ease-svyne);
   }
 
   @keyframes mouseWheel {

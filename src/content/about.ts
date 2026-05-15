@@ -1,9 +1,9 @@
 import type { Pillar, TeamMember, Value } from '@/types'
 
 export const ABOUT_STORY = [
-  'Most small businesses get their site from one freelancer, their hosting from another company, and their "ongoing updates" from a third - usually their cousin. **Three people. Three logins. Three versions of the truth.**',
-  'When something breaks at 11pm, nobody picks up the phone. The site goes down. The reservations stop. The owner shrugs and waits.',
-  'Svono was built to be **one source**. Build, launch, and maintain - all under the same roof, with the same person who knows the project. You call one number. I pick up.',
+  'Most businesses have a site idea before they have the structure to support it. The vision is real, but the roots are scattered across tools, logins, templates, and half-finished systems.',
+  'SVYNE exists to turn that loose vision into living architecture: a digital foundation that can launch, adapt, and keep growing after the first version goes live.',
+  'The name comes from **Site Vision + Vine**. A vine grows by connection and structure. So does a good web system: clear direction above, flexible growth through the middle, stable infrastructure underneath.',
 ]
 
 export const ABOUT_VALUES: Value[] = [
@@ -15,21 +15,21 @@ export const ABOUT_VALUES: Value[] = [
   },
   {
     num: 'ii.',
-    title: 'One source',
+    title: 'Living systems',
     desc:
-      'Build, launch, and maintain in the same hands. One number to call. Always.',
+      'Websites should take root and keep expanding. Build, launch, and maintain belong in one living system.',
   },
   {
     num: 'iii.',
-    title: 'Show the work',
+    title: 'Visible growth',
     desc:
       'Staging link from day one. Weekly Friday updates. Slack channel stays open.',
   },
   {
     num: 'iv.',
-    title: 'Built to last',
+    title: 'Built to root',
     desc:
-      'No throw-away code. The site you launch is the site you grow on, for years.',
+      'No throw-away code. The site you launch is the foundation you grow on, for years.',
   },
 ]
 

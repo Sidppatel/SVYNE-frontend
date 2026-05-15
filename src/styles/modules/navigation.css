@@ -118,8 +118,8 @@
     height: 1.5px;
     background: var(--color-ink);
     transition:
-      transform 0.3s var(--ease-svono),
-      top 0.3s var(--ease-svono),
+      transform 0.3s var(--ease-svyne),
+      top 0.3s var(--ease-svyne),
       opacity 0.2s;
   }
 
@@ -186,5 +186,24 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .nav-inner {
+    padding: 14px 24px;
+  }
+
+  .nav-links,
+  .nav-cta-desk {
+    display: none;
+  }
+
+  .nav-burger {
+    display: block;
+  }
+
+  .nav-mobile-panel {
+    display: block;
   }
 }

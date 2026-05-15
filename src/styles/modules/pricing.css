@@ -167,7 +167,7 @@
     color: var(--color-ink);
     font: 500 13px var(--font-sans);
     border-radius: 6px;
-    transition: all 0.3s var(--ease-svono);
+    transition: all 0.3s var(--ease-svyne);
   }
 
   .pkg-btn:hover {
@@ -232,7 +232,7 @@
     align-items: center;
     border-bottom: 1px solid var(--color-parchment-darker);
     gap: 24px;
-    transition: background 0.3s var(--ease-svono);
+    transition: background 0.3s var(--ease-svyne);
   }
 
   .maintain-row:hover {
@@ -441,7 +441,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: background 0.3s var(--ease-svono);
+    transition: background 0.3s var(--ease-svyne);
   }
 
   .addon:hover {

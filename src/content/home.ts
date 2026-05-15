@@ -22,9 +22,9 @@ export const HOME_PILLARS: Pillar[] = [
 ]
 
 export const HOME_PILLAR_TAG: Record<string, string> = {
-  Build: 'construction',
-  Launch: 'going live',
-  Maintain: 'ongoing care',
+  Build: 'foundation',
+  Launch: 'growth point',
+  Maintain: 'living system',
 }
 
 export const HOME_PROCESS: ProcessStep[] = [
@@ -38,14 +38,14 @@ export const HOME_PROCESS: ProcessStep[] = [
   {
     num: 'ii.',
     title: 'Build',
-    accent: 'construction',
+    accent: 'foundation',
     desc:
       'Weekly check-ins. Shared progress link from day one. Slack channel stays open for the whole project.',
   },
   {
     num: 'iii.',
     title: 'Ship',
-    accent: 'launch day',
+    accent: 'growth point',
     desc:
       'Coordinated launch. 24-hour war-room mode. Then ongoing care if you want it - monthly retainer, three tiers.',
   },
@@ -53,7 +53,7 @@ export const HOME_PROCESS: ProcessStep[] = [
 
 export const HOME_TESTIMONIAL = {
   quote:
-    "Svono shipped the platform we'd been quoted six months for - in five weeks. The site still works. We still talk every month.",
+    "SVYNE shipped the platform we'd been quoted six months for - in five weeks. The site still works. We still talk every month.",
   highlight: 'in five weeks',
   attr: '- Founder, CODE829',
   role: 'Private events · Mobile, AL',

@@ -1,14 +1,14 @@
 export const STUDIO = {
-  name: 'svono',
-  tagline: 'One source. Everything online.',
+  name: 'svyne',
+  tagline: 'The Living Architecture.',
   description:
-    'Built in Mobile, Alabama - working everywhere.',
-  email: 'hello@svono.com',
+    'Growing your site vision through warm, structured technology.',
+  email: 'hello@svyne.com',
   location: 'Mobile, Alabama',
-  schedulingUrl: 'calendly.com/svono',
+  schedulingUrl: 'calendly.com/svyne',
   established: 'EST. 2026',
-  bottomMeta: 'svono · est. 2026 · Mobile, Alabama',
-  bottomTag: 'one source - everything online.',
+  bottomMeta: 'svyne · est. 2026 · Mobile, Alabama',
+  bottomTag: 'site vision · growth · foundation.',
 } as const
 
 export const FOOTER_LINKS = {

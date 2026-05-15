@@ -24,12 +24,12 @@ export function Home() {
           <div className="hero-inner">
             <Eyebrow className="fade-up">◆ Studio Platform ◆</Eyebrow>
             <h1 className="h-display">
-              <span className="fade-up d1">Everything online<span className="svono-period">.</span></span>
+              <span className="fade-up d1">The Living<span className="brand-period">.</span></span>
               <br />
-              <span className="fade-up d2">Built with craft<span className="svono-period">.</span></span>
+              <span className="fade-up d2">Architecture<span className="brand-period">.</span></span>
             </h1>
             <p className="hero-deck fade-up d3">
-              SVONO builds, launches, and maintains high-performance websites and custom digital products for modern brands. <strong>One source for everything.</strong>
+              SVYNE grows site visions into warm, structured digital systems. <strong>Vision above. Growth through the middle. Foundation underneath.</strong>
             </p>
             <div className="hero-ctas fade-up d4">
               <Button variant="primary" withArrow onClick={() => navigate(ROUTES.contact)}>
@@ -61,7 +61,7 @@ export function Home() {
               Three things. <em>Done well.</em>
             </h2>
             <p className="deck">
-              The full lifecycle of a website or web product. Build, launch, maintain - no handoffs between four people.
+              The full lifecycle of a website or web product. Build the foundation, launch the growth, maintain the living system.
             </p>
           </div>
 

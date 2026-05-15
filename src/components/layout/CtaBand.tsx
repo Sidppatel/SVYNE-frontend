@@ -8,14 +8,14 @@ type Props = {
   deck?: string
 }
 
-export function CtaBand({ title, deck = 'One source for everything. I reply within one business day.' }: Props) {
+export function CtaBand({ title, deck = 'Tell SVYNE what you want to grow. I reply within one business day.' }: Props) {
   const navigate = useNavigate()
   return (
     <section className="section section-cta-band">
       <div className="cta-grid" />
       <div className="doc">
         <div className="cta-flow fade-up">
-          <div className="cta-kicker">Ready to build</div>
+          <div className="cta-kicker">Ready to grow</div>
           <div className="cta-copy">
             <h2 className="h-display fade-up d1">{title}</h2>
             <p className="deck fade-up d2">{deck}</p>

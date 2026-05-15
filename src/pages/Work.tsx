@@ -23,12 +23,12 @@ export function Work() {
           <div className="hero-inner">
             <Eyebrow className="fade-up">◆ Chapter 03 · The work ◆</Eyebrow>
             <h1>
-              <span className="fade-up d1">What I've<span className="svono-period sway">.</span></span>
+              <span className="fade-up d1">What grew<span className="brand-period sway">.</span></span>
               <br />
-              <em className="fade-up d2">shipped<span className="svono-period sway">.</span></em>
+              <em className="fade-up d2">from vision<span className="brand-period sway">.</span></em>
             </h1>
             <p className="hero-deck fade-up d3">
-              A small set, growing slowly. <strong>Three real projects</strong> beats ten placeholders. <em>One source</em>, every one.
+              A small set, growing slowly. <strong>Real systems</strong> beat placeholders. Each one has roots, structure, and room to expand.
             </p>
           </div>
         </div>

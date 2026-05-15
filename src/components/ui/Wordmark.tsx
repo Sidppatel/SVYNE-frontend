@@ -5,7 +5,7 @@ type Props = {
 export function Wordmark({ swayOnMount = false }: Props) {
   return (
     <span>
-      svono<em className={`svono-period${swayOnMount ? ' sway' : ''}`}>.</em>
+      svyne<em className={`brand-period${swayOnMount ? ' sway' : ''}`}>.</em>
     </span>
   )
 }

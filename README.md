@@ -1,6 +1,6 @@
-# SONOVO-frontend
+# SVYNE Frontend
 
-Marketing site for **Svono** — a Mobile, Alabama web/software studio. Build, launch, and maintain websites and custom web products. One source for everything.
+Marketing site for **SVYNE** — a Mobile, Alabama web/software studio growing site visions into living digital architecture.
 
 ## Stack
 
@@ -44,7 +44,7 @@ src/
   App.tsx        Router + layout
   main.tsx       Entry
 public/
-  favicon.svg    Svono spark mark
+  favicon.svg    SVYNE three-layer mark
 ```
 
 ## Design tokens
@@ -75,7 +75,7 @@ See `../CLAUDE.md` for full ruleset. Highlights:
 
 - All copy is **English**.
 - No blue. No stock photos. No "starting at."
-- The italic period after `svono.` is part of the wordmark — render the period as a separate `<em>` element.
+- The italic period after `svyne.` is part of the wordmark — render the period as a separate `<em>` element.
 - The `.italian` Cormorant-italic styling stays — apply it to English accent phrases.
 
 ## Build output

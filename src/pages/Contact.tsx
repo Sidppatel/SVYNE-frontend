@@ -58,14 +58,14 @@ export function Contact() {
 
   return (
     <>
-      <SEO title="Contact Svono" description="Ready to start your project? Tell Svono about it and I'll reply within one business day." />
+      <SEO title="Contact SVYNE" description="Ready to grow your site vision? Tell SVYNE about it and I'll reply within one business day." />
       <div className="doc">
         <div className="contact-grid">
           <div>
             <Eyebrow>◆ Chapter 07 · Let's begin ◆</Eyebrow>
             <h1 className="contact-h">
-              Tell Svono<br />
-              <em>about it<span className="svono-period sway">.</span></em>
+              Tell SVYNE<br />
+              <em>what grows<span className="brand-period sway">.</span></em>
             </h1>
             <p className="contact-deck">
               The form below goes straight to <em>{STUDIO.email}</em>. I read every inquiry and reply within one business day.
@@ -219,7 +219,7 @@ export function Contact() {
 
                 <div className="field">
                   <label htmlFor="details" className="field-label">
-                    Tell Svono about the project <span className="req">·</span> required
+                    Tell SVYNE about the project <span className="req">·</span> required
                   </label>
                   <textarea
                     id="details"
@@ -234,7 +234,7 @@ export function Contact() {
                 </div>
 
                 <div className="field">
-                  <span className="field-label">How did you hear about Svono</span>
+                  <span className="field-label">How did you hear about SVYNE</span>
                   <div className="field-pills">
                     {REFERRAL_SOURCES.map(r => (
                       <button

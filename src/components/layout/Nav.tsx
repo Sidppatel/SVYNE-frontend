@@ -15,7 +15,7 @@ export function Nav() {
   return (
     <header className="nav">
       <div className="nav-inner">
-        <button className="nav-brand" onClick={() => navigate(ROUTES.home)} aria-label="Svono home">
+        <button className="nav-brand" onClick={() => navigate(ROUTES.home)} aria-label="SVYNE home">
           <SparkMark size={28} />
           <Wordmark />
         </button>

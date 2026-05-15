@@ -8,18 +8,18 @@ import { renderBold } from '@/lib/renderBold'
 export function About() {
   return (
     <>
-      <SEO title="About Svono" description="Learn about the philosophy behind Svono. Built in Saraland, Alabama." />
+      <SEO title="About SVYNE" description="Learn about the living architecture philosophy behind SVYNE." />
       <section className="hero">
         <div className="doc">
           <div className="hero-inner">
             <Eyebrow className="fade-up">◆ Chapter 02 · About the studio ◆</Eyebrow>
             <h1>
-              <span className="fade-up d1">A small studio<span className="svono-period sway">.</span></span>
+              <span className="fade-up d1">Site vision<span className="brand-period sway">.</span></span>
               <br />
-              <em className="fade-up d2">One source<span className="svono-period sway">.</span></em>
+              <em className="fade-up d2">Given roots<span className="brand-period sway">.</span></em>
             </h1>
             <p className="hero-deck fade-up d3">
-              Svono is a one-person studio in <strong>Saraland, Alabama</strong>. I build websites and custom web products for small businesses across the Gulf Coast - and I don't disappear after launch.
+              SVYNE is a one-person studio in <strong>Saraland, Alabama</strong>. I build websites and custom web products that can take root, launch cleanly, and keep growing after release.
             </p>
           </div>
         </div>
@@ -32,9 +32,9 @@ export function About() {
           <div>
             <Eyebrow className="story-eyebrow">◆ The story ◆</Eyebrow>
             <h2 className="story-h">
-              Why Svono <em>exists<span className="svono-period sway">.</span></em>
+              Why SVYNE <em>exists<span className="brand-period sway">.</span></em>
             </h2>
-            <p className="story-accent">one source - everything online.</p>
+            <p className="story-accent">site vision - living architecture.</p>
           </div>
           <div className="story-body">
             {ABOUT_STORY.map((p, i) => (
@@ -46,10 +46,10 @@ export function About() {
         <div className="name-etymology">
           <div className="ne-label">◆ The name ◆</div>
           <div className="ne-formula">
-            <em>SITE</em> <span className="plus">+</span> <em>VISION</em> <span className="eq">=</span> SVONO<span className="period">.</span>
+            <em>SITE VISION</em> <span className="plus">+</span> <em>VINE</em> <span className="eq">=</span> SVYNE<span className="period">.</span>
           </div>
           <p className="ne-desc">
-            A studio name that sounds like both - and a wordmark that signs itself with an italic period.
+            A studio name for growth, connection, and the technical structure that lets a digital presence expand.
           </p>
         </div>
 

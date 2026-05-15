@@ -9,8 +9,8 @@ interface SEOProps {
 
 export function SEO({
   title,
-  description = 'One source. Everything online. Built in Mobile, Alabama — working everywhere.',
-  name = 'Svono',
+  description = 'The Living Architecture. Growing your site vision through warm, structured technology.',
+  name = 'SVYNE',
   type = 'website'
 }: SEOProps) {
   const fullTitle = title ? `${title} — ${name}` : `${name} · ${description}`

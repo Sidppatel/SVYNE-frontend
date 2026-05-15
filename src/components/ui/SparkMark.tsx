@@ -1,10 +1,16 @@
 type Props = {
   size?: number
   color?: string
+  growthColor?: string
   stroke?: number
 }
 
-export function SparkMark({ size = 26, color = 'var(--color-sienna)', stroke = 7 }: Props) {
+export function SparkMark({
+  size = 26,
+  color = 'var(--color-sienna)',
+  growthColor = 'var(--color-growth)',
+  stroke = 7
+}: Props) {
   return (
     <div className="spark-mark-wrap" style={{ width: size, height: size }}>
       <svg
@@ -25,7 +31,7 @@ export function SparkMark({ size = 26, color = 'var(--color-sienna)', stroke = 7
         <path
           d="M 16 50 Q 30 42 50 50 Q 70 58 84 50"
           fill="none"
-          stroke={color}
+          stroke={growthColor}
           strokeWidth={stroke}
           strokeLinecap="round"
         />

@@ -41,8 +41,8 @@ export function SuccessCta() {
         {/* Final CTA Flow */}
         <div className="integrated-cta fade-up d2">
           <div className="cta-content">
-            <h3 className="h-display">Everything online. <em>One source.</em></h3>
-            <p className="deck">Tell Svono what you're trying to build. I reply within one business day.</p>
+            <h3 className="h-display">Your site vision. <em>Built to grow.</em></h3>
+            <p className="deck">Tell SVYNE what you're trying to build. I reply within one business day.</p>
             <div className="cta-band-ctas">
               <Button variant="primary" withArrow onClick={() => navigate(ROUTES.contact)}>
                 Start a project

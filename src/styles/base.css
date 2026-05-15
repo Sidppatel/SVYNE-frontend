@@ -30,6 +30,8 @@
   --color-gold: #b58b45;
   --color-gold-bright: #d7ad68;
   --color-gold-faint: rgba(181, 139, 69, 0.16);
+  --color-growth: #6f8358;
+  --color-growth-soft: rgba(111, 131, 88, 0.14);
   --color-violet-soft: #8d6c9f;
 
   --font-display: "Outfit", -apple-system, sans-serif;
@@ -55,8 +57,9 @@
 
   --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-  --ease-svono: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-smooth: var(--ease-svono);
+  --ease-brand: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-svyne: var(--ease-brand);
+  --ease-smooth: var(--ease-brand);
 
   --doc-max-width: 1440px;
   --nav-height: 80px;
@@ -104,7 +107,7 @@
   body::before {
     background:
       radial-gradient(circle at 18% 12%, rgba(255, 90, 54, 0.13), transparent 28%),
-      radial-gradient(circle at 82% 22%, rgba(181, 139, 69, 0.12), transparent 26%),
+      radial-gradient(circle at 82% 22%, rgba(111, 131, 88, 0.12), transparent 26%),
       radial-gradient(circle at 66% 86%, rgba(141, 108, 159, 0.1), transparent 32%),
       linear-gradient(135deg, var(--color-bg), var(--color-surface));
     animation: ambient-drift 34s var(--ease-in-out) infinite alternate;
@@ -144,7 +147,7 @@
 }
 
 @layer utilities {
-  .svono-period {
+  .brand-period {
     display: inline-block;
     color: var(--color-accent);
     margin-left: 1px;
@@ -174,12 +177,12 @@
     to { transform: translateX(-50%); }
   }
 
-  @keyframes svono-spin-slow {
+  @keyframes svyne-spin-slow {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
   }
 
-  @keyframes svono-spin-fast {
+  @keyframes svyne-spin-fast {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
   }

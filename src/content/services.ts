@@ -4,7 +4,7 @@ export const SERVICE_BLOCKS: ServiceBlock[] = [
   {
     num: 'i.',
     name: 'Build',
-    accent: 'construction',
+    accent: 'foundation',
     deck:
       'From a clean marketing site to a custom event platform with ticketing. I design, code, and ship it - fully working, owned by you.',
     colA: {
@@ -101,17 +101,17 @@ export const SERVICE_BLOCKS: ServiceBlock[] = [
 
 export const SERVICES_NOT_OFFERED: Pillar[] = [
   {
-    num: '× not Svono',
+    num: '× not SVYNE',
     name: 'Logo & brand identity',
     desc: "I partner with designers for this. Ask and I'll recommend one.",
   },
   {
-    num: '× not Svono',
+    num: '× not SVYNE',
     name: 'SEO-only retainers',
     desc: 'I do SEO foundation. For ongoing content strategy, you want a specialist.',
   },
   {
-    num: '× not Svono',
+    num: '× not SVYNE',
     name: 'UX research',
     desc: 'I design what you tell me users need. Discovery research is a separate scope.',
   },

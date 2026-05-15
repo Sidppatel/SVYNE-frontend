@@ -4,7 +4,6 @@ import { Eyebrow } from '@/components/ui/Eyebrow'
 import { Accent } from '@/components/ui/Accent'
 import { WorkTileSvg } from '@/components/ui/WorkTileSvg'
 import { SEO } from '@/components/layout/SEO'
-import { Plexus } from '@/components/ui/Plexus'
 import { HOME_PILLARS, HOME_PILLAR_TAG, HOME_PROCESS } from '@/content/home'
 import { CASE_STUDIES } from '@/content/work'
 import { ROUTES } from '@/routes'
@@ -19,7 +18,6 @@ export function Home() {
     <>
       <SEO />
       <section className="hero">
-        <Plexus />
         <div className="doc">
           <div className="hero-inner">
             <Eyebrow className="fade-up">◆ Studio Platform ◆</Eyebrow>

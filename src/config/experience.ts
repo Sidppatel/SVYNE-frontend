@@ -1,0 +1,1 @@
+export const ENABLE_GLOBAL_AMBIENT_BACKGROUND = true

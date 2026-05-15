@@ -23,11 +23,11 @@
   }
 
   .section-parchment-deep {
-    background: color-mix(in srgb, var(--color-surface-2) 86%, transparent);
+    background: color-mix(in srgb, var(--color-surface-2) 65%, transparent);
   }
 
   .section-cream {
-    background: color-mix(in srgb, var(--color-surface) 88%, transparent);
+    background: color-mix(in srgb, var(--color-surface) 60%, transparent);
   }
 
   .section-dark {

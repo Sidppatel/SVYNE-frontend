@@ -81,8 +81,8 @@
     font-size: 13px;
     font-weight: 600;
     padding: 10px 20px;
-    background: var(--color-ink);
-    color: white;
+    background: var(--color-accent);
+    color: var(--color-surface);
     border-radius: 100px;
     transition: all 0.3s var(--ease-out);
   }
@@ -177,8 +177,8 @@
   .nav-mobile-cta {
     margin-top: 18px;
     width: 100%;
-    background: var(--color-ink);
-    color: var(--color-parchment);
+    background: var(--color-accent);
+    color: var(--color-surface);
     padding: 16px;
     font: 500 14px var(--font-sans);
     border-radius: 8px;

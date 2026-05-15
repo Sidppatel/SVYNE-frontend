@@ -57,7 +57,7 @@
   }
 
   .value-card {
-    background: white;
+    background: var(--color-surface);
     border-radius: 20px;
     padding: 36px 32px;
     border: 1px solid var(--color-gray-200);
@@ -97,8 +97,11 @@
   }
 
   .name-etymology {
-    background: var(--color-ink);
-    color: var(--color-parchment);
+    background:
+      radial-gradient(circle at 82% 14%, rgba(255, 90, 54, 0.16), transparent 28%),
+      linear-gradient(135deg, var(--color-surface-3), var(--color-surface-2));
+    color: var(--color-ink);
+    border: 1px solid var(--color-border);
     border-radius: 18px;
     padding: 80px 60px;
     margin: 80px 0;
@@ -143,7 +146,7 @@
     font-family: var(--font-italic);
     font-style: italic;
     font-size: 22px;
-    color: var(--color-sepia-light);
+    color: var(--color-text-muted);
     max-width: 640px;
     margin: 0 auto;
   }
@@ -162,7 +165,7 @@
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--color-sienna), var(--color-ink));
+    background: linear-gradient(135deg, var(--color-accent), var(--color-gold-bright));
     display: flex;
     align-items: center;
     justify-content: center;

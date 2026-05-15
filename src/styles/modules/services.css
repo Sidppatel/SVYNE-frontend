@@ -13,7 +13,7 @@
   }
 
   .section-dark .section-header .label-row {
-    border-bottom-color: var(--color-ink-soft);
+    border-bottom-color: var(--color-border);
   }
 
   .section-header h2 {
@@ -43,7 +43,7 @@
   }
 
   .section-dark .section-header .deck {
-    color: var(--color-sepia-light);
+    color: var(--color-text-muted);
   }
 
   .services-strip {
@@ -74,9 +74,9 @@
 
   .pillar.clickable:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 30px 60px -25px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 30px 60px -25px rgba(58, 42, 34, 0.16);
     border-color: var(--color-border);
-    background: white;
+    background: var(--color-surface);
   }
 
   .pillar-num {

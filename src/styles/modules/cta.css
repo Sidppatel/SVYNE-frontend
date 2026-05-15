@@ -1,20 +1,23 @@
 @layer components {
 
-  /* ─────────────────────────────────────────────────────────────
-     FINAL CTA SECTION  ·  section-cta-final
-     Light-field editorial close — cream surface, accent red as
-     the only chromatic moment. The heading does the heavy lifting.
-  ───────────────────────────────────────────────────────────── */
-
+  .section-cta-band,
   .section-cta-final {
     position: relative;
-    padding: 160px 0 200px;
-    background: var(--color-cream);
+    padding: clamp(84px, 10vw, 144px) 0;
+    background:
+      linear-gradient(180deg, color-mix(in srgb, var(--color-surface) 82%, transparent), color-mix(in srgb, var(--color-surface-2) 74%, transparent)),
+      radial-gradient(circle at 86% 22%, rgba(255, 90, 54, 0.12), transparent 28%);
     overflow: hidden;
-    border-top: 1px solid var(--color-border-strong);
+    border-block: 1px solid var(--color-border);
   }
 
-  /* Precision dot-grid — faint, bottom-right quadrant only */
+  .section-cta-final {
+    padding-bottom: clamp(108px, 12vw, 176px);
+    background:
+      linear-gradient(180deg, color-mix(in srgb, var(--color-surface-2) 80%, transparent), color-mix(in srgb, var(--color-surface) 88%, transparent)),
+      radial-gradient(circle at 82% 30%, rgba(255, 90, 54, 0.13), transparent 30%);
+  }
+
   .cta-grid {
     position: absolute;
     inset: 0;
@@ -27,126 +30,155 @@
     opacity: 0.35;
     mask-image: radial-gradient(
       ellipse 60% 70% at 88% 80%,
-      black 0%,
+      rgba(35, 24, 21, 0.76) 0%,
       transparent 100%
     );
     pointer-events: none;
     z-index: 1;
   }
 
-  /* Accent red bleed — bleeds in from bottom-right corner */
+  .section-cta-band::before,
   .section-cta-final::before {
     content: '';
     position: absolute;
-    bottom: -120px;
-    right: -120px;
-    width: 500px;
-    height: 500px;
+    right: max(-120px, -6vw);
+    bottom: -160px;
+    width: clamp(300px, 42vw, 620px);
+    height: clamp(300px, 42vw, 620px);
     background: radial-gradient(
       circle,
-      rgba(255, 42, 0, 0.09) 0%,
+      rgba(255, 90, 54, 0.11) 0%,
       transparent 65%
     );
     pointer-events: none;
     z-index: 2;
+    animation: ambient-drift 30s var(--ease-in-out) infinite alternate;
   }
 
-  /* Ghost chapter numeral — sits behind content, ink at 3% */
+  .section-cta-band::after,
   .section-cta-final::after {
-    content: 'V';
+    content: '';
     position: absolute;
-    right: -0.04em;
-    bottom: -0.18em;
-    font-family: var(--font-display);
-    font-weight: 300;
-    font-size: clamp(240px, 26vw, 440px);
-    line-height: 1;
-    letter-spacing: -0.06em;
-    color: rgba(0, 0, 0, 0.04);
+    left: max(-120px, -8vw);
+    top: 18%;
+    width: clamp(220px, 28vw, 420px);
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-border-strong), transparent);
     pointer-events: none;
     z-index: 1;
-    user-select: none;
   }
 
-  /* Content block */
-  .cta-content {
+  .cta-flow {
     position: relative;
     z-index: 10;
-    max-width: 860px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
+    gap: clamp(36px, 7vw, 96px);
+    align-items: end;
+    padding-top: clamp(28px, 4vw, 44px);
+    border-top: 1px solid var(--color-border-strong);
   }
 
-  /* Mono eyebrow injected via CSS — keeps HTML clean */
-  .cta-content::before {
-    content: 'Ready to build';
-    display: block;
+  .cta-kicker {
+    position: absolute;
+    top: -0.7em;
+    left: 0;
+    padding-right: 18px;
+    background: var(--color-surface-2);
     font-family: var(--font-mono);
     font-size: 10px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--color-accent);
-    margin-bottom: 32px;
   }
 
-  .section-cta-final .h-display {
-    font-size: clamp(44px, 7vw, 100px);
-    line-height: 0.9;
+  .section-cta-final .cta-kicker {
+    background: var(--color-surface);
+  }
+
+  .cta-copy {
+    max-width: 860px;
+  }
+
+  .cta-flow .h-display {
+    font-size: clamp(42px, 6.8vw, 96px);
+    line-height: 0.92;
     color: var(--color-ink);
     margin-bottom: 0;
   }
 
-  .section-cta-final .h-display em {
+  .cta-flow .h-display em {
+    font-style: italic;
     color: var(--color-accent);
+    font-weight: 300;
   }
 
-  .section-cta-final .deck {
+  .cta-flow .deck {
     font-family: var(--font-sans);
     font-size: clamp(15px, 1.6vw, 18px);
     color: var(--color-gray-600);
     line-height: 1.6;
-    margin-top: 36px;
-    max-width: 520px;
+    margin-top: 28px;
+    max-width: 560px;
+  }
+
+  .cta-action-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cta-rule {
+    width: 100%;
+    height: 1px;
+    background: var(--color-border-strong);
+    margin-bottom: 28px;
+    opacity: 0.7;
   }
 
   .cta-band-ctas {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 14px;
     flex-wrap: wrap;
-    margin-top: 64px;
+    margin-top: 0;
   }
 
-  /* Primary — solid red on cream */
+  .section-cta-band .btn-primary,
   .section-cta-final .btn-primary {
     background: var(--color-accent);
     border-color: var(--color-accent);
-    color: #fff;
+    color: var(--color-surface);
   }
 
+  .section-cta-band .btn-primary:hover,
   .section-cta-final .btn-primary:hover {
     background: var(--color-accent-deep);
     border-color: var(--color-accent-deep);
     transform: translateY(-2px);
-    box-shadow: 0 12px 32px -8px rgba(255, 42, 0, 0.32);
+    box-shadow: 0 12px 32px -8px rgba(255, 90, 54, 0.32);
   }
 
-  /* Secondary — outlined ink on cream */
+  .section-cta-band .btn-secondary,
   .section-cta-final .btn-secondary {
     background: transparent;
     color: var(--color-ink);
     border-color: var(--color-border-strong);
   }
 
+  .section-cta-band .btn-secondary:hover,
   .section-cta-final .btn-secondary:hover {
     background: var(--color-gray-100);
     border-color: var(--color-gray-400);
   }
 
-  /* Arrow nudge on primary button hover */
+  .section-cta-band .btn-primary .arr,
   .section-cta-final .btn-primary .arr {
     display: inline-block;
     transition: transform 0.25s var(--ease-out);
   }
 
+  .section-cta-band .btn-primary:hover .arr,
   .section-cta-final .btn-primary:hover .arr {
     transform: translateX(4px);
   }
@@ -279,8 +311,18 @@
   /* ── Responsive ──────────────────────────────────────────── */
 
   @media (max-width: 1024px) {
+    .section-cta-band {
+      padding: 96px 0 116px;
+    }
     .section-cta-final {
       padding: 120px 0 160px;
+    }
+    .cta-flow {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+    .cta-action-block {
+      max-width: 560px;
     }
     .section-parchment-deep {
       padding: 96px 0 120px;
@@ -304,11 +346,20 @@
   }
 
   @media (max-width: 640px) {
+    .section-cta-band {
+      padding: 76px 0 92px;
+    }
     .section-cta-final {
       padding: 96px 0 120px;
     }
-    .section-cta-final .h-display {
+    .cta-flow {
+      padding-top: 24px;
+    }
+    .cta-flow .h-display {
       font-size: 40px;
+    }
+    .cta-flow .deck {
+      margin-top: 20px;
     }
     .section-cta-final::after {
       display: none;

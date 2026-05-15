@@ -56,15 +56,13 @@ export function Plexus() {
 
       draw() {
         if (!ctx) return
-        // Use brand gold for particles on dark background
-        ctx.fillStyle = 'rgba(197, 160, 89, 0.85)'
+        ctx.fillStyle = 'rgba(181, 139, 69, 0.42)'
         ctx.beginPath()
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
         ctx.fill()
 
-        // Add a subtle glow to gold particles
-        ctx.shadowBlur = 12
-        ctx.shadowColor = 'rgba(197, 160, 89, 0.4)'
+        ctx.shadowBlur = 8
+        ctx.shadowColor = 'rgba(255, 90, 54, 0.18)'
         ctx.fill()
         ctx.shadowBlur = 0
       }
@@ -94,9 +92,8 @@ export function Plexus() {
           const distance = Math.sqrt(dx * dx + dy * dy)
 
           if (distance < connectionDistance) {
-            // High-visibility lines for intense plexus feel
-            ctx.strokeStyle = `rgba(255, 255, 255, ${0.55 * (1 - distance / connectionDistance)})`
-            ctx.lineWidth = 1.4
+            ctx.strokeStyle = `rgba(58, 42, 34, ${0.18 * (1 - distance / connectionDistance)})`
+            ctx.lineWidth = 1
             ctx.beginPath()
             ctx.moveTo(particles[i].x, particles[i].y)
             ctx.lineTo(particles[j].x, particles[j].y)

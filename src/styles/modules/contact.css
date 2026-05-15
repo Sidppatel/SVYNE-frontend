@@ -152,9 +152,9 @@
   }
 
   .field-pill.selected {
-    background: var(--color-ink);
-    color: var(--color-parchment);
-    border-color: var(--color-ink);
+    background: var(--color-accent);
+    color: var(--color-surface);
+    border-color: var(--color-accent);
   }
 
   .field-char-count {

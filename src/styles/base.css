@@ -1,40 +1,62 @@
 @theme {
-  --color-cream: #FDFCFB;
-  --color-ink: #000000;
-  --color-accent: #FF2A00;
-  --color-accent-deep: #D42400;
-  --color-accent-soft: rgba(255, 42, 0, 0.08);
+  --color-bg: #f6f1e8;
+  --color-surface: #fbf7f1;
+  --color-surface-2: #f1e9de;
+  --color-surface-3: #e8dccd;
+  --color-text: var(--color-ink);
+  --color-text-muted: #6b5c52;
+  --color-text-faint: #9b8c80;
+  --color-cream: var(--color-surface);
+  --color-ink: #231815;
+  --color-ink-soft: rgba(35, 24, 21, 0.16);
+  --color-ink-surface: #3a2a22;
+  --color-ink-surface-soft: #4a372f;
+  --color-accent: #ff5a36;
+  --color-accent-deep: #d94726;
+  --color-accent-soft: #ffe1d7;
+  --color-accent-wash: rgba(255, 90, 54, 0.12);
   
-  --color-gray-50: #F9F9F9;
-  --color-gray-100: #F2F2F2;
-  --color-gray-200: #E5E5E5;
-  --color-gray-400: #A3A3A3;
-  --color-gray-600: #666666;
-  --color-gray-800: #262626;
+  --color-gray-50: #fbf7f1;
+  --color-gray-100: #f1e9de;
+  --color-gray-200: #e8dccd;
+  --color-gray-400: #b6a89a;
+  --color-gray-600: #6b5c52;
+  --color-gray-800: #3a2a22;
 
-  --color-glass: rgba(253, 252, 251, 0.82);
-  --color-border: rgba(0, 0, 0, 0.08);
-  --color-border-strong: rgba(0, 0, 0, 0.15);
+  --color-glass: rgba(251, 247, 241, 0.84);
+  --color-border: rgba(58, 42, 34, 0.12);
+  --color-border-strong: rgba(58, 42, 34, 0.18);
 
-  --color-gold: #C5A059;
-  --color-gold-bright: #E5C185;
-  --color-gold-faint: rgba(197, 160, 89, 0.12);
+  --color-gold: #b58b45;
+  --color-gold-bright: #d7ad68;
+  --color-gold-faint: rgba(181, 139, 69, 0.16);
+  --color-violet-soft: #8d6c9f;
 
   --font-display: "Outfit", -apple-system, sans-serif;
   --font-sans: "Inter", -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
   /* Legacy mappings to prevent breakages */
-  --color-parchment: var(--color-cream);
-  --color-parchment-deep: #F5F2ED;
-  --color-parchment-darker: var(--color-gray-200);
+  --color-parchment: var(--color-bg);
+  --color-parchment-deep: var(--color-surface-2);
+  --color-parchment-darker: var(--color-surface-3);
+  --color-parchment-faint: rgba(251, 247, 241, 0.66);
   --color-sienna: var(--color-accent);
-  --color-sienna-bright: var(--color-accent);
+  --color-sienna-bright: #ff7658;
+  --color-sienna-deep: var(--color-accent-deep);
+  --color-sienna-faint: var(--color-accent-soft);
+  --color-sienna-deep-glow: rgba(217, 71, 38, 0.28);
+  --color-sienna-glow: rgba(255, 90, 54, 0.24);
   --color-sepia: var(--color-gray-600);
+  --color-sepia-light: #8e7e72;
   --color-parchment-glass: var(--color-glass);
+  --color-white-soft: rgba(251, 247, 241, 0.28);
+  --color-ink-glow: rgba(58, 42, 34, 0.2);
 
   --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-svono: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: var(--ease-svono);
 
   --doc-max-width: 1440px;
   --nav-height: 80px;
@@ -64,12 +86,38 @@
   }
   body {
     font-family: var(--font-sans);
-    background: var(--color-parchment);
+    background: var(--color-bg);
     color: var(--color-ink);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
     scrollbar-width: none;
+  }
+  body::before,
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -2;
+  }
+  body::before {
+    background:
+      radial-gradient(circle at 18% 12%, rgba(255, 90, 54, 0.13), transparent 28%),
+      radial-gradient(circle at 82% 22%, rgba(181, 139, 69, 0.12), transparent 26%),
+      radial-gradient(circle at 66% 86%, rgba(141, 108, 159, 0.1), transparent 32%),
+      linear-gradient(135deg, var(--color-bg), var(--color-surface));
+    animation: ambient-drift 34s var(--ease-in-out) infinite alternate;
+  }
+  body::after {
+    z-index: -1;
+    background-image:
+      radial-gradient(circle, rgba(58, 42, 34, 0.13) 0.75px, transparent 0.75px),
+      linear-gradient(90deg, rgba(58, 42, 34, 0.05) 1px, transparent 1px);
+    background-size: 28px 28px, 88px 88px;
+    opacity: 0.22;
+    animation: ambient-grid 28s linear infinite;
+    mask-image: linear-gradient(to bottom, rgba(35, 24, 21, 0.75), rgba(35, 24, 21, 0.14));
   }
   button {
     background: none;
@@ -136,6 +184,22 @@
     to { transform: rotate(360deg); }
   }
 
+  @keyframes ambient-drift {
+    from {
+      transform: translate3d(-1.5%, -1%, 0) scale(1.02);
+      filter: saturate(0.95);
+    }
+    to {
+      transform: translate3d(1.5%, 1%, 0) scale(1.06);
+      filter: saturate(1.08);
+    }
+  }
+
+  @keyframes ambient-grid {
+    from { background-position: 0 0, 0 0; }
+    to { background-position: 56px 84px, 88px 44px; }
+  }
+
   @keyframes blob-a-move {
     0%, 100% { transform: translate(-50%, -50%) scale(1); }
     50% { transform: translate(-30%, -60%) scale(1.15); }
@@ -168,7 +232,7 @@
   }
 
   .kinetic-fill {
-    background: linear-gradient(110deg, #0a0a0a 0%, #FF2A00 35%, #9c66ff 65%, #0a0a0a 100%);
+    background: linear-gradient(110deg, var(--color-ink) 0%, var(--color-accent) 38%, var(--color-violet-soft) 64%, var(--color-ink) 100%);
     background-size: 300% 100%;
     -webkit-background-clip: text;
     background-clip: text;

@@ -55,7 +55,7 @@
   .cs-hero-img {
     height: 560px;
     border-radius: 16px;
-    background: linear-gradient(135deg, var(--color-sienna), var(--color-ink));
+    background: linear-gradient(135deg, var(--color-accent), var(--color-gold-bright));
     margin-bottom: 80px;
     overflow: hidden;
   }

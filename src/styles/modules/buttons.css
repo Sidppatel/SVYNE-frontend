@@ -14,14 +14,14 @@
   }
 
   .btn-primary {
-    background: var(--color-ink);
-    color: white;
-    border: 1px solid var(--color-ink);
+    background: var(--color-accent);
+    color: var(--color-surface);
+    border: 1px solid var(--color-accent);
   }
 
   .btn-primary:hover {
-    background: var(--color-accent);
-    border-color: var(--color-accent);
+    background: var(--color-accent-deep);
+    border-color: var(--color-accent-deep);
     transform: translateY(-2px);
     box-shadow: 0 10px 20px -5px var(--color-accent-soft);
   }
@@ -33,17 +33,18 @@
   }
 
   .btn-secondary:hover {
-    background: var(--color-ink);
-    color: var(--color-parchment);
+    background: var(--color-surface-2);
+    color: var(--color-ink);
+    border-color: var(--color-accent);
   }
 
   .section-dark .btn-secondary {
-    color: var(--color-parchment);
-    border-color: var(--color-parchment-darker);
+    color: var(--color-ink);
+    border-color: var(--color-border-strong);
   }
 
   .section-dark .btn-secondary:hover {
-    background: var(--color-parchment);
+    background: var(--color-surface);
     color: var(--color-ink);
   }
 }

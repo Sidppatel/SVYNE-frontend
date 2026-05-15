@@ -15,8 +15,8 @@ export function Plexus() {
     let height = window.innerHeight
 
     const particles: Particle[] = []
-    const particleCount = Math.min(Math.floor((width * height) / 15000), 100)
-    const connectionDistance = 150
+    const particleCount = Math.min(Math.floor((width * height) / 6000), 220)
+    const connectionDistance = 100
     const mouse = { x: -100, y: -100 }
 
     class Particle {
@@ -29,9 +29,12 @@ export function Plexus() {
       constructor() {
         this.x = Math.random() * width
         this.y = Math.random() * height
-        this.vx = (Math.random() - 0.5) * 0.5
-        this.vy = (Math.random() - 0.5) * 0.5
-        this.size = Math.random() * 1.5 + 0.5
+        // High-velocity and high-variance speed system
+        const speedMultiplier = Math.random() > 0.85 ? 4.5 : 2.2
+        const speed = Math.random() * speedMultiplier + 0.8
+        this.vx = (Math.random() - 0.5) * speed
+        this.vy = (Math.random() - 0.5) * speed
+        this.size = Math.random() * 2.2 + 0.8
       }
 
       update() {
@@ -53,10 +56,17 @@ export function Plexus() {
 
       draw() {
         if (!ctx) return
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.4)'
+        // Use brand gold for particles on dark background
+        ctx.fillStyle = 'rgba(197, 160, 89, 0.85)'
         ctx.beginPath()
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
         ctx.fill()
+
+        // Add a subtle glow to gold particles
+        ctx.shadowBlur = 12
+        ctx.shadowColor = 'rgba(197, 160, 89, 0.4)'
+        ctx.fill()
+        ctx.shadowBlur = 0
       }
     }
 
@@ -84,8 +94,9 @@ export function Plexus() {
           const distance = Math.sqrt(dx * dx + dy * dy)
 
           if (distance < connectionDistance) {
-            ctx.strokeStyle = `rgba(255, 255, 255, ${0.15 * (1 - distance / connectionDistance)})`
-            ctx.lineWidth = 0.5
+            // High-visibility lines for intense plexus feel
+            ctx.strokeStyle = `rgba(255, 255, 255, ${0.55 * (1 - distance / connectionDistance)})`
+            ctx.lineWidth = 1.4
             ctx.beginPath()
             ctx.moveTo(particles[i].x, particles[i].y)
             ctx.lineTo(particles[j].x, particles[j].y)
@@ -127,7 +138,7 @@ export function Plexus() {
         width: '100%',
         height: '100%',
         pointerEvents: 'none',
-        zIndex: 1,
+        zIndex: 3,
       }}
     />
   )

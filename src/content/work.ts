@@ -41,59 +41,7 @@ export const CASE_STUDIES: CaseStudy[] = [
           'A private members area, a Stripe-backed RSVP flow, a phone-native scanner the door host runs at check-in, and an admin panel with the three reports the founders actually look at. Plus a Maintain retainer - 10 dev hours a month, priority response.',
       },
     ],
-  },
-  {
-    id: 'mariella',
-    tag: 'Marketing Site · 2026',
-    accent: 'tasting room site',
-    title: 'Mariella & Co.',
-    titleEm: 'tasting room',
-    outcome: 'A wine-bar marketing site that books reservations.',
-    desc: '12 pages, hand-set typography, OpenTable integration. Live in two and a half weeks.',
-    sector: 'Restaurant · Mobile, AL',
-    year: '2026',
-    timeline: '2.5 weeks',
-    tier: 'Foundation ($3.5K-6K)',
-    stack: 'Vite & React · OpenTable · Cloudinary',
-    grad: ['var(--color-ink-soft)', 'var(--color-sepia)'],
-    body: [
-      {
-        kind: 'p',
-        text: "A new tasting room opening on Dauphin Street needed a site that would carry the room's tone - quiet, set, considered - and book reservations. I started from a printed menu and three iPhone photos.",
-      },
-      { kind: 'h', text: 'The work' },
-      {
-        kind: 'p',
-        text: "Twelve pages of unhurried, well-set type. A menu that reads. An OpenTable embed that doesn't fight the rest of the page. Image direction for the opening shoot (I wrote the shot list, the team brought it back).",
-      },
-    ],
-  },
-  {
-    id: 'aldridge',
-    tag: 'Custom Dashboard · 2026',
-    accent: 'internal dashboard',
-    title: 'Aldridge Marine',
-    titleEm: 'service dashboard',
-    outcome: 'An internal admin that replaced four spreadsheets.',
-    desc: 'Repair-shop intake, parts ordering, customer status - one panel, one source.',
-    sector: 'Boat services',
-    year: '2026',
-    timeline: '7 weeks',
-    tier: 'Custom ($8K-25K)',
-    stack: 'Vite & React · Postgres · Twilio',
-    grad: ['var(--color-forest)', 'var(--color-sienna)'],
-    body: [
-      {
-        kind: 'p',
-        text: 'A two-location boat-services shop had a brilliant front desk and a chaotic back office. The intake form was paper. Parts orders lived in three Google Sheets. Customer status updates went out by text - when the owner remembered.',
-      },
-      { kind: 'h', text: 'What I built' },
-      {
-        kind: 'p',
-        text: 'A single admin with intake, parts, and customer status - and an auto-text via Twilio when a job changes state. The owner gets one screen on her phone. The shop floor uses a tablet at the intake bay.',
-      },
-    ],
-  },
+  }
 ]
 
 export const WORK_FILTERS = ['All', 'Platform', 'Site', 'Dashboard'] as const

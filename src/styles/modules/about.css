@@ -1,0 +1,233 @@
+@layer components {
+  .story-block {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+    padding: 100px 0;
+  }
+
+  .story-eyebrow {
+    margin-bottom: 18px;
+  }
+
+  .story-h {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 4.6vw, 56px);
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+
+  .story-h em {
+    font-style: italic;
+    color: var(--color-sienna);
+  }
+
+  .story-accent {
+    font-family: var(--font-italic);
+    font-style: italic;
+    font-size: 17px;
+    color: var(--color-sepia);
+    margin-top: 16px;
+  }
+
+  .story-body {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.55;
+    color: var(--color-ink-soft);
+  }
+
+  .story-body p {
+    margin-bottom: 22px;
+  }
+
+  .story-body strong {
+    color: var(--color-ink);
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 40px;
+  }
+
+  .value-card {
+    background: white;
+    border-radius: 20px;
+    padding: 36px 32px;
+    border: 1px solid var(--color-gray-200);
+    transition: all 0.3s var(--ease-out);
+  }
+
+  .value-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-4px);
+  }
+
+  .value-num {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 30px;
+    color: var(--color-sienna);
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .value-title {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    margin-bottom: 8px;
+  }
+
+  .value-title em {
+    font-style: italic;
+  }
+
+  .value-desc {
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--color-ink);
+  }
+
+  .name-etymology {
+    background: var(--color-ink);
+    color: var(--color-parchment);
+    border-radius: 18px;
+    padding: 80px 60px;
+    margin: 80px 0;
+    text-align: center;
+  }
+
+  .ne-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--color-sienna-bright);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .ne-formula {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 5vw, 64px);
+    font-weight: 300;
+    letter-spacing: -0.025em;
+    line-height: 1.05;
+    margin-bottom: 30px;
+  }
+
+  .ne-formula em {
+    font-style: italic;
+    color: var(--color-gold);
+  }
+
+  .ne-formula .plus,
+  .ne-formula .eq {
+    color: var(--color-sienna-bright);
+    font-weight: 200;
+    margin: 0 14px;
+  }
+
+  .ne-formula .period {
+    color: var(--color-sienna-bright);
+  }
+
+  .ne-desc {
+    font-family: var(--font-italic);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--color-sepia-light);
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .team-strip {
+    background: var(--color-cream);
+    border-radius: 16px;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin: 40px 0;
+  }
+
+  .team-portrait {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-sienna), var(--color-ink));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 56px;
+    font-weight: 300;
+    color: var(--color-cream);
+  }
+
+  .team-info h4 {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 4px;
+  }
+
+  .team-info h4 em {
+    font-style: italic;
+    color: var(--color-sienna);
+  }
+
+  .team-role {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--color-sepia);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .team-bio {
+    font-size: 14.5px;
+    line-height: 1.6;
+    max-width: 540px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .values-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .story-block {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 60px 0;
+  }
+
+  .team-strip {
+    flex-direction: column;
+    text-align: center;
+    gap: 24px;
+    padding: 36px 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .name-etymology {
+    padding: 50px 24px;
+  }
+}

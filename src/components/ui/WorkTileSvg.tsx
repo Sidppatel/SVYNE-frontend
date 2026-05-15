@@ -1,3 +1,5 @@
+import { LivingCircles } from './LivingCircles'
+
 type Props = {
   grad: [string, string]
   title: string
@@ -6,63 +8,93 @@ type Props = {
 }
 
 export function WorkTileSvg({ grad, title, year, idx }: Props) {
-  const id = `g${idx}`
   const words = title.split(' ')
   const first = words[0]
   const rest = words.slice(1).join(' ') || ' '
+  
   return (
-    <svg
-      className="work-img-svg"
-      viewBox="0 0 600 320"
-      preserveAspectRatio="xMidYMid slice"
-      aria-hidden="true"
+    <div 
+      className="work-tile-media"
+      style={{ 
+        background: `linear-gradient(135deg, #F0F0F0 0%, #E8E8E8 40%, #D8D8D8 100%)`,
+        overflow: 'hidden'
+      } as React.CSSProperties}
     >
-      <defs>
-        <linearGradient id={id} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor={grad[0]} />
-          <stop offset="100%" stopColor={grad[1]} />
-        </linearGradient>
-      </defs>
-      <rect width="600" height="320" fill={`url(#${id})`} />
-      <text
-        x="50"
-        y="130"
-        fontFamily="Fraunces, serif"
-        fontSize="56"
-        fontWeight="300"
-        fill="var(--color-parchment)"
-        letterSpacing="-2"
+      {/* Precision Dot Grid Overlay */}
+      <div className="work-tile-grid" style={{ opacity: 0.2 }} />
+      <div className="work-tile-overlay" style={{ background: `linear-gradient(135deg, transparent 40%, rgba(0,0,0,0.05) 100%)` }} />
+      <svg
+        className="work-img-svg"
+        viewBox="0 0 600 320"
+        preserveAspectRatio="xMidYMid slice"
+        aria-hidden="true"
       >
-        {first}
-      </text>
-      <text
-        x="50"
-        y="190"
-        fontFamily="Fraunces, serif"
-        fontStyle="italic"
-        fontSize="44"
-        fontWeight="300"
-        fill="var(--color-gold)"
-        letterSpacing="-1"
-      >
-        {rest}
-      </text>
-      <text
-        x="50"
-        y="230"
-        fontFamily="JetBrains Mono, monospace"
-        fontSize="11"
-        fill="var(--color-parchment)"
-        opacity="0.7"
-        letterSpacing="3"
-      >
-        {year.toUpperCase()}
-      </text>
-      <g stroke="var(--color-gold)" strokeWidth="1" opacity="0.35" fill="none">
-        <circle cx="490" cy="160" r="84" />
-        <circle cx="490" cy="160" r="52" />
-        <circle cx="490" cy="160" r="24" />
-      </g>
-    </svg>
+        {/* Massive Phantom Project ID */}
+        <text
+          x="50%"
+          y="60%"
+          textAnchor="middle"
+          dominantBaseline="middle"
+          fontFamily="var(--font-display)"
+          fontSize="120"
+          fontWeight="900"
+          fill="var(--color-ink)"
+          opacity="0.05"
+          className="phantom-index"
+        >
+          {title.toLowerCase()}
+        </text>
+
+        {/* Dynamic Geometric Shard */}
+        <path
+          d="M 450 0 L 600 0 L 600 320 L 520 320 Z"
+          fill={grad[0]}
+          opacity="0.12"
+          className="accent-shard"
+        />
+
+        {/* Precision Typography */}
+        <text
+          x="50%"
+          y="135"
+          textAnchor="middle"
+          fontFamily="var(--font-display)"
+          fontSize="52"
+          fontWeight="300"
+          fill="var(--color-ink)"
+          letterSpacing="-0.03em"
+        >
+          {first.toUpperCase()}
+        </text>
+        <text
+          x="50%"
+          y="185"
+          textAnchor="middle"
+          fontFamily="var(--font-display)"
+          fontStyle="italic"
+          fontSize="46"
+          fontWeight="300"
+          fill="var(--color-accent)"
+          letterSpacing="-0.01em"
+        >
+          {rest.toUpperCase()}
+        </text>
+        
+        {/* Technical Metadata */}
+        <text
+          x="50%"
+          y="235"
+          textAnchor="middle"
+          fontFamily="var(--font-mono)"
+          fontSize="10"
+          fill="var(--color-sepia)"
+          opacity="0.8"
+          letterSpacing="0.3em"
+        >
+          {year.toUpperCase()}
+        </text>
+      </svg>
+      <LivingCircles count={10} color={grad[0]} />
+    </div>
   )
 }

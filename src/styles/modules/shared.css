@@ -1,0 +1,96 @@
+@layer components {
+  .page {
+    min-height: calc(100vh - var(--nav-height));
+  }
+
+  .doc {
+    max-width: var(--doc-max-width);
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+
+  .doc-narrow {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+
+  .section {
+    padding: 100px 0;
+  }
+
+  .section-parchment-deep {
+    background: var(--color-parchment-deep);
+  }
+
+  .section-cream {
+    background: var(--color-cream);
+  }
+
+  .section-dark {
+    background: var(--color-ink);
+    color: white;
+    padding: 100px 0;
+  }
+
+  .section-dark .eyebrow {
+    color: var(--color-accent);
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--color-accent);
+    text-transform: uppercase;
+  }
+
+  .accent {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    color: var(--color-gray-600);
+  }
+
+  .hairline {
+    height: 1px;
+    background: var(--color-parchment-darker);
+    border: 0;
+  }
+
+  .section-dark .hairline {
+    background: var(--color-ink-soft);
+  }
+
+  .h-display {
+    font-family: var(--font-display);
+    font-weight: 300;
+    letter-spacing: -0.04em;
+    line-height: 0.92;
+  }
+
+  .h-display em {
+    font-style: italic;
+    color: var(--color-accent);
+    font-weight: 300;
+  }
+}
+
+@media (max-width: 1024px) {
+  .doc,
+  .doc-narrow {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .doc,
+  .doc-narrow {
+    padding-left: 26px;
+    padding-right: 26px;
+  }
+
+  .section {
+    padding: 70px 0;
+  }
+}

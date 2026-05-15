@@ -1,0 +1,123 @@
+@layer components {
+  /* Chapter IV · Success Section */
+  .integrated-testimonial {
+    margin-top: 60px;
+    max-width: 980px;
+  }
+
+  .integrated-testimonial .testimonial-quote {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(32px, 4.8vw, 56px);
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: var(--color-ink);
+    margin-bottom: 40px;
+  }
+
+  .integrated-testimonial .testimonial-quote em {
+    color: var(--color-accent);
+    font-style: normal;
+  }
+
+  .integrated-testimonial .testimonial-attr {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 32px;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .testimonial-attr-name {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--color-ink);
+  }
+
+  .testimonial-attr-role {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--color-sepia);
+    text-transform: uppercase;
+  }
+
+  /* Final CTA Section */
+  .section-cta-final {
+    position: relative;
+    padding: 140px 0 180px;
+    background: var(--color-cream);
+    overflow: hidden;
+    border-top: 1px solid var(--color-border-strong);
+  }
+
+  /* Precision Blueprint Grid (Subtle) */
+  .cta-grid {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(to right, var(--color-border) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--color-border) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.1;
+    mask-image: radial-gradient(circle at center, black, transparent 90%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* CTA Content */
+  .cta-content {
+    max-width: 820px;
+    position: relative;
+    z-index: 10;
+  }
+
+  .section-cta-final h2 {
+    font-size: clamp(40px, 6vw, 84px);
+    margin-bottom: 32px;
+    line-height: 0.95;
+    font-family: var(--font-display);
+    font-weight: 300;
+    letter-spacing: -0.04em;
+  }
+
+  .section-cta-final h2 em {
+    font-style: italic;
+    color: var(--color-accent);
+    font-weight: 300;
+  }
+
+  .section-cta-final .deck {
+    font-family: var(--font-italic);
+    font-style: italic;
+    font-size: clamp(18px, 2.4vw, 24px);
+    color: var(--color-sepia);
+    margin-bottom: 64px;
+    max-width: 600px;
+    line-height: 1.5;
+  }
+
+  .cta-band-ctas {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-top: 84px;
+  }
+
+  @media (max-width: 1024px) {
+    .section-cta-final {
+      padding: 100px 0 140px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .integrated-testimonial .testimonial-quote {
+      font-size: 28px;
+    }
+    .section-cta-final h2 {
+      font-size: 38px;
+    }
+  }
+}

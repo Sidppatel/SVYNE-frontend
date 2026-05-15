@@ -3,12 +3,13 @@ import { Button } from '@/components/ui/Button'
 import { Eyebrow } from '@/components/ui/Eyebrow'
 import { Accent } from '@/components/ui/Accent'
 import { WorkTileSvg } from '@/components/ui/WorkTileSvg'
-import { CtaBand } from '@/components/layout/CtaBand'
 import { SEO } from '@/components/layout/SEO'
 import { Plexus } from '@/components/ui/Plexus'
-import { HOME_PILLARS, HOME_PILLAR_TAG, HOME_PROCESS, HOME_TESTIMONIAL } from '@/content/home'
+import { HOME_PILLARS, HOME_PILLAR_TAG, HOME_PROCESS } from '@/content/home'
 import { CASE_STUDIES } from '@/content/work'
 import { ROUTES } from '@/routes'
+import { SuccessSection } from '@/components/layout/SuccessSection'
+import { FinalCta } from '@/components/layout/FinalCta'
 
 export function Home() {
   const navigate = useNavigate()
@@ -102,7 +103,7 @@ export function Home() {
           <div className="work-grid">
             <Link
               to={ROUTES.workDetail(featured.id)}
-              className="work-tile"
+              className="work-tile fade-up d1"
             >
               <div className="work-img">
                 <WorkTileSvg grad={featured.grad} title={featured.title} year={featured.year} idx={featured.id} />
@@ -117,7 +118,7 @@ export function Home() {
               </div>
             </Link>
 
-            <div className="work-tile placeholder">
+            <div className="work-tile placeholder fade-up d2">
               <div className="work-outcome">NEXT · IN PROGRESS</div>
               <div className="work-title">
                 <em>Your project here.</em>
@@ -163,31 +164,8 @@ export function Home() {
         </div>
       </section>
 
-      <section className="section section-cream">
-        <div className="doc-narrow">
-          <div className="testimonial">
-            <div className="testimonial-mark">"</div>
-            <p className="testimonial-quote">
-              {HOME_TESTIMONIAL.quote.split(HOME_TESTIMONIAL.highlight)[0]}
-              <em>{HOME_TESTIMONIAL.highlight}</em>
-              {HOME_TESTIMONIAL.quote.split(HOME_TESTIMONIAL.highlight)[1]}
-            </p>
-            <div className="testimonial-attr">
-              <span className="testimonial-attr-name">{HOME_TESTIMONIAL.attr}</span>
-              <span className="testimonial-attr-role">{HOME_TESTIMONIAL.role}</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <CtaBand
-        title={
-          <>
-            Everything online. <em>One source.</em>
-          </>
-        }
-        deck="Tell Svono what you're trying to build. I reply within one business day."
-      />
+      <SuccessSection />
+      <FinalCta />
     </>
   )
 }

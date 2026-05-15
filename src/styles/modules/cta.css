@@ -2,67 +2,80 @@
 
   /* ─────────────────────────────────────────────────────────────
      FINAL CTA SECTION  ·  section-cta-final
-     Dark-field inversion — ink background breaks the cream rhythm
-     and signals the conversation is about to start.
+     Light-field editorial close — cream surface, accent red as
+     the only chromatic moment. The heading does the heavy lifting.
   ───────────────────────────────────────────────────────────── */
 
   .section-cta-final {
     position: relative;
     padding: 160px 0 200px;
-    background: var(--color-ink);
+    background: var(--color-cream);
     overflow: hidden;
-    color: var(--color-cream);
+    border-top: 1px solid var(--color-border-strong);
   }
 
-  /* Fine ruled-paper texture — horizontal lines only, very subtle */
+  /* Precision dot-grid — faint, bottom-right quadrant only */
   .cta-grid {
     position: absolute;
     inset: 0;
-    background-image:
-      linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
-    background-size: 100% 72px;
+    background-image: radial-gradient(
+      circle,
+      var(--color-border-strong) 1px,
+      transparent 1px
+    );
+    background-size: 32px 32px;
+    opacity: 0.35;
+    mask-image: radial-gradient(
+      ellipse 60% 70% at 88% 80%,
+      black 0%,
+      transparent 100%
+    );
     pointer-events: none;
     z-index: 1;
   }
 
-  /* Red bleed — top-left editorial accent */
+  /* Accent red bleed — bleeds in from bottom-right corner */
   .section-cta-final::before {
     content: '';
     position: absolute;
-    top: -80px;
-    left: -80px;
-    width: 380px;
-    height: 380px;
-    background: radial-gradient(circle, rgba(255,42,0,0.18) 0%, transparent 70%);
+    bottom: -120px;
+    right: -120px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(
+      circle,
+      rgba(255, 42, 0, 0.09) 0%,
+      transparent 65%
+    );
     pointer-events: none;
     z-index: 2;
   }
 
-  /* Large decorative chapter numeral — background typographic element */
+  /* Ghost chapter numeral — sits behind content, ink at 3% */
   .section-cta-final::after {
     content: 'V';
     position: absolute;
-    right: -0.05em;
-    bottom: -0.2em;
+    right: -0.04em;
+    bottom: -0.18em;
     font-family: var(--font-display);
     font-weight: 300;
-    font-size: clamp(280px, 28vw, 480px);
+    font-size: clamp(240px, 26vw, 440px);
     line-height: 1;
     letter-spacing: -0.06em;
-    color: rgba(255, 255, 255, 0.03);
+    color: rgba(0, 0, 0, 0.04);
     pointer-events: none;
     z-index: 1;
     user-select: none;
   }
 
-  /* Content sits above decorative layers */
+  /* Content block */
   .cta-content {
     position: relative;
     z-index: 10;
     max-width: 860px;
   }
 
-  /* "Start a project" label — mono eyebrow above the heading */
+  /* Mono eyebrow injected via CSS — keeps HTML clean */
   .cta-content::before {
     content: 'Ready to build';
     display: block;
@@ -77,11 +90,10 @@
   .section-cta-final .h-display {
     font-size: clamp(44px, 7vw, 100px);
     line-height: 0.9;
-    color: var(--color-cream);
+    color: var(--color-ink);
     margin-bottom: 0;
   }
 
-  /* Override global .h-display em accent color — stays red on dark bg */
   .section-cta-final .h-display em {
     color: var(--color-accent);
   }
@@ -89,7 +101,7 @@
   .section-cta-final .deck {
     font-family: var(--font-sans);
     font-size: clamp(15px, 1.6vw, 18px);
-    color: rgba(253, 252, 251, 0.55);
+    color: var(--color-gray-600);
     line-height: 1.6;
     margin-top: 36px;
     max-width: 520px;
@@ -98,37 +110,38 @@
   .cta-band-ctas {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 20px;
     flex-wrap: wrap;
     margin-top: 64px;
   }
 
-  /* On dark bg, primary button flips to accent red */
+  /* Primary — solid red on cream */
   .section-cta-final .btn-primary {
     background: var(--color-accent);
     border-color: var(--color-accent);
-    color: white;
+    color: #fff;
   }
 
   .section-cta-final .btn-primary:hover {
     background: var(--color-accent-deep);
     border-color: var(--color-accent-deep);
-    box-shadow: 0 12px 32px -8px rgba(255, 42, 0, 0.45);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px -8px rgba(255, 42, 0, 0.32);
   }
 
-  /* On dark bg, secondary button is ghost cream */
+  /* Secondary — outlined ink on cream */
   .section-cta-final .btn-secondary {
-    color: rgba(253, 252, 251, 0.7);
-    border-color: rgba(253, 252, 251, 0.2);
+    background: transparent;
+    color: var(--color-ink);
+    border-color: var(--color-border-strong);
   }
 
   .section-cta-final .btn-secondary:hover {
-    background: rgba(253, 252, 251, 0.08);
-    color: var(--color-cream);
-    border-color: rgba(253, 252, 251, 0.4);
+    background: var(--color-gray-100);
+    border-color: var(--color-gray-400);
   }
 
-  /* Arrow span inside primary button */
+  /* Arrow nudge on primary button hover */
   .section-cta-final .btn-primary .arr {
     display: inline-block;
     transition: transform 0.25s var(--ease-out);
@@ -141,8 +154,6 @@
 
   /* ─────────────────────────────────────────────────────────────
      PROOF SECTION  ·  section-parchment-deep  (Chapter IV · Result)
-     Quote is the hero — runs nearly full-width with a tight
-     column on the right for the attribution mark.
   ───────────────────────────────────────────────────────────── */
 
   .section-parchment-deep {
@@ -150,7 +161,6 @@
     padding: 120px 0 140px;
   }
 
-  /* Section header — label row + heading */
   .section-parchment-deep .section-header {
     margin-bottom: 72px;
   }
@@ -162,7 +172,6 @@
     margin-bottom: 24px;
   }
 
-  /* Thin rule extending after the label row items */
   .label-row::after {
     content: '';
     flex: 1;
@@ -186,7 +195,7 @@
     font-weight: 300;
   }
 
-  /* Testimonial — two-column on desktop, stacked on mobile */
+  /* Testimonial — two-column grid: quote left, attribution right */
   .integrated-testimonial {
     display: grid;
     grid-template-columns: 1fr auto;
@@ -198,7 +207,6 @@
     margin-top: 0;
   }
 
-  /* Quote text */
   .integrated-testimonial .testimonial-quote {
     position: relative;
     font-family: var(--font-display);
@@ -212,7 +220,6 @@
     margin-bottom: 0;
   }
 
-  /* Large opening quotation mark */
   .integrated-testimonial .testimonial-quote::before {
     content: '\201C';
     position: absolute;
@@ -229,10 +236,8 @@
 
   .integrated-testimonial .testimonial-quote em.kinetic-fill {
     font-style: normal;
-    /* kinetic-fill gradient animation already defined in base.css */
   }
 
-  /* Attribution — right-aligned column */
   .testimonial-attr {
     display: flex;
     flex-direction: column;
@@ -244,7 +249,6 @@
     padding-top: 0;
   }
 
-  /* Small horizontal red rule above attribution text */
   .testimonial-attr::before {
     content: '';
     display: block;

@@ -354,6 +354,16 @@
   h1 {
     font-size: clamp(48px, 11vw, 82px) !important;
   }
+
+  .plexus-canvas {
+    opacity: 0.35;
+  }
+
+  .ambient-vine::before,
+  .ambient-vine::after {
+    min-width: 0;
+    min-height: 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -300,15 +300,22 @@
   .calendar-embed-wrap {
     margin-top: 48px;
     background: var(--color-bg);
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--color-border-strong);
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 40px 100px -40px rgba(58, 42, 34, 0.22);
+    box-shadow:
+      0 4px 24px -8px rgba(58, 42, 34, 0.10),
+      0 40px 100px -40px rgba(58, 42, 34, 0.18);
+  }
+
+  .calendar-embed-wrap .calendly-inline-widget {
+    border: none;
   }
 
   .calendar-embed-wrap iframe {
     display: block;
-    background: transparent;
+    background: var(--color-bg);
+    border: none;
   }
 }
 
@@ -331,5 +338,23 @@
 
   .contact-form {
     padding: 28px 22px;
+  }
+
+  .contact-h {
+    font-size: 42px;
+    margin: 14px 0 20px;
+  }
+
+  .contact-deck {
+    font-size: 18px;
+    margin-bottom: 28px;
+  }
+
+  .calendar-embed-wrap {
+    margin-top: 32px;
+  }
+
+  .calendar-embed-wrap iframe {
+    height: 580px;
   }
 }

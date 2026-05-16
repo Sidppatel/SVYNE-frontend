@@ -128,6 +128,7 @@ export function Plexus() {
   return (
     <canvas
       ref={canvasRef}
+      className="plexus-canvas"
       style={{
         position: 'absolute',
         top: 0,

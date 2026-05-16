@@ -365,4 +365,52 @@
   .section-header .deck {
     font-size: 17px;
   }
+
+  .service-block {
+    padding: 56px 0;
+  }
+
+  .sb-num {
+    font-size: 48px;
+  }
+
+  .sb-title {
+    font-size: 32px !important;
+    letter-spacing: -0.025em;
+    word-break: break-word;
+  }
+
+  .sb-deck {
+    font-size: 17px;
+    line-height: 1.45;
+  }
+
+  .sb-stats {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .sb-stat {
+    padding: 16px 20px;
+  }
+
+  .sb-list li {
+    font-size: 14px;
+  }
+
+  .pillar {
+    padding: 28px 22px;
+  }
+
+  .pillar h3 {
+    font-size: 28px;
+  }
+
+  .pillar h3.pillar-h-sm {
+    font-size: 24px;
+  }
+
+  .process-step {
+    padding: 24px;
+  }
 }

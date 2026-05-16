@@ -99,7 +99,7 @@ export function Contact() {
                     rel="noopener noreferrer"
                     className="link-draw"
                   >
-                    {STUDIO.schedulingUrl} →
+                    Book a 30-min call →
                   </a>
                 </div>
               </div>
@@ -297,33 +297,6 @@ export function Contact() {
           ))}
         </div>
       </div>
-
-      <section className="section section-parchment-deep calendar-section">
-        <div className="doc">
-          <div className="section-header">
-            <div className="label-row">
-              <Eyebrow>Direct access · skip the form</Eyebrow>
-              <Accent>30 minutes</Accent>
-            </div>
-            <h2>
-              Book a <em>30-min call.</em>
-            </h2>
-            <p className="deck">
-              If you already have a clear brief, skip the form and put yourself on my calendar. We'll talk vision, scope, and timeline.
-            </p>
-          </div>
-
-          <div className="calendar-embed-wrap fade-up">
-            <iframe
-              src={`https://${STUDIO.schedulingUrl}?embed=1`}
-              width="100%"
-              height="700"
-              frameBorder="0"
-              title="Schedule a call with SVYNE"
-            />
-          </div>
-        </div>
-      </section>
     </>
   )
 }

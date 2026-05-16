@@ -4,6 +4,7 @@ import { Nav } from '@/components/layout/Nav'
 import { Footer } from '@/components/layout/Footer'
 import { PageWrap } from '@/components/layout/PageWrap'
 import { AmbientBackground } from '@/components/layout/AmbientBackground'
+import { CalendlyBadge } from '@/components/ui/CalendlyBadge'
 import { SmoothScroll } from '@/components/layout/SmoothScroll'
 import { useScrollToTop } from '@/hooks/useScrollToTop'
 import { ROUTES } from '@/routes'
@@ -46,6 +47,7 @@ function App() {
         </AnimatePresence>
       </PageWrap>
       <Footer />
+      <CalendlyBadge />
     </SmoothScroll>
   )
 }

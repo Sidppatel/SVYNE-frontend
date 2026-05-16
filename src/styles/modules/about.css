@@ -36,7 +36,7 @@
     font-style: italic;
     font-size: 22px;
     line-height: 1.55;
-    color: var(--color-ink-soft);
+    color: var(--color-text-muted);
   }
 
   .story-body p {
@@ -285,6 +285,35 @@
 
   .name-etymology {
     padding: 50px 24px;
+  }
+
+  .ne-formula {
+    font-size: 28px;
+  }
+
+  .ne-formula .plus,
+  .ne-formula .eq {
+    margin: 0 8px;
+  }
+
+  .ne-desc {
+    font-size: 17px;
+  }
+
+  .story-body {
+    font-size: 18px;
+  }
+
+  .story-h {
+    font-size: 32px;
+  }
+
+  .story-accent {
+    font-size: 15px;
+  }
+
+  .team-bio {
+    max-width: 100%;
   }
 
   .about-home-grid {

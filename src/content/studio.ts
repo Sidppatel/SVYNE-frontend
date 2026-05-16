@@ -5,7 +5,7 @@ export const STUDIO = {
     'Growing your site vision through warm, structured technology.',
   email: 'hello@svyne.com',
   location: 'Mobile, Alabama',
-  schedulingUrl: 'calendly.com/svyne',
+  schedulingUrl: 'calendly.com/patelsiddh1408/30min',
   established: 'EST. 2026',
   bottomMeta: 'svyne · est. 2026 · Mobile, Alabama',
   bottomTag: 'site vision · growth · foundation.',

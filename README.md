@@ -1,87 +1,178 @@
-# SVYNE Frontend
+# SVYNE — The Living Architecture.
 
-Marketing site for **SVYNE** — a Mobile, Alabama web/software studio growing site visions into living digital architecture.
+> *Growing your site vision through warm, structured technology.*
 
-## Stack
+**SVYNE** (Site Vision + Vine) is a one-person web studio based in **Mobile, Alabama**, founded by **Siddh Patel**. We build custom websites and web platforms that take root, launch cleanly, and keep growing after release.
 
-- Vite + React 19 + TypeScript
-- Tailwind v4 (tokens via `@theme`)
-- react-router-dom v7
-- pnpm
+The name captures the philosophy: a vine grows by connection and structure. So does a good web system — clear direction above, flexible growth through the middle, stable infrastructure underneath.
 
-## Run locally
+---
+
+## What SVYNE Does
+
+SVYNE operates on three pillars — the full lifecycle of a website or web product:
+
+### i. Build — *foundation*
+From a clean marketing site to a custom event platform with ticketing. Design, code, and ship — fully working, owned by you.
+
+**What I make:**
+- Marketing sites — 5 to 20 pages, fully responsive, fast
+- Custom dashboards — admin tools, internal panels, reporting
+- Event platforms — ticketing, scanning, member access
+- Web applications — multi-user products with auth + database
+- Integrations — Stripe, Mailchimp, calendars, third-party APIs
+
+| Detail | Value |
+|---|---|
+| Timeline | 2–6 weeks |
+| Price range | $3,500 – $25,000+ |
+| Code ownership | 100% yours |
+
+### ii. Launch — *going live*
+Launch day is not a "fingers crossed" moment. Hosting set up, SEO foundation laid, day-of monitoring in place.
+
+- Domain & hosting — fully configured, SSL active
+- SEO foundation — sitemap, robots, meta tags, OG images
+- Analytics — Plausible or Fathom, privacy-first
+- Email — hello@yourdomain working day one
+- Day-of coordination — 24-hour monitoring
+
+### iii. Maintain — *ongoing care*
+Launching is 20% of the work. Maintain is the other 80%.
+
+| Tier | Price | Includes |
+|---|---|---|
+| **Essential** | $99/mo | Uptime monitoring · weekly backups · security patches · 1-hour outage response |
+| **Active** | $299/mo | Essential + 4 hrs monthly content updates + performance report |
+| **Full** | $799/mo | Active + 10 dev hours/mo + priority response + monthly strategy call |
+
+---
+
+## Pricing
+
+| Tier | Price | Best For |
+|---|---|---|
+| **Foundation** | $3,500 – $6,000 | Restaurants, local services, single-product businesses |
+| **Custom** | $8,000 – $25,000 | Event hosts, SaaS tools, internal platforms |
+| **Bespoke** | $25,000+ | Established businesses, multi-feature platforms |
+
+**Payment terms:** 50% deposit on signing, 50% on launch. Net 14 invoicing. Maintain can be cancelled with 30-day notice.
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | Vite + React 19 + TypeScript |
+| Styling | Vanilla CSS with CSS variables (design token system) |
+| Routing | react-router-dom v7 |
+| Animations | Framer Motion + Lenis smooth scroll |
+| Scheduling | Calendly popup widget |
+| Package manager | pnpm |
+| Node | >= 20.0.0 |
+
+---
+
+## Getting Started
 
 ```bash
+# Install dependencies
 pnpm install
+
+# Start dev server
 pnpm dev
 ```
 
-Open <http://localhost:5173>.
+Open [http://localhost:5173](http://localhost:5173).
 
-## Scripts
+### Scripts
 
-| Command | What it does |
+| Command | Description |
 |---|---|
 | `pnpm dev` | Start Vite dev server with HMR |
-| `pnpm build` | Type-check (`tsc -b`) then produce a production build in `dist/` |
+| `pnpm build` | Type-check + production build to `dist/` |
 | `pnpm preview` | Serve the production build locally |
 | `pnpm lint` | Run ESLint |
 
-## Project structure
+---
+
+## Project Structure
 
 ```
 src/
-  pages/         Route components (Home, Services, Work, WorkDetail, Pricing, About, Contact)
+  App.tsx              Router + layout shell
+  main.tsx             Entry point
+  routes.ts            Centralized route paths
+  pages/               Route-level components
+    Home.tsx
+    Services.tsx
+    Work.tsx
+    WorkDetail.tsx
+    Pricing.tsx
+    About.tsx
+    Contact.tsx
   components/
-    ui/          Shared primitives (SparkMark, Wordmark, Eyebrow, Italian, Button, WorkTileSvg)
-    layout/     Nav, Footer, PageWrap, CtaBand
-  content/       All copy + data (studio, home, services, work, pricing, about, contact)
-  hooks/         useScrollToTop, useBodyScrollLock
-  lib/           validators, renderBold
-  types/         Shared TS types
-  styles/        index.css (tokens + base + utilities), components.css, pages.css
-  routes.ts      Centralized route paths
-  App.tsx        Router + layout
-  main.tsx       Entry
+    ui/                Shared primitives (Button, Eyebrow, Accent, Plexus, CalendlyBadge, etc.)
+    layout/            Nav, Footer, PageWrap, AmbientBackground, CtaBand, FinalCta
+  content/             All copy + data constants (studio, home, services, work, pricing, about, contact)
+  hooks/               useScrollToTop, useBodyScrollLock
+  lib/                 Validators, renderBold utility
+  types/               Shared TypeScript types
+  styles/
+    base.css           Design tokens, global resets, CSS variables
+    modules/           Per-component CSS (services, about, contact, pricing, etc.)
+    shared.css         Layout utilities (.doc, .section, etc.)
 public/
-  favicon.svg    SVYNE three-layer mark
+  favicon.svg          SVYNE three-layer mark
 ```
 
-## Design tokens
+---
 
-All design tokens live in `src/styles/index.css` under `@theme` — colors, fonts, easings. Tailwind consumes them automatically. Do not hardcode hex values, font sizes, or breakpoints anywhere else.
+## Pages
 
-## Routes
+| Route | Page | Purpose |
+|---|---|---|
+| `/` | Home | Hero, three pillars, work preview, process, CTA |
+| `/services` | Services | Deep-dive into Build / Launch / Maintain |
+| `/work` | Work | Case study index |
+| `/work/:slug` | Work Detail | Individual case study |
+| `/pricing` | Pricing | Tiers, maintain plans, bundles, add-ons |
+| `/about` | About | Studio story, values, team, location |
+| `/contact` | Contact | Inquiry form + next steps |
 
-- `/` — Home
-- `/services` — Services deep-dives
-- `/work` — Work index (filter chips)
-- `/work/:slug` — Case study detail
-- `/pricing` — Pricing tiers, maintain plans, bundles, add-ons
-- `/about` — Studio, values, team, location
-- `/contact` — Contact form + journey
+---
 
-## Code rules
+## Design System
 
-See `../CLAUDE.md` for full ruleset. Highlights:
+The visual identity follows a **"Studio White"** and **"Technical Slate"** aesthetic:
 
-- No comments in code (clear names instead).
-- No inline `style={{}}` — use classes.
-- No hardcoded values — reference tokens.
-- Pages are layout + composition only; logic in `hooks/` and `lib/`.
-- All copy and constants in `src/content/`.
+- **Color palette:** Warm parchment backgrounds, ink-dark text, sienna accent (`#ff5a36`), gold highlights
+- **Typography:** Instrument Serif (display), Outfit (sans), JetBrains Mono (mono), Cormorant Garamond (italic accents)
+- **Motion:** Lenis smooth scroll, Framer Motion page transitions, ambient Plexus particle animation
+- **Layout:** `.doc` container with responsive padding (48px → 28px → 20px)
 
-## Brand
+All tokens are centralized in `src/styles/base.css`. No hardcoded hex values, font sizes, or breakpoints elsewhere.
 
-- All copy is **English**.
+For the full design specification, see [`design_rules.md`](./design_rules.md).
+
+---
+
+## Brand Guidelines
+
+- The italic period after **svyne.** is part of the wordmark
 - No blue. No stock photos. No "starting at."
-- The italic period after `svyne.` is part of the wordmark — render the period as a separate `<em>` element.
-- The `.italian` Cormorant-italic styling stays — apply it to English accent phrases.
+- All copy in `src/content/` — never hardcode strings in components
+- Cormorant italic styling for accent phrases
 
-## Build output
+---
 
-Production build:
+## Contact
 
-- ~42 KB CSS (~8 KB gzip)
-- ~282 KB JS (~87 KB gzip)
-- 53 modules transformed
+- **Email:** hello@svyne.com
+- **Location:** Mobile, Alabama
+- **Schedule:** [calendly.com/patelsiddh1408/30min](https://calendly.com/patelsiddh1408/30min)
+
+---
+
+*SVYNE · EST. 2026 · site vision · growth · foundation.*

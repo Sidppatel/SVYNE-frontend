@@ -292,6 +292,24 @@
     line-height: 1.55;
     color: var(--color-sepia);
   }
+
+  .calendar-section {
+    border-block: 1px solid var(--color-parchment-darker);
+  }
+
+  .calendar-embed-wrap {
+    margin-top: 48px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 40px 100px -40px rgba(58, 42, 34, 0.22);
+  }
+
+  .calendar-embed-wrap iframe {
+    display: block;
+    background: transparent;
+  }
 }
 
 @media (max-width: 1024px) {

@@ -27,7 +27,7 @@ export function Home() {
               <span className="fade-up d2">Architecture<span className="brand-period">.</span></span>
             </h1>
             <p className="hero-deck fade-up d3">
-              SVYNE grows site visions into warm, structured digital systems. <strong>Vision above. Growth through the middle. Foundation underneath.</strong>
+              Custom websites & web platforms<span className="brand-period">.</span><br /> Build <em>→</em> launch <em>→</em> maintain<span className="brand-period">.</span>
             </p>
             <div className="hero-ctas fade-up d4">
               <Button variant="primary" withArrow onClick={() => navigate(ROUTES.contact)}>
@@ -124,6 +124,29 @@ export function Home() {
               <p className="placeholder-note">One slot remains this quarter.</p>
               <Button variant="primary" withArrow to={ROUTES.contact}>
                 Start a project
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="doc">
+          <div className="about-home-grid">
+            <div className="about-home-portrait">
+              <div className="initial-block">SP</div>
+              <div className="est-badge">EST. 2026</div>
+            </div>
+            <div className="about-home-content">
+              <Eyebrow>The Studio · Siddh Patel</Eyebrow>
+              <h2 className="h-display">
+                I build digital <em>foundations.</em>
+              </h2>
+              <p className="deck">
+                I'm Siddh Patel. I run SVYNE as a solo studio to maintain a direct line between the vision and the code. No middle managers, no agency overhead—just high-velocity development and a partner who cares about your business as much as the tech.
+              </p>
+              <Button variant="secondary" onClick={() => navigate(ROUTES.about)}>
+                Read the manifesto <span className="arr">→</span>
               </Button>
             </div>
           </div>

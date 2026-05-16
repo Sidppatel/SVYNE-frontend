@@ -49,31 +49,36 @@
     text-transform: uppercase;
   }
 
-  .nav-links button {
+  .nav-links a {
     color: var(--color-ink);
-    opacity: 0.65;
+    opacity: 0.55;
     transition:
       opacity 0.2s,
       color 0.2s;
     position: relative;
+    padding: 6px 0;
   }
 
-  .nav-links button:hover,
-  .nav-links button.active {
+  .nav-links a:hover,
+  .nav-links a.active {
     opacity: 1;
     color: var(--color-sienna);
   }
 
-  .nav-links button.active::after {
+  .nav-links a::after {
     content: '';
     position: absolute;
-    bottom: -22px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 4px;
-    height: 4px;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
     background: var(--color-sienna);
-    border-radius: 50%;
+    transition: width 0.35s var(--ease-svyne);
+  }
+
+  .nav-links a:hover::after,
+  .nav-links a.active::after {
+    width: 100%;
   }
 
   .nav-cta {

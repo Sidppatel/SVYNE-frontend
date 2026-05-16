@@ -29,17 +29,29 @@ export function WorkTileSvg({ grad, title, year, idx }: Props) {
         </div>
         <div className="work-preview-panel">
           <div className="work-preview-meta">
-            <span>Case {projectNumber}</span>
+            <span className="live-badge">Case {projectNumber} · LIVE</span>
             <span>Platform</span>
           </div>
           <div className="work-preview-title">
             <strong>{first}</strong>
             <em>{rest}</em>
           </div>
-          <div className="work-preview-lines" aria-hidden="true">
-            <span />
-            <span />
-            <span />
+          <div className="work-preview-content">
+            <div className="work-preview-lines" aria-hidden="true">
+              <span className="line-long" />
+              <span className="line-med" />
+              <span className="line-short" />
+            </div>
+            <div className="work-preview-metrics">
+              <div className="metric-box">
+                <span className="metric-dot" />
+                <span className="metric-line" />
+              </div>
+              <div className="metric-box">
+                <span className="metric-dot" />
+                <span className="metric-line" />
+              </div>
+            </div>
           </div>
         </div>
       </div>

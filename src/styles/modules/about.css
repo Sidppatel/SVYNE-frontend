@@ -204,6 +204,59 @@
     line-height: 1.6;
     max-width: 540px;
   }
+
+  /* Homepage About Preview */
+  .about-home-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    align-items: center;
+    background: var(--color-cream);
+    border-radius: 20px;
+    padding: 60px;
+    border: 1px solid var(--color-border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-home-portrait {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .initial-block {
+    width: 140px;
+    height: 140px;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-gold));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 56px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--color-bg);
+    box-shadow: 0 20px 40px -10px var(--color-sienna-deep-glow);
+  }
+
+  .est-badge {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--color-sepia);
+    border: 1px solid var(--color-border);
+    padding: 6px 12px;
+    border-radius: 4px;
+  }
+
+  .about-home-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -232,5 +285,16 @@
 
   .name-etymology {
     padding: 50px 24px;
+  }
+
+  .about-home-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 40px 24px;
+    text-align: center;
+  }
+
+  .about-home-content {
+    align-items: center;
   }
 }

@@ -59,7 +59,8 @@ Typography is the cornerstone of the brand. Scale must be fluid.
 - **Italic:** `var(--font-italic)`. Used for secondary editorial accents and outcomes.
 
 ### 3.2 Scales & Rules
-- **H1 (Hero):** `clamp(72px, 11vw, 168px)`. Weight: 200. Line-height: 0.88. Letter-spacing: `-0.055em`.
+- **H1 (Hero):** `clamp(52px, 11vw, 168px)`. Weight: 200. Line-height: 0.88. Letter-spacing: `-0.055em`. On screens < 640px, font-size must not exceed `82px` to prevent viewport overflow.
+- **Brand Wrapping:** Key "brand-period" headlines must use `white-space: nowrap` on the final phrase to prevent punctuation orphan breaks (e.g., closing quotes).
 - **H2 (Section):** Weight: 300. Line-height: 0.92–0.95. Letter-spacing: `-0.035em` to `-0.04em`.
 - **Eyebrow:** Font: Mono. Size: `10px`. Letter-spacing: `0.22em` (Preferred) / `0.2em` (Base). Text-transform: `uppercase`.
 - **Body:** Size: `16px`. Line-height: 1.6. Weight: 400.
@@ -100,7 +101,7 @@ The site uses hierarchical grids to manage visual density:
 - **Structural Spacing:** Multiples of `8px` for containers and major blocks.
 - **Optical Spacing:** `10px`, `18px`, `22px` used for component internal rhythm and balanced gutters.
 - **Navigation Height:** `80px`.
-- **Active Link Indicator:** `4px` dot centered `22px` below the navigation link.
+- **Active Link Indicator:** A `1.5px` solid underline (`link-draw`) that expands to `100%` width. The active state must be high-contrast (`var(--color-accent)`) and persist while the user is on the page.
 
 ### 4.4 Surface Transparency (color-mix)
 - **Deep Parchment:** `color-mix(in srgb, var(--color-surface-2) 65%, transparent)`.
@@ -216,6 +217,7 @@ Motion should be buttery, intentional, and never distracting.
    - **Note:** Tailwind is permitted within `.css` files (via `@apply`) but strictly forbidden in JSX `className` attributes.
 3. **Semantic HTML:** Use `<section>`, `<article>`, `<aside>` for structure.
 4. **Accessibility:**
-   - **Contrast:** Ensure a minimum contrast ratio of 4.5:1.
+   - **Contrast:** Ensure a minimum contrast ratio of 4.5:1 (WCAG AA). 
+   - **Specific Rule:** The standard muted text (`--color-text-muted`) must be audited against the cream background (`#f6f1e8`) to ensure legibility. If failing, adjust to a deeper sepia.
    - **Decorative:** Use `aria-hidden="true"` for purely decorative elements like `Plexus` or `AmbientBackground`.
    - **Reduced Motion:** Honor `prefers-reduced-motion` by reducing all ambient and structural animation durations to `0.01ms`.

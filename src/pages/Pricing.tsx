@@ -27,7 +27,9 @@ export function Pricing() {
             <h1>
               <span className="fade-up d1">Real numbers<span className="brand-period sway">.</span></span>
               <br />
-              <em className="fade-up d2">No "starting at<span className="brand-period sway">.</span>"</em>
+              <em className="fade-up d2">
+                No <span style={{ whiteSpace: 'nowrap' }}>"starting at<span className="brand-period sway">.</span>"</span>
+              </em>
             </h1>
             <p className="hero-deck fade-up d3">
               If your project fits one of the boxes, you see the price right now. If it doesn't, I write you a <strong>real proposal in 48 hours</strong>.

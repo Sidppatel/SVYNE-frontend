@@ -1,4 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { Button } from '@/components/ui/Button'
 import { Eyebrow } from '@/components/ui/Eyebrow'
 import { Accent } from '@/components/ui/Accent'
@@ -12,6 +13,7 @@ import { FinalCta } from '@/components/layout/FinalCta'
 
 export function Home() {
   const navigate = useNavigate()
+  const { t } = useTranslation()
   const featured = CASE_STUDIES[0]
 
   return (
@@ -22,19 +24,20 @@ export function Home() {
           <div className="hero-inner">
             <Eyebrow className="fade-up">◆ Studio Platform ◆</Eyebrow>
             <h1 className="h-display">
-              <span className="fade-up d1">The Living<span className="brand-period">.</span></span>
+              <span className="fade-up d1">{t('home.hero.theLiving')}<span className="brand-period">.</span></span>
               <br />
-              <span className="fade-up d2">Architecture<span className="brand-period">.</span></span>
+              <span className="fade-up d2">{t('home.hero.architecture')}<span className="brand-period">.</span></span>
             </h1>
             <p className="hero-deck fade-up d3">
-              Custom websites & web platforms<span className="brand-period">.</span><br /> Build <em>→</em> launch <em>→</em> maintain<span className="brand-period">.</span>
+              {t('home.hero.deck')}<span className="brand-period">.</span><br />
+              For event organizers and local service business owners<span className="brand-period">.</span>
             </p>
             <div className="hero-ctas fade-up d4">
               <Button variant="primary" withArrow onClick={() => navigate(ROUTES.contact)}>
-                Start a project
+                {t('home.hero.cta.book')}
               </Button>
               <Button variant="secondary" onClick={() => navigate(ROUTES.work)}>
-                See the work
+                {t('home.hero.cta.work')}
               </Button>
             </div>
           </div>
@@ -52,14 +55,14 @@ export function Home() {
         <div className="doc">
           <div className="section-header">
             <div className="label-row">
-              <Eyebrow>Chapter I · Services</Eyebrow>
-              <Accent>three pillars</Accent>
+              <Eyebrow>{t('home.chapter1.eyebrow')}</Eyebrow>
+              <Accent>{t('home.chapter1.accent')}</Accent>
             </div>
             <h2>
-              Three things. <em>Done well.</em>
+              {t('home.chapter1.title')}<em>{t('home.chapter1.titleEm')}</em>
             </h2>
             <p className="deck">
-              The full lifecycle of a website or web product. Build the foundation, launch the growth, maintain the living system.
+              {t('home.chapter1.deck')}
             </p>
           </div>
 
@@ -74,10 +77,10 @@ export function Home() {
                 <h3>
                   <em>{p.name}</em>
                 </h3>
-                <div className="pillar-accent">{HOME_PILLAR_TAG[p.name]}</div>
+                <div className="pillar-accent">{HOME_PILLAR_TAG.get(p.name)}</div>
                 <p>{p.desc}</p>
                 <div className="pillar-more">
-                  Read more <span className="arr">→</span>
+                  {t('home.chapter1.readMore')}<span className="arr">→</span>
                 </div>
               </button>
             ))}
@@ -89,13 +92,13 @@ export function Home() {
         <div className="doc">
           <div className="section-header">
             <div className="label-row">
-              <Eyebrow>Chapter II · The work</Eyebrow>
-              <Accent>what I've built</Accent>
+              <Eyebrow>{t('home.chapter2.eyebrow')}</Eyebrow>
+              <Accent>{t('home.chapter2.accent')}</Accent>
             </div>
             <h2>
-              What I've <em>shipped.</em>
+              {t('home.chapter2.title')}<em>{t('home.chapter2.titleEm')}</em>
             </h2>
-            <p className="deck">A small set, growing slowly. Better two real than ten placeholders.</p>
+            <p className="deck">{t('home.chapter2.deck')}</p>
           </div>
 
           <div className="work-grid">
@@ -115,17 +118,6 @@ export function Home() {
                 <p className="work-desc">{featured.desc}</p>
               </div>
             </Link>
-
-            <div className="work-tile placeholder fade-up d2">
-              <div className="work-outcome">NEXT · IN PROGRESS</div>
-              <div className="work-title">
-                <em>Your project here.</em>
-              </div>
-              <p className="placeholder-note">One slot remains this quarter.</p>
-              <Button variant="primary" withArrow to={ROUTES.contact}>
-                Start a project
-              </Button>
-            </div>
           </div>
         </div>
       </section>
@@ -135,18 +127,18 @@ export function Home() {
           <div className="about-home-grid">
             <div className="about-home-portrait">
               <div className="initial-block">SP</div>
-              <div className="est-badge">EST. 2026</div>
+              <div className="est-badge">{t('home.about.badge')}</div>
             </div>
             <div className="about-home-content">
-              <Eyebrow>The Studio · Siddh Patel</Eyebrow>
+              <Eyebrow>{t('home.about.eyebrow')}</Eyebrow>
               <h2 className="h-display">
-                I build digital <em>foundations.</em>
+                {t('home.about.title')}<em>{t('home.about.titleEm')}</em>
               </h2>
               <p className="deck">
                 I'm Siddh Patel. I run SVYNE as a solo studio to maintain a direct line between the vision and the code. No middle managers, no agency overhead—just high-velocity development and a partner who cares about your business as much as the tech.
               </p>
               <Button variant="secondary" onClick={() => navigate(ROUTES.about)}>
-                Read the manifesto <span className="arr">→</span>
+                {t('home.about.cta')}<span className="arr">→</span>
               </Button>
             </div>
           </div>
@@ -157,11 +149,11 @@ export function Home() {
         <div className="doc">
           <div className="section-header">
             <div className="label-row">
-              <Eyebrow>Chapter III · The process</Eyebrow>
-              <Accent>how I work</Accent>
+              <Eyebrow>{t('home.chapter3.eyebrow')}</Eyebrow>
+              <Accent>{t('home.chapter3.accent')}</Accent>
             </div>
             <h2>
-              Three steps. <em>No surprises.</em>
+              {t('home.chapter3.title')}<em>{t('home.chapter3.titleEm')}</em>
             </h2>
           </div>
           <div className="services-strip">
@@ -177,7 +169,7 @@ export function Home() {
                   className="pillar-more"
                   onClick={() => navigate(ROUTES.services)}
                 >
-                  Learn more <span className="arr">→</span>
+                  {t('home.chapter3.learnMore')}<span className="arr">→</span>
                 </button>
               </div>
             ))}

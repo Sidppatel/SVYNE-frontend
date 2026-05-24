@@ -22,23 +22,23 @@ export const CASE_STUDIES: CaseStudy[] = [
         text:
           "CODE829 is an invitation-only events club in Mobile, Alabama - a small operation hosting four to six private dinners and salon evenings each season. They had a working spreadsheet system and a hand-tooled Squarespace site. It worked. It also didn't scale.",
       },
-      { kind: 'h', text: 'The brief' },
+      { kind: 'h', text: 'The Problem' },
       {
         kind: 'p',
         text:
-          'Replace the spreadsheets with a real platform. Members log in, see upcoming evenings, RSVP, and pay. Hosts get a scanner that reads QR codes at the door and marks arrivals in real time. Owners get a dashboard with revenue per evening, conversion, and member retention.',
+          'Their booking system was fragmented. Members had to be manually verified, RSVPs were tracked in spreadsheets, and door check-ins were slow and chaotic, leading to a poor experience for high-paying guests.',
       },
-      { kind: 'h', text: 'How I built it' },
+      { kind: 'h', text: 'The Technical Solution' },
       {
         kind: 'p',
         text:
-          'One person - me. Designing, coding, and deploying. Weekly Friday demos. Slack channel from day one. The first staging link went out at the end of week one - empty, but live. By week three the auth, RSVP, and payment flows were solid. The last two weeks were scanner UX and the host dashboard.',
+          'We replaced the spreadsheets with a unified platform. A custom auth flow allowed members to log in, RSVP, and pay securely via Stripe. For the staff, we built a phone-native scanner app to read QR codes at the door, marking arrivals in real-time on the backend.',
       },
-      { kind: 'h', text: 'What shipped' },
+      { kind: 'h', text: 'The Business Outcome' },
       {
         kind: 'p',
         text:
-          'A private members area, a Stripe-backed RSVP flow, a phone-native scanner the door host runs at check-in, and an admin panel with the three reports the founders actually look at. Plus a Maintain retainer - 10 dev hours a month, priority response.',
+          'The club now runs smoothly with zero manual data entry. Door check-in takes seconds instead of minutes. The owners get a real-time dashboard showing revenue, conversion rates, and member retention, saving them hours of admin work per event.',
       },
     ],
   }

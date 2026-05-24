@@ -5,7 +5,7 @@ export const PRICING_TIERS: PricingTier[] = [
     key: 'foundation',
     accent: 'the foundation',
     name: 'Foundation',
-    price: '$3,500 - $6,000',
+    price: '$1,200 - $2,500',
     tag: 'Marketing site · 5-10 pages',
     items: [
       '5-10 page marketing site',
@@ -22,7 +22,7 @@ export const PRICING_TIERS: PricingTier[] = [
     key: 'custom',
     accent: 'the custom build',
     name: 'Custom',
-    price: '$8,000 - $25,000',
+    price: '$3,500 - $7,000',
     tag: 'Custom app, dashboard, or platform',
     items: [
       'Custom-built application',
@@ -41,7 +41,7 @@ export const PRICING_TIERS: PricingTier[] = [
     key: 'bespoke',
     accent: 'made to measure',
     name: 'Bespoke',
-    price: '$25,000+',
+    price: '$7,000+',
     tag: 'Multi-month · custom proposal',
     items: [
       'Phased delivery',
@@ -60,24 +60,24 @@ export const PRICING_TIERS: PricingTier[] = [
 export const MAINTAIN_TIERS: MaintainTier[] = [
   {
     tier: 'Essential',
-    price: '$99',
+    price: '$49',
     features:
       'Uptime monitoring · weekly backups · security patches · 1-hour response on outages',
     best: 'Static sites with rare changes',
   },
   {
-    tier: 'Active',
-    price: '$299',
+    tier: 'Growth',
+    price: '$149',
     features:
-      'Everything in Essential + monthly content updates (4 hrs) + performance report + analytics review',
-    best: 'Active small businesses',
+      'Everything in Essential + monthly content updates (4 hrs) + performance report + minor design tweaks',
+    best: 'Active local businesses',
   },
   {
-    tier: 'Full',
-    price: '$799',
+    tier: 'Premium',
+    price: '$349',
     features:
-      'Everything in Active + 10 dev hours/month + priority response + monthly strategy call + SEO retainer',
-    best: 'Growing businesses, custom apps',
+      'Everything in Growth + priority support + 1 feature sprint/quarter + SEO retainer',
+    best: 'Event platforms & high-traffic sites',
   },
 ]
 
@@ -109,13 +109,13 @@ export const BUNDLES: Bundle[] = [
 ]
 
 export const ADDONS: AddOn[] = [
-  { name: 'Extra page', accent: 'beyond initial scope', price: '$300-500' },
-  { name: 'Copywriting assistance', accent: 'if you need help with words', price: '$200/page' },
-  { name: 'Photography direction', accent: 'shot list + coordination', price: '$500-1,500' },
-  { name: 'Migration from old site', accent: 'content + SEO redirects', price: '$500-2,000' },
-  { name: 'Email setup', accent: 'hello@yourdomain day one', price: '$200' },
-  { name: 'SEO retainer', accent: 'separate from Maintain', price: '$400-1,200/mo' },
-  { name: 'Logo / brand work', accent: 'I partner with a designer', price: '$500-2,000' },
+  { name: 'Extra page', accent: 'beyond initial scope', price: '$150' },
+  { name: 'Copywriting assistance', accent: 'if you need help with words', price: '$100/page' },
+  { name: 'Photography direction', accent: 'shot list + coordination', price: '$300' },
+  { name: 'Migration from old site', accent: 'content + SEO redirects', price: '$250' },
+  { name: 'Email setup', accent: 'hello@yourdomain day one', price: '$100' },
+  { name: 'SEO retainer', accent: 'separate from Maintain', price: '$200-500/mo' },
+  { name: 'Logo / brand work', accent: 'I partner with a designer', price: '$300-800' },
   { name: 'Rush fee', accent: 'under 2-week deadline', price: '+25%' },
 ]
 

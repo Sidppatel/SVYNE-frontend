@@ -21,11 +21,11 @@ export const HOME_PILLARS: Pillar[] = [
   },
 ]
 
-export const HOME_PILLAR_TAG: Record<string, string> = {
-  Build: 'foundation',
-  Launch: 'growth point',
-  Maintain: 'living system',
-}
+export const HOME_PILLAR_TAG = new Map<string, string>([
+  ['Build', 'foundation'],
+  ['Launch', 'growth point'],
+  ['Maintain', 'living system'],
+])
 
 export const HOME_PROCESS: ProcessStep[] = [
   {

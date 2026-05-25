@@ -38,7 +38,7 @@ export function Nav() {
           className="nav-cta-desk"
           withArrow
         >
-          Start a project
+          System audit
         </Button>
 
         <button
@@ -73,7 +73,7 @@ export function Nav() {
               onClick={() => setOpen(false)}
               withArrow
             >
-              Start a project
+              System audit
             </Button>
           </div>
         </FocusTrap>

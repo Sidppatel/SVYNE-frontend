@@ -3,17 +3,17 @@ import type { CaseStudy } from '@/types'
 export const CASE_STUDIES: CaseStudy[] = [
   {
     id: 'code829',
-    tag: 'Event Platform · 2025',
+    tag: 'Operational System · 2025',
     accent: 'private events',
     title: 'CODE829',
     titleEm: 'private events',
-    outcome: 'A members-only platform from sketch to ship in five weeks.',
+    outcome: 'Manual RSVPs, payments, and check-ins unified in five weeks.',
     desc:
-      'Custom ticketing, scanner-based check-in, host tools, and member access - all on one stack the team owns.',
+      'Ticketing, scanner-based check-in, host tools, and member access in one operating flow with real-time visibility.',
     sector: 'Private events club',
     year: '2025',
     timeline: '5 weeks',
-    tier: 'Custom ($8K-25K)',
+    tier: 'System Implementation',
     stack: 'Vite & React · Supabase · Stripe',
     grad: ['var(--color-sienna)', 'var(--color-ink)'],
     body: [

@@ -9,16 +9,16 @@ export function FinalCta() {
       <div className="cta-grid" />
       <div className="doc">
         <div className="cta-flow cta-flow-final fade-up">
-          <div className="cta-kicker">Ready to grow</div>
+          <div className="cta-kicker">Ready to simplify operations</div>
           <div className="cta-copy">
-            <h2 className="h-display">Your site vision. <em>Built to grow.</em></h2>
-            <p className="deck">Tell SVYNE what you're trying to build. I reply within one business day.</p>
+            <h2 className="h-display">Replace the spreadsheet. <em>Keep the workflow.</em></h2>
+            <p className="deck">Tell SVYNE where work gets stuck. I reply within one business day.</p>
           </div>
           <div className="cta-action-block">
             <div className="cta-rule" />
             <div className="cta-band-ctas">
               <Button variant="primary" withArrow onClick={() => navigate(ROUTES.contact)}>
-                Start a project
+                Book a system audit
               </Button>
               <Button variant="secondary" onClick={() => navigate(ROUTES.pricing)}>
                 See pricing

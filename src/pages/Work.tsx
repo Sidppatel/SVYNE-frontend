@@ -17,18 +17,18 @@ export function Work() {
 
   return (
     <>
-      <SEO title="The Work" description="Explore the portfolio of web platforms, marketing sites, and custom dashboards." />
+      <SEO title="Outcomes" description="Operational systems and business outcomes delivered by SVYNE." />
       <section className="hero work-hero">
         <div className="doc">
           <div className="hero-inner">
-            <Eyebrow className="fade-up">◆ Chapter 03 · The work ◆</Eyebrow>
+            <Eyebrow className="fade-up">◆ Chapter 03 · Outcomes ◆</Eyebrow>
             <h1>
-              <span className="fade-up d1">What grew<span className="brand-period sway">.</span></span>
+              <span className="fade-up d1">Manual work<span className="brand-period sway">.</span></span>
               <br />
-              <em className="fade-up d2">from vision<span className="brand-period sway">.</span></em>
+              <em className="fade-up d2">made visible<span className="brand-period sway">.</span></em>
             </h1>
             <p className="hero-deck fade-up d3">
-              A small set, growing slowly. <strong>Real systems</strong> beat placeholders. Each one has roots, structure, and room to expand.
+              A focused set of operational systems. Each case should answer one question: what became faster, clearer, or easier to scale?
             </p>
           </div>
         </div>
@@ -72,11 +72,11 @@ export function Work() {
           <div className="work-tile placeholder">
             <div className="work-outcome">NEXT · IN PROGRESS</div>
             <div className="work-title">
-              <em>Your project here.</em>
+              <em>Your operation here.</em>
             </div>
-            <p className="placeholder-note">One slot remains this quarter.</p>
+            <p className="placeholder-note">One operational system slot remains this quarter.</p>
             <Button variant="primary" withArrow to={ROUTES.contact}>
-              Start a project
+              Book a system audit
             </Button>
           </div>
         </div>
@@ -85,10 +85,10 @@ export function Work() {
       <CtaBand
         title={
           <>
-            Want to be <em>the next one?</em>
+            Want your workflow <em>mapped next?</em>
           </>
         }
-        deck="A 30-minute call to start. Written proposal in 48 hours."
+        deck="Start with the places work gets lost, delayed, duplicated, or hidden."
       />
     </>
   )

@@ -13,6 +13,7 @@ import { Services } from '@/pages/Services'
 import { Work } from '@/pages/Work'
 import { WorkDetail } from '@/pages/WorkDetail'
 import { Pricing } from '@/pages/Pricing'
+import { FAQ } from '@/pages/FAQ'
 import { About } from '@/pages/About'
 import { Contact } from '@/pages/Contact'
 
@@ -39,6 +40,7 @@ function App() {
               <Route path={ROUTES.work} element={<Work />} />
               <Route path="/work/:slug" element={<WorkDetail />} />
               <Route path={ROUTES.pricing} element={<Pricing />} />
+              <Route path={ROUTES.faq} element={<FAQ />} />
               <Route path={ROUTES.about} element={<About />} />
               <Route path={ROUTES.contact} element={<Contact />} />
               <Route path="*" element={<Home />} />

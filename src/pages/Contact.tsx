@@ -58,17 +58,17 @@ export function Contact() {
 
   return (
     <>
-      <SEO title="Contact SVYNE" description="Ready to grow your site vision? Tell SVYNE about it and I'll reply within one business day." />
+      <SEO title="Contact SVYNE" description="Book a system audit or tell SVYNE where your service workflow is breaking down." />
       <div className="doc">
         <div className="contact-grid">
           <div>
-            <Eyebrow>◆ Chapter 07 · Let's begin ◆</Eyebrow>
+            <Eyebrow>◆ Chapter 07 · System audit ◆</Eyebrow>
             <h1 className="contact-h">
-              Tell SVYNE<br />
-              <em>what grows<span className="brand-period sway">.</span></em>
+              Show SVYNE<br />
+              <em>what breaks<span className="brand-period sway">.</span></em>
             </h1>
             <p className="contact-deck">
-              The form below goes straight to <em>{STUDIO.email}</em>. I read every inquiry and reply within one business day.
+              The form below goes straight to <em>{STUDIO.email}</em>. Share the workflow, spreadsheet, handoff, or reporting problem you want out of the business.
             </p>
 
             <div className="contact-meta">
@@ -157,7 +157,7 @@ export function Contact() {
 
                 <div className="field">
                   <label htmlFor="business" className="field-label">
-                    Business or project name
+                    Business name
                   </label>
                   <input
                     id="business"
@@ -219,13 +219,13 @@ export function Contact() {
 
                 <div className="field">
                   <label htmlFor="details" className="field-label">
-                    Tell SVYNE about the project <span className="req">·</span> required
+                    Tell SVYNE about the workflow <span className="req">·</span> required
                   </label>
                   <textarea
                     id="details"
                     className="field-textarea"
                     rows={4}
-                    placeholder="A paragraph is plenty. What you're trying to build, who it's for, and one thing that would make it a success."
+                    placeholder="A paragraph is plenty. What is manual, duplicated, delayed, hidden, or hard to scale right now?"
                     value={form.details}
                     onChange={e => setField('details', e.target.value)}
                   />
@@ -279,7 +279,7 @@ export function Contact() {
         <div className="section-header">
           <div className="label-row">
             <Eyebrow>The journey · what happens next</Eyebrow>
-            <Accent>three steps</Accent>
+            <Accent>from friction to scope</Accent>
           </div>
           <h2>
             Three <em>steps</em> from here.

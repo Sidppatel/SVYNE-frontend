@@ -14,10 +14,10 @@ export function SuccessCta() {
     <section className="section section-success-integrated">
       <div className="cta-grid" style={{ opacity: 0.1 }} />
       <div className="doc">
-        {/* Chapter Header */}
+        {/* Result header */}
         <div className="section-header fade-up">
           <div className="label-row">
-            <Eyebrow>Chapter IV · Result</Eyebrow>
+            <Eyebrow>Result · proof of impact</Eyebrow>
             <Accent>proven success</Accent>
           </div>
           <h2>
@@ -41,11 +41,11 @@ export function SuccessCta() {
         {/* Final CTA Flow */}
         <div className="integrated-cta fade-up d2">
           <div className="cta-content">
-            <h3 className="h-display">Your site vision. <em>Built to grow.</em></h3>
-            <p className="deck">Tell SVYNE what you're trying to build. I reply within one business day.</p>
+            <h3 className="h-display">Your workflow. <em>Built to scale.</em></h3>
+            <p className="deck">Tell SVYNE where operations slow down. I reply within one business day.</p>
             <div className="cta-band-ctas">
               <Button variant="primary" withArrow onClick={() => navigate(ROUTES.contact)}>
-                Start a project
+                Book a system audit
               </Button>
               <Button variant="secondary" onClick={() => navigate(ROUTES.pricing)}>
                 See pricing

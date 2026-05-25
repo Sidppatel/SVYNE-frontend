@@ -30,7 +30,7 @@ export function Footer() {
             <h4>Reach</h4>
             <ul>
               <li><a href={`mailto:${STUDIO.email}`}>{STUDIO.email}</a></li>
-              <li><NavLink to={ROUTES.contact}>Start a project</NavLink></li>
+              <li><NavLink to={ROUTES.contact}>Book a system audit</NavLink></li>
               <li><span>{STUDIO.location}</span></li>
             </ul>
           </div>

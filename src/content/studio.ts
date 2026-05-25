@@ -1,22 +1,23 @@
 export const STUDIO = {
   name: 'svyne',
-  tagline: 'The Living Architecture.',
+  tagline: 'Operational Systems for Service Businesses.',
   description:
-    'Growing your site vision through warm, structured technology.',
+    'Replacing spreadsheets, phone calls, and disconnected tools with workflow-fit operating systems.',
   email: 'hello@svyne.com',
   location: 'Mobile, Alabama',
   schedulingUrl: 'calendly.com/patelsiddh1408/30min',
   established: 'EST. 2026',
   bottomMeta: 'svyne · est. 2026 · Mobile, Alabama',
-  bottomTag: 'site vision · growth · foundation.',
+  bottomTag: 'operations · workflow · scale.',
 } as const
 
 export const FOOTER_LINKS = {
   pages: [
-    { label: 'Services', to: '/services' },
-    { label: 'Work', to: '/work' },
-    { label: 'Pricing', to: '/pricing' },
     { label: 'About', to: '/about' },
+    { label: 'Outcomes', to: '/work' },
+    { label: 'Systems', to: '/services' },
+    { label: 'Investment', to: '/pricing' },
+    { label: 'FAQ', to: '/faq' },
   ],
   elsewhere: [
     { label: 'LinkedIn', href: '#' },

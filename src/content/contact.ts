@@ -1,19 +1,19 @@
 import type { ProcessStep } from '@/types'
 
 export const PROJECT_TYPES = [
-  'Marketing site',
-  'Custom app',
-  'Event platform',
-  'Dashboard',
-  'Maintenance only',
+  'Operational audit',
+  'System implementation',
+  'Workflow automation',
+  'Reporting dashboard',
+  'Ongoing optimization',
   'Something else',
 ] as const
 
 export const BUDGETS = [
-  '< $5K',
-  '$5K - $10K',
+  '< $2K',
+  '$2K - $10K',
   '$10K - $25K',
-  '$25K +',
+  '$25K+',
   'Not sure',
 ] as const
 
@@ -36,20 +36,20 @@ export const REFERRAL_SOURCES = [
 export const CONTACT_NEXT_STEPS: ProcessStep[] = [
   {
     num: 'i.',
-    title: 'You hit send',
+    title: 'You describe the bottleneck',
     desc:
-      'Auto-confirmation lands in your inbox immediately. A real reply from a real person within one business day.',
+      'Share where work gets lost, delayed, duplicated, or hidden. A real reply comes within one business day.',
   },
   {
     num: 'ii.',
-    title: 'A 30-minute call',
+    title: 'A 30-minute workflow call',
     desc:
-      'I talk. I listen. I ask the questions that turn a request into a clear scope.',
+      'We talk through leads, scheduling, customers, jobs, invoices, reporting, and the tools already in place.',
   },
   {
     num: 'iii.',
-    title: 'A written proposal',
+    title: 'A system recommendation',
     desc:
-      'Within 48 hours of the call: real number, real timeline. Sign or come back.',
+      'You get the right next step: audit, implementation scope, or a smaller workflow fix.',
   },
 ]

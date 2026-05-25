@@ -5,7 +5,7 @@ import { Eyebrow } from '@/components/ui/Eyebrow'
 import { Accent } from '@/components/ui/Accent'
 import { WorkTileSvg } from '@/components/ui/WorkTileSvg'
 import { SEO } from '@/components/layout/SEO'
-import { HOME_PILLARS, HOME_PILLAR_TAG, HOME_PROCESS } from '@/content/home'
+import { HOME_OUTCOMES, HOME_PILLARS, HOME_PILLAR_TAG, HOME_PROCESS } from '@/content/home'
 import { CASE_STUDIES } from '@/content/work'
 import { ROUTES } from '@/routes'
 import { SuccessSection } from '@/components/layout/SuccessSection'
@@ -18,18 +18,17 @@ export function Home() {
 
   return (
     <>
-      <SEO />
+      <SEO description="Operational systems for service businesses. SVYNE replaces spreadsheets, phone calls, and disconnected tools with workflow-fit operating systems." />
       <section className="hero">
         <div className="doc">
           <div className="hero-inner">
-            <Eyebrow className="fade-up">◆ Studio Platform ◆</Eyebrow>
+            <Eyebrow className="fade-up">◆ Chapter 01 · Operational Systems ◆</Eyebrow>
             <h1 className="h-display">
               <span className="fade-up d1">{t('home.hero.theLiving')}<span className="brand-period">.</span></span>
               <span className="fade-up d2">{t('home.hero.architecture')}<span className="brand-period">.</span></span>
             </h1>
             <p className="hero-deck fade-up d3">
-              {t('home.hero.deck')}<span className="brand-period">.</span><br />
-              For event organizers and local service business owners<span className="brand-period">.</span>
+              {t('home.hero.deck')}<span className="brand-period">.</span>
             </p>
             <div className="hero-ctas fade-up d4">
               <Button variant="primary" withArrow onClick={() => navigate(ROUTES.contact)}>
@@ -49,6 +48,34 @@ export function Home() {
       </section>
 
       <hr className="hairline" />
+
+      <section className="section section-cream">
+        <div className="doc">
+          <div className="section-header">
+            <div className="label-row">
+              <Eyebrow>Symptoms · cost of manual work</Eyebrow>
+              <Accent>what changes</Accent>
+            </div>
+            <h2>
+              The problem is usually <em>operational.</em>
+            </h2>
+            <p className="deck">
+              The business is not broken. The workflow is scattered. SVYNE turns the repeated steps into a system your team can trust.
+            </p>
+          </div>
+
+          <div className="outcome-grid">
+            {HOME_OUTCOMES.map(item => (
+              <article key={item.result} className="outcome-card">
+                <div className="outcome-result">{item.result}</div>
+                <p className="outcome-symptom">{item.symptom}</p>
+                <div className="outcome-rule" />
+                <p className="outcome-system">{item.system}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section className="section">
         <div className="doc">
@@ -134,7 +161,7 @@ export function Home() {
                 {t('home.about.title')}<em>{t('home.about.titleEm')}</em>
               </h2>
               <p className="deck">
-                I'm Siddh Patel. I run SVYNE as a solo studio to maintain a direct line between the vision and the code. No middle managers, no agency overhead—just high-velocity development and a partner who cares about your business as much as the tech.
+                I'm Siddh Patel. I run SVYNE to help service businesses turn everyday operational friction into clear, reliable systems. The work starts with how your team already operates, then becomes software only where software removes real drag.
               </p>
               <Button variant="secondary" onClick={() => navigate(ROUTES.about)}>
                 {t('home.about.cta')}<span className="arr">→</span>

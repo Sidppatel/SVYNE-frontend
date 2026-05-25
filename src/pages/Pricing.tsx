@@ -19,20 +19,20 @@ export function Pricing() {
 
   return (
     <>
-      <SEO title="Pricing" description="Real numbers. No hidden fees. Explore build tiers and ongoing maintenance packages." />
+      <SEO title="Investment" description="Investment ranges for operational audits, system implementation, and ongoing optimization with SVYNE." />
       <section className="hero">
         <div className="doc">
           <div className="hero-inner">
-            <Eyebrow className="fade-up">◆ Chapter 05 · Pricing ◆</Eyebrow>
+            <Eyebrow className="fade-up">◆ Chapter 05 · Investment ◆</Eyebrow>
             <h1>
-              <span className="fade-up d1">Real numbers<span className="brand-period sway">.</span></span>
+              <span className="fade-up d1">System investment<span className="brand-period sway">.</span></span>
               <br />
               <em className="fade-up d2">
-                No <span style={{ whiteSpace: 'nowrap' }}>"starting at<span className="brand-period sway">.</span>"</span>
+                Built for outcomes<span className="brand-period sway">.</span>
               </em>
             </h1>
             <p className="hero-deck fade-up d3">
-              If your project fits one of the boxes, you see the price right now. If it doesn't, I write you a <strong>real proposal in 48 hours</strong>.
+              Pricing follows operational complexity: the workflows involved, the modules needed, the data to migrate, and the level of support after launch.
             </p>
           </div>
         </div>
@@ -43,11 +43,11 @@ export function Pricing() {
       <div className="doc pricing-doc">
         <div className="section-header">
           <div className="label-row">
-            <Eyebrow>Build · construction</Eyebrow>
-            <Accent>three boxes</Accent>
+            <Eyebrow>Operational systems</Eyebrow>
+            <Accent>three engagement types</Accent>
           </div>
           <h2>
-            One-time build <em>tiers.</em>
+            Choose the right <em>entry point.</em>
           </h2>
         </div>
 
@@ -82,9 +82,9 @@ export function Pricing() {
 
         <div className="maintain-wrap">
           <div className="maintain-head">
-            <div className="maintain-head-label">◆ Maintain · ongoing care · monthly retainer ◆</div>
+            <div className="maintain-head-label">◆ Optimize · ongoing operations · monthly support ◆</div>
             <h3 className="maintain-head-title">
-              Three <em>tiers</em> of ongoing care.
+              Three <em>levels</em> of ongoing improvement.
             </h3>
           </div>
           {MAINTAIN_TIERS.map(m => {
@@ -125,9 +125,9 @@ export function Pricing() {
         </div>
 
         <div className="bundles-wrap">
-          <div className="bw-label">◆ Packages · bundle deals ◆</div>
+          <div className="bw-label">◆ Packages · system commitments ◆</div>
           <h3 className="bw-title">
-            Build <em>+</em> Maintain <em>=</em> a discount.
+            Audit <em>+</em> implementation <em>+</em> optimization.
           </h3>
           {BUNDLES.map(b => {
             const dim = activeBundle !== null && activeBundle !== b.key
@@ -168,8 +168,8 @@ export function Pricing() {
         <div className="doc">
           <div className="section-header">
             <div className="label-row">
-              <Eyebrow>Terms · payment terms</Eyebrow>
-              <Accent>honest</Accent>
+              <Eyebrow>Terms · working agreement</Eyebrow>
+              <Accent>plain language</Accent>
             </div>
             <h2>
               Honest <em>terms.</em>
@@ -190,10 +190,10 @@ export function Pricing() {
       <CtaBand
         title={
           <>
-            Pick a box. <em>Or get a proposal.</em>
+            Start with the <em>workflow.</em>
           </>
         }
-        deck="If you fit one of the boxes, sign and start. If you don't, I write you a real proposal in 48 hours."
+        deck="The first conversation is about bottlenecks, not features. Then SVYNE scopes the system around the business outcome."
       />
     </>
   )

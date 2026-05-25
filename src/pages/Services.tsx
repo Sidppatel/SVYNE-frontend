@@ -7,18 +7,18 @@ import { SERVICE_BLOCKS, SERVICES_NOT_OFFERED } from '@/content/services'
 export function Services() {
   return (
     <>
-      <SEO title="Services" description="Build, launch, maintain. The three pillars of the web design and development process." />
+      <SEO title="Systems" description="Operational systems for service businesses: workflow audit, modular system build, and ongoing optimization." />
       <section className="hero">
         <div className="doc">
           <div className="hero-inner">
-            <Eyebrow className="fade-up">◆ Chapter 04 · Services ◆</Eyebrow>
+            <Eyebrow className="fade-up">◆ Chapter 04 · Systems ◆</Eyebrow>
             <h1>
-              <span className="fade-up d1">Three layers<span className="brand-period sway">.</span></span>
+              <span className="fade-up d1">Operations first<span className="brand-period sway">.</span></span>
               <br />
-              <em className="fade-up d2">Built to grow<span className="brand-period sway">.</span></em>
+              <em className="fade-up d2">Software second<span className="brand-period sway">.</span></em>
             </h1>
             <p className="hero-deck fade-up d3">
-              Vision, growth, foundation. The <strong>full lifecycle</strong> of a website or web product, shaped as living architecture.
+              SVYNE maps the workflow, assembles the operational system, and keeps improving it as the business grows.
             </p>
           </div>
         </div>
@@ -77,14 +77,14 @@ export function Services() {
         <div className="doc">
           <div className="section-header">
             <div className="label-row">
-              <Eyebrow>Honest list</Eyebrow>
-              <Accent>what I don't do</Accent>
+              <Eyebrow>Positioning · what SVYNE is not</Eyebrow>
+              <Accent>clear boundaries</Accent>
             </div>
             <h2>
-              What I <em>don't</em> do.
+              Not another <em>tool vendor.</em>
             </h2>
             <p className="deck">
-              Two minutes saved beats a misaligned project. If you need any of the below, I'll point you somewhere good.
+              SVYNE is built for businesses that need operational transformation, not another disconnected app for the staff to babysit.
             </p>
           </div>
           <div className="services-strip">
@@ -102,10 +102,10 @@ export function Services() {
       <CtaBand
         title={
           <>
-            Talk to SVYNE about <em>your project.</em>
+            Talk to SVYNE about <em>your operation.</em>
           </>
         }
-        deck="A 30-minute call. Written proposal in 48 hours. Real number, real timeline."
+        deck="Bring the messy workflow. SVYNE will help identify what should become a system."
       />
     </>
   )

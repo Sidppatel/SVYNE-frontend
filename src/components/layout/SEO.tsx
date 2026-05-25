@@ -9,7 +9,7 @@ interface SEOProps {
 
 export function SEO({
   title,
-  description = 'The Living Architecture. Growing your site vision through warm, structured technology.',
+  description = 'Operational systems for service businesses. Replace spreadsheets, phone calls, and disconnected tools with workflow-fit systems.',
   name = 'SVYNE',
   type = 'website'
 }: SEOProps) {

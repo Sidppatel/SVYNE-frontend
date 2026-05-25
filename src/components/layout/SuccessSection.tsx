@@ -11,7 +11,7 @@ export function SuccessSection() {
       <div className="doc">
         <div className="section-header fade-up">
           <div className="label-row">
-            <Eyebrow>Chapter IV · Result</Eyebrow>
+            <Eyebrow>Result · proof of impact</Eyebrow>
             <Accent>proven success</Accent>
           </div>
           <h2>

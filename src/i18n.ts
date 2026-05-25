@@ -29,7 +29,11 @@ const resources = {
       "home.chapter3.accent": "map, build, support",
       "home.chapter3.title": "A system before ",
       "home.chapter3.titleEm": "software.",
-      "home.chapter3.learnMore": "Learn more "
+      "home.chapter3.learnMore": "Learn more ",
+      "ctaBand.kicker": "Ready to simplify operations",
+      "ctaBand.deck": "Tell SVYNE where the workflow is breaking down. I reply within one business day.",
+      "ctaBand.btn.audit": "Book a system audit",
+      "ctaBand.btn.pricing": "See pricing"
     }
   }
 };

@@ -3,28 +3,28 @@ import type { Pillar, ProcessStep } from '@/types'
 export const HOME_PILLARS: Pillar[] = [
   {
     num: '01',
-    name: 'Build',
+    name: 'Project Builds',
     desc:
-      'Marketing sites, custom dashboards, event platforms, web apps. Modern stack - Vite & React, Postgres, Stripe. Code you own.',
+      'Conversion sites, internal staff dashboards, and operations platforms built exactly to your spec. One-time fee.',
   },
   {
     num: '02',
-    name: 'Launch',
+    name: 'Transaction Platforms',
     desc:
-      "Hosting set up, SEO foundation laid, day-of coordination. I monitor for 24 hours so launch isn't a \"fingers crossed\" moment.",
+      'For event organizers and booking clients: zero upfront cost. A small service fee is passed to your end customer on checkout.',
   },
   {
     num: '03',
-    name: 'Maintain',
+    name: 'Ongoing Care',
     desc:
-      'Monthly retainer, three tiers. Uptime monitoring, security patches, content updates, monthly reports. Someone on call.',
+      'We replace the "build and disappear" model. Uptime monitoring, security, updates, and feature sprints as you grow.',
   },
 ]
 
 export const HOME_PILLAR_TAG = new Map<string, string>([
-  ['Build', 'foundation'],
-  ['Launch', 'growth point'],
-  ['Maintain', 'living system'],
+  ['Project Builds', 'one-time'],
+  ['Transaction Platforms', '$0 upfront'],
+  ['Ongoing Care', 'recurring'],
 ])
 
 export const HOME_PROCESS: ProcessStep[] = [

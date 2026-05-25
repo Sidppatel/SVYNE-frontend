@@ -25,7 +25,6 @@ export function Home() {
             <Eyebrow className="fade-up">◆ Studio Platform ◆</Eyebrow>
             <h1 className="h-display">
               <span className="fade-up d1">{t('home.hero.theLiving')}<span className="brand-period">.</span></span>
-              <br />
               <span className="fade-up d2">{t('home.hero.architecture')}<span className="brand-period">.</span></span>
             </h1>
             <p className="hero-deck fade-up d3">

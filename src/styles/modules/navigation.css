@@ -32,7 +32,7 @@
 
   .nav-brand em {
     font-style: italic;
-    color: var(--color-sienna);
+    color: var(--color-accent);
   }
 
   .nav-brand svg {
@@ -62,7 +62,7 @@
   .nav-links a:hover,
   .nav-links a.active {
     opacity: 1;
-    color: var(--color-sienna);
+    color: var(--color-accent);
   }
 
   .nav-links a::after {
@@ -72,7 +72,7 @@
     left: 0;
     width: 0;
     height: 1.5px;
-    background: var(--color-sienna);
+    background: var(--color-accent);
     transition: width 0.35s var(--ease-svyne);
   }
 
@@ -93,9 +93,9 @@
   }
 
   .nav-cta:hover {
-    background: var(--color-sienna);
+    background: var(--color-accent);
     transform: translateY(-1px);
-    box-shadow: 0 8px 20px -8px var(--color-sienna-glow);
+    box-shadow: 0 8px 20px -8px var(--color-accent-a24);
   }
 
   .nav-cta .arr {
@@ -148,9 +148,9 @@
 
   .nav-mobile-panel {
     display: none;
-    background: var(--color-parchment-glass);
+    background: var(--color-glass);
     backdrop-filter: blur(14px);
-    border-top: 1px solid var(--color-parchment-darker);
+    border-top: 1px solid var(--color-surface-3);
     padding: 14px 28px 22px;
   }
 
@@ -160,7 +160,7 @@
     align-items: center;
     width: 100%;
     padding: 16px 0;
-    border-bottom: 1px solid var(--color-parchment-darker);
+    border-bottom: 1px solid var(--color-surface-3);
     font-family: var(--font-display);
     font-size: 22px;
     font-weight: 400;
@@ -170,12 +170,12 @@
   }
 
   .nav-mobile-link.active {
-    color: var(--color-sienna);
+    color: var(--color-accent);
     font-style: italic;
   }
 
   .nav-mobile-link .arr {
-    color: var(--color-sienna);
+    color: var(--color-accent);
     font-size: 18px;
   }
 

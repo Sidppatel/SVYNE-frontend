@@ -1,6 +1,10 @@
 import { useEffect, useRef } from 'react'
 
-export function Plexus() {
+interface PlexusProps {
+  densityMultiplier?: number
+}
+
+export function Plexus({ densityMultiplier = 1.0 }: PlexusProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
@@ -15,9 +19,12 @@ export function Plexus() {
     let height = window.innerHeight
 
     const particles: Particle[] = []
-    const particleCount = Math.floor((width * height) / 7000)
+    const particleCount = Math.floor(((width * height) / 7000) * densityMultiplier)
     const connectionDistance = 140
     const mouse = { x: -100, y: -100 }
+
+    let particleColor = 'rgba(181, 139, 69, 0.75)'
+    let connectionColorRGB = '35, 24, 21'
 
     class Particle {
       x: number
@@ -56,7 +63,7 @@ export function Plexus() {
 
       draw() {
         if (!ctx) return
-        ctx.fillStyle = 'rgba(181, 139, 69, 0.75)'
+        ctx.fillStyle = particleColor
         ctx.beginPath()
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
         ctx.fill()
@@ -71,6 +78,20 @@ export function Plexus() {
       canvas.height = height * dpr
       ctx.scale(dpr, dpr)
 
+      const rootStyle = getComputedStyle(document.documentElement);
+      const parseHexToRGB = (varName: string) => {
+        const val = rootStyle.getPropertyValue(varName).trim();
+        const normalized = val.startsWith('#') ? val : `#${val}`;
+        if (normalized.length !== 7) return '0, 0, 0';
+        const r = parseInt(normalized.slice(1, 3), 16);
+        const g = parseInt(normalized.slice(3, 5), 16);
+        const b = parseInt(normalized.slice(5, 7), 16);
+        return `${r}, ${g}, ${b}`;
+      };
+
+      particleColor = `rgba(${parseHexToRGB('--color-gold')}, 0.75)`;
+      connectionColorRGB = parseHexToRGB('--color-ink');
+
       particles.length = 0
       for (let i = 0; i < particleCount; i++) {
         particles.push(new Particle())
@@ -81,22 +102,24 @@ export function Plexus() {
       ctx.clearRect(0, 0, width, height)
 
       for (let i = 0; i < particles.length; i++) {
-        particles[i].update()
-        particles[i].draw()
+        const pI = particles.at(i)!
+        pI.update()
+        pI.draw()
 
         for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x
-          const dy = particles[i].y - particles[j].y
+          const pJ = particles.at(j)!
+          const dx = pI.x - pJ.x
+          const dy = pI.y - pJ.y
           const distanceSq = dx * dx + dy * dy
           const connectionDistanceSq = connectionDistance * connectionDistance
 
           if (distanceSq < connectionDistanceSq) {
             const distance = Math.sqrt(distanceSq)
-            ctx.strokeStyle = `rgba(35, 24, 21, ${0.28 * (1 - distance / connectionDistance)})`
+            ctx.strokeStyle = `rgba(${connectionColorRGB}, ${0.28 * (1 - distance / connectionDistance)})`
             ctx.lineWidth = 1.2
             ctx.beginPath()
-            ctx.moveTo(particles[i].x, particles[i].y)
-            ctx.lineTo(particles[j].x, particles[j].y)
+            ctx.moveTo(pI.x, pI.y)
+            ctx.lineTo(pJ.x, pJ.y)
             ctx.stroke()
           }
         }
@@ -123,7 +146,7 @@ export function Plexus() {
       window.removeEventListener('resize', handleResize)
       cancelAnimationFrame(animationFrameId)
     }
-  }, [])
+  }, [densityMultiplier])
 
   return (
     <canvas

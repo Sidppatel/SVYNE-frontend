@@ -36,11 +36,19 @@ export function CalendlyBadge() {
     function initBadge() {
       const w = window as unknown as { Calendly?: { initBadgeWidget: (opts: Record<string, unknown>) => void } }
       if (w.Calendly?.initBadgeWidget) {
+        const rootStyle = getComputedStyle(document.documentElement);
+        const getHex = (varName: string) => rootStyle.getPropertyValue(varName).trim();
+        
+        const bgHex = getHex('--color-bg').replace('#', '');
+        const textHex = getHex('--color-ink').replace('#', '');
+        const primaryHex = getHex('--color-accent').replace('#', '');
+        const surfaceHex = getHex('--color-surface').replace('#', '');
+
         w.Calendly.initBadgeWidget({
-          url: `https://${STUDIO.schedulingUrl}?background_color=f6f1e8&text_color=231815&primary_color=ff5a36&hide_gdpr_banner=1`,
+          url: `https://${STUDIO.schedulingUrl}?background_color=${bgHex}&text_color=${textHex}&primary_color=${primaryHex}&hide_gdpr_banner=1`,
           text: 'Schedule a call →',
-          color: '#ff5a36',
-          textColor: '#fbf7f1',
+          color: `#${primaryHex}`,
+          textColor: `#${surfaceHex}`,
           branding: false,
         })
       }

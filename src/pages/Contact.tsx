@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Button } from '@/components/ui/Button'
 import { Eyebrow } from '@/components/ui/Eyebrow'
 import { Accent } from '@/components/ui/Accent'
@@ -17,6 +18,7 @@ import type { ContactForm } from '@/types'
 const SUBMIT_DELAY_MS = 900
 
 export function Contact() {
+  const { t } = useTranslation()
   const [form, setForm] = useState<ContactForm>(EMPTY_CONTACT)
   const [errors, setErrors] = useState<ContactErrors>({})
   const [submitted, setSubmitted] = useState(false)
@@ -24,8 +26,16 @@ export function Contact() {
   const [submitError, setSubmitError] = useState(false)
 
   const setField = <K extends keyof ContactForm>(key: K, value: ContactForm[K]) => {
-    setForm(prev => ({ ...prev, [key]: value }))
-    if (errors[key]) setErrors(prev => ({ ...prev, [key]: undefined }))
+    setForm(prev => {
+      const next = { ...prev }
+      Reflect.set(next, key, value)
+      return next
+    })
+    setErrors(prev => {
+      const next = { ...prev }
+      Reflect.deleteProperty(next, key)
+      return next
+    })
     if (submitError) setSubmitError(false)
   }
 
@@ -59,230 +69,237 @@ export function Contact() {
   return (
     <>
       <SEO title="Contact SVYNE" description="Book a system audit or tell SVYNE where your service workflow is breaking down." />
-      <div className="doc">
-        <div className="contact-grid">
-          <div>
-            <Eyebrow>◆ Chapter 07 · System audit ◆</Eyebrow>
-            <h1 className="contact-h">
-              Show SVYNE<br />
-              <em>what breaks<span className="brand-period sway">.</span></em>
-            </h1>
-            <p className="contact-deck">
-              The form below goes straight to <em>{STUDIO.email}</em>. Share the workflow, spreadsheet, handoff, or reporting problem you want out of the business.
-            </p>
+      
+      <section className="hero contact-hero">
+        <div className="doc">
+          <div className="hero-inner-grid">
+            <div className="hero-inner">
+              <Eyebrow className="fade-up">{t('contact.hero.eyebrow')}</Eyebrow>
+              <h1 className="h-display">
+                <span className="fade-up d1">{t('contact.hero.title')}</span>
+                <span className="fade-up d2">{t('contact.hero.titleEm')}<span className="brand-period">.</span></span>
+              </h1>
+              <p className="hero-deck fade-up d3">
+                {t('contact.hero.deck')}<em>{STUDIO.email}</em>{t('contact.hero.deckEnd')}
+              </p>
 
-            <div className="contact-meta">
-              <div className="contact-meta-item">
-                <div className="contact-meta-label">Email</div>
-                <div className="contact-meta-value">
-                  <em>{STUDIO.email}</em>
+              <div className="contact-meta fade-up d4">
+                <div className="contact-meta-item">
+                  <div className="contact-meta-label">{t('contact.meta.email')}</div>
+                  <div className="contact-meta-value">
+                    <em>{STUDIO.email}</em>
+                  </div>
                 </div>
-              </div>
-              <div className="contact-meta-item">
-                <div className="contact-meta-label">Where I am</div>
-                <div className="contact-meta-value">
-                  Mobile · <em>Alabama</em>
+                <div className="contact-meta-item">
+                  <div className="contact-meta-label">{t('contact.meta.location')}</div>
+                  <div className="contact-meta-value">
+                    {t('contact.meta.mobile')}<em>{t('contact.meta.state')}</em>
+                  </div>
                 </div>
-              </div>
-              <div className="contact-meta-item">
-                <div className="contact-meta-label">Reply window</div>
-                <div className="contact-meta-value">
-                  One <em>business day</em>
+                <div className="contact-meta-item">
+                  <div className="contact-meta-label">{t('contact.meta.reply')}</div>
+                  <div className="contact-meta-value">
+                    {t('contact.meta.one')}<em>{t('contact.meta.businessDay')}</em>
+                  </div>
                 </div>
-              </div>
-              <div className="contact-meta-item">
-                <div className="contact-meta-label">Schedule</div>
-                <div className="contact-meta-value">
-                  <a
-                    href={`https://${STUDIO.schedulingUrl}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="link-draw"
-                  >
-                    Book a 30-min call →
-                  </a>
+                <div className="contact-meta-item">
+                  <div className="contact-meta-label">{t('contact.meta.schedule')}</div>
+                  <div className="contact-meta-value">
+                    <a
+                      href={`https://${STUDIO.schedulingUrl}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="link-draw"
+                    >
+                      {t('contact.meta.bookCall')}
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div className="contact-form">
-            {submitted ? (
-              <div className="form-thanks">
-                <div className="form-thanks-mark">
-                  <em>✓</em>
-                </div>
-                <h3>
-                  Received. <em>Thank you.</em>
-                </h3>
-                <p>
-                  Reading every word. I'll be back within one business day - usually sooner.
-                </p>
-                <Button variant="secondary" onClick={resetForm}>
-                  Send another
-                </Button>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} noValidate>
-                <div className="field-row">
-                  <div className="field">
-                    <label htmlFor="name" className="field-label">
-                      Name <span className="req">·</span> required
-                    </label>
-                    <input
-                      id="name"
-                      className="field-input"
-                      type="text"
-                      placeholder="Your name"
-                      value={form.name}
-                      onChange={e => setField('name', e.target.value)}
-                    />
-                    {errors.name && <div className="field-error">{errors.name}</div>}
-                  </div>
-                  <div className="field">
-                    <label htmlFor="email" className="field-label">
-                      Email <span className="req">·</span> required
-                    </label>
-                    <input
-                      id="email"
-                      className="field-input"
-                      type="email"
-                      placeholder="you@business.com"
-                      value={form.email}
-                      onChange={e => setField('email', e.target.value)}
-                    />
-                    {errors.email && <div className="field-error">{errors.email}</div>}
-                  </div>
-                </div>
-
-                <div className="field">
-                  <label htmlFor="business" className="field-label">
-                    Business name
-                  </label>
-                  <input
-                    id="business"
-                    className="field-input"
-                    type="text"
-                    placeholder="If you have one - optional"
-                    value={form.business}
-                    onChange={e => setField('business', e.target.value)}
-                  />
-                </div>
-
-                <div className="field">
-                  <span className="field-label">What kind of project</span>
-                  <div className="field-pills">
-                    {PROJECT_TYPES.map(p => (
-                      <button
-                        key={p}
-                        type="button"
-                        className={`field-pill ${form.projectType === p ? 'selected' : ''}`}
-                        onClick={() => setField('projectType', p)}
-                      >
-                        {p}
-                      </button>
-                    ))}
-                  </div>
-                  {errors.projectType && <div className="field-error">{errors.projectType}</div>}
-                </div>
-
-                <div className="field-row">
-                  <div className="field">
-                    <label htmlFor="budget" className="field-label">Budget range</label>
-                    <select
-                      id="budget"
-                      className="field-select"
-                      value={form.budget}
-                      onChange={e => setField('budget', e.target.value)}
-                    >
-                      <option value="">Pick one - optional</option>
-                      {BUDGETS.map(b => (
-                        <option key={b}>{b}</option>
-                      ))}
-                    </select>
-                  </div>
-                  <div className="field">
-                    <label htmlFor="timeline" className="field-label">Timeline</label>
-                    <select
-                      id="timeline"
-                      className="field-select"
-                      value={form.timeline}
-                      onChange={e => setField('timeline', e.target.value)}
-                    >
-                      <option value="">Pick one - optional</option>
-                      {TIMELINES.map(t => (
-                        <option key={t}>{t}</option>
-                      ))}
-                    </select>
-                  </div>
-                </div>
-
-                <div className="field">
-                  <label htmlFor="details" className="field-label">
-                    Tell SVYNE about the workflow <span className="req">·</span> required
-                  </label>
-                  <textarea
-                    id="details"
-                    className="field-textarea"
-                    rows={4}
-                    placeholder="A paragraph is plenty. What is manual, duplicated, delayed, hidden, or hard to scale right now?"
-                    value={form.details}
-                    onChange={e => setField('details', e.target.value)}
-                  />
-                  {errors.details && <div className="field-error">{errors.details}</div>}
-                  <div className="field-char-count">{form.details.length} chars</div>
-                </div>
-
-                <div className="field">
-                  <span className="field-label">How did you hear about SVYNE</span>
-                  <div className="field-pills">
-                    {REFERRAL_SOURCES.map(r => (
-                      <button
-                        key={r}
-                        type="button"
-                        className={`field-pill ${form.referral === r ? 'selected' : ''}`}
-                        onClick={() => setField('referral', r)}
-                      >
-                        {r}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                <button type="submit" className="form-submit" disabled={submitting}>
-                  {submitting ? (
-                    'Sending…'
-                  ) : (
-                    <>
-                      Send to {STUDIO.email}
-                      <span className="arr">→</span>
-                    </>
-                  )}
-                </button>
-
-                {submitError && (
-                  <div className="form-error-block fade-up">
+            <div className="hero-canvas-wrap fade-up d2 hero-form-wrap">
+              <div className="contact-form">
+                {submitted ? (
+                  <div className="form-thanks">
+                    <div className="form-thanks-mark">
+                      <em>✓</em>
+                    </div>
+                    <h3>
+                      {t('contact.form.received')}<em>{t('contact.form.thankYou')}</em>
+                    </h3>
                     <p>
-                      <strong>Something went wrong.</strong>
-                      <br />
-                      I couldn't send your message. Please try again or email me directly at <em>{STUDIO.email}</em>.
+                      {t('contact.form.reading')}
                     </p>
+                    <Button variant="secondary" onClick={resetForm}>
+                      {t('contact.form.sendAnother')}
+                    </Button>
                   </div>
+                ) : (
+                  <form onSubmit={handleSubmit} noValidate>
+                    <div className="field-row">
+                      <div className="field">
+                        <label htmlFor="name" className="field-label">
+                          {t('contact.form.nameLabel')}<span className="req">·</span> required
+                        </label>
+                        <input
+                          id="name"
+                          className="field-input"
+                          type="text"
+                          placeholder="Your name"
+                          value={form.name}
+                          onChange={e => setField('name', e.target.value)}
+                        />
+                        {errors.name && <div className="field-error">{errors.name}</div>}
+                      </div>
+                      <div className="field">
+                        <label htmlFor="email" className="field-label">
+                          {t('contact.form.emailLabel')}<span className="req">·</span> required
+                        </label>
+                        <input
+                          id="email"
+                          className="field-input"
+                          type="email"
+                          placeholder="you@business.com"
+                          value={form.email}
+                          onChange={e => setField('email', e.target.value)}
+                        />
+                        {errors.email && <div className="field-error">{errors.email}</div>}
+                      </div>
+                    </div>
+
+                    <div className="field">
+                      <label htmlFor="business" className="field-label">
+                        {t('contact.form.businessLabel')}
+                      </label>
+                      <input
+                        id="business"
+                        className="field-input"
+                        type="text"
+                        placeholder="If you have one - optional"
+                        value={form.business}
+                        onChange={e => setField('business', e.target.value)}
+                      />
+                    </div>
+
+                    <div className="field">
+                      <span className="field-label">{t('contact.form.projectLabel')}</span>
+                      <div className="field-pills">
+                        {PROJECT_TYPES.map(p => (
+                          <button
+                            key={p}
+                            type="button"
+                            className={`field-pill ${form.projectType === p ? 'selected' : ''}`}
+                            onClick={() => setField('projectType', p)}
+                          >
+                            {p}
+                          </button>
+                        ))}
+                      </div>
+                      {errors.projectType && <div className="field-error">{errors.projectType}</div>}
+                    </div>
+
+                    <div className="field-row">
+                      <div className="field">
+                        <label htmlFor="budget" className="field-label">{t('contact.form.budgetLabel')}</label>
+                        <select
+                          id="budget"
+                          className="field-select"
+                          value={form.budget}
+                          onChange={e => setField('budget', e.target.value)}
+                        >
+                          <option value="">{t('contact.form.optional')}</option>
+                          {BUDGETS.map(b => (
+                            <option key={b}>{b}</option>
+                          ))}
+                        </select>
+                      </div>
+                      <div className="field">
+                        <label htmlFor="timeline" className="field-label">{t('contact.form.timelineLabel')}</label>
+                        <select
+                          id="timeline"
+                          className="field-select"
+                          value={form.timeline}
+                          onChange={e => setField('timeline', e.target.value)}
+                        >
+                          <option value="">{t('contact.form.optional')}</option>
+                          {TIMELINES.map(t => (
+                            <option key={t}>{t}</option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+
+                    <div className="field">
+                      <label htmlFor="details" className="field-label">
+                        {t('contact.form.detailsLabel')}<span className="req">·</span> required
+                      </label>
+                      <textarea
+                        id="details"
+                        className="field-textarea"
+                        rows={4}
+                        placeholder="A paragraph is plenty. What is manual, duplicated, delayed, hidden, or hard to scale right now?"
+                        value={form.details}
+                        onChange={e => setField('details', e.target.value)}
+                      />
+                      {errors.details && <div className="field-error">{errors.details}</div>}
+                      <div className="field-char-count">{form.details.length} chars</div>
+                    </div>
+
+                    <div className="field">
+                      <span className="field-label">{t('contact.form.referralLabel')}</span>
+                      <div className="field-pills">
+                        {REFERRAL_SOURCES.map(r => (
+                          <button
+                            key={r}
+                            type="button"
+                            className={`field-pill ${form.referral === r ? 'selected' : ''}`}
+                            onClick={() => setField('referral', r)}
+                          >
+                            {r}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <button type="submit" className="form-submit" disabled={submitting}>
+                      {submitting ? (
+                        'Sending…'
+                      ) : (
+                        <>
+                          Send to {STUDIO.email}
+                          <span className="arr">→</span>
+                        </>
+                      )}
+                    </button>
+
+                    {submitError && (
+                      <div className="form-error-block fade-up">
+                        <p>
+                          <strong>{t('contact.form.errorTitle')}</strong>
+                          <br />
+                          I couldn't send your message. Please try again or email me directly at <em>{STUDIO.email}</em>.
+                        </p>
+                      </div>
+                    )}
+                  </form>
                 )}
-              </form>
-            )}
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <hr className="hairline" />
 
       <div className="doc">
         <div className="section-header">
           <div className="label-row">
-            <Eyebrow>The journey · what happens next</Eyebrow>
-            <Accent>from friction to scope</Accent>
+            <Eyebrow>{t('contact.steps.eyebrow')}</Eyebrow>
+            <Accent>{t('contact.steps.accent')}</Accent>
           </div>
           <h2>
-            Three <em>steps</em> from here.
+            {t('contact.steps.title')}<em>{t('contact.steps.titleEm')}</em>{t('contact.steps.titleEnd')}
           </h2>
         </div>
         <div className="next-steps">

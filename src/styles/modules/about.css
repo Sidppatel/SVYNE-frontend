@@ -20,14 +20,14 @@
 
   .story-h em {
     font-style: italic;
-    color: var(--color-sienna);
+    color: var(--color-accent);
   }
 
   .story-accent {
     font-family: var(--font-italic);
     font-style: italic;
     font-size: 17px;
-    color: var(--color-sepia);
+    color: var(--color-gray-600);
     margin-top: 16px;
   }
 
@@ -73,7 +73,7 @@
     font-family: var(--font-display);
     font-style: italic;
     font-size: 30px;
-    color: var(--color-sienna);
+    color: var(--color-accent);
     line-height: 1;
     margin-bottom: 10px;
   }
@@ -98,7 +98,7 @@
 
   .name-etymology {
     background:
-      radial-gradient(circle at 82% 14%, rgba(255, 90, 54, 0.16), transparent 28%),
+      radial-gradient(circle at 82% 14%, var(--color-accent-a16), transparent 28%),
       linear-gradient(135deg, var(--color-surface-3), var(--color-surface-2));
     color: var(--color-ink);
     border: 1px solid var(--color-border);
@@ -112,7 +112,7 @@
     font-family: var(--font-mono);
     font-size: 11px;
     letter-spacing: 0.22em;
-    color: var(--color-sienna-bright);
+    color: var(--color-accent);
     text-transform: uppercase;
     margin-bottom: 20px;
   }
@@ -133,13 +133,13 @@
 
   .ne-formula .plus,
   .ne-formula .eq {
-    color: var(--color-sienna-bright);
+    color: var(--color-accent);
     font-weight: 200;
     margin: 0 14px;
   }
 
   .ne-formula .period {
-    color: var(--color-sienna-bright);
+    color: var(--color-accent);
   }
 
   .ne-desc {
@@ -187,14 +187,14 @@
 
   .team-info h4 em {
     font-style: italic;
-    color: var(--color-sienna);
+    color: var(--color-accent);
   }
 
   .team-role {
     font-family: var(--font-mono);
     font-size: 11px;
     letter-spacing: 0.22em;
-    color: var(--color-sepia);
+    color: var(--color-gray-600);
     text-transform: uppercase;
     margin-bottom: 14px;
   }
@@ -239,14 +239,14 @@
     font-weight: 300;
     font-style: italic;
     color: var(--color-bg);
-    box-shadow: 0 20px 40px -10px var(--color-sienna-deep-glow);
+    box-shadow: 0 20px 40px -10px var(--color-accent-deep-a28);
   }
 
   .est-badge {
     font-family: var(--font-mono);
     font-size: 10px;
     letter-spacing: 0.22em;
-    color: var(--color-sepia);
+    color: var(--color-gray-600);
     border: 1px solid var(--color-border);
     padding: 6px 12px;
     border-radius: 4px;

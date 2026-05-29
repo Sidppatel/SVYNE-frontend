@@ -2,8 +2,7 @@ import { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { FocusTrap } from 'focus-trap-react'
 import { NAV_ITEMS, ROUTES } from '@/routes'
-import { SparkMark } from '@/components/ui/SparkMark'
-import { Wordmark } from '@/components/ui/Wordmark'
+import { Logo } from '@/components/ui/Logo'
 import { Button } from '@/components/ui/Button'
 import { useBodyScrollLock } from '@/hooks/useBodyScrollLock'
 
@@ -16,8 +15,7 @@ export function Nav() {
     <header className="nav">
       <div className="nav-inner">
         <button className="nav-brand" onClick={() => navigate(ROUTES.home)} aria-label="SVYNE home">
-          <SparkMark size={28} />
-          <Wordmark />
+          <Logo />
         </button>
 
         <nav className="nav-links" aria-label="Primary">

@@ -8,7 +8,7 @@
     font-family: var(--font-mono);
     font-size: 11px;
     letter-spacing: 0.18em;
-    color: var(--color-sienna);
+    color: var(--color-accent);
     text-transform: uppercase;
     margin-bottom: 40px;
     display: inline-flex;
@@ -17,14 +17,14 @@
   }
 
   .cs-back:hover {
-    color: var(--color-sienna-deep);
+    color: var(--color-accent-deep);
   }
 
   .cs-meta {
     font-family: var(--font-italic);
     font-style: italic;
     font-size: 18px;
-    color: var(--color-sepia);
+    color: var(--color-gray-600);
     margin-bottom: 16px;
   }
 
@@ -39,14 +39,14 @@
 
   .cs-title em {
     font-style: italic;
-    color: var(--color-sienna);
+    color: var(--color-accent);
   }
 
   .cs-deck {
     font-family: var(--font-display);
     font-style: italic;
     font-size: 24px;
-    color: var(--color-sepia);
+    color: var(--color-gray-600);
     max-width: 720px;
     line-height: 1.5;
     margin-bottom: 60px;
@@ -70,7 +70,7 @@
     font-family: var(--font-mono);
     font-size: 10px;
     letter-spacing: 0.22em;
-    color: var(--color-sienna);
+    color: var(--color-accent);
     text-transform: uppercase;
     margin-bottom: 8px;
   }
@@ -83,7 +83,7 @@
     font-family: var(--font-mono);
     font-size: 10px;
     letter-spacing: 0.22em;
-    color: var(--color-sepia);
+    color: var(--color-gray-600);
     text-transform: uppercase;
     margin-top: 18px;
   }
@@ -96,7 +96,7 @@
 
   .cs-sidebar dd em {
     font-style: italic;
-    color: var(--color-sienna);
+    color: var(--color-accent);
   }
 
   .cs-sidebar dd.mono {
@@ -124,7 +124,7 @@
 
   .cs-body h4 em {
     font-style: italic;
-    color: var(--color-sienna);
+    color: var(--color-accent);
   }
 }
 
@@ -193,7 +193,7 @@
   .cs-sidebar h5 {
     margin-bottom: 14px;
     padding-bottom: 12px;
-    border-bottom: 1px solid var(--color-parchment-darker);
+    border-bottom: 1px solid var(--color-surface-3);
   }
 
   .cs-sidebar dl {

@@ -1,25 +1,48 @@
+import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import { Button } from '@/components/ui/Button'
 import { Eyebrow } from '@/components/ui/Eyebrow'
 import { Accent } from '@/components/ui/Accent'
 import { CtaBand } from '@/components/layout/CtaBand'
 import { SEO } from '@/components/layout/SEO'
+import { HeroCanvas3D } from '@/components/ui/HeroCanvas3D'
 import { SERVICE_BLOCKS, SERVICES_NOT_OFFERED } from '@/content/services'
+import { ROUTES } from '@/routes'
 
 export function Services() {
+  const { t } = useTranslation()
+  const navigate = useNavigate()
+
   return (
     <>
       <SEO title="Systems" description="Operational systems for service businesses: workflow audit, modular system build, and ongoing optimization." />
+      
       <section className="hero">
         <div className="doc">
-          <div className="hero-inner">
-            <Eyebrow className="fade-up">◆ Chapter 04 · Systems ◆</Eyebrow>
-            <h1>
-              <span className="fade-up d1">Operations first<span className="brand-period sway">.</span></span>
-              <br />
-              <em className="fade-up d2">Software second<span className="brand-period sway">.</span></em>
-            </h1>
-            <p className="hero-deck fade-up d3">
-              SVYNE maps the workflow, assembles the operational system, and keeps improving it as the business grows.
-            </p>
+          <div className="hero-inner-grid">
+            <div className="hero-inner">
+              <Eyebrow className="fade-up">{t('services.hero.eyebrow')}</Eyebrow>
+              <h1 className="h-display">
+                <span className="fade-up d1">{t('services.hero.title')}</span>
+                <span className="fade-up d2">{t('services.hero.titleEm')}<span className="brand-period">.</span></span>
+              </h1>
+              <p className="hero-deck fade-up d3">
+                {t('services.hero.deck')}
+              </p>
+            </div>
+            
+            <div className="hero-canvas-wrap fade-up d2">
+              <HeroCanvas3D mode="services" />
+            </div>
+
+            <div className="hero-ctas fade-up d4">
+              <Button variant="primary" withArrow onClick={() => navigate(ROUTES.contact)}>
+                {t('services.hero.cta.book')}
+              </Button>
+              <Button variant="secondary" onClick={() => navigate(ROUTES.work)}>
+                {t('services.hero.cta.work')}
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -77,14 +100,14 @@ export function Services() {
         <div className="doc">
           <div className="section-header">
             <div className="label-row">
-              <Eyebrow>Positioning · what SVYNE is not</Eyebrow>
-              <Accent>clear boundaries</Accent>
+              <Eyebrow>{t('services.not.eyebrow')}</Eyebrow>
+              <Accent>{t('services.not.accent')}</Accent>
             </div>
             <h2>
-              Not another <em>tool vendor.</em>
+              {t('services.not.title')}<em>{t('services.not.titleEm')}</em>
             </h2>
             <p className="deck">
-              SVYNE is built for businesses that need operational transformation, not another disconnected app for the staff to babysit.
+              {t('services.not.deck')}
             </p>
           </div>
           <div className="services-strip">
@@ -102,10 +125,10 @@ export function Services() {
       <CtaBand
         title={
           <>
-            Talk to SVYNE about <em>your operation.</em>
+            {t('services.cta.title')}<em>{t('services.cta.titleEm')}</em>
           </>
         }
-        deck="Bring the messy workflow. SVYNE will help identify what should become a system."
+        deck={t('services.cta.deck')}
       />
     </>
   )

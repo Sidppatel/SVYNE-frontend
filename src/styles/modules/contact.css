@@ -17,7 +17,7 @@
 
   .contact-h em {
     font-style: italic;
-    color: var(--color-sienna);
+    color: var(--color-accent);
     font-weight: 300;
   }
 
@@ -25,7 +25,7 @@
     font-family: var(--font-display);
     font-style: italic;
     font-size: 22px;
-    color: var(--color-sepia);
+    color: var(--color-gray-600);
     line-height: 1.45;
     margin-bottom: 40px;
     max-width: 460px;
@@ -33,11 +33,11 @@
 
   .contact-deck em {
     font-family: var(--font-italic);
-    color: var(--color-sienna);
+    color: var(--color-accent);
   }
 
   .contact-meta {
-    border-top: 1px solid var(--color-parchment-darker);
+    border-top: 1px solid var(--color-surface-3);
     padding-top: 28px;
   }
 
@@ -49,7 +49,7 @@
     font-family: var(--font-mono);
     font-size: 10px;
     letter-spacing: 0.22em;
-    color: var(--color-sienna);
+    color: var(--color-accent);
     text-transform: uppercase;
     margin-bottom: 6px;
   }
@@ -62,7 +62,7 @@
 
   .contact-meta-value em {
     font-style: italic;
-    color: var(--color-sienna);
+    color: var(--color-accent);
   }
 
   .contact-form {
@@ -80,13 +80,13 @@
     font-family: var(--font-mono);
     font-size: 10px;
     letter-spacing: 0.22em;
-    color: var(--color-sienna);
+    color: var(--color-accent);
     text-transform: uppercase;
     margin-bottom: 8px;
   }
 
   .field-label .req {
-    color: var(--color-sepia);
+    color: var(--color-gray-600);
   }
 
   .field-input,
@@ -94,9 +94,9 @@
   .field-select {
     width: 100%;
     padding: 12px 14px;
-    background: var(--color-parchment);
+    background: var(--color-bg);
     color: var(--color-ink);
-    border: 1px solid var(--color-parchment-darker);
+    border: 1px solid var(--color-surface-3);
     border-radius: 6px;
     font: 400 15px var(--font-sans);
     transition:
@@ -108,13 +108,13 @@
   .field-textarea:focus,
   .field-select:focus {
     outline: none;
-    border-color: var(--color-sienna);
-    background: var(--color-parchment-deep);
+    border-color: var(--color-accent);
+    background: var(--color-surface-2);
   }
 
   .field-input::placeholder,
   .field-textarea::placeholder {
-    color: var(--color-sepia);
+    color: var(--color-gray-600);
     opacity: 0.7;
   }
 
@@ -137,8 +137,8 @@
 
   .field-pill {
     padding: 9px 14px;
-    background: var(--color-parchment);
-    border: 1px solid var(--color-parchment-darker);
+    background: var(--color-bg);
+    border: 1px solid var(--color-surface-3);
     border-radius: 20px;
     font-size: 12.5px;
     font-family: var(--font-sans);
@@ -148,7 +148,7 @@
   }
 
   .field-pill:hover {
-    border-color: var(--color-sienna);
+    border-color: var(--color-accent);
   }
 
   .field-pill.selected {
@@ -160,7 +160,7 @@
   .field-char-count {
     font-family: var(--font-mono);
     font-size: 10px;
-    color: var(--color-sepia);
+    color: var(--color-gray-600);
     letter-spacing: 0.14em;
     margin-top: 4px;
     text-transform: uppercase;
@@ -170,7 +170,7 @@
     width: 100%;
     margin-top: 14px;
     padding: 16px;
-    background: var(--color-sienna);
+    background: var(--color-accent);
     color: var(--color-cream);
     border-radius: 8px;
     font: 500 15px var(--font-sans);
@@ -182,9 +182,9 @@
   }
 
   .form-submit:hover {
-    background: var(--color-sienna-deep);
+    background: var(--color-accent-deep);
     transform: translateY(-2px);
-    box-shadow: 0 12px 28px -10px var(--color-sienna-deep-glow);
+    box-shadow: 0 12px 28px -10px var(--color-accent-deep-a28);
   }
 
   .form-submit:disabled {
@@ -205,7 +205,7 @@
   .field-error {
     font-family: var(--font-mono);
     font-size: 10px;
-    color: var(--color-sienna);
+    color: var(--color-accent);
     margin-top: 4px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -222,7 +222,7 @@
     height: 64px;
     margin: 0 auto 24px;
     border-radius: 50%;
-    background: var(--color-sienna);
+    background: var(--color-accent);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -242,14 +242,14 @@
 
   .form-thanks h3 em {
     font-style: italic;
-    color: var(--color-sienna);
+    color: var(--color-accent);
   }
 
   .form-thanks p {
     font-family: var(--font-display);
     font-style: italic;
     font-size: 18px;
-    color: var(--color-sepia);
+    color: var(--color-gray-600);
     max-width: 360px;
     margin: 0 auto 30px;
   }
@@ -271,7 +271,7 @@
     font-family: var(--font-display);
     font-style: italic;
     font-size: 36px;
-    color: var(--color-sienna);
+    color: var(--color-accent);
     line-height: 1;
     margin-bottom: 14px;
   }
@@ -290,11 +290,11 @@
   .ns-desc {
     font-size: 13.5px;
     line-height: 1.55;
-    color: var(--color-sepia);
+    color: var(--color-gray-600);
   }
 
   .calendar-section {
-    border-block: 1px solid var(--color-parchment-darker);
+    border-block: 1px solid var(--color-surface-3);
   }
 
   .calendar-embed-wrap {
@@ -304,8 +304,8 @@
     border-radius: 16px;
     overflow: hidden;
     box-shadow:
-      0 4px 24px -8px rgba(58, 42, 34, 0.10),
-      0 40px 100px -40px rgba(58, 42, 34, 0.18);
+      0 4px 24px -8px var(--color-ink-surface-a10),
+      0 40px 100px -40px var(--color-border-strong);
   }
 
   .calendar-embed-wrap .calendly-inline-widget {
@@ -324,6 +324,10 @@
     grid-template-columns: 1fr;
     gap: 50px;
     padding: calc(var(--nav-height) + 32px) 0 50px;
+  }
+
+  .hero-form-wrap {
+    margin-bottom: 48px;
   }
 
   .next-steps {

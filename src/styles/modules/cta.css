@@ -5,8 +5,8 @@
     position: relative;
     padding: clamp(84px, 10vw, 144px) 0;
     background:
-      linear-gradient(180deg, color-mix(in srgb, var(--color-surface) 82%, transparent), color-mix(in srgb, var(--color-surface-2) 74%, transparent)),
-      radial-gradient(circle at 86% 22%, rgba(255, 90, 54, 0.12), transparent 28%);
+      linear-gradient(180deg, var(--color-surface-a82), var(--color-surface-2-a74)),
+      radial-gradient(circle at 86% 22%, var(--color-accent-wash), transparent 28%);
     overflow: hidden;
     border-block: 1px solid var(--color-border);
   }
@@ -14,8 +14,8 @@
   .section-cta-final {
     padding-bottom: clamp(108px, 12vw, 176px);
     background:
-      linear-gradient(180deg, color-mix(in srgb, var(--color-surface-2) 80%, transparent), color-mix(in srgb, var(--color-surface) 88%, transparent)),
-      radial-gradient(circle at 82% 30%, rgba(255, 90, 54, 0.13), transparent 30%);
+      linear-gradient(180deg, var(--color-surface-2-a80), var(--color-surface-a88)),
+      radial-gradient(circle at 82% 30%, var(--color-accent-a13), transparent 30%);
   }
 
   .cta-grid {
@@ -30,7 +30,7 @@
     opacity: 0.35;
     mask-image: radial-gradient(
       ellipse 60% 70% at 88% 80%,
-      rgba(35, 24, 21, 0.76) 0%,
+      var(--color-ink-a76) 0%,
       transparent 100%
     );
     pointer-events: none;
@@ -47,7 +47,7 @@
     height: clamp(300px, 42vw, 620px);
     background: radial-gradient(
       circle,
-      rgba(255, 90, 54, 0.11) 0%,
+      var(--color-accent-a11) 0%,
       transparent 65%
     );
     pointer-events: none;
@@ -156,7 +156,7 @@
     background: var(--color-accent-deep);
     border-color: var(--color-accent-deep);
     transform: translateY(-2px);
-    box-shadow: 0 12px 32px -8px rgba(255, 90, 54, 0.32);
+    box-shadow: 0 12px 32px -8px var(--color-accent-a32);
   }
 
   .section-cta-band .btn-secondary,
@@ -189,7 +189,7 @@
   ───────────────────────────────────────────────────────────── */
 
   .section-parchment-deep {
-    background: var(--color-parchment-deep);
+    background: var(--color-surface-2);
     padding: 120px 0 140px;
   }
 

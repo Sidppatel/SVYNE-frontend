@@ -1,23 +1,24 @@
 import { NavLink } from 'react-router-dom'
-import { SparkMark } from '@/components/ui/SparkMark'
-import { Wordmark } from '@/components/ui/Wordmark'
+import { useTranslation } from 'react-i18next'
+import { Logo } from '@/components/ui/Logo'
 import { FOOTER_LINKS, STUDIO } from '@/content/studio'
 import { ROUTES } from '@/routes'
 
 export function Footer() {
+  const { t } = useTranslation()
+
   return (
     <footer className="footer">
-      <div className="footer-inner">
+      <div className="footer-inner doc">
         <div className="footer-top">
           <div>
             <div className="footer-mark">
-              <SparkMark size={34} color="var(--color-sienna-bright)" stroke={7} />
-              <Wordmark />
+              <Logo />
             </div>
             <p className="footer-tag">{STUDIO.tagline} {STUDIO.description}</p>
           </div>
           <div className="footer-col">
-            <h4>Pages</h4>
+            <h4>{t('footer.pages')}</h4>
             <ul>
               {FOOTER_LINKS.pages.map(p => (
                 <li key={p.to}>
@@ -27,15 +28,15 @@ export function Footer() {
             </ul>
           </div>
           <div className="footer-col">
-            <h4>Reach</h4>
+            <h4>{t('footer.reach')}</h4>
             <ul>
               <li><a href={`mailto:${STUDIO.email}`}>{STUDIO.email}</a></li>
-              <li><NavLink to={ROUTES.contact}>Book a system audit</NavLink></li>
+              <li><NavLink to={ROUTES.contact}>{t('footer.audit')}</NavLink></li>
               <li><span>{STUDIO.location}</span></li>
             </ul>
           </div>
           <div className="footer-col">
-            <h4>Elsewhere</h4>
+            <h4>{t('footer.elsewhere')}</h4>
             <ul>
               {FOOTER_LINKS.elsewhere.map(l => (
                 <li key={l.label}>

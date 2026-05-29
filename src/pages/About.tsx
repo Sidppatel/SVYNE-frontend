@@ -1,26 +1,49 @@
+import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import { Button } from '@/components/ui/Button'
 import { SEO } from '@/components/layout/SEO'
 import { Eyebrow } from '@/components/ui/Eyebrow'
 import { Accent } from '@/components/ui/Accent'
 import { CtaBand } from '@/components/layout/CtaBand'
+import { HeroCanvas3D } from '@/components/ui/HeroCanvas3D'
 import { ABOUT_LOCATION, ABOUT_STORY, ABOUT_TEAM, ABOUT_VALUES } from '@/content/about'
 import { renderBold } from '@/lib/renderBold'
+import { ROUTES } from '@/routes'
 
 export function About() {
+  const { t } = useTranslation()
+  const navigate = useNavigate()
+
   return (
     <>
       <SEO title="About SVYNE" description="SVYNE designs operational systems for service businesses that need clearer workflows and scalable operations." />
+      
       <section className="hero">
         <div className="doc">
-          <div className="hero-inner">
-            <Eyebrow className="fade-up">◆ Chapter 02 · About SVYNE ◆</Eyebrow>
-            <h1>
-              <span className="fade-up d1">Service operations<span className="brand-period sway">.</span></span>
-              <br />
-              <em className="fade-up d2">made scalable<span className="brand-period sway">.</span></em>
-            </h1>
-            <p className="hero-deck fade-up d3">
-              SVYNE is based in <strong>Mobile, Alabama</strong>. I help service businesses replace scattered manual work with operational systems built around the way their teams actually work.
-            </p>
+          <div className="hero-inner-grid">
+            <div className="hero-inner">
+              <Eyebrow className="fade-up">{t('about.hero.eyebrow')}</Eyebrow>
+              <h1 className="h-display">
+                <span className="fade-up d1">{t('about.hero.title')}</span>
+                <span className="fade-up d2">{t('about.hero.titleEm')}<span className="brand-period">.</span></span>
+              </h1>
+              <p className="hero-deck fade-up d3">
+                {t('about.hero.deckStart')}<strong>{t('about.hero.location')}</strong>{t('about.hero.deckEnd')}
+              </p>
+            </div>
+            
+            <div className="hero-canvas-wrap fade-up d2">
+              <HeroCanvas3D mode="about" />
+            </div>
+
+            <div className="hero-ctas fade-up d4">
+              <Button variant="primary" withArrow onClick={() => navigate(ROUTES.contact)}>
+                {t('about.hero.cta.book')}
+              </Button>
+              <Button variant="secondary" onClick={() => navigate(ROUTES.pricing)}>
+                {t('about.hero.cta.pricing')}
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -30,11 +53,11 @@ export function About() {
       <div className="doc">
         <div className="story-block">
           <div>
-            <Eyebrow className="story-eyebrow">◆ The story ◆</Eyebrow>
+            <Eyebrow className="story-eyebrow">{t('about.story.eyebrow')}</Eyebrow>
             <h2 className="story-h">
-              Why SVYNE <em>exists<span className="brand-period sway">.</span></em>
+              {t('about.story.title')}<em>{t('about.story.titleEm')}<span className="brand-period sway">.</span></em>
             </h2>
-            <p className="story-accent">workflow clarity · operating systems.</p>
+            <p className="story-accent">{t('about.story.accent')}</p>
           </div>
           <div className="story-body">
             {ABOUT_STORY.map((p, i) => (
@@ -46,24 +69,24 @@ export function About() {
         <div className="name-etymology">
           <div className="ne-label">◆ The name ◆</div>
           <div className="ne-formula">
-            <em>SERVICE VISION</em> <span className="plus">+</span> <em>VINE</em> <span className="eq">=</span> SVYNE<span className="period">.</span>
+            <em>{t('about.name.title')}</em> <span className="plus">+</span> <em>{t('about.name.plus')}</em> <span className="eq">=</span> SVYNE<span className="period">.</span>
           </div>
           <p className="ne-desc">
-            A name for growth, connection, and the technical structure that lets a service operation expand.
+            {t('about.name.desc')}
           </p>
         </div>
 
         <div className="section">
           <div className="section-header">
             <div className="label-row">
-              <Eyebrow>Values · operating principles</Eyebrow>
-              <Accent>four rules</Accent>
+              <Eyebrow>{t('about.values.eyebrow')}</Eyebrow>
+              <Accent>{t('about.values.accent')}</Accent>
             </div>
             <h2>
-              Four <em>principles.</em>
+              {t('about.values.title')}<em>{t('about.values.titleEm')}</em>
             </h2>
             <p className="deck">
-              Strong enough to keep the work focused on outcomes instead of feature sprawl.
+              {t('about.values.deck')}
             </p>
           </div>
           <div className="values-grid">
@@ -82,14 +105,14 @@ export function About() {
         <div className="section">
           <div className="section-header">
             <div className="label-row">
-              <Eyebrow>The founder · who maps and builds it</Eyebrow>
-              <Accent>one person</Accent>
+              <Eyebrow>{t('about.team.eyebrow')}</Eyebrow>
+              <Accent>{t('about.team.accent')}</Accent>
             </div>
             <h2>
-              One <em>person.</em>
+              {t('about.team.title')}<em>{t('about.team.titleEm')}</em>
             </h2>
             <p className="deck">
-              No account managers. No project coordinators. The person mapping the workflow is the person designing and shipping the system.
+              {t('about.team.deck')}
             </p>
           </div>
           {ABOUT_TEAM.map(member => (
@@ -111,11 +134,11 @@ export function About() {
         <div className="doc">
           <div className="section-header">
             <div className="label-row">
-              <Eyebrow>Location · where & how</Eyebrow>
-              <Accent>Saraland, Alabama</Accent>
+              <Eyebrow>{t('about.location.eyebrow')}</Eyebrow>
+              <Accent>{t('about.location.accent')}</Accent>
             </div>
             <h2>
-              Local. <em>Working everywhere.</em>
+              {t('about.location.title')}<em>{t('about.location.titleEm')}</em>
             </h2>
           </div>
           <div className="services-strip">
@@ -133,10 +156,10 @@ export function About() {
       <CtaBand
         title={
           <>
-            Build around <em>your workflow.</em>
+            {t('about.cta.title')}<em>{t('about.cta.titleEm')}</em>
           </>
         }
-        deck="One partner from operational audit to implementation, launch, training, and long-term optimization."
+        deck={t('about.cta.deck')}
       />
     </>
   )

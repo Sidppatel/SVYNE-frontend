@@ -24,7 +24,7 @@
   .faq-why-card p {
     font-size: 14px;
     line-height: 1.6;
-    color: var(--color-sepia);
+    color: var(--color-gray-600);
   }
 
   .faq-list {
@@ -47,7 +47,7 @@
     font-style: italic;
     font-size: 34px;
     line-height: 1;
-    color: var(--color-sienna);
+    color: var(--color-accent);
   }
 
   .faq-item h3 {

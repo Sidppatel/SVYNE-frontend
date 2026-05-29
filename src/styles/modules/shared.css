@@ -23,16 +23,16 @@
   }
 
   .section-parchment-deep {
-    background: color-mix(in srgb, var(--color-surface-2) 65%, transparent);
+    background: var(--color-surface-2-a65);
   }
 
   .section-cream {
-    background: color-mix(in srgb, var(--color-surface) 60%, transparent);
+    background: var(--color-surface-a60);
   }
 
   .section-dark {
     background:
-      radial-gradient(circle at 84% 18%, rgba(255, 90, 54, 0.13), transparent 28%),
+      radial-gradient(circle at 84% 18%, var(--color-accent-a13), transparent 28%),
       linear-gradient(135deg, var(--color-surface-3), var(--color-surface-2));
     color: var(--color-ink);
     padding: 100px 0;
@@ -59,7 +59,7 @@
 
   .hairline {
     height: 1px;
-    background: var(--color-parchment-darker);
+    background: var(--color-surface-3);
     border: 0;
   }
 

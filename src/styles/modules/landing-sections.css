@@ -1,0 +1,517 @@
+@layer components {
+  /* ==========================================================================
+     1. Common Section Layout & Headings
+     ========================================================================== */
+  .section-cream {
+    background-color: var(--color-surface);
+  }
+
+  .section-parchment-deep {
+    background-color: var(--color-surface-2);
+  }
+
+  .label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 14px;
+  }
+
+  /* ==========================================================================
+     2. Problem Section (Operational Chaos)
+     ========================================================================== */
+  .chaos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    margin-top: 56px;
+  }
+
+  .chaos-card {
+    background: var(--color-glass);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    padding: 38px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s var(--ease-brand);
+    box-shadow: var(--shadow-elevate);
+  }
+
+  .chaos-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--color-border-strong);
+    transition: background 0.3s ease;
+  }
+
+  .chaos-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-border-strong);
+    box-shadow: 0 16px 36px -12px var(--color-ink-surface-a14);
+  }
+
+  .chaos-card:hover::before {
+    background: var(--color-accent);
+  }
+
+  .chaos-card-meta {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-text-faint);
+    margin-bottom: 18px;
+  }
+
+  .chaos-card-title {
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--color-ink);
+    margin-bottom: 16px;
+  }
+
+  .chaos-card-desc {
+    font-size: 15px;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  .chaos-card-icon {
+    position: absolute;
+    right: 28px;
+    top: 28px;
+    width: 24px;
+    height: 24px;
+    color: var(--color-text-faint);
+    opacity: 0.4;
+    transition: all 0.3s ease;
+  }
+
+  .chaos-card:hover .chaos-card-icon {
+    color: var(--color-accent);
+    opacity: 1;
+    transform: rotate(15deg) scale(1.1);
+  }
+
+  /* ==========================================================================
+     3. Why Existing Software Fails (Comparison Panel)
+     ========================================================================== */
+  .compare-panel {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 56px;
+    align-items: stretch;
+  }
+
+  .compare-column {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .compare-column-title {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-text-faint);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .compare-column-title span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .compare-column-title .bullet-chaos {
+    background: var(--color-accent);
+    box-shadow: 0 0 10px var(--color-accent);
+  }
+
+  .compare-column-title .bullet-svyne {
+    background: var(--color-growth);
+    box-shadow: 0 0 10px var(--color-growth);
+  }
+
+  .compare-card {
+    flex: 1;
+    border-radius: 18px;
+    padding: 44px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-elevate);
+    height: 100%;
+  }
+
+  .compare-card-chaos {
+    background: var(--color-ink-a2);
+    border: 1px solid var(--color-border);
+  }
+
+  .compare-card-svyne {
+    background: var(--color-glass);
+    border: 1px solid var(--color-border-strong);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 40px -15px var(--color-border);
+  }
+
+  .compare-card-svyne::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2.5px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-gold));
+  }
+
+  .compare-item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 24px;
+  }
+
+  .compare-item {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+  }
+
+  .compare-item-num {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--color-text-faint);
+    padding-top: 4px;
+  }
+
+  .compare-item-content h4 {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--color-ink);
+    margin-bottom: 6px;
+  }
+
+  .compare-item-content p {
+    font-size: 14px;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
+  /* Decorative dashboard simulator in compare */
+  .dashboard-sim {
+    margin-top: auto;
+    padding-top: 36px;
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .dash-row {
+    display: flex;
+    gap: 8px;
+  }
+
+  .dash-block {
+    height: 8px;
+    border-radius: 4px;
+    background: var(--color-ink-a8);
+  }
+
+  .dash-block-pulse {
+    background: var(--color-accent-soft);
+    animation: dash-pulse 2s infinite alternate;
+  }
+
+  @keyframes dash-pulse {
+    0% { opacity: 0.4; }
+    100% { opacity: 0.9; }
+  }
+
+  /* ==========================================================================
+     4. The SVYNE Approach (Timeline workflow)
+     ========================================================================== */
+  .timeline-container {
+    position: relative;
+    margin-top: 64px;
+    padding-left: 36px;
+  }
+
+  .timeline-line {
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: var(--color-border);
+  }
+
+  .timeline-progress {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, var(--color-accent), var(--color-gold));
+    transition: height 0.1s ease;
+  }
+
+  .timeline-step {
+    position: relative;
+    padding-bottom: 56px;
+  }
+
+  .timeline-step:last-child {
+    padding-bottom: 0;
+  }
+
+  .timeline-node {
+    position: absolute;
+    left: -36px;
+    top: 4px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--color-bg);
+    border: 3px solid var(--color-border-strong);
+    z-index: 5;
+    transition: all 0.4s var(--ease-brand);
+  }
+
+  .timeline-step:hover .timeline-node {
+    border-color: var(--color-accent);
+    transform: scale(1.2);
+    box-shadow: 0 0 12px var(--color-accent-a40);
+  }
+
+  .timeline-step.active .timeline-node {
+    border-color: var(--color-accent);
+    background: var(--color-accent);
+  }
+
+  .timeline-card {
+    background: var(--color-glass);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 32px 38px;
+    transition: all 0.4s var(--ease-brand);
+    box-shadow: var(--shadow-elevate);
+  }
+
+  .timeline-step:hover .timeline-card {
+    border-color: var(--color-border-strong);
+    transform: translateX(8px);
+    box-shadow: 0 12px 28px -8px var(--color-ink-surface-a10);
+  }
+
+  .timeline-meta {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-text-faint);
+    margin-bottom: 12px;
+  }
+
+  .timeline-meta .step-accent {
+    color: var(--color-accent);
+    font-style: italic;
+  }
+
+  .timeline-title {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--color-ink);
+    margin-bottom: 12px;
+  }
+
+  .timeline-desc {
+    font-size: 15px;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    max-width: 800px;
+  }
+
+  /* ==========================================================================
+     5. Success Outcomes (KPI Grid)
+     ========================================================================== */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: 56px;
+  }
+
+  /* Expand last items for better grid visual weight if 5 items are used */
+  .kpi-grid > *:nth-child(4),
+  .kpi-grid > *:nth-child(5) {
+    grid-column: span 1.5;
+  }
+
+  .kpi-card {
+    background: var(--color-glass);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 44px 38px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s var(--ease-brand);
+    box-shadow: var(--shadow-elevate);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .kpi-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 1px;
+    background: linear-gradient(135deg, transparent, var(--color-ink-surface-a8), transparent);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    transition: background 0.4s ease;
+  }
+
+  .kpi-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-border-strong);
+    box-shadow: 0 20px 40px -15px var(--color-ink-surface-a14);
+  }
+
+  .kpi-card:hover::before {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-gold));
+  }
+
+  .kpi-metric {
+    font-family: var(--font-display);
+    font-size: clamp(48px, 6vw, 68px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--color-ink);
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, var(--color-ink), var(--color-accent-deep));
+    -webkit-background-clip: text;
+    background-clip: text;
+    transition: all 0.3s ease;
+  }
+
+  .kpi-card:hover .kpi-metric {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-gold));
+    -webkit-background-clip: text;
+    background-clip: text;
+    transform: scale(1.04);
+  }
+
+  .kpi-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-text-faint);
+    margin-bottom: 14px;
+  }
+
+  .kpi-desc {
+    font-size: 14px;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    max-width: 280px;
+  }
+
+  /* ==========================================================================
+     6. Media Queries & Responsiveness
+     ========================================================================== */
+  @media (max-width: 1024px) {
+    .kpi-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .kpi-grid > *:nth-child(4),
+    .kpi-grid > *:nth-child(5) {
+      grid-column: span 1;
+    }
+    .kpi-grid > *:nth-child(5) {
+      grid-column: span 2;
+    }
+    .compare-panel {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .chaos-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .kpi-grid {
+      grid-template-columns: 1fr;
+    }
+    .kpi-grid > *:nth-child(4),
+    .kpi-grid > *:nth-child(5) {
+      grid-column: span 1;
+    }
+    .kpi-grid > *:nth-child(5) {
+      grid-column: span 1;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .chaos-card,
+    .compare-card,
+    .timeline-card,
+    .kpi-card {
+      padding: 28px 24px;
+    }
+    .timeline-container {
+      padding-left: 24px;
+    }
+    .timeline-node {
+      left: -24px;
+      width: 14px;
+      height: 14px;
+    }
+    .timeline-line {
+      left: 6px;
+    }
+    .chaos-card-title {
+      font-size: 22px;
+    }
+    .compare-item-content h4 {
+      font-size: 16px;
+    }
+    .kpi-metric {
+      font-size: 48px;
+    }
+  }
+}

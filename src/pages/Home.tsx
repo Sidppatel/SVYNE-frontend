@@ -1,47 +1,101 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { useEffect, useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Button } from '@/components/ui/Button'
 import { Eyebrow } from '@/components/ui/Eyebrow'
 import { Accent } from '@/components/ui/Accent'
-import { WorkTileSvg } from '@/components/ui/WorkTileSvg'
 import { SEO } from '@/components/layout/SEO'
-import { HOME_OUTCOMES, HOME_PILLARS, HOME_PILLAR_TAG, HOME_PROCESS } from '@/content/home'
-import { CASE_STUDIES } from '@/content/work'
 import { ROUTES } from '@/routes'
 import { SuccessSection } from '@/components/layout/SuccessSection'
 import { FinalCta } from '@/components/layout/FinalCta'
+import { HeroCanvas3D } from '@/components/ui/HeroCanvas3D'
+import { AlertTriangle, Mail, Layers, Database } from 'lucide-react'
+
+// Intersection observer animated counter
+function KpiCounter({ target, duration = 1200 }: { target: number; duration?: number }) {
+  const [count, setCount] = useState(0)
+  const containerRef = useRef<HTMLSpanElement>(null)
+  const hasRunRef = useRef(false)
+
+  useEffect(() => {
+    let observer: IntersectionObserver
+    const end = target
+    
+    const animate = () => {
+      const startTime = performance.now()
+      
+      const update = (now: number) => {
+        const elapsed = now - startTime
+        const progress = Math.min(elapsed / duration, 1)
+        // Ease out quadratic
+        const easeProgress = progress * (2 - progress)
+        setCount(Math.floor(easeProgress * end))
+        
+        if (progress < 1) {
+          requestAnimationFrame(update)
+        }
+      }
+      requestAnimationFrame(update)
+    }
+
+    if (containerRef.current) {
+      observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && !hasRunRef.current) {
+          hasRunRef.current = true
+          animate()
+          observer.disconnect()
+        }
+      }, { threshold: 0.1 })
+      observer.observe(containerRef.current)
+    }
+
+    return () => {
+      if (observer) observer.disconnect()
+    }
+  }, [target, duration])
+
+  return <span ref={containerRef}>{count}</span>
+}
 
 export function Home() {
-  const navigate = useNavigate()
   const { t } = useTranslation()
-  const featured = CASE_STUDIES[0]
+  const navigate = useNavigate()
 
   return (
     <>
       <SEO description="Operational systems for service businesses. SVYNE replaces spreadsheets, phone calls, and disconnected tools with workflow-fit operating systems." />
+      
+      {/* ==========================================================================
+         1. Hero Section
+         ========================================================================== */}
       <section className="hero">
         <div className="doc">
-          <div className="hero-inner">
-            <Eyebrow className="fade-up">◆ Chapter 01 · Operational Systems ◆</Eyebrow>
-            <h1 className="h-display">
-              <span className="fade-up d1">{t('home.hero.theLiving')}<span className="brand-period">.</span></span>
-              <span className="fade-up d2">{t('home.hero.architecture')}<span className="brand-period">.</span></span>
-            </h1>
-            <p className="hero-deck fade-up d3">
-              {t('home.hero.deck')}<span className="brand-period">.</span>
-            </p>
+          <div className="hero-inner-grid">
+            <div className="hero-inner">
+              <Eyebrow className="fade-up">{t('home.hero.eyebrow')}</Eyebrow>
+              <h1 className="h-display">
+                <span className="fade-up d1">{t('home.hero.title')}</span>
+                <span className="fade-up d2">{t('home.hero.titleEm')}<span className="brand-period">.</span></span>
+              </h1>
+              <p className="hero-deck fade-up d3">
+                {t('home.hero.deck')}
+              </p>
+            </div>
+            
+            <div className="hero-canvas-wrap fade-up d2">
+              <HeroCanvas3D />
+            </div>
+
             <div className="hero-ctas fade-up d4">
               <Button variant="primary" withArrow onClick={() => navigate(ROUTES.contact)}>
                 {t('home.hero.cta.book')}
               </Button>
-              <Button variant="secondary" onClick={() => navigate(ROUTES.work)}>
-                {t('home.hero.cta.work')}
+              <Button variant="secondary" onClick={() => {
+                const element = document.getElementById('problem-section')
+                element?.scrollIntoView({ behavior: 'smooth' })
+              }}>
+                {t('home.hero.cta.how')}
               </Button>
-            </div>
-          </div>
-          <div className="scroll-indicator fade-up d5">
-            <div className="mouse">
-              <div className="wheel" />
             </div>
           </div>
         </div>
@@ -49,156 +103,327 @@ export function Home() {
 
       <hr className="hairline" />
 
-      <section className="section section-cream">
+      {/* ==========================================================================
+         2. Problem Section (Operational Chaos)
+         ========================================================================== */}
+      <section id="problem-section" className="section section-cream problem-section">
         <div className="doc">
           <div className="section-header">
             <div className="label-row">
-              <Eyebrow>Symptoms · cost of manual work</Eyebrow>
-              <Accent>what changes</Accent>
+              <Eyebrow>{t('home.problem.eyebrow')}</Eyebrow>
+              <Accent>{t('home.problem.accent')}</Accent>
             </div>
             <h2>
-              The problem is usually <em>operational.</em>
+              {t('home.problem.title')}<em>{t('home.problem.titleEm')}</em>
             </h2>
             <p className="deck">
-              The business is not broken. The workflow is scattered. SVYNE turns the repeated steps into a system your team can trust.
+              {t('home.problem.deck')}
             </p>
           </div>
 
-          <div className="outcome-grid">
-            {HOME_OUTCOMES.map(item => (
-              <article key={item.result} className="outcome-card">
-                <div className="outcome-result">{item.result}</div>
-                <p className="outcome-symptom">{item.symptom}</p>
-                <div className="outcome-rule" />
-                <p className="outcome-system">{item.system}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="doc">
-          <div className="section-header">
-            <div className="label-row">
-              <Eyebrow>{t('home.chapter1.eyebrow')}</Eyebrow>
-              <Accent>{t('home.chapter1.accent')}</Accent>
-            </div>
-            <h2>
-              {t('home.chapter1.title')}<em>{t('home.chapter1.titleEm')}</em>
-            </h2>
-            <p className="deck">
-              {t('home.chapter1.deck')}
-            </p>
-          </div>
-
-          <div className="services-strip">
-            {HOME_PILLARS.map(p => (
-              <button
-                key={p.num}
-                className="pillar clickable"
-                onClick={() => navigate(ROUTES.services)}
-              >
-                <div className="pillar-num">{p.num} · pillar</div>
-                <h3>
-                  <em>{p.name}</em>
-                </h3>
-                <div className="pillar-accent">{HOME_PILLAR_TAG.get(p.name)}</div>
-                <p>{p.desc}</p>
-                <div className="pillar-more">
-                  {t('home.chapter1.readMore')}<span className="arr">→</span>
-                </div>
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section section-parchment-deep">
-        <div className="doc">
-          <div className="section-header">
-            <div className="label-row">
-              <Eyebrow>{t('home.chapter2.eyebrow')}</Eyebrow>
-              <Accent>{t('home.chapter2.accent')}</Accent>
-            </div>
-            <h2>
-              {t('home.chapter2.title')}<em>{t('home.chapter2.titleEm')}</em>
-            </h2>
-            <p className="deck">{t('home.chapter2.deck')}</p>
-          </div>
-
-          <div className="work-grid">
-            <Link
-              to={ROUTES.workDetail(featured.id)}
-              className="work-tile fade-up d1"
-            >
-              <div className="work-img">
-                <WorkTileSvg grad={featured.grad} title={featured.title} year={featured.year} idx={featured.id} />
-              </div>
-              <div className="work-info">
-                <div className="work-tag">{featured.tag}</div>
-                <div className="work-title">
-                  {featured.title} - <em>{featured.titleEm}</em>
-                </div>
-                <div className="work-outcome">{featured.outcome}</div>
-                <p className="work-desc">{featured.desc}</p>
-              </div>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="doc">
-          <div className="about-home-grid">
-            <div className="about-home-portrait">
-              <div className="initial-block">SP</div>
-              <div className="est-badge">{t('home.about.badge')}</div>
-            </div>
-            <div className="about-home-content">
-              <Eyebrow>{t('home.about.eyebrow')}</Eyebrow>
-              <h2 className="h-display">
-                {t('home.about.title')}<em>{t('home.about.titleEm')}</em>
-              </h2>
-              <p className="deck">
-                I'm Siddh Patel. I run SVYNE to help service businesses turn everyday operational friction into clear, reliable systems. The work starts with how your team already operates, then becomes software only where software removes real drag.
+          <div className="chaos-grid">
+            <article className="chaos-card">
+              <div className="chaos-card-meta">01 · Workflows</div>
+              <h3 className="chaos-card-title">{t('home.chaos.workflows')}</h3>
+              <p className="chaos-card-desc">
+                {t('home.chaos.workflowsDesc')}
               </p>
-              <Button variant="secondary" onClick={() => navigate(ROUTES.about)}>
-                {t('home.about.cta')}<span className="arr">→</span>
-              </Button>
+              <div className="chaos-card-icon" aria-hidden="true">
+                <AlertTriangle size={24} />
+              </div>
+            </article>
+
+            <article className="chaos-card">
+              <div className="chaos-card-meta">02 · Communication</div>
+              <h3 className="chaos-card-title">{t('home.chaos.comm')}</h3>
+              <p className="chaos-card-desc">
+                {t('home.chaos.commDesc')}
+              </p>
+              <div className="chaos-card-icon" aria-hidden="true">
+                <Mail size={24} />
+              </div>
+            </article>
+
+            <article className="chaos-card">
+              <div className="chaos-card-meta">03 · Systems</div>
+              <h3 className="chaos-card-title">{t('home.chaos.systems')}</h3>
+              <p className="chaos-card-desc">
+                {t('home.chaos.systemsDesc')}
+              </p>
+              <div className="chaos-card-icon" aria-hidden="true">
+                <Layers size={24} />
+              </div>
+            </article>
+
+            <article className="chaos-card">
+              <div className="chaos-card-meta">04 · Pipelines</div>
+              <h3 className="chaos-card-title">{t('home.chaos.ops')}</h3>
+              <p className="chaos-card-desc">
+                {t('home.chaos.opsDesc')}
+              </p>
+              <div className="chaos-card-icon" aria-hidden="true">
+                <Database size={24} />
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* ==========================================================================
+         3. Why Existing Software Fails (Comparison)
+         ========================================================================== */}
+      <section className="section">
+        <div className="doc">
+          <div className="section-header">
+            <div className="label-row">
+              <Eyebrow>{t('home.trap.eyebrow')}</Eyebrow>
+              <Accent>{t('home.trap.accent')}</Accent>
+            </div>
+            <h2>
+              {t('home.trap.title')}<em>{t('home.trap.titleEm')}</em>
+            </h2>
+            <p className="deck">
+              {t('home.trap.deck')}
+            </p>
+          </div>
+
+          <div className="compare-panel">
+            <div className="compare-column">
+              <div className="compare-column-title">
+                <span className="bullet-chaos" aria-hidden="true" /> {t('home.compare.saas')}
+              </div>
+              <div className="compare-card compare-card-chaos">
+                <div className="compare-item-list">
+                  <div className="compare-item">
+                    <span className="compare-item-num">{t('home.compare.roman.one')}</span>
+                    <div className="compare-item-content">
+                      <h4>{t('home.compare.saas1.title')}</h4>
+                      <p>{t('home.compare.saas1.desc')}</p>
+                    </div>
+                  </div>
+                  <div className="compare-item">
+                    <span className="compare-item-num">{t('home.compare.roman.two')}</span>
+                    <div className="compare-item-content">
+                      <h4>{t('home.compare.saas2.title')}</h4>
+                      <p>{t('home.compare.saas2.desc')}</p>
+                    </div>
+                  </div>
+                  <div className="compare-item">
+                    <span className="compare-item-num">{t('home.compare.roman.three')}</span>
+                    <div className="compare-item-content">
+                      <h4>{t('home.compare.saas3.title')}</h4>
+                      <p>{t('home.compare.saas3.desc')}</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="dashboard-sim">
+                  <div className="dash-row">
+                    <div className="dash-block" style={{ width: '40%' }} />
+                    <div className="dash-block" style={{ width: '20%' }} />
+                  </div>
+                  <div className="dash-row">
+                    <div className="dash-block" style={{ width: '60%' }} />
+                    <div className="dash-block dash-block-pulse" style={{ width: '10%' }} />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="compare-column">
+              <div className="compare-column-title">
+                <span className="bullet-svyne" aria-hidden="true" /> {t('home.compare.svyne')}
+              </div>
+              <div className="compare-card compare-card-svyne">
+                <div className="compare-item-list">
+                  <div className="compare-item">
+                    <span className="compare-item-num">{t('home.compare.roman.one')}</span>
+                    <div className="compare-item-content">
+                      <h4>{t('home.compare.svyne1.title')}</h4>
+                      <p>{t('home.compare.svyne1.desc')}</p>
+                    </div>
+                  </div>
+                  <div className="compare-item">
+                    <span className="compare-item-num">{t('home.compare.roman.two')}</span>
+                    <div className="compare-item-content">
+                      <h4>{t('home.compare.svyne2.title')}</h4>
+                      <p>{t('home.compare.svyne2.desc')}</p>
+                    </div>
+                  </div>
+                  <div className="compare-item">
+                    <span className="compare-item-num">{t('home.compare.roman.three')}</span>
+                    <div className="compare-item-content">
+                      <h4>{t('home.compare.svyne3.title')}</h4>
+                      <p>{t('home.compare.svyne3.desc')}</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="dashboard-sim">
+                  <div className="dash-row">
+                    <div className="dash-block" style={{ width: '30%', backgroundColor: 'var(--color-growth)' }} />
+                    <div className="dash-block" style={{ width: '50%', backgroundColor: 'var(--color-accent)' }} />
+                  </div>
+                  <div className="dash-row">
+                    <div className="dash-block" style={{ width: '80%', backgroundColor: 'var(--color-gold)' }} />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section">
+      {/* ==========================================================================
+         4. The SVYNE Approach (Timeline Workflow)
+         ========================================================================== */}
+      <section className="section section-parchment-deep approach-section">
         <div className="doc">
           <div className="section-header">
             <div className="label-row">
-              <Eyebrow>{t('home.chapter3.eyebrow')}</Eyebrow>
-              <Accent>{t('home.chapter3.accent')}</Accent>
+              <Eyebrow>{t('home.approach.eyebrow')}</Eyebrow>
+              <Accent>{t('home.approach.accent')}</Accent>
             </div>
             <h2>
-              {t('home.chapter3.title')}<em>{t('home.chapter3.titleEm')}</em>
+              {t('home.approach.title')}<em>{t('home.approach.titleEm')}</em>
             </h2>
+            <p className="deck">
+              {t('home.approach.deck')}
+            </p>
           </div>
-          <div className="services-strip">
-            {HOME_PROCESS.map(s => (
-              <div key={s.num} className="pillar">
-                <div className="pillar-num">{s.num} · step</div>
-                <h3>
-                  <em>{s.title}</em>
-                </h3>
-                <div className="pillar-accent">{s.accent}</div>
-                <p>{s.desc}</p>
-                <button
-                  className="pillar-more"
-                  onClick={() => navigate(ROUTES.services)}
-                >
-                  {t('home.chapter3.learnMore')}<span className="arr">→</span>
-                </button>
+
+          <div className="timeline-container">
+            <div className="timeline-line" />
+            
+            <div className="timeline-step">
+              <div className="timeline-node" />
+              <div className="timeline-card">
+                <div className="timeline-meta">
+                  <span>{t('home.approach.phase1.meta')}</span>
+                  <span className="step-accent">{t('home.approach.phase1.accent')}</span>
+                </div>
+                <h3 className="timeline-title">{t('home.approach.phase1.title')}</h3>
+                <p className="timeline-desc">
+                  {t('home.approach.phase1.desc')}
+                </p>
               </div>
-            ))}
+            </div>
+
+            <div className="timeline-step">
+              <div className="timeline-node" />
+              <div className="timeline-card">
+                <div className="timeline-meta">
+                  <span>{t('home.approach.phase2.meta')}</span>
+                  <span className="step-accent">{t('home.approach.phase2.accent')}</span>
+                </div>
+                <h3 className="timeline-title">{t('home.approach.phase2.title')}</h3>
+                <p className="timeline-desc">
+                  {t('home.approach.phase2.desc')}
+                </p>
+              </div>
+            </div>
+
+            <div className="timeline-step">
+              <div className="timeline-node" />
+              <div className="timeline-card">
+                <div className="timeline-meta">
+                  <span>{t('home.approach.phase3.meta')}</span>
+                  <span className="step-accent">{t('home.approach.phase3.accent')}</span>
+                </div>
+                <h3 className="timeline-title">{t('home.approach.phase3.title')}</h3>
+                <p className="timeline-desc">
+                  {t('home.approach.phase3.desc')}
+                </p>
+              </div>
+            </div>
+
+            <div className="timeline-step">
+              <div className="timeline-node" />
+              <div className="timeline-card">
+                <div className="timeline-meta">
+                  <span>{t('home.approach.phase4.meta')}</span>
+                  <span className="step-accent">{t('home.approach.phase4.accent')}</span>
+                </div>
+                <h3 className="timeline-title">{t('home.approach.phase4.title')}</h3>
+                <p className="timeline-desc">
+                  {t('home.approach.phase4.desc')}
+                </p>
+              </div>
+            </div>
+
+            <div className="timeline-step">
+              <div className="timeline-node" />
+              <div className="timeline-card">
+                <div className="timeline-meta">
+                  <span>{t('home.approach.phase5.meta')}</span>
+                  <span className="step-accent">{t('home.approach.phase5.accent')}</span>
+                </div>
+                <h3 className="timeline-title">{t('home.approach.phase5.title')}</h3>
+                <p className="timeline-desc">
+                  {t('home.approach.phase5.desc')}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ==========================================================================
+         5. Success Outcomes
+         ========================================================================== */}
+      <section className="section kpi-section">
+        <div className="doc">
+          <div className="section-header">
+            <div className="label-row">
+              <Eyebrow>{t('home.outcomes.eyebrow')}</Eyebrow>
+              <Accent>{t('home.outcomes.accent')}</Accent>
+            </div>
+            <h2>
+              {t('home.outcomes.title')}<em>{t('home.outcomes.titleEm')}</em>
+            </h2>
+            <p className="deck">
+              {t('home.outcomes.deck')}
+            </p>
+          </div>
+
+          <div className="kpi-grid">
+            <article className="kpi-card">
+              <div className="kpi-metric">
+                -<KpiCounter target={40} />%
+              </div>
+              <div className="kpi-label">{t('home.outcomes.kpi1.label')}</div>
+              <p className="kpi-desc">{t('home.outcomes.kpi1.desc')}</p>
+            </article>
+
+            <article className="kpi-card">
+              <div className="kpi-metric">
+                <KpiCounter target={90} />%
+              </div>
+              <div className="kpi-label">{t('home.outcomes.kpi2.label')}</div>
+              <p className="kpi-desc">{t('home.outcomes.kpi2.desc')}</p>
+            </article>
+
+            <article className="kpi-card">
+              <div className="kpi-metric">
+                <KpiCounter target={100} />%
+              </div>
+              <div className="kpi-label">{t('home.outcomes.kpi3.label')}</div>
+              <p className="kpi-desc">{t('home.outcomes.kpi3.desc')}</p>
+            </article>
+
+            <article className="kpi-card">
+              <div className="kpi-metric">
+                <KpiCounter target={15} />h
+              </div>
+              <div className="kpi-label">{t('home.outcomes.kpi4.label')}</div>
+              <p className="kpi-desc">{t('home.outcomes.kpi4.desc')}</p>
+            </article>
+
+            <article className="kpi-card">
+              <div className="kpi-metric">
+                <KpiCounter target={10} />x
+              </div>
+              <div className="kpi-label">{t('home.outcomes.kpi5.label')}</div>
+              <p className="kpi-desc">{t('home.outcomes.kpi5.desc')}</p>
+            </article>
           </div>
         </div>
       </section>

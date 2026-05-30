@@ -32,6 +32,8 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build
+        env:
+          CLOUDFLARE_ENV: ${{ (github.event_name == 'pull_request' || github.ref == 'refs/heads/preview') && 'preview' || '' }}
         run: pnpm run build
 
       - name: Deploy to Cloudflare

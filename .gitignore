@@ -35,11 +35,13 @@ coverage/
 !.env.example
 
 # AI / Tooling
-.gemini
-.antigravity
-.cursor
-.windsurf
-.anthropic
+.gemini/
+!.geminirules
+!GEMINI.md
+.antigravity/
+.cursor/
+.windsurf/
+.anthropic/
 
 # Editor
 .vscode/*

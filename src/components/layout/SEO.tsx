@@ -10,7 +10,7 @@ interface SEOProps {
 export function SEO({
   title,
   description = 'Operational systems for service businesses. Replace spreadsheets, phone calls, and disconnected tools with workflow-fit systems.',
-  name = 'SVYNE',
+  name = 'svyne.',
   type = 'website'
 }: SEOProps) {
   const fullTitle = title ? `${title} — ${name}` : `${name} · ${description}`
@@ -42,7 +42,8 @@ export function SEO({
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
-          "name": "SVYNE",
+          "name": "svyne.",
+          "logo": "https://svyne.studio/favicon.svg",
           "image": "https://svyne.studio/og-image.png",
           "@id": "https://svyne.studio",
           "url": "https://svyne.studio",

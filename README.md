@@ -1,4 +1,4 @@
-# SVYNE — The Living Architecture.
+# SVYNE — The Living Architecture
 
 > *Growing your site vision through warm, structured technology.*
 
@@ -13,9 +13,11 @@ The name captures the philosophy: a vine grows by connection and structure. So d
 SVYNE operates on three pillars — the full lifecycle of a website or web product:
 
 ### i. Build — *foundation*
+
 From a clean marketing site to a custom event platform with ticketing. Design, code, and ship — fully working, owned by you.
 
 **What I make:**
+
 - Marketing sites — 5 to 20 pages, fully responsive, fast
 - Custom dashboards — admin tools, internal panels, reporting
 - Event platforms — ticketing, scanning, member access
@@ -23,12 +25,13 @@ From a clean marketing site to a custom event platform with ticketing. Design, c
 - Integrations — Stripe, Mailchimp, calendars, third-party APIs
 
 | Detail | Value |
-|---|---|
+| --- | --- |
 | Timeline | 2–6 weeks |
 | Price range | $3,500 – $25,000+ |
 | Code ownership | 100% yours |
 
 ### ii. Launch — *going live*
+
 Launch day is not a "fingers crossed" moment. Hosting set up, SEO foundation laid, day-of monitoring in place.
 
 - Domain & hosting — fully configured, SSL active
@@ -38,10 +41,11 @@ Launch day is not a "fingers crossed" moment. Hosting set up, SEO foundation lai
 - Day-of coordination — 24-hour monitoring
 
 ### iii. Maintain — *ongoing care*
+
 Launching is 20% of the work. Maintain is the other 80%.
 
 | Tier | Price | Includes |
-|---|---|---|
+| --- | --- | --- |
 | **Essential** | $99/mo | Uptime monitoring · weekly backups · security patches · 1-hour outage response |
 | **Active** | $299/mo | Essential + 4 hrs monthly content updates + performance report |
 | **Full** | $799/mo | Active + 10 dev hours/mo + priority response + monthly strategy call |
@@ -51,7 +55,7 @@ Launching is 20% of the work. Maintain is the other 80%.
 ## Pricing
 
 | Tier | Price | Best For |
-|---|---|---|
+| --- | --- | --- |
 | **Foundation** | $3,500 – $6,000 | Restaurants, local services, single-product businesses |
 | **Custom** | $8,000 – $25,000 | Event hosts, SaaS tools, internal platforms |
 | **Bespoke** | $25,000+ | Established businesses, multi-feature platforms |
@@ -63,7 +67,7 @@ Launching is 20% of the work. Maintain is the other 80%.
 ## Tech Stack
 
 | Layer | Technology |
-|---|---|
+| --- | --- |
 | Framework | Vite + React 19 + TypeScript |
 | Styling | Vanilla CSS with CSS variables (design token system) |
 | Routing | react-router-dom v7 |
@@ -89,7 +93,7 @@ Open [http://localhost:5173](http://localhost:5173).
 ### Scripts
 
 | Command | Description |
-|---|---|
+| --- | --- |
 | `pnpm dev` | Start Vite dev server with HMR |
 | `pnpm build` | Type-check + production build to `dist/` |
 | `pnpm preview` | Serve the production build locally |
@@ -99,7 +103,7 @@ Open [http://localhost:5173](http://localhost:5173).
 
 ## Project Structure
 
-```
+```text
 src/
   App.tsx              Router + layout shell
   main.tsx             Entry point
@@ -132,14 +136,15 @@ public/
 ## Pages
 
 | Route | Page | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | `/` | Home | Hero, three pillars, work preview, process, CTA |
-| `/services` | Services | Deep-dive into Build / Launch / Maintain |
-| `/work` | Work | Case study index |
-| `/work/:slug` | Work Detail | Individual case study |
-| `/pricing` | Pricing | Tiers, maintain plans, bundles, add-ons |
+| `/systems` | Systems | Deep-dive into Build / Launch / Maintain (operational modules) |
+| `/outcomes` | Outcomes | Case study and business outcomes index |
+| `/outcomes/:slug` | Outcome Detail | Individual case study analysis |
+| `/investment` | Investment | Pricing packages, maintain plans, bundles, add-ons |
 | `/about` | About | Studio story, values, team, location |
 | `/contact` | Contact | Inquiry form + next steps |
+| `/faq` | FAQ | Frequently asked questions |
 
 ---
 
@@ -148,7 +153,7 @@ public/
 The visual identity follows a **"Studio White"** and **"Technical Slate"** aesthetic:
 
 - **Color palette:** Warm parchment backgrounds, ink-dark text, sienna accent (`#ff5a36`), gold highlights
-- **Typography:** Instrument Serif (display), Outfit (sans), JetBrains Mono (mono), Cormorant Garamond (italic accents)
+- **Typography:** Outfit (display), Inter (sans), JetBrains Mono (mono), Cormorant Garamond (italic accents fallback)
 - **Motion:** Lenis smooth scroll, Framer Motion page transitions, ambient Plexus particle animation
 - **Layout:** `.doc` container with responsive padding (48px → 28px → 20px)
 
@@ -169,7 +174,7 @@ For the full design specification, see [`design_rules.md`](./design_rules.md).
 
 ## Contact
 
-- **Email:** hello@svyne.com
+- **Email:** <hello@svyne.com>
 - **Location:** Mobile, Alabama
 - **Schedule:** [calendly.com/patelsiddh1408/30min](https://calendly.com/patelsiddh1408/30min)
 

@@ -12,6 +12,8 @@
     "nodejs_compat"
   ],
   "env": {
-    "preview": {}
+    "preview": {
+      "name": "preview-svyne-frontend"
+    }
   }
 }

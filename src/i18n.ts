@@ -4,6 +4,7 @@ import { initReactI18next } from 'react-i18next';
 const resources = {
   en: {
     translation: {
+      "brand.preview": "preview",
       "home.chapter1.eyebrow": "Operational stack",
       "home.chapter1.accent": "what gets replaced",
       "home.chapter1.title": "From scattered work. ",

@@ -35,6 +35,7 @@ jobs:
       - name: Build
         env:
           CLOUDFLARE_ENV: ${{ (github.event_name == 'pull_request' || github.ref == 'refs/heads/preview') && 'preview' || '' }}
+          VITE_IS_PREVIEW: ${{ (github.event_name == 'pull_request' || github.ref == 'refs/heads/preview') && 'true' || 'false' }}
         run: pnpm run build
 
       - name: Deploy to Cloudflare

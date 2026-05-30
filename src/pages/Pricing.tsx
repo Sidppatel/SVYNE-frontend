@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/Button'
 import { Eyebrow } from '@/components/ui/Eyebrow'
 import { Accent } from '@/components/ui/Accent'
 import { CtaBand } from '@/components/layout/CtaBand'
-import { SEO } from '@/components/layout/SEO'
+import { Metadata } from '@/components/layout/Metadata'
 import { HeroCanvas3D } from '@/components/ui/HeroCanvas3D'
 import {
   ADDONS,
@@ -23,7 +23,7 @@ export function Pricing() {
 
   return (
     <>
-      <SEO title="Investment" description="Investment ranges for operational audits, system implementation, and ongoing optimization with SVYNE." />
+      <Metadata title="Investment" description="Investment ranges for operational audits, system implementation, and ongoing optimization with SVYNE." />
       
       <section className="hero">
         <div className="doc">

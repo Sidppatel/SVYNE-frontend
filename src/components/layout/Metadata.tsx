@@ -1,43 +1,39 @@
 import { Helmet } from 'react-helmet-async'
 
-interface SEOProps {
+interface MetadataProps {
   title?: string
   description?: string
   name?: string
   type?: string
+  schema?: Record<string, unknown> | Array<Record<string, unknown>>
 }
 
-export function SEO({
+export function Metadata({
   title,
   description = 'Operational systems for service businesses. Replace spreadsheets, phone calls, and disconnected tools with workflow-fit systems.',
   name = 'svyne.',
-  type = 'website'
-}: SEOProps) {
+  type = 'website',
+  schema
+}: MetadataProps) {
   const fullTitle = title ? `${title} — ${name}` : `${name} · ${description}`
+  const schemas = schema ? (Array.isArray(schema) ? schema : [schema]) : []
 
   return (
     <Helmet>
-      {/* Standard metadata tags */}
       <title>{fullTitle}</title>
-      <meta name='description' content={description} />
-      {/* End standard metadata tags */}
+      <meta name="description" content={description} />
 
-      {/* Facebook tags */}
       <meta property="og:type" content={type} />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content="https://svyne.studio/og-image.png" />
-      {/* End Facebook tags */}
 
-      {/* Twitter tags */}
       <meta name="twitter:creator" content="@svynestudio" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content="https://svyne.studio/og-image.png" />
-      {/* End Twitter tags */}
 
-      {/* Structured Data */}
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
@@ -79,6 +75,11 @@ export function SEO({
           ]
         })}
       </script>
+      {schemas.map((s, idx) => (
+        <script key={idx} type="application/ld+json">
+          {JSON.stringify(s)}
+        </script>
+      ))}
     </Helmet>
   )
 }

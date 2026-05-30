@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/Button'
 import { Eyebrow } from '@/components/ui/Eyebrow'
 import { Accent } from '@/components/ui/Accent'
 import { CtaBand } from '@/components/layout/CtaBand'
-import { SEO } from '@/components/layout/SEO'
+import { Metadata } from '@/components/layout/Metadata'
 import { HeroCanvas3D } from '@/components/ui/HeroCanvas3D'
 import { SERVICE_BLOCKS, SERVICES_NOT_OFFERED } from '@/content/services'
 import { ROUTES } from '@/routes'
@@ -15,7 +15,29 @@ export function Services() {
 
   return (
     <>
-      <SEO title="Systems" description="Operational systems for service businesses: workflow audit, modular system build, and ongoing optimization." />
+      <Metadata
+        title="Systems"
+        description="Operational systems for service businesses: workflow audit, modular system build, and ongoing optimization."
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "svyne. Systems & Services",
+          "description": "Operational systems and workflows tailored for service businesses.",
+          "itemListElement": SERVICE_BLOCKS.map((b, idx) => ({
+            "@type": "ListItem",
+            "position": idx + 1,
+            "item": {
+              "@type": "Service",
+              "name": b.name,
+              "description": b.deck,
+              "provider": {
+                "@type": "LocalBusiness",
+                "name": "svyne."
+              }
+            }
+          }))
+        }}
+      />
       
       <section className="hero">
         <div className="doc">

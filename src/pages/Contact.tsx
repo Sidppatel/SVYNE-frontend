@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { Button } from '@/components/ui/Button'
 import { Eyebrow } from '@/components/ui/Eyebrow'
 import { Accent } from '@/components/ui/Accent'
-import { SEO } from '@/components/layout/SEO'
+import { Metadata } from '@/components/layout/Metadata'
 import {
   BUDGETS,
   CONTACT_NEXT_STEPS,
@@ -68,7 +68,7 @@ export function Contact() {
 
   return (
     <>
-      <SEO title="Contact SVYNE" description="Book a system audit or tell SVYNE where your service workflow is breaking down." />
+      <Metadata title="Contact SVYNE" description="Book a system audit or tell SVYNE where your service workflow is breaking down." />
       
       <section className="hero contact-hero">
         <div className="doc">

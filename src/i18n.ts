@@ -260,7 +260,15 @@ const resources = {
       "work.next.cta": "Book a system audit",
       "work.cta.title": "Want your workflow ",
       "work.cta.titleEm": "mapped next?",
-      "work.cta.deck": "Start with the places work gets lost, delayed, duplicated, or hidden."
+      "work.cta.deck": "Start with the places work gets lost, delayed, duplicated, or hidden.",
+      "workDetail.sidebar.project": "Project",
+      "workDetail.sidebar.sector": "Sector",
+      "workDetail.sidebar.year": "Year",
+      "workDetail.sidebar.timeline": "Timeline",
+      "workDetail.sidebar.tier": "Tier",
+      "workDetail.sidebar.stack": "Stack",
+      "workDetail.sidebar.cta": "Start something like this",
+      "workDetail.back": "All work"
     }
   }
 };

@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Button } from '@/components/ui/Button'
-import { SEO } from '@/components/layout/SEO'
+import { Metadata } from '@/components/layout/Metadata'
 import { CtaBand } from '@/components/layout/CtaBand'
 import { Accent } from '@/components/ui/Accent'
 import { Eyebrow } from '@/components/ui/Eyebrow'
@@ -15,9 +15,21 @@ export function FAQ() {
 
   return (
     <>
-      <SEO
+      <Metadata
         title="FAQ"
         description="Questions and answers about SVYNE, operational systems, workflow audits, implementation, pricing, and ongoing support."
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": FAQ_ITEMS.map(item => ({
+            "@type": "Question",
+            "name": item.question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": item.answer
+            }
+          }))
+        }}
       />
 
       <section className="hero">

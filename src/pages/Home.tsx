@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { Button } from '@/components/ui/Button'
 import { Eyebrow } from '@/components/ui/Eyebrow'
 import { Accent } from '@/components/ui/Accent'
-import { SEO } from '@/components/layout/SEO'
+import { Metadata } from '@/components/layout/Metadata'
 import { ROUTES } from '@/routes'
 import { SuccessSection } from '@/components/layout/SuccessSection'
 import { FinalCta } from '@/components/layout/FinalCta'
@@ -63,7 +63,7 @@ export function Home() {
 
   return (
     <>
-      <SEO description="Operational systems for service businesses. SVYNE replaces spreadsheets, phone calls, and disconnected tools with workflow-fit operating systems." />
+      <Metadata description="Operational systems for service businesses. SVYNE replaces spreadsheets, phone calls, and disconnected tools with workflow-fit operating systems." />
       
       {/* ==========================================================================
          1. Hero Section

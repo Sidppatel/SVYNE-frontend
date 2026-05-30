@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Button } from '@/components/ui/Button'
-import { SEO } from '@/components/layout/SEO'
+import { Metadata } from '@/components/layout/Metadata'
 import { Eyebrow } from '@/components/ui/Eyebrow'
 import { Accent } from '@/components/ui/Accent'
 import { CtaBand } from '@/components/layout/CtaBand'
@@ -16,7 +16,7 @@ export function About() {
 
   return (
     <>
-      <SEO title="About SVYNE" description="SVYNE designs operational systems for service businesses that need clearer workflows and scalable operations." />
+      <Metadata title="About SVYNE" description="SVYNE designs operational systems for service businesses that need clearer workflows and scalable operations." />
       
       <section className="hero">
         <div className="doc">

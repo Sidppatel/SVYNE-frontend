@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/Button'
 import { Eyebrow } from '@/components/ui/Eyebrow'
 import { WorkTileSvg } from '@/components/ui/WorkTileSvg'
 import { CtaBand } from '@/components/layout/CtaBand'
-import { SEO } from '@/components/layout/SEO'
+import { Metadata } from '@/components/layout/Metadata'
 import { HeroCanvas3D } from '@/components/ui/HeroCanvas3D'
 import { CASE_STUDIES, WORK_FILTERS } from '@/content/work'
 import { ROUTES } from '@/routes'
@@ -21,7 +21,7 @@ export function Work() {
 
   return (
     <>
-      <SEO title="Outcomes" description="Operational systems and business outcomes delivered by SVYNE." />
+      <Metadata title="Outcomes" description="Operational systems and business outcomes delivered by SVYNE." />
       
       <section className="hero work-hero">
         <div className="doc">

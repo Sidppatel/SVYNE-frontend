@@ -19,7 +19,7 @@
 
 - **Identity:** High-end Technical Studio.
 - **Visual Tension:** A balance between razor-sharp technical grids and fluid, organic "vines" or ambient drifts.
-- **Robots Policy:** Strict **No-AI** stance. Metadata must include `noai` and `noimageai` directives to protect studio IP.
+- **Robots Policy:** Optimize for AI Search (AIO) and Generative Engine Optimization (GEO). Allow AI bot indexing while maintaining semantic content structure.
 - **Surface First:** Use warm parchment layers to create depth.
 - **Non-Negotiable:** **No Black Sections.** Large black or near-black slabs are strictly prohibited. Use `section-dark` (Sienna-tinted technical slate) instead.
 - **Aesthetic:** "Studio White" (Cream/Parchment based) with high-contrast "Technical Slate" (Ink) typography and "Prismatic" (Sienna/Violet) highlights.

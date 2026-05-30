@@ -1,10 +1,14 @@
 import { SparkMark } from './SparkMark'
 import { Wordmark } from './Wordmark'
 
-export function Logo() {
+type Props = {
+  size?: number
+}
+
+export function Logo({ size }: Props) {
   return (
     <>
-      <SparkMark size={34} stroke={7} />
+      <SparkMark size={size} />
       <Wordmark />
     </>
   )

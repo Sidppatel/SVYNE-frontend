@@ -23,8 +23,8 @@ export function Plexus({ densityMultiplier = 1.0 }: PlexusProps) {
     const connectionDistance = 140
     const mouse = { x: -100, y: -100 }
 
-    let particleColor = 'rgba(181, 139, 69, 0.75)'
-    let connectionColorRGB = '35, 24, 21'
+    let particleColor = ''
+    let connectionColorRGB = ''
 
     class Particle {
       x: number

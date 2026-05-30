@@ -6,6 +6,7 @@
     animation: sparkFloat 4s ease-in-out infinite;
     transform-style: preserve-3d;
     perspective: 1000px;
+    aspect-ratio: 188 / 126;
   }
 
   .spark-mark {

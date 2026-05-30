@@ -24,12 +24,14 @@ const createParticleTexture = () => {
 
     const accentSoftRGB = parseHexToRGB('--color-accent-soft');
     const accentDeepRGB = parseHexToRGB('--color-accent-deep');
+    const whiteRGB = parseHexToRGB('--color-white');
+    const blackRGB = parseHexToRGB('--color-black');
 
     const gradient = ctx.createRadialGradient(8, 8, 0, 8, 8, 8)
-    gradient.addColorStop(0, 'rgba(255, 255, 255, 1)')
+    gradient.addColorStop(0, `rgba(${whiteRGB}, 1)`)
     gradient.addColorStop(0.2, `rgba(${accentSoftRGB}, 0.8)`)
     gradient.addColorStop(0.6, `rgba(${accentDeepRGB}, 0.2)`)
-    gradient.addColorStop(1, 'rgba(0, 0, 0, 0)')
+    gradient.addColorStop(1, `rgba(${blackRGB}, 0)`)
     ctx.fillStyle = gradient
     ctx.fillRect(0, 0, 16, 16)
   }

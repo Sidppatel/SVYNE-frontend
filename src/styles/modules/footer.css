@@ -38,9 +38,8 @@
     color: var(--color-accent);
   }
 
-  .footer-mark svg {
-    width: 34px;
-    height: 34px;
+  .footer-mark .spark-mark-wrap {
+    height: 38px;
   }
 
   .footer-tag {
@@ -134,8 +133,7 @@
     gap: 8px;
   }
 
-  .footer-mark svg {
-    width: 26px;
+  .footer-mark .spark-mark-wrap {
     height: 26px;
   }
 

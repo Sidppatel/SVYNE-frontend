@@ -1,9 +1,9 @@
 export const ROUTES = {
   home: '/',
-  services: '/services',
-  work: '/work',
-  workDetail: (slug: string) => `/work/${slug}`,
-  pricing: '/pricing',
+  services: '/systems',
+  work: '/outcomes',
+  workDetail: (slug: string) => `/outcomes/${slug}`,
+  pricing: '/investment',
   faq: '/faq',
   about: '/about',
   contact: '/contact',

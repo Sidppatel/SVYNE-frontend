@@ -35,9 +35,8 @@
     color: var(--color-accent);
   }
 
-  .nav-brand svg {
-    width: 26px;
-    height: 26px;
+  .nav-brand .spark-mark-wrap {
+    height: 30px;
   }
 
   .nav-links {

@@ -1,49 +1,68 @@
 type Props = {
   size?: number
-  color?: string
-  growthColor?: string
-  stroke?: number
 }
 
-export function SparkMark({
-  size = 26,
-  color = 'var(--color-sienna)',
-  growthColor = 'var(--color-growth)',
-  stroke = 7
-}: Props) {
+export function SparkMark({ size }: Props) {
+  const style = typeof size === 'number' ? { height: size } : undefined
   return (
-    <div className="spark-mark-wrap" style={{ width: size, height: size }}>
+    <div className="spark-mark-wrap" style={style}>
       <svg
         className="spark-mark"
-        viewBox="0 0 100 100"
+        viewBox="27 57 188 126"
         width="100%"
         height="100%"
         aria-hidden="true"
       >
+        {/* Input Lines */}
         <path
-          d="M 32 38 L 50 18 L 68 38"
-          fill="none"
-          stroke={color}
-          strokeWidth={stroke}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M 16 50 Q 30 42 50 50 Q 70 58 84 50"
-          fill="none"
-          stroke={growthColor}
-          strokeWidth={stroke}
+          d="M40 70 L95 110"
+          stroke="var(--color-sienna)"
+          strokeWidth="10"
           strokeLinecap="round"
         />
         <path
-          d="M 32 62 L 50 82 L 68 62"
-          fill="none"
-          stroke={color}
-          strokeWidth={stroke}
+          d="M40 120 L95 120"
+          stroke="var(--color-sienna)"
+          strokeWidth="10"
           strokeLinecap="round"
-          strokeLinejoin="round"
         />
+        <path
+          d="M40 170 L95 130"
+          stroke="var(--color-sienna)"
+          strokeWidth="10"
+          strokeLinecap="round"
+        />
+
+        {/* Input Nodes */}
+        <circle cx="40" cy="70" r="8" fill="var(--color-sienna)" />
+        <circle cx="40" cy="120" r="8" fill="var(--color-sienna)" />
+        <circle cx="40" cy="170" r="8" fill="var(--color-sienna)" />
+
+        {/* System Hub */}
+        <circle
+          cx="120"
+          cy="120"
+          r="24"
+          fill="var(--color-bg)"
+          stroke="var(--color-ink)"
+          strokeWidth="10"
+        />
+
+        {/* Inner System Core */}
+        <circle cx="120" cy="120" r="8" fill="var(--color-ink)" />
+
+        {/* Output Line */}
+        <path
+          d="M144 120 L195 120"
+          stroke="var(--color-growth)"
+          strokeWidth="10"
+          strokeLinecap="round"
+        />
+
+        {/* Output Node */}
+        <circle cx="200" cy="120" r="10" fill="var(--color-growth)" />
       </svg>
     </div>
   )
 }
+

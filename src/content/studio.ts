@@ -14,9 +14,9 @@ export const STUDIO = {
 export const FOOTER_LINKS = {
   pages: [
     { label: 'About', to: '/about' },
-    { label: 'Outcomes', to: '/work' },
-    { label: 'Systems', to: '/services' },
-    { label: 'Investment', to: '/pricing' },
+    { label: 'Outcomes', to: '/outcomes' },
+    { label: 'Systems', to: '/systems' },
+    { label: 'Investment', to: '/investment' },
     { label: 'FAQ', to: '/faq' },
   ],
   elsewhere: [

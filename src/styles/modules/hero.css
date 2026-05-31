@@ -292,12 +292,15 @@
   .hero-canvas-wrap {
     grid-column: 1;
     grid-row: 2;
-    height: 500px;
+    height: 360px;
   }
   .hero-ctas {
     grid-column: 1;
     grid-row: 3;
     margin-top: 0;
+  }
+  .hero-form-wrap {
+    height: auto !important;
   }
 }
 
@@ -335,7 +338,11 @@
   }
 
   .hero-canvas-wrap {
-    height: 380px;
+    height: 260px;
+  }
+
+  .hero-form-wrap {
+    height: auto !important;
   }
 
   .badge-tag {

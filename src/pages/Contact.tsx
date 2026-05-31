@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/Button'
 import { Eyebrow } from '@/components/ui/Eyebrow'
 import { Accent } from '@/components/ui/Accent'
 import { Metadata } from '@/components/layout/Metadata'
+import { ROUTES } from '@/routes'
 import {
   BUDGETS,
   CONTACT_NEXT_STEPS,
@@ -82,6 +84,10 @@ export function Contact() {
               <p className="hero-deck fade-up d3">
                 {t('contact.hero.deck')}<em>{STUDIO.email}</em>{t('contact.hero.deckEnd')}
               </p>
+
+              <div className="contact-builder-prompt fade-up d4">
+                {t('contact.builder.prompt')}<Link to={ROUTES.describe} className="link-draw">{t('contact.builder.link')}</Link>.
+              </div>
 
               <div className="contact-meta fade-up d4">
                 <div className="contact-meta-item">

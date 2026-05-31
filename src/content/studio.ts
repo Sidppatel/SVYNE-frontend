@@ -13,11 +13,12 @@ export const STUDIO = {
 
 export const FOOTER_LINKS = {
   pages: [
-    { label: 'About', to: '/about' },
-    { label: 'Outcomes', to: '/outcomes' },
     { label: 'Systems', to: '/systems' },
+    { label: 'Outcomes', to: '/outcomes' },
+    { label: 'About', to: '/about' },
     { label: 'Investment', to: '/investment' },
     { label: 'FAQ', to: '/faq' },
+    { label: 'Builder', to: '/describe' },
   ],
   elsewhere: [
     { label: 'LinkedIn', href: '#' },

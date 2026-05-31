@@ -90,10 +90,7 @@ export function Home() {
               <Button variant="primary" withArrow onClick={() => navigate(ROUTES.contact)}>
                 {t('home.hero.cta.book')}
               </Button>
-              <Button variant="secondary" onClick={() => {
-                const element = document.getElementById('problem-section')
-                element?.scrollIntoView({ behavior: 'smooth' })
-              }}>
+              <Button variant="secondary" onClick={() => navigate(ROUTES.describe)}>
                 {t('home.hero.cta.how')}
               </Button>
             </div>

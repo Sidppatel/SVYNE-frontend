@@ -409,11 +409,11 @@ export function HeroCanvas3D({ mode = 'home' }: HeroCanvas3DProps) {
     // Camera
     const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100)
     if (width < 480) {
-      camera.position.set(0, 0, 11.5)
+      camera.position.set(0, 0, 8.8)
     } else if (width < 768) {
-      camera.position.set(0, 0, 10.5)
+      camera.position.set(0, 0, 8.6)
     } else if (width < 1024) {
-      camera.position.set(0, 0, 9.8)
+      camera.position.set(0, 0, 8.5)
     } else {
       camera.position.set(0, 0, 8.5)
     }
@@ -767,11 +767,11 @@ export function HeroCanvas3D({ mode = 'home' }: HeroCanvas3DProps) {
       
       // Update camera distance dynamically based on container width
       if (w < 480) {
-        camera.position.z = 11.5
+        camera.position.z = 8.8
       } else if (w < 768) {
-        camera.position.z = 10.5
+        camera.position.z = 8.6
       } else if (w < 1024) {
-        camera.position.z = 9.8
+        camera.position.z = 8.5
       } else {
         camera.position.z = 8.5
       }

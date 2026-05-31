@@ -16,6 +16,7 @@ import { Pricing } from '@/pages/Pricing'
 import { FAQ } from '@/pages/FAQ'
 import { About } from '@/pages/About'
 import { Contact } from '@/pages/Contact'
+import { Describe } from '@/pages/Describe'
 
 function App() {
   const location = useLocation()
@@ -43,6 +44,7 @@ function App() {
               <Route path={ROUTES.faq} element={<FAQ />} />
               <Route path={ROUTES.about} element={<About />} />
               <Route path={ROUTES.contact} element={<Contact />} />
+              <Route path={ROUTES.describe} element={<Describe />} />
               <Route path="*" element={<Home />} />
             </Routes>
           </motion.div>

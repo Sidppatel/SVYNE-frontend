@@ -91,7 +91,20 @@
   --color-surface-a80: color-mix(in srgb, var(--color-surface) 80%, transparent);
   --color-ink-surface-a38: color-mix(in srgb, var(--color-ink-surface) 38%, transparent);
   --color-surface-a40: color-mix(in srgb, var(--color-surface) 40%, transparent);
+
+  /* Spacing Scale Tokens */
+  --space-1: calc(var(--spacing) * 1);
+  --space-2: calc(var(--spacing) * 2);
+  --space-3: calc(var(--spacing) * 3);
+  --space-4: calc(var(--spacing) * 4);
+  --space-5: calc(var(--spacing) * 5);
+  --space-6: calc(var(--spacing) * 6);
+  --space-8: calc(var(--spacing) * 8);
+  --space-10: calc(var(--spacing) * 10);
+  --space-12: calc(var(--spacing) * 12);
+  --space-16: calc(var(--spacing) * 16);
 }
+
 
 @layer base {
 

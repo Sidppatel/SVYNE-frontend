@@ -118,6 +118,25 @@ export function Services() {
         ))}
       </div>
 
+      <section className="section section-cream">
+        <div className="doc">
+          <div className="section-header services-builder-callout">
+            <div className="label-row services-builder-label-row">
+              <Eyebrow>{t('services.builder.eyebrow')}</Eyebrow>
+            </div>
+            <h2>
+              {t('services.builder.title')}<em>{t('services.builder.titleEm')}</em>
+            </h2>
+            <p className="deck services-builder-deck">
+              {t('services.builder.deck')}
+            </p>
+            <Button variant="primary" withArrow onClick={() => navigate(ROUTES.describe)}>
+              {t('services.builder.cta')}
+            </Button>
+          </div>
+        </div>
+      </section>
+
       <section className="section section-parchment-deep">
         <div className="doc">
           <div className="section-header">

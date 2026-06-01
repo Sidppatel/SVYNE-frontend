@@ -68,12 +68,12 @@
   margin: 0 auto;
   background: var(--color-cream);
   border-radius: 16px;
-  padding: 44px 44px 48px;
+  padding: 44px 44px 40px;
 }
 
 @media (max-width: 640px) {
   .describe-wizard-container {
-    padding: 28px 22px 36px;
+    padding: 28px 22px;
   }
 }
 

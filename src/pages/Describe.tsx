@@ -40,11 +40,11 @@ interface LeadErrors {
 }
 
 const INDUSTRIES: IndustryOption[] = [
-  { id: 'gc', name: 'General Contracting & Construction', meta: '01 · gc', desc: 'Custom homes, commercial builds, and crew management.' },
-  { id: 'repair', name: 'Repair & Service Shops', meta: '02 · repair', desc: 'Repair tickets, parts inventory tracking, and shop work orders.' },
-  { id: 'field', name: 'Field Services & Dispatch', meta: '03 · field', desc: 'Plumbing, electrical, HVAC, and on-site dispatch routing.' },
-  { id: 'agency', name: 'Professional & Creative Agencies', meta: '04 · agency', desc: 'Software development, design, and multi-team client projects.' },
-  { id: 'other', name: 'Other Service Business', meta: '05 · other', desc: 'Custom workflows and industry-specific business operations.' }
+  { id: 'gc', name: 'General Contracting & Construction', meta: '01 · construction', desc: 'Custom homes, commercial builds, and crew management.' },
+  { id: 'repair', name: 'Repair & Service Shops', meta: '02 · automotive', desc: 'Repair tickets, parts inventory tracking, and shop work orders.' },
+  { id: 'field', name: 'Field Services & Dispatch', meta: '03 · home services', desc: 'Plumbing, electrical, HVAC, and on-site dispatch routing.' },
+  { id: 'agency', name: 'Professional & Creative Agencies', meta: '04 · professional', desc: 'Software development, design, and multi-team client projects.' },
+  { id: 'other', name: 'Other Service Business', meta: '05 · custom', desc: 'Custom workflows and industry-specific business operations.' }
 ]
 
 const TOOLS: MultiOption[] = [

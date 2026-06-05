@@ -15,7 +15,8 @@
   --color-accent-deep: #d94726;
   --color-accent-soft: #ffe1d7;
   --color-accent-wash: rgba(255, 90, 54, 0.12);
-  --color-sienna: #D94726;
+  --color-sienna: #E06A3B;
+  --color-slate-gray: #4F5D65;
   --color-white: #ffffff;
   --color-black: #000000;
 
@@ -33,8 +34,8 @@
   --color-gold: #b58b45;
   --color-gold-bright: #d7ad68;
   --color-gold-faint: rgba(181, 139, 69, 0.16);
-  --color-growth: #6f8358;
-  --color-growth-soft: rgba(111, 131, 88, 0.14);
+  --color-growth: #0FA968;
+  --color-growth-soft: color-mix(in srgb, var(--color-growth) 14%, transparent);
   --color-violet-soft: #8d6c9f;
 
   --font-display: "Outfit", -apple-system, sans-serif;

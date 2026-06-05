@@ -8,8 +8,9 @@
     :root {
       --color-bg: #f6f1e8;
       --color-ink: #231815;
-      --color-growth: #6f8358;
-      --color-sienna: #D94726;
+      --color-slate-gray: #4F5D65;
+      --color-growth: #0FA968;
+      --color-sienna: #E06A3B;
       --ease-svyne: cubic-bezier(0.16, 1, 0.3, 1);
     }
     .spark-mark {
@@ -46,9 +47,9 @@
       100% { opacity: 0; stroke-dashoffset: 0; }
     }
     @keyframes sparkHubPulse {
-      0%, 37.5% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(35, 24, 21, 0)); }
-      46.25% { transform: scale(1.15); filter: drop-shadow(0 0 6px rgba(35, 24, 21, 0.2)); }
-      55%, 100% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(35, 24, 21, 0)); }
+      0%, 37.5% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(79, 93, 101, 0)); }
+      46.25% { transform: scale(1.15); filter: drop-shadow(0 0 6px rgba(79, 93, 101, 0.2)); }
+      55%, 100% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(79, 93, 101, 0)); }
     }
     @keyframes sparkOutputFlow {
       0%, 55% { opacity: 0; stroke-dashoffset: 40; }
@@ -58,9 +59,9 @@
       100% { opacity: 0; stroke-dashoffset: 0; }
     }
     @keyframes sparkOutputNodePulse {
-      0%, 85% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(111, 131, 88, 0)); }
+      0%, 85% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(15, 169, 104, 0)); }
       90% { transform: scale(1.25); filter: drop-shadow(0 0 8px var(--color-growth)); }
-      95%, 100% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(111, 131, 88, 0)); }
+      95%, 100% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(15, 169, 104, 0)); }
     }
   </style>
 
@@ -80,10 +81,10 @@
   <circle cx="40" cy="170" r="8" class="spark-node-input" fill="var(--color-sienna)" />
 
   <!-- System Hub -->
-  <circle cx="120" cy="120" r="24" class="spark-hub-outer" fill="var(--color-bg)" stroke="var(--color-ink)" stroke-width="10" />
+  <circle cx="120" cy="120" r="24" class="spark-hub-outer" fill="var(--color-bg)" stroke="var(--color-slate-gray)" stroke-width="10" />
 
   <!-- Inner System Core -->
-  <circle cx="120" cy="120" r="8" class="spark-hub-inner" fill="var(--color-ink)" />
+  <circle cx="120" cy="120" r="8" class="spark-hub-inner" fill="var(--color-slate-gray)" />
 
   <!-- Output Line (Static Base Conduit) -->
   <path d="M144 120 L195 120" class="spark-line-output-base" stroke="var(--color-growth)" stroke-width="10" stroke-linecap="round" />

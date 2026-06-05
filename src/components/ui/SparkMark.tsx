@@ -74,12 +74,12 @@ export function SparkMark({ size }: Props) {
           r="24"
           className="spark-hub-outer"
           fill="var(--color-bg)"
-          stroke="var(--color-ink)"
+          stroke="var(--color-slate-gray)"
           strokeWidth="10"
         />
 
         {/* Inner System Core */}
-        <circle cx="120" cy="120" r="8" className="spark-hub-inner" fill="var(--color-ink)" />
+        <circle cx="120" cy="120" r="8" className="spark-hub-inner" fill="var(--color-slate-gray)" />
 
         {/* Output Line (Static Base Conduit) */}
         <path

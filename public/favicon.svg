@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
   <rect width="240" height="240" rx="40" fill="#F6F1E8"/>
-  <path d="M40 70 L95 110" stroke="#ff5a36" stroke-width="10" stroke-linecap="round"/>
-  <path d="M40 120 L95 120" stroke="#ff5a36" stroke-width="10" stroke-linecap="round"/>
-  <path d="M40 170 L95 130" stroke="#ff5a36" stroke-width="10" stroke-linecap="round"/>
-  <circle cx="40" cy="70" r="8" fill="#ff5a36"/>
-  <circle cx="40" cy="120" r="8" fill="#ff5a36"/>
-  <circle cx="40" cy="170" r="8" fill="#ff5a36"/>
-  <circle cx="120" cy="120" r="24" fill="#fbf7f1" stroke="#231815" stroke-width="10"/>
-  <circle cx="120" cy="120" r="8" fill="#231815"/>
-  <path d="M144 120 L195 120" stroke="#6f8358" stroke-width="10" stroke-linecap="round"/>
-  <circle cx="200" cy="120" r="10" fill="#6f8358"/>
+  <path d="M40 70 L95 110" stroke="#E06A3B" stroke-width="10" stroke-linecap="round"/>
+  <path d="M40 120 L95 120" stroke="#E06A3B" stroke-width="10" stroke-linecap="round"/>
+  <path d="M40 170 L95 130" stroke="#E06A3B" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="40" cy="70" r="8" fill="#E06A3B"/>
+  <circle cx="40" cy="120" r="8" fill="#E06A3B"/>
+  <circle cx="40" cy="170" r="8" fill="#E06A3B"/>
+  <circle cx="120" cy="120" r="24" fill="#fbf7f1" stroke="#4F5D65" stroke-width="10"/>
+  <circle cx="120" cy="120" r="8" fill="#4F5D65"/>
+  <path d="M144 120 L195 120" stroke="#0FA968" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="200" cy="120" r="10" fill="#0FA968"/>
 </svg>

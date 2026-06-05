@@ -75,15 +75,15 @@
     /* 37.5% to 55% (1.5s - 2.2s): Hub pulses when inputs reach it */
     0%, 37.5% {
       transform: scale(1);
-      filter: drop-shadow(0 0 0px rgba(35, 24, 21, 0));
+      filter: drop-shadow(0 0 0px rgba(79, 93, 101, 0));
     }
     46.25% {
       transform: scale(1.15);
-      filter: drop-shadow(0 0 6px rgba(35, 24, 21, 0.2));
+      filter: drop-shadow(0 0 6px rgba(79, 93, 101, 0.25));
     }
     55%, 100% {
       transform: scale(1);
-      filter: drop-shadow(0 0 0px rgba(35, 24, 21, 0));
+      filter: drop-shadow(0 0 0px rgba(79, 93, 101, 0));
     }
   }
 
@@ -113,7 +113,7 @@
     /* 85% to 95% (3.4s - 3.8s): Output node pulses */
     0%, 85% {
       transform: scale(1);
-      filter: drop-shadow(0 0 0px rgba(111, 131, 88, 0));
+      filter: drop-shadow(0 0 0px rgba(15, 169, 104, 0));
     }
     90% {
       transform: scale(1.25);
@@ -121,7 +121,7 @@
     }
     95%, 100% {
       transform: scale(1);
-      filter: drop-shadow(0 0 0px rgba(111, 131, 88, 0));
+      filter: drop-shadow(0 0 0px rgba(15, 169, 104, 0));
     }
   }
 

@@ -12,6 +12,7 @@ import { Home } from '@/pages/Home'
 import { Services } from '@/pages/Services'
 import { Work } from '@/pages/Work'
 import { WorkDetail } from '@/pages/WorkDetail'
+import { Events } from '@/pages/Events'
 import { Pricing } from '@/pages/Pricing'
 import { FAQ } from '@/pages/FAQ'
 import { About } from '@/pages/About'
@@ -40,6 +41,7 @@ function App() {
               <Route path={ROUTES.services} element={<Services />} />
               <Route path={ROUTES.work} element={<Work />} />
               <Route path="/outcomes/:slug" element={<WorkDetail />} />
+              <Route path={ROUTES.events} element={<Events />} />
               <Route path={ROUTES.pricing} element={<Pricing />} />
               <Route path={ROUTES.faq} element={<FAQ />} />
               <Route path={ROUTES.about} element={<About />} />
@@ -50,6 +52,7 @@ function App() {
           </motion.div>
         </AnimatePresence>
       </PageWrap>
+
       <Footer />
       <CalendlyBadge />
     </SmoothScroll>

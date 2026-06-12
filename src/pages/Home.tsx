@@ -73,6 +73,9 @@ export function Home() {
           <div className="hero-inner-grid">
             <div className="hero-inner">
               <Eyebrow className="fade-up">{t('home.hero.eyebrow')}</Eyebrow>
+              <div className="hero-promise fade-up d1">
+                We don't sell software. We build operational systems.
+              </div>
               <h1 className="h-display">
                 <span className="fade-up d1">{t('home.hero.title')}</span>
                 <span className="fade-up d2">{t('home.hero.titleEm')}<span className="brand-period">.</span></span>
@@ -80,19 +83,27 @@ export function Home() {
               <p className="hero-deck fade-up d3">
                 {t('home.hero.deck')}
               </p>
+              <div className="hero-location-text fade-up d3">
+                Serving Saraland, Chickasaw, and Mobile County · Local support · No call centers
+              </div>
             </div>
             
             <div className="hero-canvas-wrap fade-up d2">
               <HeroCanvas3D />
             </div>
 
-            <div className="hero-ctas fade-up d4">
-              <Button variant="primary" withArrow onClick={() => navigate(ROUTES.contact)}>
-                {t('home.hero.cta.book')}
-              </Button>
-              <Button variant="secondary" onClick={() => navigate(ROUTES.describe)}>
-                {t('home.hero.cta.how')}
-              </Button>
+            <div className="hero-ctas-wrap fade-up d4">
+              <div className="hero-ctas">
+                <Button variant="primary" withArrow onClick={() => navigate(ROUTES.contact)}>
+                  {t('home.hero.cta.book')}
+                </Button>
+                <Button variant="secondary" onClick={() => navigate(ROUTES.describe)}>
+                  {t('home.hero.cta.how')}
+                </Button>
+              </div>
+              <p className="hero-cta-subtext">
+                No commitment. We'll map your current workflow and show you exactly where time and money are leaking.
+              </p>
             </div>
           </div>
         </div>
@@ -377,50 +388,126 @@ export function Home() {
               {t('home.outcomes.title')}<em>{t('home.outcomes.titleEm')}</em>
             </h2>
             <p className="deck">
-              {t('home.outcomes.deck')}
+              SVYNE builds scalable systems that deliver tangible improvements to your operational efficiency and visibility.
             </p>
           </div>
 
           <div className="kpi-grid">
             <article className="kpi-card">
               <div className="kpi-metric">
-                -<KpiCounter target={40} />%
+                -<KpiCounter target={90} />%
               </div>
-              <div className="kpi-label">{t('home.outcomes.kpi1.label')}</div>
-              <p className="kpi-desc">{t('home.outcomes.kpi1.desc')}</p>
-            </article>
-
-            <article className="kpi-card">
-              <div className="kpi-metric">
-                <KpiCounter target={90} />%
-              </div>
-              <div className="kpi-label">{t('home.outcomes.kpi2.label')}</div>
-              <p className="kpi-desc">{t('home.outcomes.kpi2.desc')}</p>
+              <div className="kpi-label">Scheduling Conflicts</div>
+              <p className="kpi-desc">Reduction in dispatch overlaps and double-bookings.</p>
             </article>
 
             <article className="kpi-card">
               <div className="kpi-metric">
                 <KpiCounter target={100} />%
               </div>
-              <div className="kpi-label">{t('home.outcomes.kpi3.label')}</div>
-              <p className="kpi-desc">{t('home.outcomes.kpi3.desc')}</p>
+              <div className="kpi-label">Data Ownership</div>
+              <p className="kpi-desc">You retain full control and history of your customer profiles.</p>
             </article>
 
             <article className="kpi-card">
               <div className="kpi-metric">
-                <KpiCounter target={15} />h
+                <KpiCounter target={5} />h
               </div>
-              <div className="kpi-label">{t('home.outcomes.kpi4.label')}</div>
-              <p className="kpi-desc">{t('home.outcomes.kpi4.desc')}</p>
+              <div className="kpi-label">Saved Weekly</div>
+              <p className="kpi-desc">Admin hours saved per employee on manual data entry.</p>
             </article>
 
             <article className="kpi-card">
               <div className="kpi-metric">
-                <KpiCounter target={10} />x
+                <KpiCounter target={40} />%
               </div>
-              <div className="kpi-label">{t('home.outcomes.kpi5.label')}</div>
-              <p className="kpi-desc">{t('home.outcomes.kpi5.desc')}</p>
+              <div className="kpi-label">Faster Invoicing</div>
+              <p className="kpi-desc">Reduction in time from job completion to payment collection.</p>
             </article>
+
+            <article className="kpi-card">
+              <div className="kpi-metric">
+                $<KpiCounter target={0} />
+              </div>
+              <div className="kpi-label">Upfront Setup</div>
+              <p className="kpi-desc">For event venues utilizing the transaction-based pricing model.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* ==========================================================================
+         5.5 Data Ownership Covenant
+         ========================================================================== */}
+      <section className="section section-cream data-ownership-section">
+        <div className="doc">
+          <div className="section-header">
+            <div className="label-row">
+              <Eyebrow>Covenant · Data Guarantee</Eyebrow>
+              <Accent>your data forever</Accent>
+            </div>
+            <h2>
+              The Data Ownership <em>Covenant.</em>
+            </h2>
+            <p className="deck">
+              Unlike generic platforms that hold your business history hostage or market to your clients, we pledge absolute data independence.
+            </p>
+          </div>
+
+          <div className="services-strip">
+            <div className="pillar">
+              <div className="pillar-num">01</div>
+              <h3 className="pillar-h-sm">100% Ownership</h3>
+              <p>You retain full and exclusive ownership of all customer profiles, purchase history, and operational records. We never share or sell your data.</p>
+            </div>
+            <div className="pillar">
+              <div className="pillar-num">02</div>
+              <h3 className="pillar-h-sm">Complete Export</h3>
+              <p>If you choose to leave, we provide a complete SQL/JSON database export and a migration map to transition to industry-standard tools.</p>
+            </div>
+            <div className="pillar">
+              <div className="pillar-num">03</div>
+              <h3 className="pillar-h-sm">No Lock-in</h3>
+              <p>While our core engine code remains ours, your entire operational history is yours forever, with zero proprietary format constraints.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ==========================================================================
+         5.6 Target Verticals (Who We Help)
+         ========================================================================== */}
+      <section className="section target-verticals-section">
+        <div className="doc">
+          <div className="section-header">
+            <div className="label-row">
+              <Eyebrow>ICP · Target Verticals</Eyebrow>
+              <Accent>Who we build for</Accent>
+            </div>
+            <h2>
+              Systems configured for <em>your industry.</em>
+            </h2>
+            <p className="deck">
+              We build operational structures around specific trade and business workflows in Mobile County.
+            </p>
+          </div>
+
+          <div className="services-strip">
+            <div className="pillar">
+              <div className="pillar-num">i.</div>
+              <h3 className="pillar-h-sm">Event Venues</h3>
+              <p>Direct website ticketing embeds, visual seating chart drag-and-drop designers, QR scanning check-in portals, and 100% direct customer lists.</p>
+            </div>
+            <div className="pillar">
+              <div className="pillar-num">ii.</div>
+              <h3 className="pillar-h-sm">Auto Shops</h3>
+              <p>Customer vehicle history tracking, appointment calendar grids, automated SMS status alerts, parts tracking, and invoice follow-ups.</p>
+            </div>
+            <div className="pillar">
+              <div className="pillar-num">iii.</div>
+              <h3 className="pillar-h-sm">Trade Contractors</h3>
+              <p>Mobile field technician work orders, custom visual Kanban dispatch boards, estimates approval routing, and onsite text-to-pay invoicing.</p>
+            </div>
           </div>
         </div>
       </section>

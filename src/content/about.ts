@@ -1,8 +1,9 @@
 import type { Pillar, TeamMember, Value } from '@/types'
 
 export const ABOUT_STORY = [
-  'Most service businesses do not wake up asking for software. They feel the symptoms first: missed follow-ups, double entry, delayed invoices, unclear job status, and too much owner dependency.',
-  'SVYNE exists to turn scattered daily operations into a clear operating system: workflow mapped, tools connected, manual steps reduced, and reporting visible enough to make better decisions.',
+  'SVYNE started when we saw a local event venue—L&A Studios in Mobile County—managing everything by hand. They were using paper tickets, manual seating charts, and spreadsheets. Their customer list was trapped inside Eventbrite, and they were leaking revenue at every event.',
+  'We built a custom operating system that let them sell tickets directly on their website, keep 100% of their customer list, and manage seating layouts with a drag-and-drop seating chart builder. They saved hours of manual work and cut scheduling conflicts by 90%.',
+  'We soon realized this operational friction exists in almost every small business. SVYNE exists to turn scattered manual processes into structured, workflow-fit operating systems: mapped, configured, and supported locally.',
   'The name comes from **Site Vision + Vine**. A vine grows by connection and structure. So does a strong operation: clear direction above, flexible growth through the middle, stable infrastructure underneath.',
 ]
 
@@ -40,7 +41,7 @@ export const ABOUT_TEAM: TeamMember[] = [
     role: 'founder',
     meta: 'STRATEGY · UX · ENGINEERING',
     bio:
-      'The single point of contact for every engagement. From workflow mapping to system design, engineering, launch, and long-term optimization, I keep the strategy close to the implementation.',
+      'Based in Saraland, AL, I design, build, and support every system personally. I answer my own phone. From workflow audits to mockup design and launch training, you deal directly with me.',
   },
 ]
 

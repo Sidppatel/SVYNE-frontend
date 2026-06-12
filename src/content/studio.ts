@@ -15,6 +15,7 @@ export const FOOTER_LINKS = {
   pages: [
     { label: 'Systems', to: '/systems' },
     { label: 'Outcomes', to: '/outcomes' },
+    { label: 'Events', to: '/events' },
     { label: 'About', to: '/about' },
     { label: 'Investment', to: '/investment' },
     { label: 'FAQ', to: '/faq' },

@@ -68,6 +68,20 @@ export function Pricing() {
           </h2>
         </div>
 
+        <div className="pricing-special-banner">
+          <div className="psb-content">
+            <span className="psb-badge">Limited Pilot Program</span>
+            <h3 className="psb-title">First 3 Local Clients <em>Special</em></h3>
+            <p className="psb-desc">
+              Get setup for a fraction of standard cost. In exchange, we ask for a video testimonial, Google review, and 2 introductions to other local business owners.
+            </p>
+          </div>
+          <div className="psb-offer">
+            <div className="psb-price">$250 - $500 <em>setup + $99/mo</em></div>
+            <div className="psb-spots">2 spots remaining</div>
+          </div>
+        </div>
+
         <div className="pkg-grid">
           {PRICING_TIERS.map(tier => {
             const priceParts = tier.price.split(' ')

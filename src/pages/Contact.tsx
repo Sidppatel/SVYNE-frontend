@@ -97,6 +97,12 @@ export function Contact() {
                   </div>
                 </div>
                 <div className="contact-meta-item">
+                  <div className="contact-meta-label">Phone & Text</div>
+                  <div className="contact-meta-value">
+                    <a href="tel:+12512282342" className="link-draw">(251) 228-2342</a>
+                  </div>
+                </div>
+                <div className="contact-meta-item">
                   <div className="contact-meta-label">{t('contact.meta.location')}</div>
                   <div className="contact-meta-value">
                     {t('contact.meta.mobile')}<em>{t('contact.meta.state')}</em>

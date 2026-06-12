@@ -515,4 +515,94 @@
   .bundles-wrap {
     padding: 36px 28px;
   }
+
+  .pricing-special-banner {
+    background:
+      radial-gradient(circle at 92% 18%, var(--color-accent-a14), transparent 30%),
+      linear-gradient(135deg, var(--color-surface-2), var(--color-surface-3));
+    border: 1px solid var(--color-accent-soft);
+    border-radius: 16px;
+    padding: 30px 36px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .psb-content {
+    max-width: 680px;
+  }
+
+  .psb-badge {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--color-accent-deep);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: inline-block;
+  }
+
+  .psb-title {
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  .psb-title em {
+    font-style: italic;
+    color: var(--color-accent);
+  }
+
+  .psb-desc {
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .psb-offer {
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .psb-price {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--color-ink);
+  }
+
+  .psb-price em {
+    font-style: italic;
+    font-size: 16px;
+    color: var(--color-accent);
+  }
+
+  .psb-spots {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-growth);
+    font-weight: 600;
+    margin-top: 6px;
+  }
+
+  @media (max-width: 768px) {
+    .pricing-special-banner {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 24px;
+      gap: 16px;
+    }
+    .psb-offer {
+      text-align: left;
+    }
+  }
 }

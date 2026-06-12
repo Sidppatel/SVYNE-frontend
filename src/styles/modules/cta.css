@@ -144,6 +144,14 @@
     margin-top: 0;
   }
 
+  .cta-local-info {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    margin-top: 18px;
+    line-height: 1.5;
+    max-width: 320px;
+  }
+
   .section-cta-band .btn-primary,
   .section-cta-final .btn-primary {
     background: var(--color-accent);

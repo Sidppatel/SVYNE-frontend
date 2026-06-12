@@ -66,13 +66,13 @@ const CONFIGS: Record<
         metric: '100% connected'
       },
       {
-        id: 'leads',
-        label: 'Lead Flow',
+        id: 'crm',
+        label: 'CRM',
         color: '--color-accent',
         accentColor: '--color-accent-deep',
         pos: [-3.0, 1.8, -0.8],
-        desc: 'Capture, qualify, and route leads automatically from all channels.',
-        metric: '0.2s capture'
+        desc: 'Lead capture, customer profiles, and marketing history.',
+        metric: '100% data ownership'
       },
       {
         id: 'scheduling',
@@ -80,44 +80,64 @@ const CONFIGS: Record<
         color: '--color-gold',
         accentColor: '--color-gold-bright',
         pos: [-1.8, -2.0, 1.0],
-        desc: 'Intelligent resource, staff, and job allocation in real time.',
-        metric: '95% dispatch efficiency'
+        desc: 'Calendar, appointments, dispatch, and conflict detection.',
+        metric: '90% fewer conflicts'
       },
       {
-        id: 'invoicing',
-        label: 'Invoicing',
+        id: 'financial',
+        label: 'Financial',
         color: '--color-growth',
         accentColor: '--color-growth',
         pos: [2.2, -1.8, -1.2],
-        desc: 'Automated billing, estimate approval, and payment collection.',
-        metric: '-14 days payment cycle'
+        desc: 'Estimates, invoices, payment tracking, and text-to-pay.',
+        metric: '40% faster collections'
       },
       {
-        id: 'automation',
-        label: 'Automation',
+        id: 'operations',
+        label: 'Operations',
         color: '--color-violet-soft',
         accentColor: '--color-violet-soft',
         pos: [2.8, 1.4, 0.5],
-        desc: 'Trigger handoffs, status changes, alerts, and syncs across teams.',
-        metric: '90% admin reduction'
+        desc: 'Work orders, Kanban boards, crew dispatch, and project tracking.',
+        metric: 'Real-time updates'
       },
       {
-        id: 'reporting',
-        label: 'Reporting',
+        id: 'communication',
+        label: 'Communication',
         color: '--color-accent-deep',
         accentColor: '--color-accent-deep',
         pos: [0.6, 2.8, 1.0],
-        desc: 'Operational intelligence dashboards mapping margins, time, and tasks.',
-        metric: 'Real-time accuracy'
+        desc: 'Two-way SMS, email templates, and automated review campaigns.',
+        metric: 'Instant notifications'
+      },
+      {
+        id: 'inventory',
+        label: 'Inventory',
+        color: '--color-gold-bright',
+        accentColor: '--color-gold-bright',
+        pos: [-3.2, -0.5, 0.8],
+        desc: 'Stock levels, asset assignment, and low-stock alerts.',
+        metric: '0 manual counts'
+      },
+      {
+        id: 'events',
+        label: 'Event Management',
+        color: '--color-violet-soft',
+        accentColor: '--color-violet-soft',
+        pos: [1.0, -3.0, -0.5],
+        desc: 'Ticketing, drag-and-drop seating charts, QR check-in, and attendee lists.',
+        metric: '$0 setup fee'
       }
     ],
     paths: [
-      { from: 'leads', to: 'workflows' },
+      { from: 'crm', to: 'workflows' },
       { from: 'workflows', to: 'scheduling' },
-      { from: 'scheduling', to: 'invoicing' },
-      { from: 'workflows', to: 'automation' },
-      { from: 'automation', to: 'reporting' },
-      { from: 'reporting', to: 'workflows' }
+      { from: 'scheduling', to: 'operations' },
+      { from: 'operations', to: 'financial' },
+      { from: 'financial', to: 'communication' },
+      { from: 'communication', to: 'workflows' },
+      { from: 'inventory', to: 'workflows' },
+      { from: 'events', to: 'workflows' }
     ]
   },
   services: {

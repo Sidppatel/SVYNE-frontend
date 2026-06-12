@@ -2,17 +2,17 @@ export const FAQ_ITEMS = [
   {
     question: 'What is SVYNE?',
     answer:
-      'SVYNE builds operational systems for service businesses. The goal is to replace spreadsheets, phone calls, manual handoffs, and disconnected tools with one workflow-fit system your team can actually run.',
+      'SVYNE builds operational systems for service businesses. We don\'t sell software; we construct the workflow-fit systems that replace spreadsheets, whiteboard dispatching, and manual handoffs with a single tool.',
   },
   {
     question: 'Why SVYNE instead of another software tool?',
     answer:
-      'Most software asks the business to adapt to the product. SVYNE starts with how your business already works, maps the bottlenecks, then configures the system around the workflow. The result is less adoption friction and more operational clarity.',
+      'Most software asks your business to adapt to the product. SVYNE starts with how your business already works, maps the bottlenecks, then configures the system around the workflow. The result is less adoption friction and more operational clarity.',
   },
   {
     question: 'Is SVYNE a custom software agency?',
     answer:
-      'No. SVYNE uses a modular operating-system approach. The experience is tailored to your workflow, but the foundation is built from reusable operational modules for reliability, speed, and long-term support.',
+      'No. SVYNE uses a modular operating-system approach. The experience is tailored to your workflow, but the foundation is built from reusable operational modules (CRM, scheduling, work orders) for reliability, speed, and long-term support.',
   },
   {
     question: 'Is SVYNE a CRM or booking platform?',
@@ -22,32 +22,32 @@ export const FAQ_ITEMS = [
   {
     question: 'Who is SVYNE best for?',
     answer:
-      'SVYNE is best for service businesses that have outgrown spreadsheets and informal processes. If work is getting lost, duplicated, delayed, or hidden from the owner, the business is likely ready for an operational system.',
+      'SVYNE is best for service businesses (contractors, event venues, auto shops, spas) that have outgrown spreadsheets and informal processes. If work is getting lost, duplicated, delayed, or hidden from the owner, you are ready for a system.',
   },
   {
-    question: 'What problems does SVYNE solve?',
+    question: 'What if we already tried software and it didn\'t work?',
     answer:
-      'Common problems include missed follow-ups, scattered customer information, manual scheduling, delayed invoices, unclear job status, poor reporting, and too much owner dependency.',
-  },
-  {
-    question: 'What does the first step look like?',
-    answer:
-      'The first step is a system audit or workflow call. SVYNE looks at how work currently moves through the business, identifies the highest-value bottlenecks, and recommends the right implementation path.',
-  },
-  {
-    question: 'What gets included in an operational system?',
-    answer:
-      'A system may include lead intake, customer profiles, scheduling, work orders, estimates, invoices, payments, notifications, staff permissions, reporting dashboards, and integrations with tools worth keeping.',
+      'Most software forces you to adapt to IT. We do the opposite—we configure the system around your workflow. Plus, you are never locked in: your data is 100% yours, always guaranteed.',
   },
   {
     question: 'How much does it cost?',
     answer:
-      'Pricing depends on operational complexity. A workflow audit is the smallest entry point. Larger implementations depend on the number of workflows, modules, users, data sources, integrations, and support needs.',
+      'Every system is custom-fit, so we don\'t publish rigid prices. A typical local service business invests $1,500–$3,000 for setup plus $99–$299/month. Event ticketing systems often cost $0 upfront, using a small platform fee per ticket. Let\'s do a free 15-minute audit to get an exact quote.',
+  },
+  {
+    question: 'How long does implementation take?',
+    answer:
+      'Most systems go live in 7 days: Day 0 (audit), Days 1-2 (offline tablet mockup), Day 3 (pricing & quote), Days 4-6 (build), and Day 7 (staff training & launch).',
+  },
+  {
+    question: 'What happens if we want to leave?',
+    answer:
+      'We do not hold your business history hostage. If you leave, we provide a complete export of all your data (SQL/JSON) along with a migration mapping guide to other industry-standard tools.',
   },
   {
     question: 'What happens after launch?',
     answer:
-      'SVYNE can continue supporting the system through hosting, maintenance, security updates, reporting reviews, workflow improvements, automations, integrations, and staff training as the business grows.',
+      'SVYNE supports your system through hosting, maintenance, security updates, reporting reviews, workflow improvements, new automations, integrations, and staff training as the business grows.',
   },
 ] as const
 

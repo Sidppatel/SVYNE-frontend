@@ -53,10 +53,10 @@ export const HOME_PROCESS: ProcessStep[] = [
 
 export const HOME_TESTIMONIAL = {
   quote:
-    "SVYNE shipped the platform we'd been quoted six months for - in five weeks. The site still works. We still talk every month.",
-  highlight: 'in five weeks',
-  attr: '- Founder, CODE829',
-  role: 'Private events · Mobile, AL',
+    "SVYNE built an event ticketing system that let us keep 100% of our attendee data, cut scheduling conflicts by 90%, and saved us 5 hours a week in manual admin—all with $0 upfront cost.",
+  highlight: "with $0 upfront cost",
+  attr: "- Owner, L&A Studios",
+  role: "Event Venue · Mobile County, AL",
 }
 
 export const HOME_OUTCOMES = [

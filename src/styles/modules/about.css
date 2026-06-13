@@ -205,7 +205,7 @@
     max-width: 540px;
   }
 
-  /* Homepage About Preview */
+  
   .about-home-grid {
     display: grid;
     grid-template-columns: 1fr 2fr;

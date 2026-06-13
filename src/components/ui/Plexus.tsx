@@ -19,7 +19,7 @@ export function Plexus({ densityMultiplier = 1.0 }: PlexusProps) {
     let height = window.innerHeight
 
     const particles: Particle[] = []
-    const particleCount = Math.floor(((width * height) / 7000) * densityMultiplier)
+    const particleCount = Math.min(400, Math.floor(((width * height) / 7000) * densityMultiplier))
     const connectionDistance = 140
     const mouse = { x: -100, y: -100 }
 
@@ -36,7 +36,7 @@ export function Plexus({ densityMultiplier = 1.0 }: PlexusProps) {
       constructor() {
         this.x = Math.random() * width
         this.y = Math.random() * height
-        // High-velocity and high-variance speed system
+        
         const speedMultiplier = Math.random() > 0.85 ? 4.5 : 2.5
         const speed = Math.random() * speedMultiplier + 1.2
         this.vx = (Math.random() - 0.5) * speed
@@ -51,7 +51,7 @@ export function Plexus({ densityMultiplier = 1.0 }: PlexusProps) {
         if (this.x < 0 || this.x > width) this.vx *= -1
         if (this.y < 0 || this.y > height) this.vy *= -1
 
-        // Mouse attraction
+        
         const dx = mouse.x - this.x
         const dy = mouse.y - this.y
         const dist = Math.sqrt(dx * dx + dy * dy)

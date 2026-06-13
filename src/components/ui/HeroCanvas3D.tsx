@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import * as THREE from 'three'
 import { getCssVar } from '@/utils/colors'
 
-// Helper to create a radial gradient canvas for round soft particles (bokeh sparks)
+
 const createParticleTexture = () => {
   const canvas = document.createElement('canvas')
   canvas.width = 16
@@ -416,7 +416,7 @@ export function HeroCanvas3D({ mode = 'home' }: HeroCanvas3DProps) {
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
-  // Keep track of ref values in animation loop
+  
   const hoverStateRef = useRef<string | null>(null)
   useEffect(() => {
     hoverStateRef.current = hoveredBadge || activeNode
@@ -488,12 +488,12 @@ export function HeroCanvas3D({ mode = 'home' }: HeroCanvas3DProps) {
     const nodesData = config.nodes
     const paths = config.paths
 
-    // 1. Scene & Setup
+    
     const width = container.clientWidth
     const height = container.clientHeight
     const scene = new THREE.Scene()
     
-    // Camera
+    
     const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100)
     if (width < 480) {
       camera.position.set(0, 0, 8.8)
@@ -505,7 +505,7 @@ export function HeroCanvas3D({ mode = 'home' }: HeroCanvas3DProps) {
       camera.position.set(0, 0, 8.5)
     }
 
-    // Renderer
+    
     let renderer: THREE.WebGLRenderer
     try {
       renderer = new THREE.WebGLRenderer({
@@ -521,7 +521,7 @@ export function HeroCanvas3D({ mode = 'home' }: HeroCanvas3DProps) {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
     renderer.setSize(width, height)
 
-    // --- Lights ---
+    
     const ambientLight = new THREE.AmbientLight(getCssVar('--color-surface'), 0.45)
     scene.add(ambientLight)
 
@@ -537,12 +537,12 @@ export function HeroCanvas3D({ mode = 'home' }: HeroCanvas3DProps) {
     pulseLight.position.set(0, 0, 1)
     scene.add(pulseLight)
 
-    // Headlight attached directly to camera to provide crisp specular reflections
+    
     const cameraLight = new THREE.PointLight(getCssVar('--color-surface'), 1.8, 20)
     camera.add(cameraLight)
     scene.add(camera)
 
-    // 3. Node Meshes
+    
     const nodeMeshes = new Map<string, THREE.Mesh>()
     const nodeGroup = new THREE.Group()
     scene.add(nodeGroup)
@@ -551,11 +551,11 @@ export function HeroCanvas3D({ mode = 'home' }: HeroCanvas3DProps) {
 
     nodesData.forEach(node => {
       if (node.id === 'workflows') {
-        // Create a composite group for the central node (workflows)
+        
         const workflowsGroup = new THREE.Group()
         workflowsGroup.position.set(...node.pos)
         
-        // Inner physical core sphere
+        
         const innerGeometry = new THREE.SphereGeometry(0.13, 32, 32)
         const innerMaterial = new THREE.MeshPhysicalMaterial({
           color: new THREE.Color(getCssVar(node.color)),
@@ -569,7 +569,7 @@ export function HeroCanvas3D({ mode = 'home' }: HeroCanvas3DProps) {
         const innerMesh = new THREE.Mesh(innerGeometry, innerMaterial)
         workflowsGroup.add(innerMesh)
 
-        // Outer rotating wireframe shell to represent active computation
+        
         const outerGeometry = new THREE.SphereGeometry(0.22, 16, 16)
         const outerMaterial = new THREE.MeshBasicMaterial({
           color: new THREE.Color(getCssVar(node.color)),
@@ -582,10 +582,10 @@ export function HeroCanvas3D({ mode = 'home' }: HeroCanvas3DProps) {
         workflowsGroup.add(outerMesh)
 
         nodeGroup.add(workflowsGroup)
-        nodeMeshes.set(node.id, innerMesh) // Map core mesh for scaling animations
+        nodeMeshes.set(node.id, innerMesh) 
         workflowsOuter = outerMesh
       } else {
-        // Satellite nodes
+        
         const geometry = new THREE.SphereGeometry(0.10, 32, 32)
         const material = new THREE.MeshPhysicalMaterial({
           color: new THREE.Color(getCssVar(node.color)),
@@ -603,7 +603,7 @@ export function HeroCanvas3D({ mode = 'home' }: HeroCanvas3DProps) {
       }
     })
 
-    // 4. Connection Lines
+    
     const lineGroup = new THREE.Group()
     scene.add(lineGroup)
 
@@ -618,7 +618,7 @@ export function HeroCanvas3D({ mode = 'home' }: HeroCanvas3DProps) {
       const toVec = new THREE.Vector3(...toNode.pos)
       connectionPaths.push({ from: fromVec, to: toVec, color: fromNode.color })
 
-      // Create line geometry
+      
       const points = [fromVec, toVec]
       const lineGeom = new THREE.BufferGeometry().setFromPoints(points)
       const lineMat = new THREE.LineBasicMaterial({
@@ -631,7 +631,7 @@ export function HeroCanvas3D({ mode = 'home' }: HeroCanvas3DProps) {
       lineGroup.add(line)
     })
 
-    // 5. Data Packets (glowing elements traveling along connections)
+    
     const packets: {
       mesh: THREE.Mesh
       fromVec: THREE.Vector3
@@ -661,7 +661,7 @@ export function HeroCanvas3D({ mode = 'home' }: HeroCanvas3DProps) {
       }
     })
 
-    // 6. Rotating Architecture (Dual Background Torus Rings)
+    
     const ringGroup = new THREE.Group()
     scene.add(ringGroup)
 
@@ -688,7 +688,7 @@ export function HeroCanvas3D({ mode = 'home' }: HeroCanvas3DProps) {
     ring2.rotation.y = Math.PI / 6.0
     ringGroup.add(ring2)
 
-    // 7. Ambient Particle Dust (Soft Bokeh Sparks)
+    
     const particleCount = 180
     const particleGeom = new THREE.BufferGeometry()
     const positions = new Float32Array(particleCount * 3)
@@ -714,7 +714,7 @@ export function HeroCanvas3D({ mode = 'home' }: HeroCanvas3DProps) {
     const dustParticles = new THREE.Points(particleGeom, particleMat)
     scene.add(dustParticles)
 
-    // 8. Interactive Mouse Parallax
+    
     const mouse = { x: 0, y: 0, targetX: 0, targetY: 0 }
     
     const handleMouseMove = (e: MouseEvent) => {
@@ -724,18 +724,18 @@ export function HeroCanvas3D({ mode = 'home' }: HeroCanvas3DProps) {
 
     window.addEventListener('mousemove', handleMouseMove)
 
-    // 9. Animation Loop
+    
     let animationId: number
     const tempV = new THREE.Vector3()
 
     const animate = () => {
       animationId = requestAnimationFrame(animate)
 
-      // Move camera target slightly based on mouse
+      
       mouse.x += (mouse.targetX - mouse.x) * 0.05
       mouse.y += (mouse.targetY - mouse.y) * 0.05
 
-      // Constant slow auto-rotation combined with mouse parallax
+      
       const timeSecs = Date.now() * 0.0005
       const autoRotateY = timeSecs * 0.2
 
@@ -744,54 +744,54 @@ export function HeroCanvas3D({ mode = 'home' }: HeroCanvas3DProps) {
       lineGroup.rotation.y = autoRotateY + mouse.x * 0.15
       lineGroup.rotation.x = -mouse.y * 0.1
 
-      // Rotate background rings in opposite directions
+      
       ring1.rotation.z += 0.0012
       ring2.rotation.z -= 0.0008
       ringGroup.rotation.x = mouse.y * 0.05
       ringGroup.rotation.y = mouse.x * 0.05
 
-      // Rotate the workflows outer wireframe core separately
+      
       if (workflowsOuter) {
         workflowsOuter.rotation.y -= 0.008
         workflowsOuter.rotation.x += 0.004
       }
 
-      // Pulse lighting
+      
       const time = Date.now() * 0.001
       pulseLight.position.x = Math.sin(time * 0.5) * 2
       pulseLight.position.y = Math.cos(time * 0.3) * 2
       pulseLight.intensity = 1.5 + Math.sin(time * 2) * 0.5
 
-      // Animate data packets
+      
       packets.forEach(p => {
         p.progress += p.speed
         if (p.progress >= 1) {
           p.progress = 0
         }
-        // Quadratic easing for fluid movement
+        
         const easedProgress = p.progress
         p.mesh.position.lerpVectors(p.fromVec, p.toVec, easedProgress)
-        // Shift packets based on group rotation
+        
         p.mesh.position.applyEuler(new THREE.Euler(0, mouse.x * 0.002, 0))
       })
 
-      // Animate dust particles
+      
       const positionsArr = dustParticles.geometry.attributes.position.array as Float32Array
       for (let i = 0; i < particleCount; i++) {
-        // Drift upwards
+        
         const currentY = positionsArr.at(i * 3 + 1)!
         const speedY = speeds.at(i)!
         positionsArr.set([currentY + speedY], i * 3 + 1)
         if (positionsArr.at(i * 3 + 1)! > 4) {
           positionsArr.set([-4], i * 3 + 1)
         }
-        // Subtle wave motion
+        
         const currentX = positionsArr.at(i * 3)!
         positionsArr.set([currentX + Math.sin(time + i) * 0.001], i * 3)
       }
       dustParticles.geometry.attributes.position.needsUpdate = true
 
-      // Highlight active node in 3D
+      
       const activeId = hoverStateRef.current
       nodesData.forEach(node => {
         const mesh = nodeMeshes.get(node.id)
@@ -799,11 +799,11 @@ export function HeroCanvas3D({ mode = 'home' }: HeroCanvas3DProps) {
 
         const mat = mesh.material as THREE.MeshPhysicalMaterial
         if (node.id === activeId) {
-          // Glow and swell
+          
           mesh.scale.lerp(tempV.set(1.3, 1.3, 1.3), 0.1)
           mat.emissiveIntensity = THREE.MathUtils.lerp(mat.emissiveIntensity, 0.8, 0.1)
         } else {
-          // Regular size/glow
+          
           const baseScale = node.id === 'workflows' ? 1.25 : 1.0
           mesh.scale.lerp(tempV.set(baseScale, baseScale, baseScale), 0.1)
           mat.emissiveIntensity = THREE.MathUtils.lerp(
@@ -814,21 +814,21 @@ export function HeroCanvas3D({ mode = 'home' }: HeroCanvas3DProps) {
         }
       })
 
-      // Project 3D nodes onto 2D viewport coordinates
+      
       const coords: ProjectedCoord[] = nodesData.map(node => {
         const mesh = nodeMeshes.get(node.id)
         if (!mesh) return { ...node, x: 0, y: 0, visible: false }
 
-        // Find world position of the node mesh
+        
         tempV.setFromMatrixPosition(mesh.matrixWorld)
-        // Project to camera screen space
+        
         tempV.project(camera)
 
-        // Convert projection coordinates to CSS coordinates
+        
         const x = (tempV.x * 0.5 + 0.5) * width
         const y = (-tempV.y * 0.5 + 0.5) * height
 
-        // Hide nodes that are behind the camera (depth test)
+        
         const visible = tempV.z < 1
 
         return {
@@ -849,7 +849,7 @@ export function HeroCanvas3D({ mode = 'home' }: HeroCanvas3DProps) {
 
     animate()
 
-    // 10. Resize handler
+    
     const handleResize = () => {
       if (!containerRef.current) return
       const w = containerRef.current.clientWidth
@@ -858,7 +858,7 @@ export function HeroCanvas3D({ mode = 'home' }: HeroCanvas3DProps) {
       camera.aspect = w / h
       camera.updateProjectionMatrix()
       
-      // Update camera distance dynamically based on container width
+      
       if (w < 480) {
         camera.position.z = 8.8
       } else if (w < 768) {
@@ -875,7 +875,7 @@ export function HeroCanvas3D({ mode = 'home' }: HeroCanvas3DProps) {
     const resizeObserver = new ResizeObserver(handleResize)
     resizeObserver.observe(container)
 
-    // Cleanup
+    
     return () => {
       window.removeEventListener('mousemove', handleMouseMove)
       resizeObserver.disconnect()
@@ -943,7 +943,7 @@ export function HeroCanvas3D({ mode = 'home' }: HeroCanvas3DProps) {
         </svg>
       )}
 
-      {/* HTML Overlays projected onto 3D Coordinates */}
+      
       {projectedCoords.map(node => {
         if (!node.visible) return null
         const isActive = activeNode === node.id || hoveredBadge === node.id
@@ -965,13 +965,13 @@ export function HeroCanvas3D({ mode = 'home' }: HeroCanvas3DProps) {
             onMouseEnter={() => setActiveNode(node.id)}
             onMouseLeave={() => setActiveNode(null)}
           >
-            {/* Glass Badge Title */}
+            
             <div className="badge-tag">
               <span className="badge-label">{node.label}</span>
               {isActive && <span className="badge-metric">{node.metric}</span>}
             </div>
 
-            {/* Hover Expansion Panel */}
+            
             {isActive && (
               <div
                 className="badge-panel fade-in"

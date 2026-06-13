@@ -1,14 +1,14 @@
 @import "tailwindcss";
 @import "./base.css";
 
-/* Core Modules */
+
 @import "./modules/shared.css";
 @import "./modules/animations.css";
 @import "./modules/buttons.css";
 @import "./modules/navigation.css";
 @import "./modules/footer.css";
 
-/* Page/Feature Modules */
+
 @import "./modules/hero.css";
 @import "./modules/landing-sections.css";
 @import "./modules/services.css";

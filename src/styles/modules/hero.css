@@ -134,7 +134,7 @@
     opacity: 1;
   }
 
-  /* Button Overrides for Editorial Hero */
+  
   .hero .btn-secondary {
     color: var(--color-ink);
     border-color: var(--color-border-strong);
@@ -148,9 +148,7 @@
     border-color: var(--color-accent);
   }
 
-  /* ==========================================================================
-     3D Hero Grid Layout & Projected Tags
-     ========================================================================== */
+  
   .hero-inner-grid {
     display: grid;
     grid-template-columns: 1.1fr 1.4fr;
@@ -249,7 +247,7 @@
     padding-left: 6px;
   }
 
-  /* Expanded hover panel description */
+  
   .badge-panel {
     position: absolute;
     left: 0;

@@ -81,7 +81,7 @@
   <circle cx="40" cy="170" r="8" class="spark-node-input" fill="var(--color-sienna)" />
 
   <!-- System Hub -->
-  <circle cx="120" cy="120" r="24" class="spark-hub-outer" fill="var(--color-bg)" stroke="var(--color-ink)" stroke-width="10" />
+  <circle cx="120" cy="120" r="24" class="spark-hub-outer" fill="transparent" stroke="var(--color-ink)" stroke-width="10" />
 
   <!-- Inner System Core -->
   <circle cx="120" cy="120" r="8" class="spark-hub-inner" fill="var(--color-sienna)" />

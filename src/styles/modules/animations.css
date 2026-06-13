@@ -1,5 +1,5 @@
 @layer components {
-  /* Spark / Logo Animations */
+  
   .spark-mark-wrap {
     display: inline-block;
     vertical-align: middle;
@@ -20,7 +20,7 @@
     filter: drop-shadow(0 15px 25px var(--color-accent-a24));
   }
 
-  /* Sequential Pipeline Animation Classes */
+  
   .spark-line-input-base,
   .spark-line-output-base {
     opacity: 0.15;
@@ -48,9 +48,9 @@
     animation: sparkOutputNodePulse 4s infinite ease-in-out;
   }
 
-  /* Sequential Pipeline Animation Keyframes */
+  
   @keyframes sparkInputFlow {
-    /* 0% to 37.5% (0s - 1.5s): Inputs flow inward */
+    
     0% {
       opacity: 0;
       stroke-dashoffset: 48;
@@ -72,7 +72,7 @@
   }
 
   @keyframes sparkHubPulse {
-    /* 37.5% to 55% (1.5s - 2.2s): Hub pulses when inputs reach it */
+    
     0%, 37.5% {
       transform: scale(1);
       filter: drop-shadow(0 0 0px rgba(79, 93, 101, 0));
@@ -88,7 +88,7 @@
   }
 
   @keyframes sparkOutputFlow {
-    /* 55% to 85% (2.2s - 3.4s): Output flows outward */
+    
     0%, 55% {
       opacity: 0;
       stroke-dashoffset: 40;
@@ -110,7 +110,7 @@
   }
 
   @keyframes sparkOutputNodePulse {
-    /* 85% to 95% (3.4s - 3.8s): Output node pulses */
+    
     0%, 85% {
       transform: scale(1);
       filter: drop-shadow(0 0 0px rgba(15, 169, 104, 0));
@@ -129,7 +129,7 @@
 
 
 
-  /* Scroll Indicator */
+  
   .scroll-indicator {
     position: absolute;
     bottom: 50px;
@@ -176,7 +176,7 @@
     100% { opacity: 0; transform: translate(-50%, 10px); }
   }
 
-  /* Living Circles Animation */
+  
   .living-circles-container {
     position: absolute;
     top: 50%;
@@ -222,7 +222,7 @@
     }
   }
 
-  /* Global Shimmer Effects */
+  
   @keyframes kinetic-shimmer {
     0% { background-position: -200% 0; }
     100% { background-position: 200% 0; }

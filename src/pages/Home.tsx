@@ -11,7 +11,7 @@ import { FinalCta } from '@/components/layout/FinalCta'
 import { HeroCanvas3D } from '@/components/ui/HeroCanvas3D'
 import { AlertTriangle, Mail, Layers, Database } from 'lucide-react'
 
-// Intersection observer animated counter
+
 function KpiCounter({ target, duration = 1200 }: { target: number; duration?: number }) {
   const [count, setCount] = useState(0)
   const containerRef = useRef<HTMLSpanElement>(null)
@@ -27,7 +27,7 @@ function KpiCounter({ target, duration = 1200 }: { target: number; duration?: nu
       const update = (now: number) => {
         const elapsed = now - startTime
         const progress = Math.min(elapsed / duration, 1)
-        // Ease out quadratic
+        
         const easeProgress = progress * (2 - progress)
         setCount(Math.floor(easeProgress * end))
         
@@ -65,9 +65,7 @@ export function Home() {
     <>
       <Metadata description="Operational systems for service businesses. SVYNE replaces spreadsheets, phone calls, and disconnected tools with workflow-fit operating systems." />
       
-      {/* ==========================================================================
-         1. Hero Section
-         ========================================================================== */}
+      
       <section className="hero home-hero">
         <div className="doc">
           <div className="hero-inner-grid">
@@ -111,9 +109,7 @@ export function Home() {
 
       <hr className="hairline" />
 
-      {/* ==========================================================================
-         2. Problem Section (Operational Chaos)
-         ========================================================================== */}
+      
       <section id="problem-section" className="section section-cream problem-section">
         <div className="doc">
           <div className="section-header">
@@ -177,12 +173,8 @@ export function Home() {
         </div>
       </section>
 
-      {/* ==========================================================================
-         3. Why Existing Software Fails (Comparison)
-         ========================================================================== */}
-      {/* ==========================================================================
-         3. Why Existing Software Fails (Comparison)
-         ========================================================================== */}
+      
+      
       <section className="section section-parchment-deep compare-section">
         <div className="doc">
           <div className="section-header">
@@ -283,9 +275,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* ==========================================================================
-         3.5 Data Ownership Covenant
-         ========================================================================== */}
+      
       <section className="section data-ownership-section">
         <div className="doc">
           <div className="section-header">
@@ -321,9 +311,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* ==========================================================================
-         4. The SVYNE Approach (Timeline Workflow)
-         ========================================================================== */}
+      
       <section className="section section-cream approach-section">
         <div className="doc">
           <div className="section-header">
@@ -415,9 +403,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* ==========================================================================
-         5. Success Outcomes
-         ========================================================================== */}
+      
       <section className="section section-parchment-deep kpi-section">
         <div className="doc">
           <div className="section-header">
@@ -477,9 +463,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* ==========================================================================
-         5.6 Target Verticals (Who We Help)
-         ========================================================================== */}
+      
       <section className="section target-verticals-section">
         <div className="doc">
           <div className="section-header">

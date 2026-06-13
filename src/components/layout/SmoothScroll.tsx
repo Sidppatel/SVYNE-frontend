@@ -26,7 +26,7 @@ export function SmoothScroll({ children }: SmoothScrollProps) {
 
     requestAnimationFrame(raf)
 
-    // Handle scroll to top on route change or other needs
+    
     const handleScrollTo = (e: Event) => {
       const customEvent = e as CustomEvent
       if (customEvent.detail?.target !== undefined) {

@@ -14,7 +14,7 @@ export function SuccessCta() {
     <section className="section section-success-integrated">
       <div className="cta-grid" style={{ opacity: 0.1 }} />
       <div className="doc">
-        {/* Result header */}
+        
         <div className="section-header fade-up">
           <div className="label-row">
             <Eyebrow>Result · proof of impact</Eyebrow>
@@ -25,7 +25,7 @@ export function SuccessCta() {
           </h2>
         </div>
 
-        {/* Minimalist Testimonial */}
+        
         <div className="integrated-testimonial fade-up d1">
           <p className="testimonial-quote">
             {before}
@@ -38,7 +38,7 @@ export function SuccessCta() {
           </div>
         </div>
 
-        {/* Final CTA Flow */}
+        
         <div className="integrated-cta fade-up d2">
           <div className="cta-content">
             <h3 className="h-display">Your workflow. <em>Built to scale.</em></h3>

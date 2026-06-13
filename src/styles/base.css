@@ -57,7 +57,7 @@
   --doc-max-width: 1440px;
   --nav-height: 80px;
 
-  /* Alpha variants */
+  
   --color-accent-a16: color-mix(in srgb, var(--color-accent) 16%, transparent);
   --color-accent-deep-a28: color-mix(in srgb, var(--color-accent-deep) 28%, transparent);
   --color-accent-a24: color-mix(in srgb, var(--color-accent) 24%, transparent);
@@ -98,7 +98,7 @@
   --color-ink-surface-a38: color-mix(in srgb, var(--color-ink-surface) 38%, transparent);
   --color-surface-a40: color-mix(in srgb, var(--color-surface) 40%, transparent);
 
-  /* Spacing Scale Tokens */
+  
   --space-1: calc(var(--spacing) * 1);
   --space-2: calc(var(--spacing) * 2);
   --space-3: calc(var(--spacing) * 3);

@@ -13,7 +13,7 @@ export function SparkMark({ size }: Props) {
         height="100%"
         aria-hidden="true"
       >
-        {/* Input Lines (Static Base Conduit) */}
+        
         <path
           d="M40 70 L95 110"
           className="spark-line-input-base"
@@ -36,7 +36,7 @@ export function SparkMark({ size }: Props) {
           strokeLinecap="round"
         />
 
-        {/* Input Lines (Animated Flow Overlay) */}
+        
         <path
           d="M40 70 L95 110"
           className="spark-line-input-flow"
@@ -62,26 +62,27 @@ export function SparkMark({ size }: Props) {
           strokeDasharray="12 12"
         />
 
-        {/* Input Nodes */}
+        
         <circle cx="40" cy="70" r="8" className="spark-node-input" fill="var(--color-accent)" />
         <circle cx="40" cy="120" r="8" className="spark-node-input" fill="var(--color-accent)" />
         <circle cx="40" cy="170" r="8" className="spark-node-input" fill="var(--color-accent)" />
 
-        {/* System Hub */}
+        
         <circle
           cx="120"
           cy="120"
           r="24"
           className="spark-hub-outer"
-          fill="var(--color-bg)"
+          fill="transparent"
           stroke="var(--color-ink)"
           strokeWidth="10"
         />
 
-        {/* Inner System Core */}
+
+        
         <circle cx="120" cy="120" r="8" className="spark-hub-inner" fill="var(--color-accent)" />
 
-        {/* Output Line (Static Base Conduit) */}
+        
         <path
           d="M144 120 L195 120"
           className="spark-line-output-base"
@@ -90,7 +91,7 @@ export function SparkMark({ size }: Props) {
           strokeLinecap="round"
         />
 
-        {/* Output Line (Animated Flow Overlay) */}
+        
         <path
           d="M144 120 L195 120"
           className="spark-line-output-flow"
@@ -100,7 +101,7 @@ export function SparkMark({ size }: Props) {
           strokeDasharray="10 10"
         />
 
-        {/* Output Node */}
+        
         <circle cx="200" cy="120" r="10" className="spark-node-output" fill="var(--color-growth)" />
       </svg>
     </div>

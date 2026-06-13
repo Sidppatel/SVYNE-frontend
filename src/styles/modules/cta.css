@@ -222,7 +222,7 @@
     font-weight: 300;
   }
 
-  /* Testimonial — two-column grid: quote left, attribution right */
+  
   .integrated-testimonial {
     display: grid;
     grid-template-columns: 1fr auto;
@@ -303,7 +303,7 @@
   }
 
 
-  /* ── Responsive ──────────────────────────────────────────── */
+  
 
   @media (max-width: 1024px) {
     .section-cta-band {

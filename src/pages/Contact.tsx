@@ -50,7 +50,7 @@ export function Contact() {
     setSubmitError(false)
 
     setTimeout(() => {
-      // Simulate failure for a specific email for testing
+      
       if (form.email.includes('error')) {
         setSubmitError(true)
         setSubmitting(false)

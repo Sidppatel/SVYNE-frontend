@@ -74,14 +74,14 @@ export function Contact() {
       
       <section className="hero contact-hero">
         <div className="doc">
-          <div className="hero-inner-grid">
-            <div className="hero-inner">
+          <div className="contact-grid">
+            <div className="contact-info">
               <Eyebrow className="fade-up">{t('contact.hero.eyebrow')}</Eyebrow>
-              <h1 className="h-display">
+              <h1 className="contact-h">
                 <span className="fade-up d1">{t('contact.hero.title')}</span>
                 <span className="fade-up d2">{t('contact.hero.titleEm')}<span className="brand-period">.</span></span>
               </h1>
-              <p className="hero-deck fade-up d3">
+              <p className="contact-deck fade-up d3">
                 {t('contact.hero.deck')}<em>{STUDIO.email}</em>{t('contact.hero.deckEnd')}
               </p>
 
@@ -130,7 +130,7 @@ export function Contact() {
               </div>
             </div>
 
-            <div className="hero-canvas-wrap fade-up d2 hero-form-wrap">
+            <div className="hero-form-wrap fade-up d2">
               <div className="contact-form">
                 {submitted ? (
                   <div className="form-thanks">

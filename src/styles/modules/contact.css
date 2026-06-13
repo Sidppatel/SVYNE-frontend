@@ -1,9 +1,15 @@
 @layer components {
+  .hero.contact-hero {
+    padding: 0;
+  }
+
   .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1.1fr;
     gap: 80px;
     padding: calc(var(--nav-height) + 60px) 0 60px;
+    position: relative;
+    z-index: 10;
   }
 
   .contact-h {

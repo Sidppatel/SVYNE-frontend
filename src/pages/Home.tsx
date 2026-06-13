@@ -68,7 +68,7 @@ export function Home() {
       {/* ==========================================================================
          1. Hero Section
          ========================================================================== */}
-      <section className="hero">
+      <section className="hero home-hero">
         <div className="doc">
           <div className="hero-inner-grid">
             <div className="hero-inner">

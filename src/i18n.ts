@@ -158,7 +158,7 @@ const resources = {
       "home.hero.eyebrow": "◆ Chapter 01 · Operational Systems ◆",
       "home.hero.title": "We Don't Sell Software. ",
       "home.hero.titleEm": "We Build Your Operational System",
-      "home.hero.deck": "Custom workflow-fit systems for Mobile County small businesses. No generic templates. No vendor lock-in. Free 15-minute audit.",
+      "home.hero.deck": "Custom workflow-fit systems for Mobile County small businesses. No generic templates. No vendor lock-in. 100% direct data ownership, guaranteed. Free 15-minute audit.",
       "home.hero.cta.book": "Get Your Free 15-Minute Audit",
       "home.hero.cta.how": "Map Your System",
       "home.problem.eyebrow": "Symptoms · Cost of Manual Work",

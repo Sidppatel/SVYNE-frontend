@@ -62,7 +62,7 @@
 
   .nav-links {
     display: flex;
-    gap: 32px;
+    gap: var(--grid-micro);
     font-family: var(--font-mono);
     font-size: 11px;
     letter-spacing: 0.18em;
@@ -116,16 +116,6 @@
     background: var(--color-accent);
     transform: translateY(-1px);
     box-shadow: 0 8px 20px -8px var(--color-accent-a24);
-  }
-
-  .nav-cta .arr {
-    display: inline-block;
-    margin-left: 4px;
-    transition: transform 0.3s;
-  }
-
-  .nav-cta:hover .arr {
-    transform: translateX(3px);
   }
 
   .nav-burger {

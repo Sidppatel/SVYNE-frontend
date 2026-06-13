@@ -140,10 +140,73 @@ export function SystemCanvas3D({ activeModules }: SystemCanvas3DProps) {
   const [hoveredBadge, setHoveredBadge] = useState<string | null>(null)
 
   const hoverStateRef = useRef<string | null>(null)
+  const [webglSupported, setWebglSupported] = useState(() => {
+    try {
+      const canvas = document.createElement('canvas')
+      return !!(
+        window.WebGLRenderingContext &&
+        (canvas.getContext('webgl') || canvas.getContext('experimental-webgl'))
+      )
+    } catch {
+      return false
+    }
+  })
 
   useEffect(() => {
     hoverStateRef.current = hoveredBadge || activeNode
   }, [hoveredBadge, activeNode])
+
+  useEffect(() => {
+    if (webglSupported) return
+
+    let animationId: number
+    let angle = 0
+
+    const updateProjection = () => {
+      if (!containerRef.current) return
+      const width = containerRef.current.clientWidth
+      const height = containerRef.current.clientHeight
+
+      angle += 0.002
+
+      const coords: ProjectedCoord[] = NODES_DATA.map(node => {
+        const [x, y, z] = node.pos
+
+        const cosY = Math.cos(angle)
+        const sinY = Math.sin(angle)
+
+        const rx = x * cosY - z * sinY
+        const rz = x * sinY + z * cosY
+        const ry = y
+
+        const cameraZ = 7.5
+        const factor = cameraZ / (cameraZ + rz)
+
+        const screenX = rx * width * 0.12 * factor + width / 2
+        const screenY = -ry * height * 0.15 * factor + height / 2
+
+        return {
+          id: node.id,
+          label: node.label,
+          name: node.name,
+          color: node.color,
+          desc: node.desc,
+          x: screenX,
+          y: screenY,
+          visible: true
+        }
+      })
+
+      setProjectedCoords(coords)
+      animationId = requestAnimationFrame(updateProjection)
+    }
+
+    updateProjection()
+
+    return () => {
+      cancelAnimationFrame(animationId)
+    }
+  }, [webglSupported])
 
   const activeModulesRef = useRef(activeModules)
   useEffect(() => {
@@ -168,12 +231,18 @@ export function SystemCanvas3D({ activeModules }: SystemCanvas3DProps) {
       camera.position.set(0, 0, 7.5)
     }
 
-    const renderer = new THREE.WebGLRenderer({
-      canvas,
-      antialias: true,
-      alpha: true,
-      powerPreference: 'high-performance'
-    })
+    let renderer: THREE.WebGLRenderer
+    try {
+      renderer = new THREE.WebGLRenderer({
+        canvas,
+        antialias: true,
+        alpha: true,
+        powerPreference: 'high-performance'
+      })
+    } catch {
+      setTimeout(() => setWebglSupported(false), 0)
+      return
+    }
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
     renderer.setSize(width, height)
 
@@ -586,11 +655,45 @@ export function SystemCanvas3D({ activeModules }: SystemCanvas3DProps) {
       ref={containerRef}
       className="hero-3d-container"
     >
-      <canvas
-        ref={canvasRef}
-        className="hero-3d-canvas"
-        aria-hidden="true"
-      />
+      {webglSupported ? (
+        <canvas
+          ref={canvasRef}
+          className="hero-3d-canvas"
+          aria-hidden="true"
+        />
+      ) : (
+        <svg
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            pointerEvents: 'none',
+            zIndex: 3
+          }}
+          aria-hidden="true"
+        >
+          {PATHS.map((path, idx) => {
+            const fromNode = projectedCoords.find(n => n.id === path.from)
+            const toNode = projectedCoords.find(n => n.id === path.to)
+            if (!fromNode || !toNode) return null
+            const pathActive = (activeModulesMap.get(path.from) ?? false) && (activeModulesMap.get(path.to) ?? false)
+            return (
+              <line
+                key={idx}
+                x1={fromNode.x}
+                y1={fromNode.y}
+                x2={toNode.x}
+                y2={toNode.y}
+                stroke={pathActive ? "var(--color-accent)" : "var(--color-border)"}
+                strokeWidth="1.5"
+                strokeOpacity={pathActive ? "0.6" : "0.2"}
+              />
+            )
+          })}
+        </svg>
+      )}
 
       {projectedCoords.map(node => {
         if (!node.visible) return null

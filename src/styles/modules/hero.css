@@ -41,11 +41,11 @@
 
   .hero h1 {
     font-family: var(--font-display);
-    font-size: clamp(38px, 4.6vw, 68px);
+    font-size: clamp(52px, 11vw, 168px);
     font-weight: 200;
-    letter-spacing: -0.04em;
-    line-height: 1.15;
-    margin: 22px 0 32px;
+    letter-spacing: -0.055em;
+    line-height: 0.88;
+    margin: 22px 0 var(--grid-micro);
   }
 
   .hero h1 span {
@@ -117,7 +117,7 @@
     font-size: 12px;
     color: var(--color-text-faint);
     margin-top: -24px;
-    margin-bottom: 32px;
+    margin-bottom: var(--grid-micro);
     font-family: var(--font-mono);
     text-transform: uppercase;
     letter-spacing: 0.12em;
@@ -315,7 +315,7 @@
 @media (max-width: 1024px) {
   .hero-inner-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: var(--grid-micro);
   }
   .hero-inner {
     grid-column: 1;
@@ -348,15 +348,15 @@
   }
 
   .hero h1 {
-    font-size: clamp(30px, 9vw, 44px);
+    font-size: clamp(48px, 11vw, 82px);
     margin: 18px 0 24px;
-    letter-spacing: -0.04em;
-    line-height: 1.25;
+    letter-spacing: -0.055em;
+    line-height: 0.88;
   }
 
   .hero-deck {
     font-size: 15px;
-    margin-bottom: 32px;
+    margin-bottom: var(--grid-micro);
     line-height: 1.5;
   }
 

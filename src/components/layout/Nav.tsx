@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { FocusTrap } from 'focus-trap-react'
 import { NAV_ITEMS, ROUTES } from '@/routes'
 import { Logo } from '@/components/ui/Logo'
@@ -8,15 +8,14 @@ import { useBodyScrollLock } from '@/hooks/useBodyScrollLock'
 
 export function Nav() {
   const [open, setOpen] = useState(false)
-  const navigate = useNavigate()
   useBodyScrollLock(open)
 
   return (
     <header className="nav">
       <div className="nav-inner">
-        <button className="nav-brand" onClick={() => navigate(ROUTES.home)} aria-label="SVYNE home">
+        <Link className="nav-brand" to={ROUTES.home} aria-label="SVYNE home">
           <Logo />
-        </button>
+        </Link>
 
         <nav className="nav-links" aria-label="Primary">
           {NAV_ITEMS.map(item => (

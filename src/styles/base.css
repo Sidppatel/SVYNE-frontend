@@ -20,6 +20,10 @@
   --color-white: #ffffff;
   --color-black: #000000;
 
+  --grid-ambient: 88px;
+  --grid-work: 42px;
+  --grid-micro: 32px;
+
   --color-gray-50: #fbf7f1;
   --color-gray-100: #f1e9de;
   --color-gray-200: #e8dccd;

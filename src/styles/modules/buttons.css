@@ -47,4 +47,14 @@
     background: var(--color-surface);
     color: var(--color-ink);
   }
+
+  .btn .arr {
+    display: inline-block;
+    margin-left: 6px;
+    transition: transform 0.3s var(--ease-svyne);
+  }
+
+  .btn:hover .arr {
+    transform: translateX(4px);
+  }
 }

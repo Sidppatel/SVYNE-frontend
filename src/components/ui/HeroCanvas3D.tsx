@@ -395,6 +395,17 @@ export function HeroCanvas3D({ mode = 'home' }: HeroCanvas3DProps) {
   const [activeNode, setActiveNode] = useState<string | null>(null)
   const [hoveredBadge, setHoveredBadge] = useState<string | null>(null)
   const [isMobile, setIsMobile] = useState(false)
+  const [webglSupported, setWebglSupported] = useState(() => {
+    try {
+      const canvas = document.createElement('canvas')
+      return !!(
+        window.WebGLRenderingContext &&
+        (canvas.getContext('webgl') || canvas.getContext('experimental-webgl'))
+      )
+    } catch {
+      return false
+    }
+  })
 
   useEffect(() => {
     const checkMobile = () => {
@@ -410,6 +421,62 @@ export function HeroCanvas3D({ mode = 'home' }: HeroCanvas3DProps) {
   useEffect(() => {
     hoverStateRef.current = hoveredBadge || activeNode
   }, [hoveredBadge, activeNode])
+
+  useEffect(() => {
+    if (webglSupported) return
+
+    const configMode = mode === 'contact' ? 'home' : mode
+    const config = CONFIGS[configMode] || CONFIGS.home
+    const nodesData = config.nodes
+
+    let animationId: number
+    let angle = 0
+
+    const updateProjection = () => {
+      if (!containerRef.current) return
+      const width = containerRef.current.clientWidth
+      const height = containerRef.current.clientHeight
+
+      angle += 0.003
+
+      const coords: ProjectedCoord[] = nodesData.map(node => {
+        const [x, y, z] = node.pos
+
+        const cosY = Math.cos(angle)
+        const sinY = Math.sin(angle)
+
+        const rx = x * cosY - z * sinY
+        const rz = x * sinY + z * cosY
+        const ry = y
+
+        const cameraZ = 8.5
+        const factor = cameraZ / (cameraZ + rz)
+
+        const screenX = rx * width * 0.11 * factor + width / 2
+        const screenY = -ry * height * 0.16 * factor + height / 2
+
+        return {
+          id: node.id,
+          label: node.label,
+          metric: node.metric,
+          desc: node.desc,
+          color: node.color,
+          x: screenX,
+          y: screenY,
+          visible: true
+        }
+      })
+
+      setProjectedCoords(coords)
+      animationId = requestAnimationFrame(updateProjection)
+    }
+
+    updateProjection()
+
+    return () => {
+      cancelAnimationFrame(animationId)
+    }
+  }, [webglSupported, mode])
 
   useEffect(() => {
     const container = containerRef.current
@@ -439,12 +506,18 @@ export function HeroCanvas3D({ mode = 'home' }: HeroCanvas3DProps) {
     }
 
     // Renderer
-    const renderer = new THREE.WebGLRenderer({
-      canvas,
-      antialias: true,
-      alpha: true,
-      powerPreference: 'high-performance'
-    })
+    let renderer: THREE.WebGLRenderer
+    try {
+      renderer = new THREE.WebGLRenderer({
+        canvas,
+        antialias: true,
+        alpha: true,
+        powerPreference: 'high-performance'
+      })
+    } catch {
+      setTimeout(() => setWebglSupported(false), 0)
+      return
+    }
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
     renderer.setSize(width, height)
 
@@ -826,16 +899,49 @@ export function HeroCanvas3D({ mode = 'home' }: HeroCanvas3DProps) {
         zIndex: 4
       }}
     >
-      <canvas
-        ref={canvasRef}
-        style={{
-          width: '100%',
-          height: '100%',
-          display: 'block',
-          pointerEvents: 'auto' // Allow hover interactions on canvas itself if needed
-        }}
-        aria-hidden="true"
-      />
+      {webglSupported ? (
+        <canvas
+          ref={canvasRef}
+          style={{
+            width: '100%',
+            height: '100%',
+            display: 'block',
+            pointerEvents: 'auto'
+          }}
+          aria-hidden="true"
+        />
+      ) : (
+        <svg
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            pointerEvents: 'none',
+            zIndex: 3
+          }}
+          aria-hidden="true"
+        >
+          {(CONFIGS[mode === 'contact' ? 'home' : mode] || CONFIGS.home).paths.map((path, idx) => {
+            const fromNode = projectedCoords.find(n => n.id === path.from)
+            const toNode = projectedCoords.find(n => n.id === path.to)
+            if (!fromNode || !toNode) return null
+            return (
+              <line
+                key={idx}
+                x1={fromNode.x}
+                y1={fromNode.y}
+                x2={toNode.x}
+                y2={toNode.y}
+                stroke="var(--color-border)"
+                strokeWidth="1.5"
+                strokeOpacity="0.25"
+              />
+            )
+          })}
+        </svg>
+      )}
 
       {/* HTML Overlays projected onto 3D Coordinates */}
       {projectedCoords.map(node => {

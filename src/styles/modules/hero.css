@@ -135,18 +135,6 @@
   }
 
   /* Button Overrides for Editorial Hero */
-  .hero .btn-primary {
-    background: var(--color-accent);
-    color: var(--color-surface);
-    border-color: var(--color-accent);
-  }
-
-  .hero .btn-primary:hover {
-    background: var(--color-accent-deep);
-    color: var(--color-surface);
-    border-color: var(--color-accent-deep);
-  }
-
   .hero .btn-secondary {
     color: var(--color-ink);
     border-color: var(--color-border-strong);

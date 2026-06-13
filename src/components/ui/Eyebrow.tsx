@@ -5,5 +5,12 @@ type Props = PropsWithChildren<{
 }>
 
 export function Eyebrow({ children, className = '' }: Props) {
-  return <div className={`eyebrow ${className}`.trim()}>{children}</div>
+  let content = children
+  if (typeof children === 'string') {
+    const trimmed = children.trim()
+    if (!trimmed.startsWith('◆') && !trimmed.endsWith('◆')) {
+      content = `◆ ${trimmed} ◆`
+    }
+  }
+  return <div className={`eyebrow ${className}`.trim()}>{content}</div>
 }

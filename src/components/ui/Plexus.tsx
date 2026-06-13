@@ -79,8 +79,8 @@ export function Plexus({ densityMultiplier = 1.0 }: PlexusProps) {
       ctx.scale(dpr, dpr)
 
       const rootStyle = getComputedStyle(document.documentElement);
-      const parseHexToRGB = (varName: string) => {
-        const val = rootStyle.getPropertyValue(varName).trim();
+      const parseHexToRGB = (varName: string, fallback: string) => {
+        const val = rootStyle.getPropertyValue(varName).trim() || fallback;
         const normalized = val.startsWith('#') ? val : `#${val}`;
         if (normalized.length !== 7) return '0, 0, 0';
         const r = parseInt(normalized.slice(1, 3), 16);
@@ -89,8 +89,8 @@ export function Plexus({ densityMultiplier = 1.0 }: PlexusProps) {
         return `${r}, ${g}, ${b}`;
       };
 
-      particleColor = `rgba(${parseHexToRGB('--color-gold')}, 0.75)`;
-      connectionColorRGB = parseHexToRGB('--color-ink');
+      particleColor = `rgba(${parseHexToRGB('--color-gold', '#b58b45')}, 0.75)`;
+      connectionColorRGB = parseHexToRGB('--color-ink', '#231815');
 
       particles.length = 0
       for (let i = 0; i < particleCount; i++) {

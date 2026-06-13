@@ -30,9 +30,9 @@
     color: var(--color-ink);
   }
 
-  .nav-brand em {
-    font-style: italic;
+  .nav-brand .brand-period {
     color: var(--color-accent);
+    font-style: italic;
   }
 
   .nav-brand .spark-mark-wrap {
@@ -101,7 +101,7 @@
     width: 100%;
   }
 
-  .nav-cta {
+  .nav-cta-desk {
     font-family: var(--font-sans);
     font-size: 13px;
     font-weight: 600;
@@ -112,10 +112,10 @@
     transition: all 0.3s var(--ease-out);
   }
 
-  .nav-cta:hover {
-    background: var(--color-accent);
-    transform: translateY(-1px);
-    box-shadow: 0 8px 20px -8px var(--color-accent-a24);
+  .nav-cta-desk:hover {
+    background: var(--color-accent-deep);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px var(--color-accent-soft);
   }
 
   .nav-burger {

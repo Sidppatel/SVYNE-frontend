@@ -7,7 +7,7 @@ export function SuccessSection() {
   const [before, after] = quote.split(highlight)
 
   return (
-    <section className="section section-parchment-deep">
+    <section className="section section-cream">
       <div className="doc">
         <div className="section-header fade-up">
           <div className="label-row">
@@ -20,6 +20,7 @@ export function SuccessSection() {
         </div>
 
         <div className="integrated-testimonial fade-up d1">
+          <div className="testimonial-mark">“</div>
           <p className="testimonial-quote">
             {before}
             <em className="kinetic-fill">{highlight}</em>

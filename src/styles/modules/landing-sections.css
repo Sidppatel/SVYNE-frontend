@@ -3,11 +3,11 @@
      1. Common Section Layout & Headings
      ========================================================================== */
   .section-cream {
-    background-color: var(--color-surface);
+    background-color: var(--color-surface-a82);
   }
 
   .section-parchment-deep {
-    background-color: var(--color-surface-2);
+    background-color: var(--color-surface-2-a74);
   }
 
   .label-row {

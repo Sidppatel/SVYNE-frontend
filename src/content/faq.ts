@@ -32,7 +32,7 @@ export const FAQ_ITEMS = [
   {
     question: 'How much does it cost?',
     answer:
-      'Every system is custom-fit, so we don\'t publish rigid prices. A typical local service business invests $1,500–$3,000 for setup plus $99–$299/month. Event ticketing systems often cost $0 upfront, using a small platform fee per ticket. Let\'s do a free 15-minute audit to get an exact quote.',
+      'Every system is custom-fit, so we don\'t publish rigid prices. A typical local service business invests $1,500–$6,000 for setup plus $99–$299/month. Event ticketing systems often cost $0 upfront, using a small platform fee per ticket. Let\'s do a free 15-minute audit to get an exact quote.',
   },
   {
     question: 'How long does implementation take?',

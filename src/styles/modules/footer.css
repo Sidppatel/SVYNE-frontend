@@ -33,9 +33,9 @@
     gap: 12px;
   }
 
-  .footer-mark em {
-    font-style: italic;
+  .footer-mark .brand-period {
     color: var(--color-accent);
+    font-style: italic;
   }
 
   .footer-mark .spark-mark-wrap {

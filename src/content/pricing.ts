@@ -22,7 +22,7 @@ export const PRICING_TIERS: PricingTier[] = [
     key: 'hub',
     accent: 'retainer model',
     name: 'Operational Hub',
-    price: '$1,500 - $3,000 setup',
+    price: '$1,500 - $6,000 setup',
     tag: 'Plus $99 - $299 / month',
     items: [
       'CRM, scheduling, dispatch, & invoicing modules',

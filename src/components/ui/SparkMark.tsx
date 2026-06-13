@@ -17,21 +17,21 @@ export function SparkMark({ size }: Props) {
         <path
           d="M40 70 L95 110"
           className="spark-line-input-base"
-          stroke="var(--color-sienna)"
+          stroke="var(--color-accent)"
           strokeWidth="10"
           strokeLinecap="round"
         />
         <path
           d="M40 120 L95 120"
           className="spark-line-input-base"
-          stroke="var(--color-sienna)"
+          stroke="var(--color-accent)"
           strokeWidth="10"
           strokeLinecap="round"
         />
         <path
           d="M40 170 L95 130"
           className="spark-line-input-base"
-          stroke="var(--color-sienna)"
+          stroke="var(--color-accent)"
           strokeWidth="10"
           strokeLinecap="round"
         />
@@ -40,7 +40,7 @@ export function SparkMark({ size }: Props) {
         <path
           d="M40 70 L95 110"
           className="spark-line-input-flow"
-          stroke="var(--color-sienna)"
+          stroke="var(--color-accent)"
           strokeWidth="10"
           strokeLinecap="round"
           strokeDasharray="12 12"
@@ -48,7 +48,7 @@ export function SparkMark({ size }: Props) {
         <path
           d="M40 120 L95 120"
           className="spark-line-input-flow"
-          stroke="var(--color-sienna)"
+          stroke="var(--color-accent)"
           strokeWidth="10"
           strokeLinecap="round"
           strokeDasharray="12 12"
@@ -56,16 +56,16 @@ export function SparkMark({ size }: Props) {
         <path
           d="M40 170 L95 130"
           className="spark-line-input-flow"
-          stroke="var(--color-sienna)"
+          stroke="var(--color-accent)"
           strokeWidth="10"
           strokeLinecap="round"
           strokeDasharray="12 12"
         />
 
         {/* Input Nodes */}
-        <circle cx="40" cy="70" r="8" className="spark-node-input" fill="var(--color-sienna)" />
-        <circle cx="40" cy="120" r="8" className="spark-node-input" fill="var(--color-sienna)" />
-        <circle cx="40" cy="170" r="8" className="spark-node-input" fill="var(--color-sienna)" />
+        <circle cx="40" cy="70" r="8" className="spark-node-input" fill="var(--color-accent)" />
+        <circle cx="40" cy="120" r="8" className="spark-node-input" fill="var(--color-accent)" />
+        <circle cx="40" cy="170" r="8" className="spark-node-input" fill="var(--color-accent)" />
 
         {/* System Hub */}
         <circle
@@ -74,12 +74,12 @@ export function SparkMark({ size }: Props) {
           r="24"
           className="spark-hub-outer"
           fill="var(--color-bg)"
-          stroke="var(--color-slate-gray)"
+          stroke="var(--color-ink)"
           strokeWidth="10"
         />
 
         {/* Inner System Core */}
-        <circle cx="120" cy="120" r="8" className="spark-hub-inner" fill="var(--color-slate-gray)" />
+        <circle cx="120" cy="120" r="8" className="spark-hub-inner" fill="var(--color-accent)" />
 
         {/* Output Line (Static Base Conduit) */}
         <path

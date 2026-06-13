@@ -180,7 +180,10 @@ export function Home() {
       {/* ==========================================================================
          3. Why Existing Software Fails (Comparison)
          ========================================================================== */}
-      <section className="section">
+      {/* ==========================================================================
+         3. Why Existing Software Fails (Comparison)
+         ========================================================================== */}
+      <section className="section section-parchment-deep compare-section">
         <div className="doc">
           <div className="section-header">
             <div className="label-row">
@@ -281,9 +284,47 @@ export function Home() {
       </section>
 
       {/* ==========================================================================
+         3.5 Data Ownership Covenant
+         ========================================================================== */}
+      <section className="section data-ownership-section">
+        <div className="doc">
+          <div className="section-header">
+            <div className="label-row">
+              <Eyebrow>Covenant · Data Guarantee</Eyebrow>
+              <Accent>your data forever</Accent>
+            </div>
+            <h2>
+              The Data Ownership <em>Covenant.</em>
+            </h2>
+            <p className="deck">
+              Unlike generic platforms that hold your business history hostage or market to your clients, we pledge absolute data independence.
+            </p>
+          </div>
+
+          <div className="services-strip">
+            <div className="pillar">
+              <div className="pillar-num">01</div>
+              <h3 className="pillar-h-sm">100% Ownership</h3>
+              <p>You retain full and exclusive ownership of all customer profiles, purchase history, and operational records. We never share or sell your data.</p>
+            </div>
+            <div className="pillar">
+              <div className="pillar-num">02</div>
+              <h3 className="pillar-h-sm">Complete Export</h3>
+              <p>If you choose to leave, we provide a complete SQL/JSON database export and a migration map to transition to industry-standard tools.</p>
+            </div>
+            <div className="pillar">
+              <div className="pillar-num">03</div>
+              <h3 className="pillar-h-sm">No Lock-in</h3>
+              <p>While our core engine code remains ours, your entire operational history is yours forever, with zero proprietary format constraints.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ==========================================================================
          4. The SVYNE Approach (Timeline Workflow)
          ========================================================================== */}
-      <section className="section section-parchment-deep approach-section">
+      <section className="section section-cream approach-section">
         <div className="doc">
           <div className="section-header">
             <div className="label-row">
@@ -377,7 +418,7 @@ export function Home() {
       {/* ==========================================================================
          5. Success Outcomes
          ========================================================================== */}
-      <section className="section kpi-section">
+      <section className="section section-parchment-deep kpi-section">
         <div className="doc">
           <div className="section-header">
             <div className="label-row">
@@ -432,44 +473,6 @@ export function Home() {
               <div className="kpi-label">Upfront Setup</div>
               <p className="kpi-desc">For event venues utilizing the transaction-based pricing model.</p>
             </article>
-          </div>
-        </div>
-      </section>
-
-      {/* ==========================================================================
-         5.5 Data Ownership Covenant
-         ========================================================================== */}
-      <section className="section section-cream data-ownership-section">
-        <div className="doc">
-          <div className="section-header">
-            <div className="label-row">
-              <Eyebrow>Covenant · Data Guarantee</Eyebrow>
-              <Accent>your data forever</Accent>
-            </div>
-            <h2>
-              The Data Ownership <em>Covenant.</em>
-            </h2>
-            <p className="deck">
-              Unlike generic platforms that hold your business history hostage or market to your clients, we pledge absolute data independence.
-            </p>
-          </div>
-
-          <div className="services-strip">
-            <div className="pillar">
-              <div className="pillar-num">01</div>
-              <h3 className="pillar-h-sm">100% Ownership</h3>
-              <p>You retain full and exclusive ownership of all customer profiles, purchase history, and operational records. We never share or sell your data.</p>
-            </div>
-            <div className="pillar">
-              <div className="pillar-num">02</div>
-              <h3 className="pillar-h-sm">Complete Export</h3>
-              <p>If you choose to leave, we provide a complete SQL/JSON database export and a migration map to transition to industry-standard tools.</p>
-            </div>
-            <div className="pillar">
-              <div className="pillar-num">03</div>
-              <h3 className="pillar-h-sm">No Lock-in</h3>
-              <p>While our core engine code remains ours, your entire operational history is yours forever, with zero proprietary format constraints.</p>
-            </div>
           </div>
         </div>
       </section>

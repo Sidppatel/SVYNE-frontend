@@ -10,7 +10,7 @@ export function Wordmark({ swayOnMount = false }: Props) {
 
   return (
     <span className="brand-wordmark-container">
-      svyne<em className={`brand-period${swayOnMount ? ' sway' : ''}`}>.</em>
+      svyne<span className={`brand-period${swayOnMount ? ' sway' : ''}`}>.</span>
       {isPreview && <span className="preview-badge">{t('brand.preview')}</span>}
     </span>
   )

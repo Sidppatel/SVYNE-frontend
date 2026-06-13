@@ -45,6 +45,7 @@
   --font-display: "Outfit", -apple-system, sans-serif;
   --font-sans: "Inter", -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
+  --font-italic: "Cormorant Garamond", Georgia, serif;
 
 
   --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -119,13 +120,16 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  *::-webkit-scrollbar {
+    display: none;
   }
 
   html {
     -webkit-text-size-adjust: 100%;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    overflow-x: hidden;
     max-width: 100vw;
   }
 
@@ -163,10 +167,24 @@
     color: var(--color-ink);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    max-width: 100vw;
+    min-height: 100vh;
+  }
+
+  #root {
     overflow-x: hidden;
     max-width: 100vw;
-    scrollbar-width: none;
-    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+
+  h1 em, h2 em, h3 em, h4 em, h5 em, h6 em {
+    font-family: var(--font-italic);
+    font-style: italic;
+    color: var(--color-accent);
+    font-weight: 300;
   }
 
   button {
@@ -217,8 +235,8 @@
   .ambient-field {
     background:
       radial-gradient(circle at 18% 14%, rgba(255, 90, 54, 0.17), transparent 30%),
-      radial-gradient(circle at 78% 24%, rgba(111, 131, 88, 0.15), transparent 27%),
-      radial-gradient(circle at 66% 82%, rgba(141, 108, 159, 0.1), transparent 34%),
+      radial-gradient(circle at 78% 24%, rgba(15, 169, 104, 0.08), transparent 27%),
+      radial-gradient(circle at 66% 82%, rgba(141, 108, 159, 0.06), transparent 34%),
       linear-gradient(135deg, rgba(251, 247, 241, 0.4), rgba(241, 233, 222, 0.55));
     animation: ambient-drift 34s var(--ease-in-out) infinite alternate;
   }

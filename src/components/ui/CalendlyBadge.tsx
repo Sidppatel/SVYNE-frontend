@@ -37,12 +37,15 @@ export function CalendlyBadge() {
       const w = window as unknown as { Calendly?: { initBadgeWidget: (opts: Record<string, unknown>) => void } }
       if (w.Calendly?.initBadgeWidget) {
         const rootStyle = getComputedStyle(document.documentElement);
-        const getHex = (varName: string) => rootStyle.getPropertyValue(varName).trim();
+        const getHex = (varName: string, fallback: string) => {
+          const val = rootStyle.getPropertyValue(varName).trim() || fallback;
+          return val.replace('#', '');
+        };
         
-        const bgHex = getHex('--color-bg').replace('#', '');
-        const textHex = getHex('--color-ink').replace('#', '');
-        const primaryHex = getHex('--color-accent').replace('#', '');
-        const surfaceHex = getHex('--color-surface').replace('#', '');
+        const bgHex = getHex('--color-bg', '#f6f1e8');
+        const textHex = getHex('--color-ink', '#231815');
+        const primaryHex = getHex('--color-accent', '#ff5a36');
+        const surfaceHex = getHex('--color-surface', '#fbf7f1');
 
         w.Calendly.initBadgeWidget({
           url: `https://${STUDIO.schedulingUrl}?background_color=${bgHex}&text_color=${textHex}&primary_color=${primaryHex}&hide_gdpr_banner=1`,

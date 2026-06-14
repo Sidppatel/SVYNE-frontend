@@ -30,7 +30,18 @@ The SparkMark represents a system hub accepting three primary data conduits (Lea
   <circle cx="32" cy="68" r="6" class="spark-node-input" fill="var(--color-accent)" />
   <circle cx="56" cy="110" r="11" class="spark-node-input" fill="var(--color-accent)" />
   <circle cx="36" cy="168" r="8" class="spark-node-input" fill="var(--color-accent)" />
-  <circle cx="120" cy="120" r="24" class="spark-hub-outer" fill="transparent" stroke="var(--color-ink)" stroke-width="10" />
+  <g class="spark-hub-gear">
+    <circle cx="120" cy="120" r="18" fill="none" stroke="var(--color-ink)" stroke-width="8" />
+    <rect x="116" y="94" width="8" height="14" rx="2" fill="var(--color-ink)" />
+    <rect x="116" y="94" width="8" height="14" rx="2" fill="var(--color-ink)" transform="rotate(45 120 120)" />
+    <rect x="116" y="94" width="8" height="14" rx="2" fill="var(--color-ink)" transform="rotate(90 120 120)" />
+    <rect x="116" y="94" width="8" height="14" rx="2" fill="var(--color-ink)" transform="rotate(135 120 120)" />
+    <rect x="116" y="94" width="8" height="14" rx="2" fill="var(--color-ink)" transform="rotate(180 120 120)" />
+    <rect x="116" y="94" width="8" height="14" rx="2" fill="var(--color-ink)" transform="rotate(225 120 120)" />
+    <rect x="116" y="94" width="8" height="14" rx="2" fill="var(--color-ink)" transform="rotate(270 120 120)" />
+    <rect x="116" y="94" width="8" height="14" rx="2" fill="var(--color-ink)" transform="rotate(315 120 120)" />
+  </g>
+
   <circle cx="120" cy="120" r="8" class="spark-hub-inner" fill="var(--color-accent)" />
   <path d="M144 120 L195 120" class="spark-line-output-base" stroke="var(--color-growth)" stroke-width="10" stroke-linecap="round" />
   <circle cx="200" cy="120" r="10" class="spark-node-output" fill="var(--color-growth)" />

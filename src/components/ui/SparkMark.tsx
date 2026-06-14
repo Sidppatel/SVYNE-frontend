@@ -157,15 +157,18 @@ export function SparkMark({ size }: Props) {
         <circle cx="32" cy="68" r="6" className="spark-node-input" fill="var(--color-accent)" />
         <circle cx="56" cy="110" r="11" className="spark-node-input" fill="var(--color-accent)" />
         <circle cx="36" cy="168" r="8" className="spark-node-input" fill="var(--color-accent)" />
-        <circle
-          cx="120"
-          cy="120"
-          r="24"
-          className="spark-hub-outer"
-          fill="transparent"
-          stroke="var(--color-ink)"
-          strokeWidth="10"
-        />
+        <g className="spark-hub-gear">
+          <circle cx="120" cy="120" r="18" fill="none" stroke="var(--color-ink)" strokeWidth="8" />
+          <rect x="116" y="94" width="8" height="14" rx="2" fill="var(--color-ink)" />
+          <rect x="116" y="94" width="8" height="14" rx="2" fill="var(--color-ink)" transform="rotate(45 120 120)" />
+          <rect x="116" y="94" width="8" height="14" rx="2" fill="var(--color-ink)" transform="rotate(90 120 120)" />
+          <rect x="116" y="94" width="8" height="14" rx="2" fill="var(--color-ink)" transform="rotate(135 120 120)" />
+          <rect x="116" y="94" width="8" height="14" rx="2" fill="var(--color-ink)" transform="rotate(180 120 120)" />
+          <rect x="116" y="94" width="8" height="14" rx="2" fill="var(--color-ink)" transform="rotate(225 120 120)" />
+          <rect x="116" y="94" width="8" height="14" rx="2" fill="var(--color-ink)" transform="rotate(270 120 120)" />
+          <rect x="116" y="94" width="8" height="14" rx="2" fill="var(--color-ink)" transform="rotate(315 120 120)" />
+        </g>
+
         <circle cx="120" cy="120" r="8" className="spark-hub-inner" fill="var(--color-accent)" />
         <path
           d="M144 120 L195 120"

@@ -1,24 +1,164 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="2 57 213 126">
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="2 57 213 126"
+>
+  <style>
+    :root {
+      --color-bg: #f6f1e8;
+      --color-ink: #231815;
+      --color-slate-gray: #4F5D65;
+      --color-growth: #0FA968;
+      --color-sienna: #ff5a36;
+      --color-accent: #ff5a36;
+      --ease-svyne: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .spark-mark {
+      transition: all 0.8s var(--ease-svyne);
+    }
+    .spark-line-input-base,
+    .spark-line-output-base {
+      opacity: 0.15;
+    }
+    .spark-line-input-branch-base {
+      opacity: 0.06;
+      animation: sparkBranchBasePulse 6s infinite ease-in-out;
+    }
+    .spark-line-input-flow {
+      opacity: 0;
+      animation: sparkInputFlow 4s infinite linear;
+    }
+    .flow-line-1 {
+      animation: sparkInputFlow 3.8s infinite linear;
+      animation-delay: 0.4s;
+    }
+    .flow-line-2 {
+      animation: sparkInputFlow 3.0s infinite linear;
+      animation-delay: 1.2s;
+    }
+    .flow-line-3 {
+      animation: sparkInputFlow 4.5s infinite linear;
+      animation-delay: 0.0s;
+    }
+    .flow-branch-1a {
+      animation: sparkBranchFlow 3.8s infinite linear;
+      animation-delay: 0.1s;
+    }
+    .flow-branch-1b {
+      animation: sparkBranchFlow 3.8s infinite linear;
+      animation-delay: 0.2s;
+    }
+    .flow-branch-2a {
+      animation: sparkBranchFlow 3.0s infinite linear;
+      animation-delay: 0.9s;
+    }
+    .flow-branch-2b {
+      animation: sparkBranchFlow 3.0s infinite linear;
+      animation-delay: 1.0s;
+    }
+    .flow-branch-3a {
+      animation: sparkBranchFlow 4.5s infinite linear;
+      animation-delay: 4.2s;
+    }
+    .flow-branch-3b {
+      animation: sparkBranchFlow 4.5s infinite linear;
+      animation-delay: 4.3s;
+    }
+    .spark-line-output-flow {
+      opacity: 0;
+      animation: sparkOutputFlow 4s infinite linear;
+    }
+    .spark-hub-inner {
+      transform-origin: 120px 120px;
+      animation: sparkHubPulse 4s infinite ease-in-out;
+    }
+    .spark-hub-gear {
+      transform-origin: 120px 120px;
+      animation: sparkHubRotate 11s infinite linear;
+    }
+    .spark-node-output {
+      transform-origin: 200px 120px;
+      animation: sparkOutputNodePulse 4s infinite ease-in-out;
+    }
+    @keyframes sparkInputFlow {
+      0% { opacity: 0; stroke-dashoffset: 48; }
+      10% { opacity: 1; }
+      30% { opacity: 1; }
+      37.5% { opacity: 0; stroke-dashoffset: 0; }
+      100% { opacity: 0; stroke-dashoffset: 0; }
+    }
+    @keyframes sparkBranchBasePulse {
+      0%, 100% { opacity: 0.03; }
+      50% { opacity: 0.09; }
+    }
+    @keyframes sparkBranchFlow {
+      0% { opacity: 0; stroke-dashoffset: 48; }
+      10% { opacity: 0.35; }
+      30% { opacity: 0.35; }
+      37.5% { opacity: 0; stroke-dashoffset: 0; }
+      100% { opacity: 0; stroke-dashoffset: 0; }
+    }
+    @keyframes sparkHubRotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes sparkHubPulse {
+      0%, 37.5% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(35, 24, 21, 0)); }
+      46.25% { transform: scale(1.15); filter: drop-shadow(0 0 6px rgba(35, 24, 21, 0.2)); }
+      55%, 100% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(35, 24, 21, 0)); }
+    }
+    @keyframes sparkOutputFlow {
+      0%, 55% { opacity: 0; stroke-dashoffset: 40; }
+      60% { opacity: 1; }
+      80% { opacity: 1; }
+      85% { opacity: 0; stroke-dashoffset: 0; }
+      100% { opacity: 0; stroke-dashoffset: 0; }
+    }
+    @keyframes sparkOutputNodePulse {
+      0%, 85% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(15, 169, 104, 0)); }
+      90% { transform: scale(1.25); filter: drop-shadow(0 0 8px var(--color-growth)); }
+      95%, 100% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(15, 169, 104, 0)); }
+    }
+  </style>
   <defs>
     <linearGradient id="branch-fade-sienna" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#ff5a36" stop-opacity="0"/>
       <stop offset="100%" stop-color="#ff5a36" stop-opacity="1"/>
     </linearGradient>
   </defs>
-  <path d="M 10 60 Q 40 45 96 104" stroke="url(#branch-fade-sienna)" stroke-width="4" stroke-linecap="round" opacity="0.06"/>
-  <path d="M 14 85 Q 50 92 96 110" stroke="url(#branch-fade-sienna)" stroke-width="4" stroke-linecap="round" opacity="0.06"/>
-  <path d="M 24 98 Q 50 85 96 116" stroke="url(#branch-fade-sienna)" stroke-width="5" stroke-linecap="round" opacity="0.06"/>
-  <path d="M 28 125 Q 60 135 96 124" stroke="url(#branch-fade-sienna)" stroke-width="5" stroke-linecap="round" opacity="0.06"/>
-  <path d="M 12 150 Q 50 140 96 130" stroke="url(#branch-fade-sienna)" stroke-width="4.5" stroke-linecap="round" opacity="0.06"/>
-  <path d="M 16 180 Q 45 190 96 136" stroke="url(#branch-fade-sienna)" stroke-width="4.5" stroke-linecap="round" opacity="0.06"/>
-  <path d="M 32 68 Q 65 72 96 112" stroke="#ff5a36" stroke-width="10" stroke-linecap="round" opacity="0.15"/>
-  <path d="M 56 110 Q 78 105 96 120" stroke="#ff5a36" stroke-width="10" stroke-linecap="round" opacity="0.15"/>
-  <path d="M 36 168 Q 60 160 96 128" stroke="#ff5a36" stroke-width="10" stroke-linecap="round" opacity="0.15"/>
-  <circle cx="32" cy="68" r="6" fill="#ff5a36"/>
-  <circle cx="56" cy="110" r="11" fill="#ff5a36"/>
-  <circle cx="36" cy="168" r="8" fill="#ff5a36"/>
-  <circle cx="120" cy="120" r="24" fill="transparent" stroke="#231815" stroke-width="10"/>
-  <circle cx="120" cy="120" r="8" fill="#ff5a36"/>
-  <path d="M144 120 L195 120" stroke="#0FA968" stroke-width="10" stroke-linecap="round" opacity="0.15"/>
-  <circle cx="200" cy="120" r="10" fill="#0FA968"/>
+  <path d="M 10 60 Q 40 45 96 104" class="spark-line-input-branch-base" stroke="url(#branch-fade-sienna)" stroke-width="4" stroke-linecap="round" />
+  <path d="M 14 85 Q 50 92 96 110" class="spark-line-input-branch-base" stroke="url(#branch-fade-sienna)" stroke-width="4" stroke-linecap="round" />
+  <path d="M 24 98 Q 50 85 96 116" class="spark-line-input-branch-base" stroke="url(#branch-fade-sienna)" stroke-width="5" stroke-linecap="round" />
+  <path d="M 28 125 Q 60 135 96 124" class="spark-line-input-branch-base" stroke="url(#branch-fade-sienna)" stroke-width="5" stroke-linecap="round" />
+  <path d="M 12 150 Q 50 140 96 130" class="spark-line-input-branch-base" stroke="url(#branch-fade-sienna)" stroke-width="4.5" stroke-linecap="round" />
+  <path d="M 16 180 Q 45 190 96 136" class="spark-line-input-branch-base" stroke="url(#branch-fade-sienna)" stroke-width="4.5" stroke-linecap="round" />
+  <path d="M 32 68 Q 65 72 96 112" class="spark-line-input-base" stroke="var(--color-sienna)" stroke-width="10" stroke-linecap="round" />
+  <path d="M 56 110 Q 78 105 96 120" class="spark-line-input-base" stroke="var(--color-sienna)" stroke-width="10" stroke-linecap="round" />
+  <path d="M 36 168 Q 60 160 96 128" class="spark-line-input-base" stroke="var(--color-sienna)" stroke-width="10" stroke-linecap="round" />
+  <path d="M 10 60 Q 40 45 96 104" class="spark-line-input-flow flow-branch-1a" stroke="url(#branch-fade-sienna)" stroke-width="4" stroke-linecap="round" stroke-dasharray="6 6" />
+  <path d="M 14 85 Q 50 92 96 110" class="spark-line-input-flow flow-branch-1b" stroke="url(#branch-fade-sienna)" stroke-width="4" stroke-linecap="round" stroke-dasharray="6 6" />
+  <path d="M 24 98 Q 50 85 96 116" class="spark-line-input-flow flow-branch-2a" stroke="url(#branch-fade-sienna)" stroke-width="5" stroke-linecap="round" stroke-dasharray="6 6" />
+  <path d="M 28 125 Q 60 135 96 124" class="spark-line-input-flow flow-branch-2b" stroke="url(#branch-fade-sienna)" stroke-width="5" stroke-linecap="round" stroke-dasharray="6 6" />
+  <path d="M 12 150 Q 50 140 96 130" class="spark-line-input-flow flow-branch-3a" stroke="url(#branch-fade-sienna)" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="6 6" />
+  <path d="M 16 180 Q 45 190 96 136" class="spark-line-input-flow flow-branch-3b" stroke="url(#branch-fade-sienna)" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="6 6" />
+  <path d="M 32 68 Q 65 72 96 112" class="spark-line-input-flow flow-line-1" stroke="var(--color-sienna)" stroke-width="10" stroke-linecap="round" stroke-dasharray="12 12" />
+  <path d="M 56 110 Q 78 105 96 120" class="spark-line-input-flow flow-line-2" stroke="var(--color-sienna)" stroke-width="10" stroke-linecap="round" stroke-dasharray="8 8" />
+  <path d="M 36 168 Q 60 160 96 128" class="spark-line-input-flow flow-line-3" stroke="var(--color-sienna)" stroke-width="10" stroke-linecap="round" stroke-dasharray="10 14" />
+  <circle cx="32" cy="68" r="6" class="spark-node-input" fill="var(--color-sienna)" />
+  <circle cx="56" cy="110" r="11" class="spark-node-input" fill="var(--color-sienna)" />
+  <circle cx="36" cy="168" r="8" class="spark-node-input" fill="var(--color-sienna)" />
+  <g class="spark-hub-gear">
+    <circle cx="120" cy="120" r="18" fill="none" stroke="var(--color-ink)" stroke-width="8" />
+    <rect x="116" y="94" width="8" height="14" rx="2" fill="var(--color-ink)" />
+    <rect x="116" y="94" width="8" height="14" rx="2" fill="var(--color-ink)" transform="rotate(45 120 120)" />
+    <rect x="116" y="94" width="8" height="14" rx="2" fill="var(--color-ink)" transform="rotate(90 120 120)" />
+    <rect x="116" y="94" width="8" height="14" rx="2" fill="var(--color-ink)" transform="rotate(135 120 120)" />
+    <rect x="116" y="94" width="8" height="14" rx="2" fill="var(--color-ink)" transform="rotate(180 120 120)" />
+    <rect x="116" y="94" width="8" height="14" rx="2" fill="var(--color-ink)" transform="rotate(225 120 120)" />
+    <rect x="116" y="94" width="8" height="14" rx="2" fill="var(--color-ink)" transform="rotate(270 120 120)" />
+    <rect x="116" y="94" width="8" height="14" rx="2" fill="var(--color-ink)" transform="rotate(315 120 120)" />
+  </g>
+  <circle cx="120" cy="120" r="8" class="spark-hub-inner" fill="var(--color-sienna)" />
+  <path d="M144 120 L195 120" class="spark-line-output-base" stroke="var(--color-growth)" stroke-width="10" stroke-linecap="round" />
+  <path d="M144 120 L195 120" class="spark-line-output-flow" stroke="var(--color-growth)" stroke-width="10" stroke-linecap="round" stroke-dasharray="10 10" />
+  <circle cx="200" cy="120" r="10" class="spark-node-output" fill="var(--color-growth)" />
 </svg>

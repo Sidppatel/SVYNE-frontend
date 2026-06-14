@@ -68,11 +68,15 @@
       opacity: 0;
       animation: sparkOutputFlow 4s infinite linear;
     }
-    .spark-hub-outer,
     .spark-hub-inner {
       transform-origin: 120px 120px;
       animation: sparkHubPulse 4s infinite ease-in-out;
     }
+    .spark-hub-gear {
+      transform-origin: 120px 120px;
+      animation: sparkHubRotate 11s infinite linear;
+    }
+
     .spark-node-output {
       transform-origin: 200px 120px;
       animation: sparkOutputNodePulse 4s infinite ease-in-out;
@@ -95,6 +99,11 @@
       37.5% { opacity: 0; stroke-dashoffset: 0; }
       100% { opacity: 0; stroke-dashoffset: 0; }
     }
+    @keyframes sparkHubRotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
     @keyframes sparkHubPulse {
       0%, 37.5% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(35, 24, 21, 0)); }
       46.25% { transform: scale(1.15); filter: drop-shadow(0 0 6px rgba(35, 24, 21, 0.2)); }
@@ -140,7 +149,18 @@
   <circle cx="32" cy="68" r="6" class="spark-node-input" fill="var(--color-sienna)" />
   <circle cx="56" cy="110" r="11" class="spark-node-input" fill="var(--color-sienna)" />
   <circle cx="36" cy="168" r="8" class="spark-node-input" fill="var(--color-sienna)" />
-  <circle cx="120" cy="120" r="24" class="spark-hub-outer" fill="transparent" stroke="var(--color-ink)" stroke-width="10" />
+  <g class="spark-hub-gear">
+    <circle cx="120" cy="120" r="18" fill="none" stroke="var(--color-ink)" stroke-width="8" />
+    <rect x="116" y="94" width="8" height="14" rx="2" fill="var(--color-ink)" />
+    <rect x="116" y="94" width="8" height="14" rx="2" fill="var(--color-ink)" transform="rotate(45 120 120)" />
+    <rect x="116" y="94" width="8" height="14" rx="2" fill="var(--color-ink)" transform="rotate(90 120 120)" />
+    <rect x="116" y="94" width="8" height="14" rx="2" fill="var(--color-ink)" transform="rotate(135 120 120)" />
+    <rect x="116" y="94" width="8" height="14" rx="2" fill="var(--color-ink)" transform="rotate(180 120 120)" />
+    <rect x="116" y="94" width="8" height="14" rx="2" fill="var(--color-ink)" transform="rotate(225 120 120)" />
+    <rect x="116" y="94" width="8" height="14" rx="2" fill="var(--color-ink)" transform="rotate(270 120 120)" />
+    <rect x="116" y="94" width="8" height="14" rx="2" fill="var(--color-ink)" transform="rotate(315 120 120)" />
+  </g>
+
   <circle cx="120" cy="120" r="8" class="spark-hub-inner" fill="var(--color-sienna)" />
   <path d="M144 120 L195 120" class="spark-line-output-base" stroke="var(--color-growth)" stroke-width="10" stroke-linecap="round" />
   <path d="M144 120 L195 120" class="spark-line-output-flow" stroke="var(--color-growth)" stroke-width="10" stroke-linecap="round" stroke-dasharray="10 10" />

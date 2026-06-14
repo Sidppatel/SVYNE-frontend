@@ -86,10 +86,14 @@
     animation: sparkOutputFlow 4s infinite linear;
   }
 
-  .spark-hub-outer,
   .spark-hub-inner {
     transform-origin: 120px 120px;
     animation: sparkHubPulse 4s infinite ease-in-out;
+  }
+
+  .spark-hub-gear {
+    transform-origin: 120px 120px;
+    animation: sparkHubRotate 11s infinite linear;
   }
 
   .spark-node-output {
@@ -146,6 +150,15 @@
     100% {
       opacity: 0;
       stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes sparkHubRotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
     }
   }
 

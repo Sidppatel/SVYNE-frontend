@@ -5,7 +5,7 @@
     vertical-align: middle;
     transform-style: preserve-3d;
     perspective: 1000px;
-    aspect-ratio: 188 / 126;
+    aspect-ratio: 213 / 126;
   }
 
   .spark-mark {
@@ -24,12 +24,61 @@
   .spark-line-input-base,
   .spark-line-output-base {
     opacity: 0.15;
-    transition: opacity 0.3s var(--ease-svyne);
+  }
+
+  .spark-line-input-branch-base {
+    opacity: 0.06;
+    animation: sparkBranchBasePulse 6s infinite ease-in-out;
   }
 
   .spark-line-input-flow {
     opacity: 0;
     animation: sparkInputFlow 4s infinite linear;
+  }
+
+  .flow-line-1 {
+    animation: sparkInputFlow 3.8s infinite linear;
+    animation-delay: 0.4s;
+  }
+
+  .flow-line-2 {
+    animation: sparkInputFlow 3.0s infinite linear;
+    animation-delay: 1.2s;
+  }
+
+  .flow-line-3 {
+    animation: sparkInputFlow 4.5s infinite linear;
+    animation-delay: 0.0s;
+  }
+
+  .flow-branch-1a {
+    animation: sparkBranchFlow 3.8s infinite linear;
+    animation-delay: 0.1s;
+  }
+
+  .flow-branch-1b {
+    animation: sparkBranchFlow 3.8s infinite linear;
+    animation-delay: 0.2s;
+  }
+
+  .flow-branch-2a {
+    animation: sparkBranchFlow 3.0s infinite linear;
+    animation-delay: 0.9s;
+  }
+
+  .flow-branch-2b {
+    animation: sparkBranchFlow 3.0s infinite linear;
+    animation-delay: 1.0s;
+  }
+
+  .flow-branch-3a {
+    animation: sparkBranchFlow 4.5s infinite linear;
+    animation-delay: 4.2s;
+  }
+
+  .flow-branch-3b {
+    animation: sparkBranchFlow 4.5s infinite linear;
+    animation-delay: 4.3s;
   }
 
   .spark-line-output-flow {
@@ -50,7 +99,6 @@
 
   
   @keyframes sparkInputFlow {
-    
     0% {
       opacity: 0;
       stroke-dashoffset: 48;
@@ -60,6 +108,36 @@
     }
     30% {
       opacity: 1;
+    }
+    37.5% {
+      opacity: 0;
+      stroke-dashoffset: 0;
+    }
+    100% {
+      opacity: 0;
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes sparkBranchBasePulse {
+    0%, 100% {
+      opacity: 0.03;
+    }
+    50% {
+      opacity: 0.09;
+    }
+  }
+
+  @keyframes sparkBranchFlow {
+    0% {
+      opacity: 0;
+      stroke-dashoffset: 48;
+    }
+    10% {
+      opacity: 0.35;
+    }
+    30% {
+      opacity: 0.35;
     }
     37.5% {
       opacity: 0;
@@ -88,7 +166,6 @@
   }
 
   @keyframes sparkOutputFlow {
-    
     0%, 55% {
       opacity: 0;
       stroke-dashoffset: 40;

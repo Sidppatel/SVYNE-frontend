@@ -1,10 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="27 57 188 126">
-  <path d="M40 70 L95 110" stroke="#ff5a36" stroke-width="10" stroke-linecap="round" opacity="0.15"/>
-  <path d="M40 120 L95 120" stroke="#ff5a36" stroke-width="10" stroke-linecap="round" opacity="0.15"/>
-  <path d="M40 170 L95 130" stroke="#ff5a36" stroke-width="10" stroke-linecap="round" opacity="0.15"/>
-  <circle cx="40" cy="70" r="8" fill="#ff5a36"/>
-  <circle cx="40" cy="120" r="8" fill="#ff5a36"/>
-  <circle cx="40" cy="170" r="8" fill="#ff5a36"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="2 57 213 126">
+  <defs>
+    <linearGradient id="branch-fade-sienna" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff5a36" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ff5a36" stop-opacity="1"/>
+    </linearGradient>
+  </defs>
+  <path d="M 10 60 Q 40 45 96 104" stroke="url(#branch-fade-sienna)" stroke-width="4" stroke-linecap="round" opacity="0.06"/>
+  <path d="M 14 85 Q 50 92 96 110" stroke="url(#branch-fade-sienna)" stroke-width="4" stroke-linecap="round" opacity="0.06"/>
+  <path d="M 24 98 Q 50 85 96 116" stroke="url(#branch-fade-sienna)" stroke-width="5" stroke-linecap="round" opacity="0.06"/>
+  <path d="M 28 125 Q 60 135 96 124" stroke="url(#branch-fade-sienna)" stroke-width="5" stroke-linecap="round" opacity="0.06"/>
+  <path d="M 12 150 Q 50 140 96 130" stroke="url(#branch-fade-sienna)" stroke-width="4.5" stroke-linecap="round" opacity="0.06"/>
+  <path d="M 16 180 Q 45 190 96 136" stroke="url(#branch-fade-sienna)" stroke-width="4.5" stroke-linecap="round" opacity="0.06"/>
+  <path d="M 32 68 Q 65 72 96 112" stroke="#ff5a36" stroke-width="10" stroke-linecap="round" opacity="0.15"/>
+  <path d="M 56 110 Q 78 105 96 120" stroke="#ff5a36" stroke-width="10" stroke-linecap="round" opacity="0.15"/>
+  <path d="M 36 168 Q 60 160 96 128" stroke="#ff5a36" stroke-width="10" stroke-linecap="round" opacity="0.15"/>
+  <circle cx="32" cy="68" r="6" fill="#ff5a36"/>
+  <circle cx="56" cy="110" r="11" fill="#ff5a36"/>
+  <circle cx="36" cy="168" r="8" fill="#ff5a36"/>
   <circle cx="120" cy="120" r="24" fill="transparent" stroke="#231815" stroke-width="10"/>
   <circle cx="120" cy="120" r="8" fill="#ff5a36"/>
   <path d="M144 120 L195 120" stroke="#0FA968" stroke-width="10" stroke-linecap="round" opacity="0.15"/>
